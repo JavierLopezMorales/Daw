@@ -1,15 +1,15 @@
 #caja {
 	background-color: rgb(44, 44, 44, 0.5);
 	color: rgb(189, 214, 247);
-	width: 70%;
-	height: 70%;
+	width: 80%;
+	height: auto;
 	text-align: center;
 	position: absolute;
 	top: 15%;
 	padding-top: 30px;
 	border-radius: 5%;
-	right: 15%;
-	left: 15%;
+	right: 10%;
+	left: 10%;
 }
 
 table {
@@ -54,4 +54,5 @@ table td a:hover {
 	justify-content: space-around;
 	margin-top: 20px;
 	text-align: left;
+	margin-bottom: 20px;
 }

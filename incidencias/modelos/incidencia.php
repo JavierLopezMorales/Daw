@@ -82,7 +82,7 @@ class Incidencia
     public function update($id_incidencia, $descripcion, $equipo_afectado, $fecha, $estado, $observacion, $prioridad, $id_usuario)
     {
 
-        if($estado = 'cerrada'){
+        if($estado == 'cerrada'){
             $prioridad = $estado;
         }
 

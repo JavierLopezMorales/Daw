@@ -57,11 +57,11 @@
 	foreach($data['listaIncidencias'] as $incidencias) {
 			echo "<tr>";
 			echo "<td>" . $incidencias->id_incidencia . "</td>";
-			echo "<td><div style='overflow-x:scroll; width:300px'>" . $incidencias->descripcion . "</div></td>";
+			echo "<td><div style='overflow-x:scroll; width:200px'>" . $incidencias->descripcion . "</div></td>";
 			echo "<td>" . $incidencias->equipo_afectado . "</td>";
 			echo "<td>" . $incidencias->fecha . "</td>";
             echo "<td>" . $incidencias->estado . "</td>";
-			echo "<td><div style='overflow-x:scroll; width:300px'>" . $incidencias->observacion . "</div></td>";
+			echo "<td><div style='overflow-x:scroll; width:200px'>" . $incidencias->observacion . "</div></td>";
 			
 			if($incidencias->prioridad == 'alta'){
 				echo "<td style='color:lightcoral'>" . $incidencias->prioridad . "</td>";
