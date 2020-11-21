@@ -7,7 +7,7 @@
 	if (isset($_REQUEST["action"])) {
 		$action = $_REQUEST["action"];
 	} else {
-		$action = "";  // Acción por defecto
+		$action = "inicio";  // Acción por defecto
 	}
 
     $controlador->$action();
