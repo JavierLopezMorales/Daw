@@ -19,7 +19,7 @@
          */
         public function buscarUsuario($usuario,$password) {
 
-            if ($result = $this->db->query("SELECT idUser, name, lastname1, lastname2, image FROM user WHERE name = '$usuario' AND password = '$password'")) {
+            if ($result = $this->db->query("SELECT idUser, name, lastname1, lastname2, email, image FROM user WHERE email = '$usuario' AND password = '$password'")) {
                 if ($result->num_rows == 1) {
                     $usuario = $result->fetch_object();
                     // Iniciamos la sesión
@@ -27,6 +27,7 @@
                     $_SESSION["name"] = $usuario->name;
                     $_SESSION["lastname1"] = $usuario->lastname1;
                     $_SESSION["lastname2"] = $usuario->lastname2;
+                    $_SESSION["email"] = $usuario->email;
                     $_SESSION["image"] = $usuario->image;
                     return true;
                 } else {

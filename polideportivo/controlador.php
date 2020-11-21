@@ -15,8 +15,31 @@
             $this->vista = new Vista();
         }
 
-        public function inicio(){
+        public function inicio()
+        {
             $this->vista->mostrar("inicio");
+        }
+
+        public function mostrarLogin()
+        {
+            $this->vista->mostrar("login");
+        }
+
+        public function procesarLogin()
+        {
+            $usuario = $_REQUEST["usuario"];
+            $password = $_REQUEST["password"];
+
+            $result = $this->usuario->buscarUsuario($usuario, $password);
+
+            if($result)
+            {
+                $this->vista->mostrar("inicio");
+            }
+            else
+            {
+                $this->vista->mostrar("login");
+            }
         }
 
     }
