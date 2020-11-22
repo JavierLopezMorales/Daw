@@ -1,6 +1,16 @@
 <?php
+
+	include_once("modelos/seguridad.php");	
+
 	class Vista {
-		public function mostrar($nombreVista, $data = null) {
+		
+		private $seguridad;
+
+		public function __construct() {
+			$this->seguridad = new Seguridad();	
+		}
+		
+		public function mostrar($nombreVista) {
 
 			include_once("vistas/$nombreVista.php");
 

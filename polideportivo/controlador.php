@@ -2,6 +2,7 @@
 
     include_once("modelos/usuario.php");
     include_once("vista.php");
+    include_once("modelos/seguridad.php");
 
     class Controlador
     {
@@ -13,6 +14,7 @@
         {
             $this->usuario = new Usuario();
             $this->vista = new Vista();
+            $this->seguridad = new Seguridad();
         }
 
         public function inicio()
@@ -30,16 +32,25 @@
             $usuario = $_REQUEST["usuario"];
             $password = $_REQUEST["password"];
 
-            $result = $this->usuario->buscarUsuario($usuario, $password);
+            $existe = $this->usuario->buscarUsuario($usuario, $password);
 
-            if($result)
-            {
+            if ($existe) {
+                $this->seguridad->abrirSesion($existe);
                 $this->vista->mostrar("inicio");
-            }
-            else
-            {
+            } else {
+                // Error al iniciar la sesión
                 $this->vista->mostrar("login");
             }
+        }
+
+        /**
+         * Cierra la sesión
+         */
+        public function cerrarSesion()
+        {
+            $this->seguridad->cerrarSesion();
+
+            $this->vista->mostrar("login");
         }
 
     }
