@@ -10,7 +10,7 @@
 			$this->seguridad = new Seguridad();	
 		}
 		
-		public function mostrar($nombreVista) {
+		public function mostrar($nombreVista, $data = null) {
 
 			include_once("vistas/$nombreVista.php");
 

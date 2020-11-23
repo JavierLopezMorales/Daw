@@ -35,11 +35,13 @@
             $existe = $this->usuario->buscarUsuario($usuario, $password);
 
             if ($existe) {
+                $data['msjInfo'] = "Sesión iniciada correctamente";
                 $this->seguridad->abrirSesion($existe);
-                $this->vista->mostrar("inicio");
+                $this->vista->mostrar("inicio", $data);
             } else {
                 // Error al iniciar la sesión
-                $this->vista->mostrar("login");
+                $data['msjError'] = "Nombre de usuario o contraseña incorrectos";
+                $this->vista->mostrar("login", $data);
             }
         }
 
@@ -48,8 +50,8 @@
          */
         public function cerrarSesion()
         {
+            $data['msjInfo'] = "Sesión cerrada correctamente";
             $this->seguridad->cerrarSesion();
-
             $this->vista->mostrar("login");
         }
 
