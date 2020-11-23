@@ -1,7 +1,9 @@
 <?php
+
     class Seguridad {
 
-        public function abrirSesion($usuario) {
+        public function abrirSesion($usuario) 
+        {
             $_SESSION["idUser"] = $usuario->idUser;
             $_SESSION["name"] = $usuario->name;
             $_SESSION["lastname1"] = $usuario->lastname1;
@@ -10,15 +12,18 @@
             $_SESSION["image"] = $usuario->image;
         }
 
-        public function cerrarSesion() {
+        public function cerrarSesion() 
+        {
             session_destroy();
         }
 
-        public function get($variable) {
+        public function get($variable) 
+        {
             return $_SESSION[$variable];
         }
 
-        public function haySesionIniciada() {
+        public function haySesionIniciada() 
+        {
             if (isset($_SESSION["idUser"])) {
                 return true;
             } else {
@@ -26,8 +31,9 @@
             }
         }
 
-        public function errorAccesoNoPermitido() {
+        public function errorAccesoNoPermitido() 
+        {
 			$data['msjError'] = "No tienes permisos para hacer eso";
-			$this->vista->mostrar("usuario/formularioLogin", $data);
+			$this->vista->mostrar("login", $data);
         }
     }

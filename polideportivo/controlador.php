@@ -19,7 +19,14 @@
 
         public function inicio()
         {
-            $this->vista->mostrar("inicio");
+            if ($this->seguridad->haySesionIniciada()) {
+                // Primero, accedemos al modelo de personas para obtener la lista de autores
+                $this->vista->mostrar("inicio");
+            } else {
+                $data['msjError'] = "Nombre de usuario o contraseña incorrectos";
+                $this->vista->mostrar("login", $data);
+            }
+        
         }
 
         public function mostrarLogin()
@@ -52,7 +59,7 @@
         {
             $data['msjInfo'] = "Sesión cerrada correctamente";
             $this->seguridad->cerrarSesion();
-            $this->vista->mostrar("login");
+            $this->vista->mostrar("login", $data);
         }
 
     }

@@ -13,4 +13,4 @@
 	}
 ?>
 
-<a href='index.php?action=mostrarLogin' style='color:white;'>Login</a>
+<a href='index.php?action=cerrarSesion' style='color:white;'>Cerrar sesión</a>
