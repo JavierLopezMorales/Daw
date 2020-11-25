@@ -30,4 +30,16 @@
             }
         }
 
+        public function getAll()
+        {
+            $usuarios = $this->db->consulta("SELECT * FROM user");
+            return $usuarios;
+        }
+
+        public function borrarUsuario($idUser)
+        {
+            $result = $this->db->manipulacion("DELETE FROM user WHERE idUser = '$idUser'");
+            return $result;
+        }
+
     }

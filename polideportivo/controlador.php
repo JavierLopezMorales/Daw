@@ -62,4 +62,26 @@
             $this->vista->mostrar("login", $data);
         }
 
+        public function mostrarUsuarios()
+        {
+            $data['mostrarUsuario'] = $this->usuario->getAll();
+            $this->vista->mostrar("usuarios/listaUsuarios", $data);
+        }
+
+        public function borrarUsuarios()
+        {
+            $idUser = $_REQUEST['id'];
+            $result = $this->usuario->borrarUsuario($idUser);
+            if($result)
+            {
+                $data['mostrarUsuario'] = "Usuario borrado con exito";
+                $this->vista->mostrar("usuarios/listaUsuarios", $data);
+            }
+            else
+            {
+                $data['mostrarUsuario'] = "Error en el borrado";
+                $this->vista->mostrar("usuarios/listaUsuarios", $data);
+            }
+        }
+
     }

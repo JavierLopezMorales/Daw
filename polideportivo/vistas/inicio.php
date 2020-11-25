@@ -13,4 +13,5 @@
 	}
 ?>
 
+<a href='index.php?action=mostrarUsuarios' style='color:white;'>Lista de usuarios</a> <br><br>
 <a href='index.php?action=cerrarSesion' style='color:white;'>Cerrar sesión</a>
