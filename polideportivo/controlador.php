@@ -84,4 +84,17 @@
             }
         }
 
+        public function crearUsuarios()
+        {
+            if(haySesionIniciada())
+            {
+                $this->vista->mostrar("usuarios/formularioUsuarios");
+            }
+            else
+            {
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
+            }
+        }
+
     }
