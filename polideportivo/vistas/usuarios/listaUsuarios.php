@@ -28,7 +28,7 @@
 	
 
 	// Muestra la tabla con los datos de los usuarios
-    echo "<table>";
+    echo "<table border='1px solid white'>";
         
         echo "<tr style='color:white;'>";
             echo "<td>" . "Id" . "</td>";
@@ -49,12 +49,13 @@
 			echo "<td>" . $usuario->password . "</td>";
             echo "<td>" . $usuario->email . "</td>";
             echo "<td>" . $usuario->type . "</td>";
-            echo "<td><a href='index.php?action=borrarUsuarios&id=" . $usuario->idUser . "'>Borrar Usuario</a></td>";
+			echo "<td><a href='index.php?action=borrarUsuarios&id=" . $usuario->idUser . "' style='color: white; text-decoration: none;'>Borrar Usuario</a></td>";
+			echo "<td><a href='index.php?action=modificarUsuarios&id=" . $usuario->idUser . "' style='color: white; text-decoration: none;'>Modificar Usuario</a></td>";
 			echo "</tr>";
 	}
 	echo "</table>";
 	
-	echo "<p><a href='index.php?action=crearUsuarios' style='color:white; border: solid 1px white;'>Crear Usuario</a></p><br>";
+	echo "<br><p><a href='index.php?action=crearUsuarios' style='color:white; border: solid 1px white;'>Crear Usuario</a></p><br>";
     echo "<p><a href='index.php?action=inicio' style='color:white; border: solid 1px white;'>Inicio</a></p>";
 
 ?>

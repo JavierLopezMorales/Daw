@@ -118,6 +118,50 @@
             else
             {
                 $data['msjError'] = "Error en la creación del usuario";
+                $data['mostrarUsuario'] = $this->usuario->getAll();
+                $this->vista->mostrar("usuarios/listaUsuarios", $data);
+            }
+
+        }
+
+        public function modificarUsuarios()
+        {
+            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            {
+                $idUser = $_REQUEST['id'];
+                $data['usuario'] = $this->usuario->getUser($idUser);
+                $this->vista->mostrar("usuarios/formularioUsuarios", $data);
+            }
+            else
+            {
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
+            }
+        }
+
+        public function modificacionUsuario()
+        {
+            $idUser = $_REQUEST['idUser'];
+            $name = $_REQUEST['name'];
+            $lastname1 = $_REQUEST['lastname1'];
+            $lastname2 = $_REQUEST['lastname2'];
+            $dni = $_REQUEST['dni'];
+            $password = $_REQUEST['password'];
+            $email = $_REQUEST['email'];
+            $type = $_REQUEST['type'];
+
+            $result = $this->usuario->modificarUsuario($idUser, $name, $lastname1, $lastname2, $dni, $password, $email, $type);
+
+            if($result)
+            {
+                $data['mostrarUsuario'] = "Usuario modificado con exito";
+                $data['mostrarUsuario'] = $this->usuario->getAll();
+                $this->vista->mostrar("usuarios/listaUsuarios", $data);
+            }
+            else
+            {
+                $data['mostrarUsuario'] = "Error en la modificacion";
+                $data['mostrarUsuario'] = $this->usuario->getAll();
                 $this->vista->mostrar("usuarios/listaUsuarios", $data);
             }
 

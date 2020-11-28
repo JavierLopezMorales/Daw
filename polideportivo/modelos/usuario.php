@@ -36,6 +36,12 @@
             return $usuarios;
         }
 
+        public function getUser($idUser)
+        {
+            $usuario = $this->db->consulta("SELECT * FROM user WHERE idUser = '$idUser'");
+            return $usuario;
+        }
+
         public function borrarUsuario($idUser)
         {
             $result = $this->db->manipulacion("DELETE FROM user WHERE idUser = '$idUser'");
@@ -46,6 +52,12 @@
         {
             $result = $this->db->manipulacion("INSERT INTO user (name, lastname1, lastname2, email, dni, password, type) 
             VALUES ('$name','$lastname1', '$lastname2', '$email', '$dni', '$password', '$type')");
+            return $result;
+        }
+
+        public function modificarUsuario($idUser, $name, $lastname1, $lastname2, $dni, $password, $email, $type)
+        {
+            $result = $this->db->manipulacion("UPDATE user SET name = '$name', lastname1 = '$lastname1', lastname2 = '$lastname2', email = '$email', dni = '$dni', password = '$password', type = '$type' WHERE idUser = '$idUser'");
             return $result;
         }
 
