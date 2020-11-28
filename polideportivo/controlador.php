@@ -86,7 +86,7 @@
 
         public function crearUsuarios()
         {
-            if(haySesionIniciada())
+            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
             {
                 $this->vista->mostrar("usuarios/formularioUsuarios");
             }
@@ -95,6 +95,32 @@
                 $data['msjError'] = "No tienes permisos para esto";
                 $this->vista->mostrar("login", $data);
             }
+        }
+
+        public function insertarUsuarios()
+        {
+            $name = $_REQUEST['name'];
+            $lastname1 = $_REQUEST['lastname1'];
+            $lastname2 = $_REQUEST['lastname2'];
+            $dni = $_REQUEST['dni'];
+            $password = $_REQUEST['password'];
+            $email = $_REQUEST['email'];
+            $type = $_REQUEST['type'];
+
+            $result = $this->usuario->crearUsuario($name, $lastname1, $lastname2, $dni, $password, $email, $type);
+
+            if($result)
+            {
+                $data['msjInfo'] = "Usuario creado con exito";
+                $data['mostrarUsuario'] = $this->usuario->getAll();
+                $this->vista->mostrar("usuarios/listaUsuarios", $data);
+            }
+            else
+            {
+                $data['msjError'] = "Error en la creación del usuario";
+                $this->vista->mostrar("usuarios/listaUsuarios", $data);
+            }
+
         }
 
     }

@@ -54,7 +54,7 @@
 	}
 	echo "</table>";
 	
-
+	echo "<p><a href='index.php?action=crearUsuarios' style='color:white; border: solid 1px white;'>Crear Usuario</a></p><br>";
     echo "<p><a href='index.php?action=inicio' style='color:white; border: solid 1px white;'>Inicio</a></p>";
 
 ?>

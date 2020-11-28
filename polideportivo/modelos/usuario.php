@@ -42,4 +42,11 @@
             return $result;
         }
 
+        public function crearUsuario($name, $lastname1, $lastname2, $dni, $password, $email, $type)
+        {
+            $result = $this->db->manipulacion("INSERT INTO user (name, lastname1, lastname2, email, dni, password, type) 
+            VALUES ('$name','$lastname1', '$lastname2', '$email', '$dni', '$password', '$type')");
+            return $result;
+        }
+
     }
