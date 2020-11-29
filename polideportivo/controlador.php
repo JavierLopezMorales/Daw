@@ -20,7 +20,6 @@
         public function inicio()
         {
             if ($this->seguridad->haySesionIniciada()) {
-                // Primero, accedemos al modelo de personas para obtener la lista de autores
                 $this->vista->mostrar("inicio");
             } else {
                 $data['msjError'] = "Nombre de usuario o contraseña incorrectos";
@@ -42,6 +41,7 @@
             $existe = $this->usuario->buscarUsuario($usuario, $password);
 
             if ($existe) {
+                
                 $data['msjInfo'] = "Sesión iniciada correctamente";
                 $this->seguridad->abrirSesion($existe);
                 $this->vista->mostrar("inicio", $data);
@@ -190,6 +190,102 @@
             {
                 $data['msjError'] = "No tienes permisos para esto";
                 $this->vista->mostrar("login", $data);
+            }
+        }
+
+        public function cambiarImagen()
+        {
+            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            {
+                $this->vista->mostrar("usuarios/formularioImagen");
+            }
+            else
+            {
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
+            }
+        }
+
+        public function subirImagen()
+        {
+            if (isset($_POST['subir'])) {
+                //Recogemos el archivo enviado por el formulario
+                $archivo = $_FILES['archivo']['name'];
+                //Si el archivo contiene algo y es diferente de vacio
+                if (isset($archivo) && $archivo != "") {
+                   //Obtenemos algunos datos necesarios sobre el archivo
+                   $tipo = $_FILES['archivo']['type'];
+                   $tamano = $_FILES['archivo']['size'];
+                   $temp = $_FILES['archivo']['tmp_name'];
+                   //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+                  if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
+                     $data['msjError'] = "<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
+                     - Se permiten archivos .png y de 200 kb como máximo.</b></div>";
+                     $this->vista->mostrar("inicio", $data);
+                  }
+                    else {
+                        //Si la imagen es correcta en tamaño y tipo
+                        //Se intenta subir al servidor
+                        $archivo = $_SESSION['idUser'];
+                        $idUser = $_SESSION['idUser'];
+                        $result = $this->usuario->cambiarImagen($archivo, $idUser);
+
+                        if(!$result == null)
+                        {
+                            if (move_uploaded_file($temp, 'imagenes/'.$archivo)) 
+                            {
+                                $_SESSION['image'] = $archivo;
+                                //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                                chmod('imagenes/'.$archivo, 0777);
+                                //Mostramos el mensaje de que se ha subido co éxito
+                                $data['msjInfo'] = "<div><b>Se ha subido correctamente la imagen.</b></div>";
+                                $this->vista->mostrar("inicio", $data);
+                            }
+                            else
+                            {
+                                //Si no se ha podido subir la imagen, mostramos un mensaje de error
+                                $data['msjError'] = "<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>";
+                                $this->vista->mostrar("inicio", $data);
+                            }
+                        }
+                        else
+                        {  
+                            //Si no se ha podido subir la imagen, mostramos un mensaje de error
+                            $data['msjError'] = "<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>";
+                            $this->vista->mostrar("inicio", $data);
+                          
+                        }
+
+                        
+                        
+                    }
+                }
+            }
+        }
+
+        public function borrarImagen()
+        {   
+            $idUser = $_SESSION['idUser'];
+            $archivo = "default";
+            $result = $this->usuario->cambiarImagen($archivo, $idUser);
+            if(!$result == null)
+            { 
+                if(unlink("imagenes/" . $_SESSION['idUser'] . ""))
+                {
+                    $_SESSION['image'] = $archivo;
+                    $data['msjInfo'] = "<div><b>Se ha borrado correctamente la imagen.</b></div>";
+                    $this->vista->mostrar("inicio", $data);
+                }
+                else
+                {
+                    $data['msjError'] = "<div><b>Ocurrió algún error al borrar el fichero. No pudo guardarse.</b></div>";
+                    $this->vista->mostrar("inicio", $data);
+                }
+            }
+            else
+            {
+                $data['msjError'] = "<div><b>Ocurrió algún error al borrar el fichero. No pudo guardarse.</b></div>";
+                $this->vista->mostrar("inicio", $data);
             }
         }
 

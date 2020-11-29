@@ -69,4 +69,11 @@
                  
         }
 
+        public function cambiarImagen($archivo, $idUser)
+        {
+            $result = $this->db->manipulacion("UPDATE user SET image = '$archivo' WHERE idUser = '$idUser'");
+            return $result;
+                 
+        }
+
     }
