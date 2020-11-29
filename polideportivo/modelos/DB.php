@@ -15,21 +15,21 @@ class DB {
    }
    
    public function consulta($sql) {
-    $arrayResult = array();
-    if ($result = $this->db->query($sql)) {
-        while($fila = $result->fetch_object()) {
-            $arrayResult[] = $fila;
+        $arrayResult = array();
+        if ($result = $this->db->query($sql)) {
+            while($fila = $result->fetch_object()) {
+                $arrayResult[] = $fila;
+            }
+        } else {
+            $arrayResult = null;
         }
-    } else {
-        $arrayResult = null;
+        
+        return $arrayResult;
+    
     }
-    
-    return $arrayResult;
-    
-}
 
-public function manipulacion($sql) {
-    $this->db->query($sql);
-    return $this->db->affected_rows;
-}
+    public function manipulacion($sql) {
+        $this->db->query($sql);
+        return $this->db->affected_rows;
+    }
 }

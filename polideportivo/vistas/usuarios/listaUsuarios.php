@@ -9,8 +9,8 @@
                 <option value='name'>Nombre</option>
                 <option value='lastname1'>Primer apellido</option>
                 <option value='lastname2'>Segundo apellido</option>
-				<option value='password'>Contraseña</option>
 				<option value='email'>Email</option>
+				<option value='type'>Tipo</option>
 			</select>
 			<input type='hidden' name='action' value='buscarUsuario'>
 			<input type='text' name='textoBusqueda'>

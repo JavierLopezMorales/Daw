@@ -166,5 +166,30 @@
             }
 
         }
+         
+        public function buscarUsuario()
+        {
+            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            {
+                $textoBusqueda = $_REQUEST["textoBusqueda"];
+                $seleccion = $_REQUEST["seleccion"];
+                
+                if($textoBusqueda == "" || $textoBusqueda == null)
+                {
+                    $data['mostrarUsuario'] = $this->usuario->getAll();
+                }
+                else
+                {
+                    $data['msjInfo'] = "<p>Resultados de la búsqueda: \"$textoBusqueda\"</p>";
+                    $data['mostrarUsuario'] = $this->usuario->busquedaAproximada($textoBusqueda, $seleccion);
+                }
+                $this->vista->mostrar("usuarios/listaUsuarios", $data);
+            }
+            else
+            {
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
+            }
+        }
 
     }
