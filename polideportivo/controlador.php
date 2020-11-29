@@ -149,8 +149,9 @@
             $password = $_REQUEST['password'];
             $email = $_REQUEST['email'];
             $type = $_REQUEST['type'];
+            $state = $_REQUEST['state'];
 
-            $result = $this->usuario->modificarUsuario($idUser, $name, $lastname1, $lastname2, $dni, $password, $email, $type);
+            $result = $this->usuario->modificarUsuario($idUser, $name, $lastname1, $lastname2, $dni, $password, $email, $type, $state);
 
             if($result)
             {

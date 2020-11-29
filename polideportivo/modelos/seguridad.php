@@ -11,6 +11,7 @@
             $_SESSION["email"] = $usuario->email;
             $_SESSION["type"] = $usuario->type;
             $_SESSION["image"] = $usuario->image;
+            $_SESSION["state"] = $usuario->state;
         }
 
         public function cerrarSesion() 

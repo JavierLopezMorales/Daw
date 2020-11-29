@@ -25,6 +25,10 @@ foreach($data['usuario'] as $usuario)
                 <label for='type'>Tipo:</label><select name='type'>
                     <option value='user' "; if($usuario->type == 'user'){echo "selected";} echo ">Usuario</option>
                     <option value='admin' "; if($usuario->type == 'admin'){echo "selected";} echo ">Administrador</option>
+                </select><br><br>
+                <label for='state'>Estado:</label><select name='state'>
+                    <option value='alta' "; if($usuario->state == 'alta'){echo "selected";} echo ">Alta</option>
+                    <option value='borrado' "; if($usuario->state == 'borrado'){echo "selected";} echo ">Borrado</option>
                 </select><br><br>";
 }
 echo "  <input type='hidden' name='action' value='modificacionUsuario'>

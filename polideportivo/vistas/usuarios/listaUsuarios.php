@@ -11,6 +11,7 @@
                 <option value='lastname2'>Segundo apellido</option>
 				<option value='email'>Email</option>
 				<option value='type'>Tipo</option>
+				<option value='state'>Estado</option>
 			</select>
 			<input type='hidden' name='action' value='buscarUsuario'>
 			<input type='text' name='textoBusqueda'>
@@ -31,31 +32,29 @@
     echo "<table border='1px solid white'>";
         
         echo "<tr style='color:white;'>";
-            echo "<td>" . "Id" . "</td>";
             echo "<td>" . "Nombre" . "</td>";
             echo "<td>" . "Apellido 1" . "</td>";
             echo "<td>" . "Apellido 2" . "</td>";
-            echo "<td>" . "Contraseña" . "</td>";
             echo "<td>" . "Email" . "</td>";
-            echo "<td>" . "Tipo" . "</td>";
+			echo "<td>" . "Tipo" . "</td>";
+			echo "<td>" . "Estado" . "</td>";
         echo "</tr>";	
 
 	foreach($data['mostrarUsuario'] as $usuario) {
             echo "<tr>";
-            echo "<td>" . $usuario->idUser . "</td>";
 			echo "<td>" . $usuario->name . "</td>";
 			echo "<td>" . $usuario->lastname1 . "</td>";
 			echo "<td>" . $usuario->lastname2 . "</td>";
-			echo "<td>" . $usuario->password . "</td>";
             echo "<td>" . $usuario->email . "</td>";
-            echo "<td>" . $usuario->type . "</td>";
+			echo "<td>" . $usuario->type . "</td>";
+			echo "<td>" . $usuario->state . "</td>";
 			echo "<td><a href='index.php?action=borrarUsuarios&id=" . $usuario->idUser . "' style='color: white; text-decoration: none;'>Borrar Usuario</a></td>";
 			echo "<td><a href='index.php?action=modificarUsuarios&id=" . $usuario->idUser . "' style='color: white; text-decoration: none;'>Modificar Usuario</a></td>";
 			echo "</tr>";
 	}
 	echo "</table>";
 	
-	echo "<br><p><a href='index.php?action=crearUsuarios' style='color:white; border: solid 1px white;'>Crear Usuario</a></p><br>";
-    echo "<p><a href='index.php?action=inicio' style='color:white; border: solid 1px white;'>Inicio</a></p>";
+	echo "<br><p><a href='index.php?action=crearUsuarios' style='color:white;'>Crear Usuario</a></p><br>";
+    echo "<p><a href='index.php?action=inicio' style='color:white;'>Inicio</a></p>";
 
 ?>
