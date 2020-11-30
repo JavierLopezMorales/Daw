@@ -42,6 +42,12 @@
             return $usuario;
         }
 
+        public function getId($email)
+        {
+            $usuario = $this->db->consulta("SELECT idUser FROM user WHERE email = '$email' LIMIT 1");
+            return $usuario;
+        }
+
         public function borrarUsuario($idUser)
         {
             $result = $this->db->manipulacion("DELETE FROM user WHERE idUser = '$idUser'");
@@ -69,11 +75,10 @@
                  
         }
 
-        public function cambiarImagen($archivo, $idUser)
+        public function indicarImagen($idUser)
         {
-            $result = $this->db->manipulacion("UPDATE user SET image = '$archivo' WHERE idUser = '$idUser'");
+            $result = $this->db->manipulacion("UPDATE user SET image = '$idUser' WHERE idUser = '$idUser'");
             return $result;
-                 
         }
 
     }
