@@ -26,4 +26,12 @@
             return $facility;
         }
 
+        public function busquedaAproximada($textoBusqueda, $seleccion)
+        {
+            // Buscamos los usuarios de la BD que coincidan con el texto de búsqueda
+            $result = $this->db->consulta("SELECT * FROM facility WHERE $seleccion LIKE '%$textoBusqueda%'");
+            return $result;
+                 
+        }
+
     }

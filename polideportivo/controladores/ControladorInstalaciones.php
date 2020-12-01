@@ -32,4 +32,30 @@
                 $this->vista->mostrar("login", $data);
             }
         }
+
+        public function buscarInstalacion()
+        {
+            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            {
+                $textoBusqueda = $_REQUEST["textoBusqueda"];
+                $seleccion = $_REQUEST["seleccion"];
+                
+                if($textoBusqueda == "" || $textoBusqueda == null)
+                {
+                    $data['listaInstalaciones'] = $this->instalacion->getAll();
+                }
+                else
+                {
+                    $data['msjInfo'] = "<p>Resultados de la búsqueda: \"$textoBusqueda\"</p>";
+                    $data['listaInstalaciones'] = $this->instalacion->busquedaAproximada($textoBusqueda, $seleccion);
+                }
+                $this->vista->mostrar("instalaciones/listaInstalaciones", $data);
+            }
+            else
+            {
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
+            }
+        }
+
     }
