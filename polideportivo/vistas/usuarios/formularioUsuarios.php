@@ -13,6 +13,7 @@ if(!isset($data['usuario'])){
         <label for='email'>Email:</label><input type='text' name='email'><br><br>
         <label for='type'>Tipo:</label><select name='type'><option value='user'>Usuario</option><option value='admin'>Administrador</option></select>";
         echo "  <input type='hidden' name='action' value='insertarUsuarios'>
+        <input type='hidden' name='direction' value='ControladorUsuarios'>
             <input type='submit' id='boton' value='Aceptar'>
           </form>";
 }else{
@@ -35,9 +36,10 @@ foreach($data['usuario'] as $usuario)
                 </select><br><br>
                 <label for='image'>Añadir imagen:<input name='image' type='file'/><br><br>";
                 echo "  <input type='hidden' name='action' value='modificacionUsuario'>
+                <input type='hidden' name='direction' value='ControladorUsuarios'>
             <input type='submit' id='boton' value='Aceptar'>
           </form>";
 }
 
-echo "<p><a href='index.php?action=mostrarUsuarios'>Volver</a></p>";
+echo "<p><a href='index.php?action=mostrarUsuarios&direction=ControladorUsuarios'>Volver</a></p>";
 

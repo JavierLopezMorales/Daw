@@ -14,6 +14,7 @@
 				<option value='state'>Estado</option>
 			</select>
 			<input type='hidden' name='action' value='buscarUsuario'>
+			<input type='hidden' name='direction' value='ControladorUsuarios'>      
 			<input type='text' name='textoBusqueda'>
 			<input type='submit' value='Buscar' id='boton'>
 			<button  href='index.php?action=mostrarUsuario' id='boton'>Limpiar</button>
@@ -48,13 +49,13 @@
             echo "<td>" . $usuario->email . "</td>";
 			echo "<td>" . $usuario->type . "</td>";
 			echo "<td>" . $usuario->state . "</td>";
-			echo "<td><a href='index.php?action=borrarUsuarios&id=" . $usuario->idUser . "' style='color: white; text-decoration: none;'>Borrar Usuario</a></td>";
-			echo "<td><a href='index.php?action=modificarUsuarios&id=" . $usuario->idUser . "' style='color: white; text-decoration: none;'>Modificar Usuario</a></td>";
+			echo "<td><a href='index.php?action=borrarUsuarios&id=" . $usuario->idUser . "&direction=ControladorUsuarios' style='color: white; text-decoration: none;'>Borrar Usuario</a></td>";
+			echo "<td><a href='index.php?action=modificarUsuarios&id=" . $usuario->idUser . "&direction=ControladorUsuarios' style='color: white; text-decoration: none;'>Modificar Usuario</a></td>";
 			echo "</tr>";
 	}
 	echo "</table>";
 	
-	echo "<br><p><a href='index.php?action=crearUsuarios' style='color:white;'>Crear Usuario</a></p><br>";
-    echo "<p><a href='index.php?action=inicio' style='color:white;'>Inicio</a></p>";
+	echo "<br><p><a href='index.php?action=crearUsuarios&direction=ControladorUsuarios' style='color:white;'>Crear Usuario</a></p><br>";
+    echo "<p><a href='index.php?action=inicio&direction=ControladorUsuarios' style='color:white;'>Inicio</a></p>";
 
 ?>

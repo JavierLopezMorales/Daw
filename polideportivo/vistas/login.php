@@ -19,5 +19,6 @@
     Contraseña:<input type='text' name='password'>
     <br><br>
     <input type='hidden' name='action' value='procesarLogin'>
+    <input type='hidden' name='direction' value='ControladorUsuarios'>
     <input type='submit' id='boton' value='Aceptar'>
 </form>

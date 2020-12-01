@@ -9,7 +9,8 @@
             </form>";
 
     echo "<br><form action='index.php' method='get'>
-                <input type='hidden' name='action' value='borrarImagen'>    
+                <input type='hidden' name='action' value='borrarImagen'>
+                <input type='hidden' name='direction' value='ControladorUsuarios'>       
                 <input type='hidden' name='idUser' value='" . $_SESSION['idUser'] . "'>
                 <input type='submit' name='borrar' value='Borrar imagen'/>
             </form>";
