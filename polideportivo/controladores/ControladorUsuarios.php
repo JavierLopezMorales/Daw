@@ -74,7 +74,7 @@
             $result = $this->usuario->borrarUsuario($idUser);
             if($result)
             {
-                unlink('./imagenes/'.$idUser);
+                unlink('./imagenes/usuarios/'.$idUser);
                 $data['mostrarUsuario'] = $this->usuario->getAll();
                 $data['msjInfo'] = "Usuario borrado con exito";
                 $this->vista->mostrar("usuarios/listaUsuarios", $data);
@@ -120,7 +120,7 @@
                     $result = $this->usuario->indicarImagen($idUs);
                     if($result)
                     {
-                        copy('./imagenes/default', 'imagenes/'.$idUs);
+                        copy('./imagenes/usuarios/default', 'imagenes/usuarios/'.$idUs);
                         $data['msjInfo'] = "Usuario creado con exito";
                         $data['mostrarUsuario'] = $this->usuario->getAll();
                         $this->vista->mostrar("usuarios/listaUsuarios", $data);
@@ -180,10 +180,10 @@
                     //Se intenta subir al servidor
                     $image = $idUser;
                     
-                    if (move_uploaded_file($temp, './imagenes/'.$image)) 
+                    if (move_uploaded_file($temp, './imagenes/usuarios/'.$image)) 
                     {
                         //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
-                        chmod('./imagenes/'.$image, 0777);
+                        chmod('./imagenes/usuarios/'.$image, 0777);
                     }
                     else
                     {
@@ -272,11 +272,11 @@
                         //Se intenta subir al servidor
                         $archivo = $_REQUEST['idUser'];
                         
-                        if (move_uploaded_file($temp, './imagenes/'.$archivo)) 
+                        if (move_uploaded_file($temp, './imagenes/usuarios/'.$archivo)) 
                         {
                             $_SESSION['image'] = $archivo;
                             //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
-                            chmod('./imagenes/'.$archivo, 0777);
+                            chmod('./imagenes/usuarios/'.$archivo, 0777);
                             //Mostramos el mensaje de que se ha subido co éxito
                             $data['msjInfo'] = "<div><b>Se ha subido correctamente la imagen.</b></div>";
                             $this->vista->mostrar("inicio", $data);
@@ -300,7 +300,7 @@
         {   
             $idUser = $_REQUEST['idUser'];
 
-            if(copy('./imagenes/default', 'imagenes/'.$idUser))
+            if(copy('./imagenes/usuarios/default', 'imagenes/usuarios/'.$idUser))
             {
                 //$_SESSION['image'] = $idUser;
                 $data['msjInfo'] = "<div><b>Se ha borrado correctamente la imagen.</b></div>";

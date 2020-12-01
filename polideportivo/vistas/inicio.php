@@ -22,4 +22,5 @@
 
 <a href='index.php?action=cambiarImagen&direction=ControladorUsuarios' style='color:white;'>Cambiar imagen</a> <br><br>
 <a href='index.php?action=mostrarUsuarios&direction=ControladorUsuarios' style='color:white;'>Lista de usuarios</a> <br><br>
+<a href='index.php?action=mostrarInstalaciones&direction=ControladorInstalaciones' style='color:white;'>Lista de instalaciones</a> <br><br>
 <a href='index.php?action=cerrarSesion&direction=ControladorUsuarios' style='color:white;'>Cerrar sesión</a>
