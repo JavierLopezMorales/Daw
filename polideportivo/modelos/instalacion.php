@@ -31,7 +31,43 @@
             // Buscamos los usuarios de la BD que coincidan con el texto de búsqueda
             $result = $this->db->consulta("SELECT * FROM facility WHERE $seleccion LIKE '%$textoBusqueda%'");
             return $result;
-                 
+        }
+
+        public function getId($name)
+        {
+            $facility = $this->db->consulta("SELECT idFacility FROM facility WHERE name = '$name' LIMIT 1");
+            return $facility;
+        }
+
+        public function crearInstalacion($name, $description, $price)
+        {
+            $result = $this->db->manipulacion("INSERT INTO facility (name, description, price) 
+            VALUES ('$name','$description', '$price')");
+            return $result;
+        }
+
+        public function indicarImagen($idFacility)
+        {
+            $result = $this->db->manipulacion("UPDATE facility SET image = '$idFacility' WHERE idFacility = '$idFacility'");
+            return $result;
+        }
+
+        public function borrarInstalacion($idFacility)
+        {
+            $result = $this->db->manipulacion("DELETE FROM facility WHERE idFacility = '$idFacility'");
+            return $result;
+        }
+
+        public function getInstalacion($idFacility)
+        {
+            $facility = $this->db->consulta("SELECT * FROM facility WHERE idFacility = '$idFacility'");
+            return $facility;
+        }
+
+        public function modificarInstalacion($idFacility, $name, $description, $price)
+        {
+            $result = $this->db->manipulacion("UPDATE facility SET name = '$name', description = '$description', price = '$price' WHERE idFacility = '$idFacility'");
+            return $result;
         }
 
     }

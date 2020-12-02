@@ -30,6 +30,7 @@
     echo "<table border='1px solid white'>";
         
         echo "<tr style='color:white;'>";
+            echo "<td>" . "Imagen" . "</td>";
             echo "<td>" . "Nombre" . "</td>";
             echo "<td>" . "Descripcion" . "</td>";
             echo "<td>" . "Precio" . "</td>";
@@ -37,6 +38,7 @@
 
 	foreach($data['listaInstalaciones'] as $instalaciones) {
             echo "<tr>";
+            echo "<td><img src='./imagenes/instalaciones/" . $instalaciones->image . "' width='50px'></td>";
 			echo "<td>" . $instalaciones->name . "</td>";
 			echo "<td>" . $instalaciones->description . "</td>";
 			echo "<td>" . $instalaciones->price . "</td>";
@@ -46,7 +48,7 @@
 	}
 	echo "</table>";
 	
-	echo "<br><p><a href='index.php?action=crearUsuarios&direction=ControladorUsuarios' style='color:white;'>Crear Usuario</a></p><br>";
+	echo "<br><p><a href='index.php?action=crearInstalaciones&direction=ControladorInstalaciones' style='color:white;'>Crear Instalacion</a></p><br>";
     echo "<p><a href='index.php?action=inicio&direction=ControladorUsuarios' style='color:white;'>Inicio</a></p>";
 
 ?>

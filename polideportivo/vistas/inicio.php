@@ -14,7 +14,7 @@
 	}
 
     if (isset($_SESSION['idUser'])) {
-		echo "<br><img src='./imagenes/" . $_SESSION['image'] . "' width='50px'>";
+		echo "<br><img src='./imagenes/usuarios/" . $_SESSION['image'] . "' width='50px'>";
 		echo "Hola, ".$_SESSION['name']."<br><br>";
 	}
 
