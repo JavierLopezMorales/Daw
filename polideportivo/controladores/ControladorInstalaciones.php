@@ -7,14 +7,13 @@
 
     class ControladorInstalaciones
     {
-        private $instalacion, $usuario, $vista;
+        private $instalacion, $vista;
         /**
          * Constructor. Crea las variables de los modelos y la vista
          */
         public function __construct()
         {
             $this->instalacion = new Instalacion();
-            $this->usuario = new Usuario();
             $this->vista = new Vista();
             $this->seguridad = new Seguridad();
         }

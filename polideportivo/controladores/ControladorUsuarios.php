@@ -178,7 +178,7 @@
                 else {
                     //Si la imagen es correcta en tamaño y tipo
                     //Se intenta subir al servidor
-                    $image = $idUser;
+                    $image = $idUser;// $image = 'imagenes/usuarios/'.$idUsuario;
                     
                     if (move_uploaded_file($temp, './imagenes/usuarios/'.$image)) 
                     {
