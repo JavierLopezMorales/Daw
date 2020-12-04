@@ -49,4 +49,117 @@
 
         }
 
+        public function crearReservas()
+        {
+            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            {
+                $this->vista->mostrar("reservas/formularioReserva");
+            }
+            else
+            {
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
+            }
+        }
+
+        public function insertarReservas()
+        {
+            if($this->seguridad->haySesionIniciada())
+            {
+                $price = $_REQUEST['price'];
+                $time = $_REQUEST['time'];
+                $date = $_REQUEST['date'];
+                $idUser = $_REQUEST['idUser'];
+                $idFacility = $_REQUEST['idFacility'];
+    
+                $result = $this->reserva->crearReserva($price, $time, $date, $idUser, $idFacility);
+    
+                if($result)
+                {
+                    $data['msjInfo'] = "Reserva creada con exito";
+                    $data['listaReservas'] = $this->reserva->getAll();
+                    $this->vista->mostrar("reservas/listaReservas", $data);
+                }
+                else
+                {
+                    $data['msjError'] = "Error en la creación de la reserva";
+                    $data['listaReservas'] = $this->reserva->getAll();
+                    $this->vista->mostrar("reservas/listaReservas", $data);
+                }
+                    
+            }
+            else
+            {
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
+            }
+            
+
+        }
+
+        public function borrarReserva()
+        {
+            if($this->seguridad->haySesionIniciada())
+            {
+                $idReservation = $_REQUEST['id'];
+                $result = $this->reserva->borrarReserva($idReservation);
+                if($result)
+                {
+                    $data['msjInfo'] = "Borrado con exito";
+                    $data['listaReservas'] = $this->reserva->getAll();
+                    $this->vista->mostrar("reservas/listaReservas", $data);
+                }
+                else
+                {
+                    $data['msjError'] = "Error en el borrado";
+                    $this->vista->mostrar("reservas/listaReservas", $data);
+                }
+            }
+            else
+            {
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
+            }
+        }
+
+        public function modificarReserva()
+        {
+            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            {
+                $idReservation = $_REQUEST['id'];
+                $data['listaReservas'] = $this->reserva->getReserva($idReservation);
+                $this->vista->mostrar("reservas/formularioReserva", $data);
+            }
+            else
+            {
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
+            }
+        }
+
+        public function modificacionReserva()
+        {
+            $idReservation = $_REQUEST['idReservation'];
+            $price = $_REQUEST['price'];
+            $time = $_REQUEST['time'];
+            $date = $_REQUEST['date'];
+            $idFacility = $_REQUEST['idFacility'];
+
+            $result = $this->reserva->modificarReserva($idReservation, $price, $time, $date, $idFacility);
+
+            if($result)
+            {
+                $data['msjInfo'] = "Reserva modificada con exito";
+                $data['listaReservas'] = $this->reserva->getAll();
+                $this->vista->mostrar("reservas/listaReservas", $data);
+            }
+            else
+            {
+                $data['msjError'] = "Error en la modificacion";
+                $data['listaReservas'] = $this->reserva->getAll();
+                $this->vista->mostrar("reservas/listaReservas", $data);
+            }
+
+        }
+
     }

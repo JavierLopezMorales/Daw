@@ -17,6 +17,15 @@
     echo date('N', strtotime('first day of +1 month'));//Dia 1 del siguiente mes
     */
     //////////////////////////////////////////////////////////////////////////////////////////////////
+
+    if (isset($data['msjError'])) {
+        echo "<p style='color:lightcoral'>".$data['msjError']."</p>";
+    }
+    if (isset($data['msjInfo'])) {
+        echo "<p style='color:rgb(189, 214, 247)'>".$data['msjInfo']."</p>";
+    }
+
+
     $dia = 1;
     $contador = 1;
     $numDias = date('t', strtotime(date('Y-m')));
@@ -32,7 +41,8 @@
         for($y=0; $y<7; $y++){
             echo "<td>";
 
-            if($contador >= date('N', strtotime(date('Y-m-01'))) && !($numDias < $dia)){
+            if($contador >= date('N', strtotime(date('Y-m-01'))) && !($numDias < $dia))
+            {
                 $fecha = $dia .' '. date('M Y');
                 $fecha =  getdate(strtotime($fecha));
                 $fecha = $fecha['year'] . ' ' .$fecha['mon'] . ' ' . $fecha['mday'];
