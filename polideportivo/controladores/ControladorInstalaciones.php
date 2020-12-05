@@ -18,6 +18,7 @@
             $this->seguridad = new Seguridad();
         }
 
+        // Mostrar la tabla de instalaciones
         public function mostrarInstalaciones()
         {
             if($this->seguridad->haySesionIniciada())
@@ -32,6 +33,7 @@
             }
         }
 
+        // Buscar instalaciones dependiendo del texto de busqueda
         public function buscarInstalacion()
         {
             if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
@@ -57,6 +59,7 @@
             }
         }
 
+        // Mostrar el formulario de creacion de instalaciones
         public function crearInstalaciones()
         {
             if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
@@ -70,6 +73,7 @@
             }
         }
 
+        // Recoger los datos del formulario y se insertan en la base de datos
         public function insertarInstalaciones()
         {
             if($this->seguridad->haySesionIniciada())
@@ -112,6 +116,7 @@
 
         }
 
+        // Borrar una instalacion
         public function borrarInstalaciones()
         {
             if($this->seguridad->haySesionIniciada())
@@ -138,6 +143,7 @@
             }
         }
 
+        // Mostrar el formulario de modificacion de instalaciones
         public function modificarInstalaciones()
         {
             if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
@@ -153,6 +159,7 @@
             }
         }
 
+        // Recoger los datos del formulario y se insertan en la base de datos
         public function modificacionInstalaciones()
         {
             $idFacility = $_REQUEST['idFacility'];

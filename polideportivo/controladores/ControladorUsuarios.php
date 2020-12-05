@@ -17,6 +17,9 @@
             $this->seguridad = new Seguridad();
         }
 
+        /**
+         * Pagina de inicio del administrador 
+         */
         public function inicio()
         {
             if ($this->seguridad->haySesionIniciada()) {
@@ -28,11 +31,17 @@
         
         }
 
+        /**
+         * Mostrar login 
+         */
         public function mostrarLogin()
         {
             $this->vista->mostrar("login");
         }
 
+        /**
+         * Comprobar si el login es correcto 
+         */
         public function procesarLogin()
         {
             $usuario = $_REQUEST["usuario"];
@@ -62,12 +71,18 @@
             $this->vista->mostrar("login", $data);
         }
 
+        /**
+         * Mostrar la tabla con la lista de usuarios
+         */
         public function mostrarUsuarios()
         {
             $data['mostrarUsuario'] = $this->usuario->getAll();
             $this->vista->mostrar("usuarios/listaUsuarios", $data);
         }
 
+        /**
+         * Borrar un usuario 
+         */
         public function borrarUsuarios()
         {
             $idUser = $_REQUEST['id'];
@@ -86,6 +101,9 @@
             }
         }
 
+        /**
+         * Mostrar el formulario de creacion de usuarios 
+         */
         public function crearUsuarios()
         {
             if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
@@ -99,6 +117,9 @@
             }
         }
 
+        /**
+         * Recoger los datos del formulario y enviarlos a la base de datos 
+         */
         public function insertarUsuarios()
         {
             $name = $_REQUEST['name'];
@@ -134,7 +155,9 @@
                 }
             }
         }
-
+        /**
+         * Mostrar el formulario de modificacion de usuarios
+         */
         public function modificarUsuarios()
         {
             if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
@@ -150,6 +173,9 @@
             }
         }
 
+        /**
+         * Recoger los datos del formulario y enviarlos 
+         */
         public function modificacionUsuario()
         {
             $idUser = $_REQUEST['idUser'];
@@ -212,6 +238,9 @@
 
         }
          
+        /**
+         * Buscar un formulario mediante el texto de busqueda
+         */
         public function buscarUsuario()
         {
             if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
@@ -236,7 +265,9 @@
                 $this->vista->mostrar("login", $data);
             }
         }
-
+        /**
+         * Formulario de cambio de imagen 
+         */
         public function cambiarImagen()
         {
             if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
@@ -250,6 +281,9 @@
             }
         }
 
+        /**
+         * Subir la imagen seleccionada 
+         */
         public function subirImagen()
         {
             if (isset($_POST['subir'])) {
@@ -296,6 +330,9 @@
             }
         }
 
+        /**
+         * Borrar la imagen 
+         */
         public function borrarImagen()
         {   
             $idUser = $_REQUEST['idUser'];
