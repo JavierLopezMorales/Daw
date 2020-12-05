@@ -162,56 +162,67 @@
         // Recoger los datos del formulario y se insertan en la base de datos
         public function modificacionInstalaciones()
         {
-            $idFacility = $_REQUEST['idFacility'];
-            $name = $_REQUEST['name'];
-            $description = $_REQUEST['description'];
-            $price = $_REQUEST['price'];
-            
-            $image = $_FILES['image']['name'];
-            //Si el archivo contiene algo y es diferente de vacio
-            if (isset($image) && $image != "") {
-               //Obtenemos algunos datos necesarios sobre el archivo
-               $tipo = $_FILES['image']['type'];
-               $tamano = $_FILES['image']['size'];
-               $temp = $_FILES['image']['tmp_name'];
-               //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
-              if (!strpos($tipo, "png") && ($tamano < 2000000)) {
-                 $data['msjError'] = "<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
-                 - Se permiten archivos .png y de 200 kb como máximo.</b></div>";
-                 $this->vista->mostrar("inicio", $data);
-              }
-                else {
-                    //Si la imagen es correcta en tamaño y tipo
-                    //Se intenta subir al servidor
-                    $image = $idFacility;
-                    
-                    if (move_uploaded_file($temp, './imagenes/instalaciones/'.$image)) 
-                    {
-                        //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
-                        chmod('./imagenes/instalaciones/'.$image, 0777);
-                    }
-                    else
-                    {
-                        //Si no se ha podido subir la imagen, mostramos un mensaje de error
-                        $data['msjError'] = "<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>";
-                        $this->vista->mostrar("inicio", $data);
+
+            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            {
+
+                $idFacility = $_REQUEST['idFacility'];
+                $name = $_REQUEST['name'];
+                $description = $_REQUEST['description'];
+                $price = $_REQUEST['price'];
+                
+                $image = $_FILES['image']['name'];
+                //Si el archivo contiene algo y es diferente de vacio
+                if (isset($image) && $image != "") {
+                   //Obtenemos algunos datos necesarios sobre el archivo
+                   $tipo = $_FILES['image']['type'];
+                   $tamano = $_FILES['image']['size'];
+                   $temp = $_FILES['image']['tmp_name'];
+                   //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+                  if (!strpos($tipo, "png") && ($tamano < 2000000)) {
+                     $data['msjError'] = "<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
+                     - Se permiten archivos .png y de 200 kb como máximo.</b></div>";
+                     $this->vista->mostrar("inicio", $data);
+                  }
+                    else {
+                        //Si la imagen es correcta en tamaño y tipo
+                        //Se intenta subir al servidor
+                        $image = $idFacility;
+                        
+                        if (move_uploaded_file($temp, './imagenes/instalaciones/'.$image)) 
+                        {
+                            //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                            chmod('./imagenes/instalaciones/'.$image, 0777);
+                        }
+                        else
+                        {
+                            //Si no se ha podido subir la imagen, mostramos un mensaje de error
+                            $data['msjError'] = "<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>";
+                            $this->vista->mostrar("inicio", $data);
+                        }
                     }
                 }
-            }
-
-            $result = $this->instalacion->modificarInstalacion($idFacility, $name, $description, $price);
-
-            if($result)
-            {
-                $data['msjInfo'] = "Instalacion modificada con exito";
-                $data['listaInstalaciones'] = $this->instalacion->getAll();
-                $this->vista->mostrar("instalaciones/listaInstalaciones", $data);
+    
+                $result = $this->instalacion->modificarInstalacion($idFacility, $name, $description, $price);
+    
+                if($result)
+                {
+                    $data['msjInfo'] = "Instalacion modificada con exito";
+                    $data['listaInstalaciones'] = $this->instalacion->getAll();
+                    $this->vista->mostrar("instalaciones/listaInstalaciones", $data);
+                }
+                else
+                {
+                    $data['msjError'] = "Error en la modificacion";
+                    $data['listaInstalaciones'] = $this->instalacion->getAll();
+                    $this->vista->mostrar("instalaciones/listaInstalaciones", $data);
+                }
+    
             }
             else
             {
-                $data['msjError'] = "Error en la modificacion";
-                $data['listaInstalaciones'] = $this->instalacion->getAll();
-                $this->vista->mostrar("instalaciones/listaInstalaciones", $data);
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
             }
 
         }

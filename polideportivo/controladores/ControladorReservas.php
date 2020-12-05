@@ -146,25 +146,34 @@
         // Recoger los datos del formulario e insertarlos
         public function modificacionReserva()
         {
-            $idReservation = $_REQUEST['idReservation'];
-            $price = $_REQUEST['price'];
-            $time = $_REQUEST['time'];
-            $date = $_REQUEST['date'];
-            $idFacility = $_REQUEST['idFacility'];
 
-            $result = $this->reserva->modificarReserva($idReservation, $price, $time, $date, $idFacility);
-
-            if($result)
+            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
             {
-                $data['msjInfo'] = "Reserva modificada con exito";
-                $data['listaReservas'] = $this->reserva->getAll();
-                $this->vista->mostrar("reservas/listaReservas", $data);
+                $idReservation = $_REQUEST['idReservation'];
+                $price = $_REQUEST['price'];
+                $time = $_REQUEST['time'];
+                $date = $_REQUEST['date'];
+                $idFacility = $_REQUEST['idFacility'];
+    
+                $result = $this->reserva->modificarReserva($idReservation, $price, $time, $date, $idFacility);
+    
+                if($result)
+                {
+                    $data['msjInfo'] = "Reserva modificada con exito";
+                    $data['listaReservas'] = $this->reserva->getAll();
+                    $this->vista->mostrar("reservas/listaReservas", $data);
+                }
+                else
+                {
+                    $data['msjError'] = "Error en la modificacion";
+                    $data['listaReservas'] = $this->reserva->getAll();
+                    $this->vista->mostrar("reservas/listaReservas", $data);
+                }
             }
             else
             {
-                $data['msjError'] = "Error en la modificacion";
-                $data['listaReservas'] = $this->reserva->getAll();
-                $this->vista->mostrar("reservas/listaReservas", $data);
+                $data['msjError'] = "No tienes permisos para esto";
+                $this->vista->mostrar("login", $data);
             }
 
         }
