@@ -1,12 +1,13 @@
 <?php
 
+    include_once("./modelos/reserva.php");
     include_once("./modelos/usuario.php");
     include_once("./vista.php");
     include_once("./modelos/seguridad.php");
 
     class ControladorUsuarios
     {
-        private $usuario, $vista;
+        private $usuario, $vista, $reserva;
         /**
          * Constructor. Crea las variables de los modelos y la vista
          */
@@ -15,6 +16,7 @@
             $this->usuario = new Usuario();
             $this->vista = new Vista();
             $this->seguridad = new Seguridad();
+            $this->reserva = new Reserva();
         }
 
         /**
@@ -86,6 +88,65 @@
         public function borrarUsuarios()
         {
             $idUser = $_REQUEST['id'];
+            $fecha =  date('Y-m-d');
+            $reservas = $this->reserva->getReservasUsuario($idUser, $fecha);
+            
+            // FUNCIONA
+            // Borrar reservas futuras //
+            $resProx = $this->reserva->getReservasProximas($idUser, $fecha);
+            if($resProx)
+            {
+                $borrado = $this->reserva->borrarReservasUsuario($idUser, $fecha);
+            }
+
+
+            if($reservas)
+            {
+                $resultado = $this->usuario->marcarBorrado($idUser);
+                if($resultado)
+                {
+                    $data['mostrarUsuario'] = $this->usuario->getAll();
+                    $data['msjInfo'] = "Usuario marcado como borrado";
+                    $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                }
+                else
+                {
+                    $data['mostrarUsuario'] = $this->usuario->getAll();
+                    $data['msjError'] = "Error al marcar como borrado al usuario";
+                    $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                }
+            }
+            else
+            {
+                $result = $this->usuario->borrarUsuario($idUser);
+                if($result)
+                {
+                    unlink('./imagenes/usuarios/'.$idUser);
+                    $data['mostrarUsuario'] = $this->usuario->getAll();
+                    $data['msjInfo'] = "Usuario borrado con exito";
+                    $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                }
+                else
+                {
+                    $data['mostrarUsuario'] = $this->usuario->getAll();
+                    $data['msjError'] = "Error al borrar el usuario";
+                    $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                }
+            }
+
+            //FUNCIONA//
+            $vacio = $this->reserva->getVacio($idUser);
+            if($vacio)
+            {
+                unlink('./imagenes/usuarios/'.$idUser);
+                $data['mostrarUsuario'] = $this->usuario->getAll();
+                $data['msjInfo'] = "Usuario borrado con exito";
+                $this->vista->mostrar("usuarios/listaUsuarios", $data);
+            }
+
+
+            /* BORRAR SI FUNCIONA LO ANTERIOR
+
             $result = $this->usuario->borrarUsuario($idUser);
             if($result)
             {
@@ -99,6 +160,7 @@
                 $data['msjError'] = "Error en el borrado";
                 $this->vista->mostrar("usuarios/listaUsuarios", $data);
             }
+            */
         }
 
         /**

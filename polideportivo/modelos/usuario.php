@@ -81,4 +81,10 @@
             return $result;
         }
 
+        public function marcarBorrado($idUser)
+        {
+            $result = $this->db->manipulacion("UPDATE user SET state = 'borrado' WHERE idUser = '$idUser'");
+            return $result;
+        }
+
     }

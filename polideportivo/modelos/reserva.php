@@ -51,4 +51,28 @@
             return $result;
         }
 
+        public function getReservasUsuario($idUser, $fecha)
+        {
+            $result = $this->db->consulta("SELECT * FROM reservation WHERE idUser = '$idUser' AND date > DATE_SUB('$fecha', interval 1 month) AND date < '$fecha'");
+            return $result;
+        }
+
+        public function getReservasProximas($idUser, $fecha)
+        {
+            $result = $this->db->consulta("SELECT * FROM reservation WHERE idUser = '$idUser' AND date < '$fecha'");
+            return $result;
+        }
+
+        public function borrarReservasUsuario($idUser, $fecha)
+        {
+            $result = $this->db->manipulacion("DELETE FROM reservation WHERE idUser = '$idUser' AND date > '$fecha'");
+            return $result;
+        }
+
+        public function getVacio($idUser)
+        {
+            $result = $this->db->consulta("SELECT * FROM reservation WHERE idUser = '$idUser'");
+            return $result;
+        }
+        
     }
