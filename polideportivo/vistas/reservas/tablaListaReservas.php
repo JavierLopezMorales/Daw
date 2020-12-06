@@ -4,20 +4,16 @@
 echo "<table border='1px solid white'>";
         
         echo "<tr style='color:white;'>";
-            echo "<td>" . "price" . "</td>";
-            echo "<td>" . "time" . "</td>";
-            echo "<td>" . "date" . "</td>";
-            echo "<td>" . "idUser" . "</td>";
-			echo "<td>" . "idFacility" . "</td>";
+            echo "<td>" . "Precio" . "</td>";
+            echo "<td>" . "Hora" . "</td>";
+            echo "<td>" . "Fecha" . "</td>";
         echo "</tr>";	
 
 	foreach($data['listaReservas'] as $reserva) {
             echo "<tr>";
 			echo "<td>" . $reserva->price . "</td>";
 			echo "<td>" . $reserva->time . "</td>";
-			echo "<td>" . $reserva->date . "</td>";
-            echo "<td>" . $reserva->idUser . "</td>";
-            echo "<td>" . $reserva->idFacility . "</td>";
+            echo "<td>" . $reserva->date . "</td>";
             echo "<td><a href='index.php?action=borrarReserva&id=" . $reserva->idReservation . "&direction=ControladorReservas' style='color: white; text-decoration: none;'>Borrar Reserva</a></td>";
 			echo "<td><a href='index.php?action=modificarReserva&id=" . $reserva->idReservation . "&direction=ControladorReservas' style='color: white; text-decoration: none;'>Modificar Reserva</a></td>";
 			echo "</tr>";

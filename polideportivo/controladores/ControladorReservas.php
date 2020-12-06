@@ -141,8 +141,6 @@
                 $data['msjError'] = "No tienes permisos para esto";
                 $this->vista->mostrar("login", $data);
             }
-            
-
         }
 
         // Borrar una reserva
@@ -198,20 +196,57 @@
                 $time = $_REQUEST['time'];
                 $date = $_REQUEST['date'];
                 $idFacility = $_REQUEST['idFacility'];
-    
-                $result = $this->reserva->modificarReserva($idReservation, $price, $time, $date, $idFacility);
-    
-                if($result)
+                $idUser = $_REQUEST['idUser'];
+                $newDuration = $_REQUEST['duration'];
+
+                if($date < date('Y-m-d'))
                 {
-                    $data['msjInfo'] = "Reserva modificada con exito";
-                    $data['listaReservas'] = $this->reserva->getAll();
-                    $this->vista->mostrar("reservas/listaReservas", $data);
+                    $data['msjError'] = "No puedes reservar un dia anterior al actual";
+                    $this->vista->mostrar("reservas/formularioReserva", $data);
                 }
-                else
+
+                // Ver horas totales de la instalacion
+                $maxDuration['lista'] = $this->instalacion->getMaxDuration($idFacility);
+
+                foreach($maxDuration['lista'] as $duracionMaxima)
                 {
-                    $data['msjError'] = "Error en la modificacion";
-                    $data['listaReservas'] = $this->reserva->getAll();
-                    $this->vista->mostrar("reservas/listaReservas", $data);
+                    if($newDuration > $duracionMaxima->maxDuration)
+                    {
+                        $data['msjError'] = "La duracion de su reserva es demasiado alta";
+                        $data['listaReservas'] = $this->reserva->getAll();
+                        $this->vista->mostrar("reservas/listaReservas", $data);
+                    }
+                    else
+                    {
+
+                        $sumDur['lista'] = $this->reserva->getSumaDuracion($date, $idUser, $idFacility);
+                        foreach($sumDur['lista'] as $suma)
+                        {
+                            if((($suma->sumDuration)+$newDuration) > $duracionMaxima->maxDuration)
+                            {
+                                $data['msjError'] = "El numero de horas que ha elegido es demasiado alto, reduzcalo por favor";
+                                $data['listaReservas'] = $this->reserva->getAll();
+                                    $this->vista->mostrar("reservas/listaReservas", $data);
+                            }
+                            else
+                            {
+                                $result = $this->reserva->modificarReserva($idReservation, $price, $time, $date, $idFacility, $duracionMaxima);
+        
+                                if($result)
+                                {
+                                    $data['msjInfo'] = "Reserva modificada con exito";
+                                    $data['listaReservas'] = $this->reserva->getAll();
+                                    $this->vista->mostrar("reservas/listaReservas", $data);
+                                }
+                                else
+                                {
+                                    $data['msjError'] = "Error en la modificacion de la reserva";
+                                    $data['listaReservas'] = $this->reserva->getAll();
+                                    $this->vista->mostrar("reservas/listaReservas", $data);
+                                }
+                            }
+                        }   
+                    }
                 }
             }
             else

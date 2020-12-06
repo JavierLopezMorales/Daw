@@ -26,10 +26,10 @@
             return $reservation;
         }
 
-        public function crearReserva($price, $time, $date, $idUser, $idFacility)
+        public function crearReserva($price, $time, $date, $idUser, $idFacility, $duracionMaxima)
         {
-            $result = $this->db->manipulacion("INSERT INTO reservation (price, time, date, idUser, idFacility) 
-            VALUES ('$price', '$time', '$date', '$idUser', '$idFacility')");
+            $result = $this->db->manipulacion("INSERT INTO reservation (price, time, date, duration, idUser, idFacility) 
+            VALUES ('$price', '$time', '$date', '$duracionMaxima', '$idUser', '$idFacility')");
             return $result;
         }
 
@@ -45,9 +45,9 @@
             return $result;
         }
 
-        public function modificarReserva($idReservation, $price, $time, $date, $idFacility)
+        public function modificarReserva($idReservation, $price, $time, $date, $idFacility, $duracionMaxima)
         {
-            $result = $this->db->manipulacion("UPDATE reservation SET price = '$price', time = '$time', price = '$price', idFacility = '$idFacility' WHERE idReservation = '$idReservation'");
+            $result = $this->db->manipulacion("UPDATE reservation SET price = '$price', time = '$time', date = '$date', duracionMaxima = '$duracionMaxima' idFacility = '$idFacility' WHERE idReservation = '$idReservation'");
             return $result;
         }
 
