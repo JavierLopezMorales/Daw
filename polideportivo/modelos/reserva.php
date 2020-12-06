@@ -74,5 +74,11 @@
             $result = $this->db->consulta("SELECT * FROM reservation WHERE idUser = '$idUser'");
             return $result;
         }
+
+        public function getSumaDuracion($date, $idUser, $idFacility)
+        {
+            $result = $this->db->consulta("SELECT SUM(duration) AS 'sumDuration' FROM reservation WHERE idUser = '$idUser' AND idFacility = '$idFacility' AND date = '$date'");
+            return $result;
+        }
         
     }

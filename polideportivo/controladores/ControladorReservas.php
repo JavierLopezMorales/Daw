@@ -2,18 +2,20 @@
 
     include_once("./modelos/reserva.php");
     include_once("./modelos/usuario.php");
+    include_once("./modelos/instalacion.php");
     include_once("./vista.php");
     include_once("./modelos/seguridad.php");
 
     class ControladorReservas
     {
-        private $reserva, $vista;
+        private $reserva, $vista, $instalacion;
         /**
          * Constructor. Crea las variables de los modelos y la vista
          */
         public function __construct()
         {
             $this->reserva = new Reserva();
+            $this->instalacion = new Instalacion();
             $this->vista = new Vista();
             $this->seguridad = new Seguridad();
         }
@@ -76,21 +78,63 @@
                 $idUser = $_REQUEST['idUser'];
                 $idFacility = $_REQUEST['idFacility'];
     
-                $result = $this->reserva->crearReserva($price, $time, $date, $idUser, $idFacility);
-    
-                if($result)
+                if($date < date('Y-m-d'))
                 {
-                    $data['msjInfo'] = "Reserva creada con exito";
-                    $data['listaReservas'] = $this->reserva->getAll();
-                    $this->vista->mostrar("reservas/listaReservas", $data);
+                    $data['msjError'] = "No puedes reservar un dia anterior al actual";
+                    $this->vista->mostrar("reservas/formularioReserva", $data);
                 }
                 else
                 {
-                    $data['msjError'] = "Error en la creación de la reserva";
-                    $data['listaReservas'] = $this->reserva->getAll();
-                    $this->vista->mostrar("reservas/listaReservas", $data);
+                    /////////////////
+                    //  COMPROBAR HORAS TOTALES RESTANTES PARA EL USUARIO HACIENDO LA RESERVA 
+                    ////////////////
+
+                    // Ver horas totales de la instalacion
+                    $maxDuration['lista'] = $this->instalacion->getMaxDuration($idFacility);
+
+                    // Ver horas de la reserva
+                    $duration = $_REQUEST['duration'];
+
+                    // Si $duration > $maxDuration ERROR
+                    foreach($maxDuration['lista'] as $duracionMaxima)
+                    {
+                        if($duration > $duracionMaxima->maxDuration)
+                        {
+                            $data['msjError'] = "La duracion de su reserva es demasiado alta";
+                            $this->vista->mostrar("reservas/formularioReserva", $data);
+                        }
+                        else
+                        {
+
+                            $sumDur['lista'] = $this->reserva->getSumaDuracion($date, $idUser, $idFacility);
+                            foreach($sumDur['lista'] as $suma)
+                            {
+                                if((($suma->sumDuration)+$duration) > $duracionMaxima->maxDuration)
+                                {
+                                    $data['msjError'] = "El numero de horas que ha elegido es demasiado alto, reduzcalo por favor";
+                                    $this->vista->mostrar("reservas/formularioReserva", $data);
+                                }
+                                else
+                                {
+                                    $result = $this->reserva->crearReserva($price, $time, $date, $idUser, $idFacility);
+            
+                                    if($result)
+                                    {
+                                        $data['msjInfo'] = "Reserva creada con exito";
+                                        $data['listaReservas'] = $this->reserva->getAll();
+                                        $this->vista->mostrar("reservas/listaReservas", $data);
+                                    }
+                                    else
+                                    {
+                                        $data['msjError'] = "Error en la creación de la reserva";
+                                        $data['listaReservas'] = $this->reserva->getAll();
+                                        $this->vista->mostrar("reservas/listaReservas", $data);
+                                    }
+                                }
+                            }   
+                        }
+                    }
                 }
-                    
             }
             else
             {

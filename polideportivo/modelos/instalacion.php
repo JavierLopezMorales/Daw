@@ -70,4 +70,10 @@
             return $result;
         }
 
+        public function getMaxDuration($idFacility)
+        {
+            $result = $this->db->consulta("SELECT * FROM facility WHERE idFacility = '$idFacility'");
+            return $result;
+        }
+
     }
