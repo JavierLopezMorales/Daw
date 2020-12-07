@@ -59,30 +59,19 @@
          */
         public function procesarLogin()
         {
+            $usuario = $_REQUEST["usuario"];
+            $password = $_REQUEST["password"];
 
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
-            {
-                $usuario = $_REQUEST["usuario"];
-                $password = $_REQUEST["password"];
-    
-                $existe = $this->usuario->buscarUsuario($usuario, $password);
-    
-                if ($existe) {
-                    
-                    $data['msjInfo'] = "Sesión iniciada correctamente";
-                    $this->seguridad->abrirSesion($existe);
-                    $this->vista->mostrar("inicio", $data);
-                } else {
-                    // Error al iniciar la sesión
-                    $data['msjError'] = "Nombre de usuario o contraseña incorrectos";
-                    $this->vista->mostrar("login", $data);
-                }
-            }
-            else
-            {
-                $data['msjError'] = "No tienes permisos para esto";
+            $existe = $this->usuario->buscarUsuario($usuario, $password);
+            if ($existe) {
+                $data['msjInfo'] = "Sesión iniciada correctamente";
+                $this->seguridad->abrirSesion($existe);
+                $this->vista->mostrar("inicio", $data);
+            } else {
+                // Error al iniciar la sesión
+                $data['msjError'] = "Nombre de usuario o contraseña incorrectos";
                 $this->vista->mostrar("login", $data);
-            }
+            }        
         }
 
         /**
@@ -136,15 +125,21 @@
                     $resultado = $this->usuario->marcarBorrado($idUser);
                     if($resultado)
                     {
+                        /*
                         $data['mostrarUsuario'] = $this->usuario->getAll();
                         $data['msjInfo'] = "Usuario marcado como borrado";
                         $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                        */
+                        echo $idUser;
                     }
                     else
                     {
+                        /*
                         $data['mostrarUsuario'] = $this->usuario->getAll();
                         $data['msjError'] = "Error al marcar como borrado al usuario";
                         $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                        */
+                        echo '0';
                     }
                 }
                 else
@@ -152,26 +147,50 @@
                     $result = $this->usuario->borrarUsuario($idUser);
                     if($result)
                     {
+                        
                         unlink('./imagenes/usuarios/'.$idUser);
+                        /*
                         $data['mostrarUsuario'] = $this->usuario->getAll();
                         $data['msjInfo'] = "Usuario borrado con exito";
                         $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                        */
+                        echo $idUser;
                     }
                     else
                     {
+                        /*
                         $data['mostrarUsuario'] = $this->usuario->getAll();
                         $data['msjError'] = "Error al borrar el usuario";
                         $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                        */
+                        echo '0';
                     }
                 }
     
                 $vacio = $this->reserva->getVacio($idUser);
                 if($vacio)
                 {
-                    unlink('./imagenes/usuarios/'.$idUser);
-                    $data['mostrarUsuario'] = $this->usuario->getAll();
-                    $data['msjInfo'] = "Usuario borrado con exito";
-                    $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                    $result = $this->usuario->borrarUsuario($idUser);
+                    if($result)
+                    {
+                        
+                        unlink('./imagenes/usuarios/'.$idUser);
+                        /*
+                        $data['mostrarUsuario'] = $this->usuario->getAll();
+                        $data['msjInfo'] = "Usuario borrado con exito";
+                        $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                        */
+                        echo $idUser;
+                    }
+                    else
+                    {
+                        /*
+                        $data['mostrarUsuario'] = $this->usuario->getAll();
+                        $data['msjError'] = "Error al borrar el usuario";
+                        $this->vista->mostrar("usuarios/listaUsuarios", $data);
+                        */
+                        echo '0';
+                    }
                 }
             }
             else

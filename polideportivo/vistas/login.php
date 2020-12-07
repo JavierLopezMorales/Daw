@@ -23,7 +23,7 @@
     ?>
 
     <form action='index.php'>
-        Email:<input type='text' name='usuario' id='email' onblur='verificarEmail()'>
+        Email:<input type='text' name='usuario' id='usuario' onblur='verificarEmail()'>
         <span id='mensajeUsuario'></span><br><br>
         Contraseña:<input type='text' name='password'>
         <br><br>
@@ -35,11 +35,11 @@
     <script>
         function verificarEmail()
         { 
-            var email = document.getElementById("email").value;
+            var usuario = document.getElementById("usuario").value;
 
             peticion = new XMLHttpRequest();
             peticion.onreadystatechange = procesarRespuesta;
-            peticion.open('GET', 'index.php?action=comprobarEmail&direction=ControladorUsuarios&email=' + email, true);
+            peticion.open('GET', 'index.php?action=comprobarEmail&direction=ControladorUsuarios&email=' + usuario, true);
             peticion.send(null);
         }	
 
