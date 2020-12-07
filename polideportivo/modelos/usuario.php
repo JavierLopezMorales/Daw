@@ -22,7 +22,7 @@
          */
         public function buscarUsuario($usuario,$password) 
         {
-            $usuario = $this->db->consulta("SELECT idUser, name, lastname1, lastname2, email, image FROM user WHERE email = '$usuario' AND password = '$password'");
+            $usuario = $this->db->consulta("SELECT * FROM user WHERE email = '$usuario' AND password = '$password'");
             if ($usuario) {
                 return $usuario[0];
             } else {

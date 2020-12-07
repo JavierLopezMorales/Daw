@@ -257,4 +257,36 @@
 
         }
 
+        public function diasReservas()
+        {
+            $idUser = $_REQUEST['id'];
+            $fecha = $_REQUEST['fecha'];
+
+            if($idUser != 0)
+            {
+                $result = $this->reserva->getDate($idUser, $fecha);
+                if($result)
+                {
+                    echo $fecha;
+                }
+                else
+                {
+                    echo '0';
+                }
+            }
+            if($idUser == 0)
+            {
+                $resultado = $this->reserva->getAllDate($fecha);
+                if($resultado)
+                {
+                    echo $fecha;
+                }
+                else
+                {
+                    echo '0';
+                }
+            }
+
+        }
+
     }
