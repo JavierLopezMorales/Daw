@@ -27,10 +27,23 @@
             if ($this->seguridad->haySesionIniciada()) {
                 $this->vista->mostrar("inicio");
             } else {
-                $data['msjError'] = "Nombre de usuario o contraseña incorrectos";
-                $this->vista->mostrar("login", $data);
+                $this->vista->mostrar("login");
             }
         
+        }
+
+        public function comprobarEmail()
+        {
+            $email = $_REQUEST['email'];
+            $result = $this->usuario->existeUsuario($email);
+            if($result != null)
+            {
+                echo '1';
+            }
+            else
+            {
+                echo '0';
+            }
         }
 
         /**

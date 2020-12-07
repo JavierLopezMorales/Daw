@@ -30,6 +30,12 @@
             }
         }
 
+        public function existeUsuario($email)
+        {
+            $result = $this->db->consulta("SELECT * FROM user WHERE email = '$email'");
+            return $result;
+        }
+
         public function getAll()
         {
             $usuarios = $this->db->consulta("SELECT * FROM user");
