@@ -42,8 +42,16 @@
             if($this->seguridad->haySesionIniciada())
             {
                 $fecha = $_REQUEST['fecha'];
-                $data['listaReservas'] = $this->reserva->getAllDate($fecha);
-                $this->vista->mostrar("reservas/tablaListaReservas", $data);
+                $idUser = $_SESSION['idUser'];
+                if( $_SESSION['type'] == 'admin'){
+                    $data['listaReservas'] = $this->reserva->getAllDate($fecha);
+                    $this->vista->mostrar("reservas/tablaListaReservas", $data);
+                }
+                $data['listaReservas'] = $this->reserva->getDate($idUser, $fecha);
+                if($data){
+                    $this->vista->mostrar("reservas/tablaListaReservas", $data);
+                }
+                
             }
             else
             {

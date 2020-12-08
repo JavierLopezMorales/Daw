@@ -1,36 +1,29 @@
+<nav class='navbar bg-dark text-white p-2'>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Gestión de biblioteca - Un ejemplo de aplicación web</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="./estilos/fondo.css">
-</head>
-<body>
-
-    <h1>Pagina de login</h1>
-    <br><br>
-
-    <?php
+    <h1>Inicio</h1>
+</nav>
+<div class="container p-4 my-4 bg-dark text-white rounded">
+<?php
         if (isset($data['msjError'])) {
-            echo "<p style='color:lightcoral'>".$data['msjError']."</p>";
+            echo "<p class='text-danger'>".$data['msjError']."</p>";
         }
         if (isset($data['msjInfo'])) {
-            echo "<p style='color:rgb(189, 214, 247)'>".$data['msjInfo']."</p>";
+            echo "<p class='text-info'>".$data['msjInfo']."</p>";
         }
     ?>
-
-    <form action='index.php'>
-        Email:<input type='text' name='usuario' id='usuario' onblur='verificarEmail()'>
-        <span id='mensajeUsuario'></span><br><br>
-        Contraseña:<input type='text' name='password'>
-        <br><br>
+    <form action='index.php' >
+        <div class="form-group">
+            <input class="form-control" type='text' name='usuario' id='usuario' onblur='verificarEmail()' placeholder='Introduce tu email'>
+            <span class='text-warning' id='mensajeUsuario'></span> <br> <br>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type='password' name='password' placeholder='Introduce tu contraseña'> <br>
+        </div>
         <input type='hidden' name='action' value='procesarLogin'>
         <input type='hidden' name='direction' value='ControladorUsuarios'>
-        <input type='submit' id='boton' value='Aceptar'>
+        <input type='submit' id='boton' value='Aceptar' class='btn btn-primary btn-block'>
     </form>
+</div>
 
     <script>
         function verificarEmail()
@@ -53,7 +46,7 @@
                     }
                     if (peticion.responseText == '1')
                     {
-                        document.getElementById('mensajeUsuario').innerHTML = "Usuario OK";
+                        document.getElementById('mensajeUsuario').innerHTML = "Usuario existente";
                     }
 
                 }
@@ -63,6 +56,5 @@
         
     </script>
 
-</body>
-</html>
+
 

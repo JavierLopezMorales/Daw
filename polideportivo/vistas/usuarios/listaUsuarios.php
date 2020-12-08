@@ -1,46 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<nav class='navbar bg-dark text-white p-2 mb-5'>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Gestión de biblioteca - Un ejemplo de aplicación web</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="./estilos/fondo.css">
-</head>
-<body>
-
+    <h1>Lista de Usuarios</h1>
 	<?php
+	    if (isset($_SESSION['idUser'])) {
+			echo "<div class='media bg-light text-dark p-1'>";
+			echo "<div>";
+			echo "<img src='./imagenes/usuarios/" . $_SESSION['image'] . "' width='50px' class='rounded-circle border border-dark'>";
+			echo "</div>";
+			echo "<div class='text-center'>".$_SESSION['name']."</div>";
+			echo "</div>";
 
-		echo "<h1>Usuarios</h1>";
+		}
+	?>
+</nav>
+<?php
+	// Muestra la tabla con los datos de los usuarios
+		echo "<table class='table bg-dark text-white'>";
+		
+		if (isset($data['msjError'])) {
+			echo "<tr><td>";
+			echo "<div class='text-danger'>".$data['msjError']."</div>";
+			echo "</td></tr>";
+		}
+		if (isset($data['msjInfo'])) {
+			echo "<tr><td>";
+			echo "<div class='text-info'>".$data['msjInfo']."</div>";
+			echo "</td></tr>";
+		}
 			
 		echo "<form action='index.php'>
-				<select name='seleccion'>
+			<tr><td><select name='seleccion'>
 					<option value='name'>Nombre</option>
 					<option value='lastname1'>Primer apellido</option>
 					<option value='lastname2'>Segundo apellido</option>
 					<option value='email'>Email</option>
 					<option value='type'>Tipo</option>
 					<option value='state'>Estado</option>
-				</select>
+				</select></td>
 				<input type='hidden' name='action' value='buscarUsuario'>
 				<input type='hidden' name='direction' value='ControladorUsuarios'>      
-				<input type='text' name='textoBusqueda'>
-				<input type='submit' value='Buscar' id='boton'>
-				<button  href='index.php?action=mostrarUsuario' id='boton'>Limpiar</button>
+				<td><input type='text' name='textoBusqueda'></td>
+				<td><input type='submit' value='Buscar' id='boton'></td>
+				<td><button  href='index.php?action=mostrarUsuario' id='boton'>Limpiar</button></td>
 			</form><br>";
-
-			if (isset($data['msjError'])) {
-				echo "<p style='color:lightcoral' id='msjError'>".$data['msjError']."</p>";
-			}
-			if (isset($data['msjInfo'])) {
-				echo "<p style='color:rgb(189, 214, 247)' id='msjInfo'>".$data['msjInfo']."</p>";
-			}
-
 		
-
-		// Muestra la tabla con los datos de los usuarios
-		echo "<table border='1px solid white'>";
-			
 			echo "<tr style='color:white;'>";
 				echo "<td>" . "Nombre" . "</td>";
 				echo "<td>" . "Apellido 1" . "</td>";
@@ -58,15 +61,15 @@
 				echo "<td>" . $usuario->email . "</td>";
 				echo "<td>" . $usuario->type . "</td>";
 				echo "<td>" . $usuario->state . "</td>";
-				echo "<td><button onclick='borrarUsuario(". $usuario->idUser .")'>Borrar Usuario</button></td>";
-				//echo "<td><a href='index.php?action=borrarUsuarios&id=" . $usuario->idUser . "&direction=ControladorUsuarios' style='color: white; text-decoration: none;'>Borrar Usuario</a></td>";
-				echo "<td><a href='index.php?action=modificarUsuarios&id=" . $usuario->idUser . "&direction=ControladorUsuarios' style='color: white; text-decoration: none;'>Modificar Usuario</a></td>";
+				echo "<td><button class='btn btn-success btn-sm' onclick='borrarUsuario(". $usuario->idUser .")'>Borrar Usuario</button></td>";
+
+				echo "<td><a class='btn btn-success btn-sm' href='index.php?action=modificarUsuarios&id=" . $usuario->idUser . "&direction=ControladorUsuarios' style='color: white; text-decoration: none;'>Modificar Usuario</a></td>";
 				echo "</tr>";
 		}
 		echo "</table>";
 		
-		echo "<br><p><a href='index.php?action=crearUsuarios&direction=ControladorUsuarios' style='color:white;'>Crear Usuario</a></p><br>";
-		echo "<p><a href='index.php?action=inicio&direction=ControladorUsuarios' style='color:white;'>Inicio</a></p>";
+		echo "<br><p><a class='btn btn-success' href='index.php?action=crearUsuarios&direction=ControladorUsuarios' style='color:white;'>Crear Usuario</a></p><br>";
+		echo "<p><a class='btn btn-success' href='index.php?action=inicio&direction=ControladorUsuarios' style='color:white;'>Inicio</a></p>";
 
 	?>
 

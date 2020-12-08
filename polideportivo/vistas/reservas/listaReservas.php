@@ -1,40 +1,27 @@
+<nav class='navbar bg-dark text-white p-2 mb-5'>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="./estilos/fondo.css">
-</head>
-<body>
-    <?php
+    <h1>Calendario</h1>
+	<?php
+	    if (isset($_SESSION['idUser'])) {
+			echo "<div class='media bg-light text-dark p-1'>";
+			echo "<div>";
+			echo "<img src='./imagenes/usuarios/" . $_SESSION['image'] . "' width='50px' class='rounded-circle border border-dark'>";
+			echo "</div>";
+			echo "<div class='text-center'>".$_SESSION['name']."</div>";
+			echo "</div>";
 
-        echo "<style>
-        table{border:2px solid red;background-color:white;}
-        td{border:2px solid black;background-color:white;height:4em;width:4em;text-align:center;color:black;}
-        </style>";
-        /*
-        $nombredia = (new DateTime('first day of this month'))->format('m j Y');
-
-        $dias = array('Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo');
-
-        $fecha = $dias[date('N', strtotime(date('Y-m-01')))-1];
-        
-        echo $fecha;
-        echo date('N', strtotime(date('Y-m-01')));//Dia 1 de este mes
-        echo date('N', strtotime('first day of +1 month'));//Dia 1 del siguiente mes
-        */
-        //////////////////////////////////////////////////////////////////////////////////////////////////
-
+		}
+	?>
+</nav>
+<?php
 
 
         $dia = 0;
         $contador = 1;
         $numDias = date('t', strtotime(date('Y-m')));
 
-        echo "<table>";
-        echo "<tr><td>Lunes</td><td>Martes</td><td>Miercoles</td><td>Jueves</td><td>Viernes</td><td>Sabado</td><td>Domingo</td></tr>";
+        echo "<table class='table text-center table-bordered'>";
+        echo "<tr class='bg-dark text-white'><td>Lunes</td><td>Martes</td><td>Miercoles</td><td>Jueves</td><td>Viernes</td><td>Sabado</td><td>Domingo</td></tr>";
         for($x=0; $x<6; $x++){
 
             if($numDias <= $contador){
@@ -73,8 +60,8 @@
         $contador2 = 1;
         $numDias2 = date('t', strtotime(date('Y-m')));
 
-        echo "<table>";
-        echo "<tr><td>Lunes</td><td>Martes</td><td>Miercoles</td><td>Jueves</td><td>Viernes</td><td>Sabado</td><td>Domingo</td></tr>";
+        echo "<table class='table text-center table-bordered'>";
+        echo "<tr class='bg-dark text-white'><td>Lunes</td><td>Martes</td><td>Miercoles</td><td>Jueves</td><td>Viernes</td><td>Sabado</td><td>Domingo</td></tr>";
         for($x=0; $x<6; $x++){
 
             if($numDias2 <= $contador2){
@@ -109,7 +96,7 @@
         }
         echo "</table>";
         $undia = '10';
-        echo "<p><a href='index.php?action=inicio&direction=ControladorUsuarios' style='color:white;'>Inicio</a></p>";  
+        echo "<p><a class='btn btn-success btn-sm' href='index.php?action=inicio&direction=ControladorUsuarios' style='color:white;'>Inicio</a></p>";  
     ?>
 
 <p style='color:lightcoral' id='msjError'></p>

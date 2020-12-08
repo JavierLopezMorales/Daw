@@ -24,7 +24,7 @@
          */
         public function inicio()
         {
-            if ($this->seguridad->haySesionIniciada()) {
+            if ($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin') {
                 $this->vista->mostrar("inicio");
             } else {
                 $this->vista->mostrar("login");
@@ -66,7 +66,13 @@
             if ($existe) {
                 $data['msjInfo'] = "Sesión iniciada correctamente";
                 $this->seguridad->abrirSesion($existe);
-                $this->vista->mostrar("inicio", $data);
+                if($_SESSION['type'] == 'admin'){
+                    $this->vista->mostrar("inicio", $data);
+                }
+                else
+                {
+                    $this->vista->mostrar("reservas/listaReservas", $data);
+                }
             } else {
                 // Error al iniciar la sesión
                 $data['msjError'] = "Nombre de usuario o contraseña incorrectos";
@@ -89,7 +95,7 @@
          */
         public function mostrarUsuarios()
         {
-            if($this->seguridad->haySesionIniciada())
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')
             {
                 $data['mostrarUsuario'] = $this->usuario->getAll();
                 $this->vista->mostrar("usuarios/listaUsuarios", $data);
@@ -107,7 +113,7 @@
         public function borrarUsuarios()
         {
 
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $idUser = $_REQUEST['id'];
                 $fecha =  date('Y-m-d');
@@ -205,7 +211,7 @@
          */
         public function crearUsuarios()
         {
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $this->vista->mostrar("usuarios/formularioUsuarios");
             }
@@ -221,7 +227,7 @@
          */
         public function insertarUsuarios()
         {
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $name = $_REQUEST['name'];
                 $lastname1 = $_REQUEST['lastname1'];
@@ -268,7 +274,7 @@
          */
         public function modificarUsuarios()
         {
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $idUser = $_REQUEST['id'];
                 $data['usuario'] = $this->usuario->getUser($idUser);
@@ -287,7 +293,7 @@
         public function modificacionUsuario()
         {
 
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $idUser = $_REQUEST['idUser'];
                 $name = $_REQUEST['name'];
@@ -360,7 +366,7 @@
          */
         public function buscarUsuario()
         {
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $textoBusqueda = $_REQUEST["textoBusqueda"];
                 $seleccion = $_REQUEST["seleccion"];
@@ -387,7 +393,7 @@
          */
         public function cambiarImagen()
         {
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $this->vista->mostrar("usuarios/formularioImagen");
             }
@@ -404,7 +410,7 @@
         public function subirImagen()
         {
 
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 if (isset($_POST['subir'])) 
                 {
@@ -463,7 +469,7 @@
         public function borrarImagen()
         {   
 
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $idUser = $_REQUEST['idUser'];
 

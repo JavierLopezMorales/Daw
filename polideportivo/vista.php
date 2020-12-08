@@ -11,8 +11,8 @@
 		}
 		
 		public function mostrar($nombreVista, $data = null) {
-
+			include_once("estilos/header.php");
 			include_once("vistas/$nombreVista.php");
-
+			include_once("estilos/footer.php");
 		}
     }

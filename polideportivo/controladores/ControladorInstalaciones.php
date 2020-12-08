@@ -21,7 +21,7 @@
         // Mostrar la tabla de instalaciones
         public function mostrarInstalaciones()
         {
-            if($this->seguridad->haySesionIniciada())
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')
             {
                 $data['listaInstalaciones'] = $this->instalacion->getAll();
                 $this->vista->mostrar("instalaciones/listaInstalaciones", $data);
@@ -36,7 +36,7 @@
         // Buscar instalaciones dependiendo del texto de busqueda
         public function buscarInstalacion()
         {
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $textoBusqueda = $_REQUEST["textoBusqueda"];
                 $seleccion = $_REQUEST["seleccion"];
@@ -47,7 +47,7 @@
                 }
                 else
                 {
-                    $data['msjInfo'] = "<p>Resultados de la búsqueda: \"$textoBusqueda\"</p>";
+                    $data['msjInfo'] = "Resultados de la búsqueda: $textoBusqueda";
                     $data['listaInstalaciones'] = $this->instalacion->busquedaAproximada($textoBusqueda, $seleccion);
                 }
                 $this->vista->mostrar("instalaciones/listaInstalaciones", $data);
@@ -62,7 +62,7 @@
         // Mostrar el formulario de creacion de instalaciones
         public function crearInstalaciones()
         {
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $this->vista->mostrar("instalaciones/formularioInstalacion");
             }
@@ -76,7 +76,7 @@
         // Recoger los datos del formulario y se insertan en la base de datos
         public function insertarInstalaciones()
         {
-            if($this->seguridad->haySesionIniciada())
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')
             {
                 $name = $_REQUEST['name'];
                 $description = $_REQUEST['description'];
@@ -119,7 +119,7 @@
         // Borrar una instalacion
         public function borrarInstalaciones()
         {
-            if($this->seguridad->haySesionIniciada())
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')
             {
                 $idFacility = $_REQUEST['id'];
                 $result = $this->instalacion->borrarInstalacion($idFacility);
@@ -146,7 +146,7 @@
         // Mostrar el formulario de modificacion de instalaciones
         public function modificarInstalaciones()
         {
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
                 $idFacility = $_REQUEST['id'];
                 $data['instalacion'] = $this->instalacion->getInstalacion($idFacility);
@@ -163,7 +163,7 @@
         public function modificacionInstalaciones()
         {
 
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
             {
 
                 $idFacility = $_REQUEST['idFacility'];
