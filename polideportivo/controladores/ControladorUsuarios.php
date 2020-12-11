@@ -140,7 +140,7 @@
                     }
                     else
                     {
-                        /*
+                        /* 
                         $data['mostrarUsuario'] = $this->usuario->getAll();
                         $data['msjError'] = "Error al marcar como borrado al usuario";
                         $this->vista->mostrar("usuarios/listaUsuarios", $data);

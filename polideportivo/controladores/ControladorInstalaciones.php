@@ -8,6 +8,7 @@
     class ControladorInstalaciones
     {
         private $instalacion, $vista;
+
         /**
          * Constructor. Crea las variables de los modelos y la vista
          */
@@ -18,7 +19,9 @@
             $this->seguridad = new Seguridad();
         }
 
-        // Mostrar la tabla de instalaciones
+        /**
+         * Mostrar la tabla de instalaciones
+         */
         public function mostrarInstalaciones()
         {
             if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')
@@ -33,7 +36,9 @@
             }
         }
 
-        // Buscar instalaciones dependiendo del texto de busqueda
+        /**
+         * Buscar instalaciones dependiendo del texto de busqueda
+         */
         public function buscarInstalacion()
         {
             if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
@@ -59,7 +64,9 @@
             }
         }
 
-        // Mostrar el formulario de creacion de instalaciones
+        /**
+         * Mostrar el formulario de creacion de instalaciones
+         */
         public function crearInstalaciones()
         {
             if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
@@ -73,7 +80,9 @@
             }
         }
 
-        // Recoger los datos del formulario y se insertan en la base de datos
+        /**
+         * Recoger los datos del formulario y se insertan en la base de datos
+         */
         public function insertarInstalaciones()
         {
             if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')
@@ -112,11 +121,11 @@
                 $data['msjError'] = "No tienes permisos para esto";
                 $this->vista->mostrar("login", $data);
             }
-            
-
         }
 
-        // Borrar una instalacion
+        /**
+         * Borrar una instalacion
+         */
         public function borrarInstalaciones()
         {
             if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')
@@ -143,7 +152,9 @@
             }
         }
 
-        // Mostrar el formulario de modificacion de instalaciones
+        /**
+         * Mostrar el formulario de modificacion de instalaciones
+         */
         public function modificarInstalaciones()
         {
             if($this->seguridad->haySesionIniciada() && $_SESSION['type'] == 'admin')/* && $_SESSION["type"] == "admin"*/
@@ -159,7 +170,9 @@
             }
         }
 
-        // Recoger los datos del formulario y se insertan en la base de datos
+        /**
+         * Recoger los datos del formulario y se insertan en la base de datos
+         */
         public function modificacionInstalaciones()
         {
 

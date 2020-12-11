@@ -20,7 +20,9 @@
             $this->seguridad = new Seguridad();
         }
 
-        // Mostrar el calendario
+        /**
+         * Mostrar el calendario 
+         */
         public function mostrarReservas()
         {
             if($this->seguridad->haySesionIniciada())
@@ -36,7 +38,10 @@
 
         }
 
-        // Mostrar la tabla de las reservas de el dia seleccionado
+        
+        /**
+         * Mostrar la tabla de las reservas de el dia seleccionado
+         */
         public function mostrarDia()
         {
             if($this->seguridad->haySesionIniciada())
@@ -61,7 +66,10 @@
 
         }
 
-        // Mostrar el formulario de creacion de reservas
+        
+        /**
+         * Mostrar el formulario de creacion de reservas
+         */
         public function crearReservas()
         {
             if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
@@ -75,7 +83,9 @@
             }
         }
 
-        // Recoger los datos del formulario e insertalos en la base de datos
+        /**
+         * Recoger los datos del formulario e insertalos en la base de datos
+         */
         public function insertarReservas()
         {
             if($this->seguridad->haySesionIniciada())
@@ -151,7 +161,9 @@
             }
         }
 
-        // Borrar una reserva
+                /**
+         * Borrar una reserva 
+         */
         public function borrarReserva()
         {
             if($this->seguridad->haySesionIniciada())
@@ -177,10 +189,13 @@
             }
         }
 
-        // Mostrar el formulario de modificacion de reservas
+        
+        /**
+         * Mostrar el formulario de modificacion de reservas
+         */
         public function modificarReserva()
         {
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada())
             {
                 $idReservation = $_REQUEST['id'];
                 $data['listaReservas'] = $this->reserva->getReserva($idReservation);
@@ -193,11 +208,14 @@
             }
         }
 
-        // Recoger los datos del formulario e insertarlos
+    
+        /**
+         * Recoger los datos del formulario e insertarlos
+         */
         public function modificacionReserva()
         {
 
-            if($this->seguridad->haySesionIniciada())/* && $_SESSION["type"] == "admin"*/
+            if($this->seguridad->haySesionIniciada())
             {
                 $idReservation = $_REQUEST['idReservation'];
                 $price = $_REQUEST['price'];
@@ -265,6 +283,9 @@
 
         }
 
+        /**
+         * Envia los datos para poder pintar el fondo del calendario
+         */
         public function diasReservas()
         {
             $idUser = $_REQUEST['id'];
