@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Ships;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,4 @@ Route::get('prueba', function(){
     return "Pagina de prueba";
 });
 
-Route::get('/ships', function () {
-    return view('showShipsMM');
-});
+Route::get('/ships', 'ShipsController@index');

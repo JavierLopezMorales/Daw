@@ -18,16 +18,18 @@
             <th>Tipo de bala</th>
         </tr>
 
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th><button>Borrar</button></th>
-            <th><button>Modificar</button></th>
-        </tr>
+        @foreach($shipsList as $ships)
 
+        <tr>
+            <td>{{$ships -> name}}</td>
+            <td>{{$ships -> health}}</td>
+            <td>{{$ships -> atk_damage}}</td>
+            <td>{{$ships -> speed}}</td>
+            <td>{{$ships -> atk_speed}}</td>
+            <td>{{$ships -> bullet_type}}</td>
+            <td></td>
+            <td></td>
+        </tr>
+        @endforeach
     </table>
 @endsection
