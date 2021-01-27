@@ -22,8 +22,13 @@ Route::get('/hola', function () {
     return '¡Hola!';
 });
 
+//----------Usuarios----------------//
 Route::get('/users', 'userController@index')->name('user.index');
 
 //----------Crud de naves------------//
 Route::get('/ships', 'ShipsController@index')->name('ships.index');
 Route::get('/ships/create', 'ShipsController@create')->name('ships.create');
+Route::get('/ships/store', 'ShipsController@store')->name('ships.store');
+Route::get('/ships/{id}/edit', 'ShipsController@edit')->name('ships.edit');
+Route::get('/ships/{id}', 'ShipsController@update')->name('ships.update');
+Route::delete('/ships/{id}/delete', 'ShipsController@destroy')->name('ships.destroy');

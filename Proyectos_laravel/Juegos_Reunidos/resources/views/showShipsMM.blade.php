@@ -28,8 +28,21 @@
             <td>{{$ships -> speed}}</td>
             <td>{{$ships -> atk_speed}}</td>
             <td>{{$ships -> bullet_type}}</td>
-            <td><a href="">Borrar</a></td>
-            <td><a href="">Modificar</a></td>
+
+            <td><a href="{{route('ships.edit', $ships->id)}}">Modificar</a></td>
+
+            {{-- 
+                Boton para borrar una nave
+                --}}
+            
+            <td>
+                <form action = "{{route('ships.destroy', $ships->id)}}" method="POST">
+                    @csrf
+                    @method("DELETE")
+                    <input type="submit" value="Borrar">
+                </form>
+            </td>
+            
         </tr>
         @endforeach
 

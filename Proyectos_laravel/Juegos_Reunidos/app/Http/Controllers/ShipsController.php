@@ -36,7 +36,16 @@ class ShipsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ship = new Ships();
+        $ship->name = $request->name;
+        $ship->health = $request->health;
+        $ship->image = $request->image;
+        $ship->atk_speed = $request->atk_speed;
+        $ship->atk_damage = $request->atk_damage;
+        $ship->speed = $request->speed;
+        $ship->bullet_type = $request->bullet_type;
+        $ship->save();
+        return redirect()->route('ships.index');
     }
 
     /**
@@ -58,7 +67,8 @@ class ShipsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ships = Ships::find($id);
+        return view('formShipsMM', array('ship' => $ships));
     }
 
     /**
@@ -70,7 +80,16 @@ class ShipsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ship = Ships::find($request->id);
+        $ship->name = $request->name;
+        $ship->health = $request->health;
+        $ship->image = $request->image;
+        $ship->atk_speed = $request->atk_speed;
+        $ship->atk_damage = $request->atk_damage;
+        $ship->speed = $request->speed;
+        $ship->bullet_type = $request->bullet_type;
+        $ship->save();
+        return redirect()->route('ships.index');
     }
 
     /**
@@ -81,6 +100,8 @@ class ShipsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ship = Ships::find($id);
+        $ship->delete();
+        return redirect()->route('ships.index');
     }
 }
