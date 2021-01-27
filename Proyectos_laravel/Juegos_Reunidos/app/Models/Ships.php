@@ -25,7 +25,6 @@ class Ships extends Model
         'speed',
         'health',
         'bullet_type',
-
     ];
 
 }

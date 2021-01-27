@@ -22,8 +22,6 @@ Route::get('/hola', function () {
     return '¡Hola!';
 });
 
-Route::get('prueba', function(){
-    return "Pagina de prueba";
-});
-
-Route::get('/ships', 'ShipsController@index');
+//----------Crud de naves------------//
+Route::get('/ships', 'ShipsController@index')->name('ships.index');
+Route::get('/ships/create', 'ShipsController@create')->name('ships.create');

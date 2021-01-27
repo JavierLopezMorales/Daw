@@ -16,6 +16,7 @@
             <th>Velocidad</th>
             <th>Velocidad de ataque</th>
             <th>Tipo de bala</th>
+            <th colspan="2"><a href="{{route('ships.create')}}">Crear</a></th>
         </tr>
 
         @foreach($shipsList as $ships)
@@ -27,9 +28,10 @@
             <td>{{$ships -> speed}}</td>
             <td>{{$ships -> atk_speed}}</td>
             <td>{{$ships -> bullet_type}}</td>
-            <td></td>
-            <td></td>
+            <td><a href="">Borrar</a></td>
+            <td><a href="">Modificar</a></td>
         </tr>
         @endforeach
+
     </table>
 @endsection

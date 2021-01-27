@@ -25,7 +25,7 @@ class ShipsController extends Controller
      */
     public function create()
     {
-        //
+        return view('formShipsMM');
     }
 
     /**
