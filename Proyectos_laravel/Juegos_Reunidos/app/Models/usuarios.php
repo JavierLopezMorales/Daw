@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class usuarios extends Model
 {
     use HasFactory, Notifiable;
     protected $table = 'usuarios'; // Nombre de la tabla
-        protected $primaryKey = 'id'; // Nombre de la clave primaria
+    protected $primaryKey = 'id'; // Nombre de la clave primaria
     /**
      * The attributes that are mass assignable.
      *
@@ -39,5 +41,5 @@ class usuarios extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-}
+
 }

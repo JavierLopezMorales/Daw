@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\usuarios;
+use App\Models\User;
+
 
 class UserController extends Controller
 {
     //
     public function index() {
-        $userList = usuarios::all();
+        $userList = User::all();
         return view('showUsuarios', ['userList'=>$userList]);
     }
 

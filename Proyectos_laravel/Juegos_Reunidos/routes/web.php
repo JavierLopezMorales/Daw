@@ -22,6 +22,8 @@ Route::get('/hola', function () {
     return '¡Hola!';
 });
 
+Route::get('/users', 'userController@index')->name('user.index');
+
 //----------Crud de naves------------//
 Route::get('/ships', 'ShipsController@index')->name('ships.index');
 Route::get('/ships/create', 'ShipsController@create')->name('ships.create');
