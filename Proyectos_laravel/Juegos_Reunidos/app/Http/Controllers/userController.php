@@ -25,7 +25,7 @@ class UserController extends Controller
         $usuario->email = $r->email;
         $usuario->password = $r->password;
         $usuario->save();
-        return redirect()->route('usuarios.index');
+        return redirect()->route('User.index');
     }
     public function show($id)
         {
@@ -34,7 +34,7 @@ class UserController extends Controller
 
     public function edit($id) {
         $usuarios = User::find($id);
-        return view('formusuarios', array('usuarios' => $usuarios));
+        return view('formusuarios', array('User' => $usuarios));
     }
 
     public function update(Request $r,$id) {
@@ -43,12 +43,12 @@ class UserController extends Controller
         $usuario->email = $r->email;
         $usuario->password = $r->password;
         $usuario->save();
-        return redirect()->route('usuarios.index');
+        return redirect()->route('User.index');
     }
 
     public function destroy($id) {
         $usuario = User::find($id);
         $usuario->delete();
-        return redirect()->route('usuarios.index');
+        return redirect()->route('User.index');
     }
 }
