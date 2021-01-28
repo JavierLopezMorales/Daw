@@ -23,13 +23,13 @@ Route::get('/hola', function () {
 });
 
 //----------Usuarios----------------//
-Route::get('/usuarios', 'userController@index')->name('usuarios.index');;
-Route::get('/usuario/create', 'userController@create')->name('usuarios.create');
-Route::post('/usuario/store', 'userController@store')->name('usuarios.store');
-Route::get('/usuario/{id}', 'userController@showUsuarios')->name('showUsuarios');
-Route::get('/usuario/{id}/edit', 'userController@edit')->name('usuarios.edit');
-Route::put('/usuario/{id}', 'userController@update')->name('usuarios.update');
-Route::delete('/usuario/{id}/delete', 'userController@destroy')->name('usuarios.destroy');
+Route::get('/users', 'userController@index')->name('User.index');;
+Route::get('/users/create', 'userController@create')->name('User.create');
+Route::post('/users/store', 'userController@store')->name('User.store');
+Route::get('/users/{id}', 'userController@showUsuarios')->name('showUsuarios');
+Route::get('/users/{id}/edit', 'userController@edit')->name('User.edit');
+Route::put('/users/{id}', 'userController@update')->name('User.update');
+Route::delete('/users/{id}/delete', 'userController@destroy')->name('User.destroy');
 
 //----------Crud de naves------------//
 Route::get('/ships', 'ShipsController@index')->name('ships.index');
