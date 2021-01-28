@@ -10,6 +10,8 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+    protected $table = 'usuarios'; // Nombre de la tabla
+      protected $primaryKey = 'id'; // Nombre de la clave primaria
 
     /**
      * The attributes that are mass assignable.
