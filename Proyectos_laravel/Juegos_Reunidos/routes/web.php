@@ -23,7 +23,13 @@ Route::get('/hola', function () {
 });
 
 //----------Usuarios----------------//
-Route::get('/users', 'userController@index')->name('user.index');
+Route::get('/usuarios', 'userController@index')->name('usuarios.index');;
+Route::get('/usuario/create', 'userController@create')->name('usuarios.create');
+Route::post('/usuario/store', 'userController@store')->name('usuarios.store');
+Route::get('/usuario/{id}', 'userController@showUsuarios')->name('showUsuarios');
+Route::get('/usuario/{id}/edit', 'userController@edit')->name('usuarios.edit');
+Route::put('/usuario/{id}', 'userController@update')->name('usuarios.update');
+Route::delete('/usuario/{id}/delete', 'userController@destroy')->name('usuarios.destroy');
 
 //----------Crud de naves------------//
 Route::get('/ships', 'ShipsController@index')->name('ships.index');
