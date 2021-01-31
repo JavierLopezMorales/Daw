@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShipsTable extends Migration
+class CreateEnemiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateShipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ships', function (Blueprint $table) {
+        Schema::create('enemies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('image');
             $table->integer('atk_speed');
             $table->integer('atk_damage');
-            $table->integer('speed');
+            $table->integer('route');
             $table->integer('health');
             $table->integer('bullet_type');
             $table->timestamps();
@@ -33,6 +33,6 @@ class CreateShipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ships');
+        Schema::dropIfExists('enemies');
     }
 }

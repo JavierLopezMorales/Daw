@@ -38,3 +38,11 @@ Route::get('/ships/store', 'ShipsController@store')->name('ships.store');
 Route::get('/ships/{id}/edit', 'ShipsController@edit')->name('ships.edit');
 Route::get('/ships/{id}', 'ShipsController@update')->name('ships.update');
 Route::delete('/ships/{id}/delete', 'ShipsController@destroy')->name('ships.destroy');
+
+//----------Crud de enemigos------------//
+Route::get('/enemies', 'EnemiesController@index')->name('enemies.index');
+Route::get('/enemies/create', 'EnemiesController@create')->name('enemies.create');
+Route::get('/enemies/store', 'EnemiesController@store')->name('enemies.store');
+Route::get('/enemies/{id}/edit', 'EnemiesController@edit')->name('enemies.edit');
+Route::get('/enemies/{id}', 'EnemiesController@update')->name('enemies.update');
+Route::delete('/enemies/{id}/delete', 'EnemiesController@destroy')->name('enemies.destroy');
