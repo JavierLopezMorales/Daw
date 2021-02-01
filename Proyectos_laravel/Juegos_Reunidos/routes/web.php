@@ -46,3 +46,11 @@ Route::get('/enemies/store', 'EnemiesController@store')->name('enemies.store');
 Route::get('/enemies/{id}/edit', 'EnemiesController@edit')->name('enemies.edit');
 Route::get('/enemies/{id}', 'EnemiesController@update')->name('enemies.update');
 Route::delete('/enemies/{id}/delete', 'EnemiesController@destroy')->name('enemies.destroy');
+
+//----------Crud de rankingMM------------//
+Route::get('/rankingMM', 'RankingMMController@index')->name('rankingMM.index');
+Route::get('/rankingMM/create', 'RankingMMController@create')->name('rankingMM.create');
+Route::get('/rankingMM/store', 'RankingMMController@store')->name('rankingMM.store');
+Route::get('/rankingMM/{id}/edit', 'RankingMMController@edit')->name('rankingMM.edit');
+Route::get('/rankingMM/{id}', 'RankingMMController@update')->name('rankingMM.update');
+Route::delete('/rankingMM/{id}/delete', 'RankingMMController@destroy')->name('rankingMM.destroy');
