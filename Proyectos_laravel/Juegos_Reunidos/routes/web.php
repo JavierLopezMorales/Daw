@@ -26,7 +26,7 @@ Route::get('/hola', function () {
 Route::get('/users', 'userController@index')->name('User.index');;
 Route::get('/users/create', 'userController@create')->name('User.create');
 Route::post('/users/store', 'userController@store')->name('User.store');
-Route::get('/users/{id}', 'userController@showUsuarios')->name('showUsuarios');
+Route::get('/users/{id}', 'userController@show')->name('User.show');
 Route::get('/users/{id}/edit', 'userController@edit')->name('User.edit');
 Route::put('/users/{id}', 'userController@update')->name('User.update');
 Route::delete('/users/{id}/delete', 'userController@destroy')->name('User.destroy');
