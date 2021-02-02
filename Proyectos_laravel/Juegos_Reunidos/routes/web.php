@@ -30,6 +30,15 @@ Route::get('/users/{id}', 'userController@show')->name('User.show');
 Route::get('/users/{id}/edit', 'userController@edit')->name('User.edit');
 Route::put('/users/{id}', 'userController@update')->name('User.update');
 Route::delete('/users/{id}/delete', 'userController@destroy')->name('User.destroy');
+//----------Tematicas_slide----------------//
+Route::get('/tematicas', 'Tematicas_ST@index')->name('TematicasST.index');;
+Route::get('/tematicas/create', 'Tematicas_ST@create')->name('TematicasST.create');
+Route::post('/tematicas/store', 'Tematicas_ST@store')->name('TematicasST.store');
+Route::get('/tematicas/{id}', 'Tematicas_ST@show')->name('TematicasST.show');
+Route::get('/tematicas/{id}/edit', 'Tematicas_ST@edit')->name('TematicasST.edit');
+Route::put('/tematicas/{id}', 'Tematicas_ST@update')->name('TematicasST.update');
+Route::delete('/tematicas/{id}/delete', 'Tematicas_ST@destroy')->name('TematicasST.destroy');
+
 
 //----------Crud de naves------------//
 Route::get('/ships', 'ShipsController@index')->name('ships.index');
@@ -62,3 +71,10 @@ Route::get('/mapMM/store', 'MapMMController@store')->name('mapMM.store');
 Route::get('/mapMM/{id}/edit', 'MapMMController@edit')->name('mapMM.edit');
 Route::get('/mapMM/{id}', 'MapMMController@update')->name('mapMM.update');
 Route::delete('/mapMM/{id}/delete', 'MapMMController@destroy')->name('mapMM.destroy');
+//----------Crud de rankingST------------//
+Route::get('/rankingST', 'rankingSTController@index')->name('rankingST.index');
+Route::get('/rankingST/create', 'RankingSTController@create')->name('rankingST.create');
+Route::get('/rankingST/store', 'RankingSTController@store')->name('rankingST.store');
+Route::get('/rankingST/{id}/edit', 'RankingSTController@edit')->name('rankingST.edit');
+Route::get('/rankingST/{id}', 'RankingSTController@update')->name('rankingST.update');
+Route::delete('/rankingST/{id}/delete', 'RankingSTController@destroy')->name('rankingST.destroy');
