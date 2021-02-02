@@ -54,3 +54,11 @@ Route::get('/rankingMM/store', 'RankingMMController@store')->name('rankingMM.sto
 Route::get('/rankingMM/{id}/edit', 'RankingMMController@edit')->name('rankingMM.edit');
 Route::get('/rankingMM/{id}', 'RankingMMController@update')->name('rankingMM.update');
 Route::delete('/rankingMM/{id}/delete', 'RankingMMController@destroy')->name('rankingMM.destroy');
+
+//----------Crud de rankingMM------------//
+Route::get('/mapMM', 'MapMMController@index')->name('mapMM.index');
+Route::get('/mapMM/create', 'MapMMController@create')->name('mapMM.create');
+Route::get('/mapMM/store', 'MapMMController@store')->name('mapMM.store');
+Route::get('/mapMM/{id}/edit', 'MapMMController@edit')->name('mapMM.edit');
+Route::get('/mapMM/{id}', 'MapMMController@update')->name('mapMM.update');
+Route::delete('/mapMM/{id}/delete', 'MapMMController@destroy')->name('mapMM.destroy');

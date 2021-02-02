@@ -2,13 +2,6 @@
 
 @section('Titulo', 'Tabla de Ranking Matamarcianos')
 
-@section('sidebar')
-    <h1>Juegos Reunidos - MataMarcianos</h1>
-    <a href="{{route('ships.index')}}">Naves</a>
-    <a href="{{route('enemies.index')}}">Enemigos</a>
-    <a href="{{route('rankingMM.index')}}">Ranking</a>
-@endsection
-
 @section('content')
     <table border="1px solid black">
 

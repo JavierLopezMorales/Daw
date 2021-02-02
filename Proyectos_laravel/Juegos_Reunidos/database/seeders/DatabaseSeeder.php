@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ShipsTableSeeder::class);
         $this->call(EnemiesTableSeeder::class);
         $this->call(RankingMMTableSeeder::class);
+        $this->call(MapMMTableSeeder::class);
     }
 }
