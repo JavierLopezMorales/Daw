@@ -13,8 +13,8 @@
     @endisset
         @csrf
         Nombre:<input type="text" name="name" value="{{$ranking->name ?? '' }}"><br>
-        Puntuacion:<input type="number" name="score" value="{{$ranking->score ?? '' }}"><br>
         Nivel:<input type="number" name="level" value="{{$ranking->level ?? '' }}"><br>
+        Puntuacion:<input type="number" name="score" value="{{$ranking->score ?? '' }}"><br>
         <input type="submit">
         </form>
 

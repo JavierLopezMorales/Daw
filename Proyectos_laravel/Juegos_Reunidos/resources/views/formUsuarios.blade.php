@@ -2,10 +2,6 @@
 
 @section('Titulo', 'Creación de Usuarios')
 
-@section('sidebar')
-    <h1>Juegos Reunidos - Creacion de Usuarios</h1>
-@endsection
-
 @section('content')
 
     @isset($usuario)

@@ -7,8 +7,8 @@
 
         <tr>
             <th>Nombre</th>
-            <th>Puntuacion</th>
             <th>Nivel</th>
+            <th>Puntuación</th>
             <th colspan="2"><a href="{{route('rankingMM.create')}}">Crear</a></th>
         </tr>
 

@@ -2,7 +2,6 @@
 
 @section('Titulo', 'Tabla de Enemigos')
 
-
 @section('content')
     <table border="1px solid black">
 

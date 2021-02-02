@@ -2,10 +2,6 @@
 
 @section('Titulo', 'Creación de Naves')
 
-@section('sidebar')
-    <h1>Juegos Reunidos - MataMarcianos</h1>
-@endsection
-
 @section('content')
 
     @isset($ship)
