@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TematicasST; // Necesario indicar la ubicacion de el modelo, si no no lo encuentra
 
 class Tematicas_STController extends Controller
 {

@@ -13,7 +13,7 @@
         {{-- @method("PUT") --}}
 
     @else
-        <form action="{{ route('tematica.store') }}" method="GET">
+        <form action="{{ route('TematicasST.store') }}" method="GET">
     @endisset
         @csrf
         Tipo de tematica:<input type="text" name="type" value="{{$tematica->type ?? '' }}"><br>

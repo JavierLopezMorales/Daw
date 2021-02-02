@@ -31,13 +31,13 @@ Route::get('/users/{id}/edit', 'userController@edit')->name('User.edit');
 Route::put('/users/{id}', 'userController@update')->name('User.update');
 Route::delete('/users/{id}/delete', 'userController@destroy')->name('User.destroy');
 //----------Tematicas_slide----------------//
-Route::get('/tematicas', 'Tematicas_ST@index')->name('TematicasST.index');;
-Route::get('/tematicas/create', 'Tematicas_ST@create')->name('TematicasST.create');
-Route::post('/tematicas/store', 'Tematicas_ST@store')->name('TematicasST.store');
-Route::get('/tematicas/{id}', 'Tematicas_ST@show')->name('TematicasST.show');
-Route::get('/tematicas/{id}/edit', 'Tematicas_ST@edit')->name('TematicasST.edit');
-Route::put('/tematicas/{id}', 'Tematicas_ST@update')->name('TematicasST.update');
-Route::delete('/tematicas/{id}/delete', 'Tematicas_ST@destroy')->name('TematicasST.destroy');
+Route::get('/tematicas', 'Tematicas_STController@index')->name('TematicasST.index');;
+Route::get('/tematicas/create', 'Tematicas_STController@create')->name('TematicasST.create');
+Route::post('/tematicas/store', 'Tematicas_STController@store')->name('TematicasST.store');
+Route::get('/tematicas/{id}', 'Tematicas_STController@show')->name('TematicasST.show');
+Route::get('/tematicas/{id}/edit', 'Tematicas_STController@edit')->name('TematicasST.edit');
+Route::put('/tematicas/{id}', 'Tematicas_STController@update')->name('TematicasST.update');
+Route::delete('/tematicas/{id}/delete', 'Tematicas_STController@destroy')->name('TematicasST.destroy');
 
 
 //----------Crud de naves------------//
