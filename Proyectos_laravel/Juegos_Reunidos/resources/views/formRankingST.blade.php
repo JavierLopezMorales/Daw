@@ -9,14 +9,14 @@
 @section('content')
 
     @isset($ranking)
-        <form action="{{ route('rankingST.update', ['id' => $ranking->id]) }}" method="GET">
-        {{-- @method("PUT") --}}
+        <form action="{{ route('RankingST.update', ['id' => $ranking->id]) }}" method="POST">
+    @method("PUT")
 
     @else
-        <form action="{{ route('rankingST.store') }}" method="GET">
+        <form action="{{ route('RankingST.store') }}" method="POST">
     @endisset
         @csrf
-        Score:<input type="numer" name="score" value="{{$ranking->score ?? '' }}"><br>
+        Score:<input type="number" name="score" value="{{$ranking->score ?? '' }}"><br>
         Date:<input type="date" name="date" value="{{$ranking->date ?? '' }}"><br>
         Mode:<input type="number" name="mode" value="{{$ranking->mode ?? '' }}"><br>
         <input type="submit">

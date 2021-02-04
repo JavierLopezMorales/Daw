@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class RankingSTSeeder extends Seeder
 {
@@ -16,14 +17,14 @@ class RankingSTSeeder extends Seeder
       DB::table('ranking_slide')->insert([
           'id' => '1',
           'score' => '1000',
-          'date' => '02/02/2021',
+          'date' => '2021/01/23',
           'mode' => '1',
       ]);
 
       DB::table('ranking_slide')->insert([
           'id' => '2',
           'score' => '800',
-          'date' => '01/02/2021',
+          'date' => '2021/01/22',
           'mode' => '2',
       ]);
 

@@ -5,7 +5,7 @@
 @section('sidebar')
     <h1>Juegos Reunidos - Sliding Tiles</h1>
     <a href="{{route('TematicasST.index')}}">Tematicas</a>
-    <a href="{{route('rankingST.index')}}">Ranking</a>
+    <a href="{{route('RankingST.index')}}">Ranking</a>
 @endsection
 
 @section('content')

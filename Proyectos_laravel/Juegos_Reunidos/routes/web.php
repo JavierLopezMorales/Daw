@@ -72,9 +72,9 @@ Route::get('/mapMM/{id}/edit', 'MapMMController@edit')->name('mapMM.edit');
 Route::get('/mapMM/{id}', 'MapMMController@update')->name('mapMM.update');
 Route::delete('/mapMM/{id}/delete', 'MapMMController@destroy')->name('mapMM.destroy');
 //----------Crud de rankingST------------//
-Route::get('/rankingST', 'rankingSTController@index')->name('rankingST.index');
-Route::get('/rankingST/create', 'RankingSTController@create')->name('rankingST.create');
-Route::get('/rankingST/store', 'RankingSTController@store')->name('rankingST.store');
-Route::get('/rankingST/{id}/edit', 'RankingSTController@edit')->name('rankingST.edit');
-Route::get('/rankingST/{id}', 'RankingSTController@update')->name('rankingST.update');
-Route::delete('/rankingST/{id}/delete', 'RankingSTController@destroy')->name('rankingST.destroy');
+Route::get('/rankingST', 'rankingSTController@index')->name('RankingST.index');
+Route::get('/rankingST/create', 'rankingSTController@create')->name('RankingST.create');
+Route::post('/rankingST/store', 'rankingSTController@store')->name('RankingST.store');
+Route::get('/rankingST/{id}/edit', 'rankingSTController@edit')->name('RankingST.edit');
+Route::put('/rankingST/{id}', 'rankingSTController@update')->name('RankingST.update');
+Route::delete('/rankingST/{id}/delete', 'rankingSTController@destroy')->name('RankingST.destroy');

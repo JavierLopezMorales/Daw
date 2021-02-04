@@ -5,7 +5,7 @@
 @section('sidebar')
     <h1>Juegos Reunidos - Sliding Tiles</h1>
     <a href="{{route('TematicasST.index')}}">Tematicas</a>
-    <a href="{{route('RankingSt.index')}}">Ranking</a>
+    <a href="{{route('RankingST.index')}}">Ranking</a>
 
 @endsection
 
@@ -16,7 +16,7 @@
             <th>Fecha</th>
             <th>Puntuacion</th>
             <th>Modo</th>
-            <th colspan="2"><a href="{{route('rankingST.create')}}">Crear</a></th>
+            <th colspan="2"><a href="{{route('RankingST.create')}}">Crear</a></th>
         </tr>
 
         @foreach($rankingList as $ranking)
@@ -26,12 +26,12 @@
             <td>{{$ranking -> score}}</td>
             <td>{{$ranking -> mode}}</td>
 
-            <td><a href="{{route('rankingST.edit', $ranking->id)}}">Modificar</a></td>
+            <td><a href="{{route('RankingST.edit', $ranking->id)}}">Modificar</a></td>
 
 
 
             <td>
-                <form action = "{{route('rankingST.destroy', $ranking->id)}}" method="POST">
+                <form action = "{{route('RankingST.destroy', $ranking->id)}}" method="POST">
                     @csrf
                     @method("DELETE")
                     <input type="submit" value="Borrar">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\TematicasST; // Necesario indicar la ubicacion de el modelo, si no no lo encuentra
+use App\Models\TematicasST;
 
 class Tematicas_STController extends Controller
 {
@@ -35,7 +35,7 @@ class Tematicas_STController extends Controller
 
    public function edit($id) {
        $tematicas = TematicasST::find($id);
-       return view('formTematicasST', array('Tematica' => $tematicas));
+       return view('formTematicasST', array('tematica' => $tematicas));
    }
 
    public function update(Request $r,$id) {
