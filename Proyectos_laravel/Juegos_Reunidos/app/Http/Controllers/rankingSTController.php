@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RankingST;
 
-class RankingST extends Controller
+class rankingSTController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -40,7 +41,7 @@ class RankingST extends Controller
       $ranking->date = $request->date;
       $ranking->mode = $request->mode;
       $ranking->save();
-      return redirect()->route('rankingST.index');
+      return redirect()->route('RankingST.index');
   }
 
   /**
@@ -80,7 +81,7 @@ class RankingST extends Controller
       $ranking->date = $request->date;
       $ranking->mode = $request->mode;
       $ranking->save();
-      return redirect()->route('rankingST.index');
+      return redirect()->route('RankingST.index');
   }
 
   /**
@@ -93,8 +94,6 @@ class RankingST extends Controller
   {
       $ranking = RankingST::find($id);
       $ranking->delete();
-      return redirect()->route('rankingST.index');
+      return redirect()->route('RankingST.index');
   }
-}
-
 }
