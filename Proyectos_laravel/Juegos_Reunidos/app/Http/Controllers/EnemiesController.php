@@ -15,7 +15,7 @@ class EnemiesController extends Controller
     public function index()
     {
         $enemiesList = Enemies::all();
-        return view('showEnemiesMM', ['enemiesList' => $enemiesList]);
+        return view('MM/enemies/showEnemiesMM', ['enemiesList' => $enemiesList]);
     }
 
     /**
@@ -68,7 +68,7 @@ class EnemiesController extends Controller
     public function edit($id)
     {
         $enemies = Enemies::find($id);
-        return view('formEnemiesMM', array('enemy' => $enemies));
+        return view('MM/enemies/formEnemiesMM', array('enemy' => $enemies));
     }
 
     /**

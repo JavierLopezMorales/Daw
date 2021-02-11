@@ -15,7 +15,7 @@ class MapMMController extends Controller
     public function index()
     {
         $mapMMList = MapMM::all();
-        return view('showMapMM', ['mapMMList' => $mapMMList]);
+        return view('MM/map/showMapMM', ['mapMMList' => $mapMMList]);
     }
 
     /**
@@ -63,7 +63,7 @@ class MapMMController extends Controller
     public function edit($id)
     {
         $mapMM = MapMM::find($id);
-        return view('formMapMM', array('mapMM' => $mapMM));
+        return view('MM/map/formMapMM', array('mapMM' => $mapMM));
     }
 
     /**

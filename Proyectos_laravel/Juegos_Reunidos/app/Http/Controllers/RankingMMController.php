@@ -15,7 +15,7 @@ class RankingMMController extends Controller
     public function index()
     {
         $rankingList = RankingMM::all();
-        return view('showRankingMM', ['rankingList' => $rankingList]);
+        return view('MM/ranking/showRankingMM', ['rankingList' => $rankingList]);
     }
 
     /**
@@ -64,7 +64,7 @@ class RankingMMController extends Controller
     public function edit($id)
     {
         $ranking = RankingMM::find($id);
-        return view('formRankingMM', array('ranking' => $ranking));
+        return view('MM/ranking/formRankingMM', array('ranking' => $ranking));
     }
 
     /**

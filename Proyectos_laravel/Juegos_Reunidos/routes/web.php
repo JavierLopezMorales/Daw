@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hola', function () {
-    return '¡Hola!';
-});
+Route::get('/juegoMM', 'shipsController@show');
 
 //----------Usuarios----------------//
 Route::get('/users', 'userController@index')->name('User.index');;

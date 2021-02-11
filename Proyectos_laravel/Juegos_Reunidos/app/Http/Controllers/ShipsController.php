@@ -15,7 +15,7 @@ class ShipsController extends Controller
     public function index()
     {
         $shipsList = Ships::all();
-        return view('showShipsMM', ['shipsList' => $shipsList]);
+        return view('MM/ships/showShipsMM', ['shipsList' => $shipsList]);
     }
 
     /**
@@ -54,9 +54,9 @@ class ShipsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('MM/game');
     }
 
     /**
@@ -68,7 +68,7 @@ class ShipsController extends Controller
     public function edit($id)
     {
         $ships = Ships::find($id);
-        return view('formShipsMM', array('ship' => $ships));
+        return view('MM/ships/formShipsMM', array('ship' => $ships));
     }
 
     /**

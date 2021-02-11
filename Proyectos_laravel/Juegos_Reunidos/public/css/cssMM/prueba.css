@@ -1,0 +1,52 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav {
+	display: none;
+}
+
+.game-nav {
+	height: 10vh;
+	width: 100vw;
+	background-color: rgb(82, 82, 82);
+	border-bottom: 2px solid white;
+	display: flex;
+	flex-direction: row;
+	font-size: 3em;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.game-info {
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+	height: 100%;
+	justify-content: space-around;
+	align-items: center;
+	color: rgb(255, 255, 255);
+}
+
+.game-title {
+	color: rgb(255, 255, 255);
+	margin-left: 5%;
+}
+
+.main-container {
+	background-color: black;
+	width: 100vw;
+	height: 90vh;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+}
