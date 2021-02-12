@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/juegoMM', 'shipsController@show');
 
+Route::get('/menu', [MenuSGController::class, 'index'])->name('menu');
+
 //----------Usuarios----------------//
 Route::get('/users', 'userController@index')->name('User.index');;
 Route::get('/users/create', 'userController@create')->name('User.create');
@@ -36,6 +38,14 @@ Route::get('/tematicas/{id}', 'Tematicas_STController@show')->name('TematicasST.
 Route::get('/tematicas/{id}/edit', 'Tematicas_STController@edit')->name('TematicasST.edit');
 Route::put('/tematicas/{id}', 'Tematicas_STController@update')->name('TematicasST.update');
 Route::delete('/tematicas/{id}/delete', 'Tematicas_STController@destroy')->name('TematicasST.destroy');
+//----------Tematicas_snake----------------//
+Route::get('/tematicasSG', 'TematicasSGController@index')->name('TematicasSG.index');;
+Route::get('/tematicasSG/create', 'TematicasSGController@create')->name('TematicasSG.create');
+Route::post('/tematicasSG/store', 'TematicasSGController@store')->name('TematicasSG.store');
+Route::get('/tematicasSG/{id}', 'TematicasSGController@show')->name('TematicasSG.show');
+Route::get('/tematicasSG/{id}/edit', 'TematicasSGController@edit')->name('TematicasSG.edit');
+Route::put('/tematicasSG/{id}', 'TematicasSGController@update')->name('TematicasSG.update');
+Route::delete('/tematicasSG/{id}/delete', 'TematicasSGController@destroy')->name('TematicasSG.destroy');
 
 
 //----------Crud de naves------------//
@@ -76,3 +86,10 @@ Route::post('/rankingST/store', 'rankingSTController@store')->name('RankingST.st
 Route::get('/rankingST/{id}/edit', 'rankingSTController@edit')->name('RankingST.edit');
 Route::put('/rankingST/{id}', 'rankingSTController@update')->name('RankingST.update');
 Route::delete('/rankingST/{id}/delete', 'rankingSTController@destroy')->name('RankingST.destroy');
+//----------Crud de rankingSG------------//
+Route::get('/rankingSG', 'rankingSGController@index')->name('RankingSG.index');
+Route::get('/rankingSG/create', 'rankingSGController@create')->name('RankingSG.create');
+Route::post('/rankingSG/store', 'rankingSGController@store')->name('RankingSG.store');
+Route::get('/rankingSG/{id}/edit', 'rankingSGController@edit')->name('RankingSG.edit');
+Route::put('/rankingSG/{id}', 'rankingSGController@update')->name('RankingSG.update');
+Route::delete('/rankingSG/{id}/delete', 'rankingSGController@destroy')->name('RankingSG.destroy');
