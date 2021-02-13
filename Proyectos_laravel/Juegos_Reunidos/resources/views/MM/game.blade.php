@@ -22,6 +22,6 @@
 
     </div>
     <div class="main-container">
-        <img src="{{asset('app/pruebas-imagenes/estrellas-prueba.png')}}" alt="">
+        <div class='image'></div>
     </div>
 @endsection
