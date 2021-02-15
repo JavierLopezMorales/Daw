@@ -30,21 +30,25 @@ const snakeboard_ctx = snakeboard.getContext("2d");
 //main();
 
 gen_food();
-
+clear_board();
 document.addEventListener("keydown", change_direction);
     
 // función main llamada repetidamente para mantener el juego en marcha
 function main() {
-    if (has_game_ended()) return;
-        changing_direction = false;
-        setTimeout(function onTick() {
-            clear_board();
-            drawFood();
-            move_snake();
-            drawSnake();
-            // Repetir
-            main();
-        }, 100)
+    if (has_game_ended()){
+        var mensaje = alert("Fin del juego\nHas conseguido " + score + " puntos");
+        location.reload();
+        return mensaje;
+    } 
+    changing_direction = false;
+    setTimeout(function onTick() {
+        clear_board();
+        drawFood();
+        move_snake();
+        drawSnake();
+        // Repetir
+        main();
+    }, 100)
 }
     
 // dibujar un borde alrededor del canvas
