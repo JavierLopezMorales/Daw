@@ -1,5 +1,6 @@
 @extends('layouts.masterMM')
 <link rel="stylesheet" href="{{ asset('css/cssMM/prueba.css') }}" />
+<script src="{{ asset('js/jsMM/prueba-movimiento.js') }}"></script>
 
 @section('Titulo', 'MataMarcianos')
 
@@ -22,6 +23,8 @@
 
     </div>
     <div class="main-container">
+        <div id="player"></div>
         <div class='image'></div>
+        
     </div>
 @endsection
