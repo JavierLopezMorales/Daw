@@ -1,24 +1,25 @@
 window.addEventListener('load', function(){
     var player = document.getElementById('player');
-    var speed = 10;
-    var keyCodes = { left: 'A', up: 38, right: 39, down: 40 };
+    player.style.top = 	300;
+	player.style.left = 300;
+    var speed = 3;
+    var keyCodes = { left: 'ArrowLeft', up: 'ArrowUp', right: 'ArrowRight', down: 'ArrowDown' };
     var key = [];
 
-    window.addEventListener('keydown', function(evt){
-        player.style.backgroundColor = 'red';
-        key[evt.key] = true;
+    window.addEventListener('keydown', function(e){
+        key[e.key] = true;
     });
 
-    window.addEventListener('keyup', function(evt){
-        key[evt.key] = false;
+    window.addEventListener('keyup', function(e){
+        key[e.key] = false;
     });
 
     setInterval(function(){
 
 
         //position of the div
-        var x = parseInt(player.style.left),
-            y = parseInt(player.style.top);
+        var x = parseInt(player.style.left);
+        var y = parseInt(player.style.top);
         
         // update position
         // left/right
