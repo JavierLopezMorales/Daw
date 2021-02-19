@@ -26,7 +26,7 @@ body {
 	border-bottom: 0.1vh solid white;
 	display: flex;
 	flex-direction: row;
-	font-size: 8vh;
+	font-size: 7vh;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -76,8 +76,8 @@ body {
 	width: 10vh;
 	height: 10vh;
 	background-color: yellow;
-	left: 30%;
-	top: 30%;
+	left: 0vw;
+	top: 0vw;
 	position: absolute;
 	z-index: 100;
 }
@@ -85,7 +85,7 @@ body {
 .info {
 	color: white;
 	position: absolute;
-	top:10%;
-	left:0%;
+	top: 10%;
+	left: 0%;
 	z-index: 110;
 }
