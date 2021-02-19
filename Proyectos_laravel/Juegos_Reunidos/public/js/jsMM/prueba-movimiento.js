@@ -1,43 +1,47 @@
-window.addEventListener('load', function(){
-    var player = document.getElementById('player');
-    player.style.top = 	300;
-	player.style.left = 300;
-    var speed = 3;
-    var keyCodes = { left: 'ArrowLeft', up: 'ArrowUp', right: 'ArrowRight', down: 'ArrowDown' };
-    var key = [];
+var speed;
 
-    window.addEventListener('keydown', function(e){
-        key[e.key] = true;
-    });
-
-    window.addEventListener('keyup', function(e){
-        key[e.key] = false;
-    });
-
-    setInterval(function(){
-
-
-        //position of the div
-        var x = parseInt(player.style.left);
-        var y = parseInt(player.style.top);
-        
-        // update position
-        // left/right
-        if (key[keyCodes.left]) {
-            x -= speed;
-        } else if (key[keyCodes.right]) {
-            x += speed;
+    function calcSpeed(){
+        if(kd.LEFT.isDown() == true && kd.UP.isDown() == true || kd.LEFT.isDown() == true && kd.DOWN.isDown() == true || kd.UP.isDown() == true && kd.RIGHT.isDown() == true || kd.RIGHT.isDown() == true && kd.DOWN.isDown() == true){
+            speed = 8;
         }
-        // up/down
-        if (key[keyCodes.up]) {
-            y -= speed;
-        } else if (key[keyCodes.down]) {
-            y += speed;
+        else{
+            speed = 10;
         }
-        
-        // set div position
-        player.style.left = x + 'px';
-        player.style.top = y + 'px';
-        
-    }, 1/30);
-});
+    }
+
+    kd.LEFT.down(function () {
+        calcSpeed();
+        var x = parseFloat($('#player').css('left'));
+        x -= speed;
+        $('#player').css('left', x + 'px');
+
+   });
+
+   kd.UP.down(function () {
+    calcSpeed();
+        var x = parseFloat($('#player').css('top'));
+        x -= speed;
+        $('#player').css('top', x + 'px');
+
+   });
+
+   kd.RIGHT.down(function () {
+    calcSpeed();
+        var x = parseFloat($('#player').css('left'));
+        x += speed;
+        $('#player').css('left', x + 'px');
+
+   });
+
+   kd.DOWN.down(function () {
+    calcSpeed();
+        var x = parseFloat($('#player').css('top'));
+        x += speed;
+        $('#player').css('top', x + 'px');
+
+   });
+
+   // This update loop is the heartbeat of Keydrown
+   kd.run(function () {
+     kd.tick();
+   });

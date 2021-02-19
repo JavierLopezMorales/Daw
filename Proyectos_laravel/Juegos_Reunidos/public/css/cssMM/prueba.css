@@ -71,12 +71,16 @@ body {
 		transform: translate3d(-300vw, 0, 0);
 	}
 }
-
 #player {
 	width: 100px;
 	height: 100px;
 	background-color: yellow;
-	
+	left: 300px;
+	top: 300px;
 	position: absolute;
 	z-index: 100;
+}
+
+.info {
+	color: white;
 }
