@@ -1,4 +1,6 @@
 @extends('layouts.masterMM')
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="{{ asset('css/cssMM/prueba.css') }}" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ asset('js/libraries/Keydown.js') }}"></script>
@@ -12,7 +14,7 @@
     <div class="game-nav">
 
         <div class="game-title">
-            Shoot'em up
+            SHOOT'EM UP!
         </div>
 
         <div class="game-info">
@@ -29,6 +31,7 @@
         <div class="info">
             <div class="info-top"></div>
             <div class="info-left"></div>
+            <div class="bullet-count">NUMERO DE BALAS: 0</div>
         </div>
         <div id="player"></div>
         <div class='image'></div>
