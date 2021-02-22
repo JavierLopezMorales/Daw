@@ -98,8 +98,9 @@ body {
 
 .bullet {
 	width: 1vw;
-	height: 0.7vw;
-	background-color: darkorchid;
+	height: 1vw;
+	border-radius: 50%;
+	background-color: rgb(255, 225, 0);
 	position: absolute;
 	z-index: 110;
 }
