@@ -100,10 +100,6 @@ body {
 	width: 1vw;
 	height: 0.7vw;
 	background-color: darkorchid;
-	/*
-	left: 100%;
-	top: calc(50% - 1vw/2);
-	*/
 	position: absolute;
 	z-index: 110;
 }

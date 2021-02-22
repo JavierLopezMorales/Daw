@@ -1,16 +1,25 @@
 $(document).ready(function(){
 
     var speed;
-    var posX;
-    var posY;
+    var posX = 0;
+    var posY = 0;
 
     // Calcula las coordenadas del player
     function coordinates(){
-        posX = (100 * parseFloat($('#player').css('left')) / (parseFloat($('.main-container').css('width')) - parseFloat($('#player').css('width'))));
-        posY = (100 * parseFloat($('#player').css('top')) / (parseFloat($('.main-container').css('height')) - parseFloat($('#player').css('height'))));
-        $('.info-left').html(posX);
-        $('.info-top').html(posY);
+//        posX = (100 * (parseFloat($('#player').css('left')) / (parseFloat($('.main-container').css('width')) - parseFloat($('#player').css('width')))));
+//        posY = 20;
+        
+
+        $('.info-top').html( posY + " - "+ speed );
+        $('.info-left').html(posY);
+
+
+
+
     }
+
+    var rSize;
+    var dSize;
 
     // Velocidad a la que el player se mueve, es mas despacio si se mueve en diagonal
     function calcSpeed(){
@@ -22,14 +31,12 @@ $(document).ready(function(){
         }
     }
 
-    coordinates();
-    var positionX = posX; 
-    var positionY = posY;
+    //coordinates();
 
     // Mueve el player dependiendo que tecla pulsas
     //IZQ
     kd.LEFT.down(function () { 
-        coordinates();
+
         calcSpeed();
         if(posX <= 0){
             positionX = 0;
@@ -43,10 +50,10 @@ $(document).ready(function(){
     });
     //DER
     kd.RIGHT.down(function () {
-        coordinates();
+
         calcSpeed();
-        if(posX >= 100){
-            positionX = 100 - (parseFloat($('#player').css('width'))/parseFloat($('.main-container').css('width'))) * 100;
+        if(positionX >= rSize){
+            positionX = rSize;
 
         }
         else{
@@ -57,39 +64,37 @@ $(document).ready(function(){
         $('#player').css('left', positionX + 'vw');
     });
     //ARR
-    kd.UP.down(function () {
-        coordinates();   
+    kd.UP.down(function () { 
         calcSpeed();
         if(posY <= 0){
-            positionY = 0;
+            posY = 0;
 
         }
         else{
-
-            positionY = positionY - speed;
+            console.log("ANTES posY = " + posY);
+            posY = posY - speed;
+            console.log("DESPUES posY = " + posY);
         }
 
-        $('#player').css('top', positionY + 'vw');
+        $('#player').css('top', posY + 'vh');
     });
 //ABJ
-    kd.DOWN.down(function () {
-        coordinates();   
+    kd.DOWN.down(function () { 
         calcSpeed();
-        if(posY >= 100){
-            posY = 100 - (parseFloat($('#player').css('height'))/parseFloat($('.main-container').css('height'))) * 100;
-            $('#player').css('top', posY + '%');
+        if(posY >= dSize){
+            posY = dSize;
+            $('#player').css('top', posY + 'vh');
         }
         else{
-
-            positionY = positionY + speed;
-            $('#player').css('top', positionY + 'vw');
+            posY = posY + speed;
+            $('#player').css('top', posY + 'vh');
         }
-
+        
         
     });
 
    // DISPARO
-    kd.S.down(function () {
+    kd.A.down(function () {
         // Al disparar se crea un div que avanza hasta el final de la pantalla
         if(shoot == true){
             $('.main-container').append('<div class="bullet"></div>');
@@ -118,6 +123,7 @@ $(document).ready(function(){
         $('#' + counterBullet).css('top' , bulletY + '%');
     }
 
+    // Incrementar la posicion de la bala
     function moveBullet(){
         $('.bullet').css('left', '+=1vw');
 
@@ -131,17 +137,19 @@ $(document).ready(function(){
 
 
 
-
-
-
 var shoot = true;
 var shootTimer = 30;
 
    // This update loop is the heartbeat of Keydrown
     kd.run(function () {
         kd.tick();
-        moveBullet();
 
+        moveBullet();
+        coordinates();
+
+        rSize = 100 - (parseFloat($('#player').css('width'))/parseFloat($('.main-container').css('width'))) * 100;
+        dSize = (parseFloat($('.main-container').css('height'))/parseFloat($(window).height())*100) - (parseFloat($('#player').css('height'))/parseFloat($(window).height())) * 100;
+        
         if(shootTimer < 30){
             shootTimer++;
             shoot = false;
