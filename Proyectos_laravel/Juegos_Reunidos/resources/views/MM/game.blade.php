@@ -32,6 +32,7 @@
             <div class="info-top"></div>
             <div class="info-left"></div>
             <div class="bullet-count">NUMERO DE BALAS: 0</div>
+            <div class="shoot-counter"></div>
         </div>
         <div id="player"></div>
         <div class='image'></div>

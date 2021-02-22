@@ -88,23 +88,24 @@ $(document).ready(function(){
         
     });
 
-    var bulletPos;
    // DISPARO
-    kd.S.press(function () {
-        $('#player').css('background-color', 'red');
-
+    kd.S.down(function () {
         // Al disparar se crea un div que avanza hasta el final de la pantalla
-        $('.main-container').append('<div class="bullet"></div>');
-        bulletMovement();
-        $('.bullet-count').html('NUMERO DE BALAS: ' + $('.bullet').length);
+        if(shoot == true){
+            $('.main-container').append('<div class="bullet"></div>');
+            bulletMovement();
+            shootTimer = 0;
+            $('.bullet-count').html('NUMERO DE BALAS: ' + $('.bullet').length);
+        }
     });
+
     var bulletX;
     var bulletY;
     var counterBullet = 0;
+
     function bulletMovement(){
         //Se crea la bala
         counterBullet++;
-
         $('.bullet').last().attr('id',  counterBullet);
 
         // La mitad de la altura de la bala, para poder centrarlo en la nave
@@ -115,36 +116,39 @@ $(document).ready(function(){
         bulletY = (100 * parseFloat($('#player').css('top')) / (parseFloat($('.main-container').css('height')))) + (((parseFloat($('#player').css('height'))/2)/(parseFloat($('.main-container').css('height'))) * 100)-bulletHeight);
         $('#' + counterBullet).css('left' , bulletX + 'vw');
         $('#' + counterBullet).css('top' , bulletY + '%');
-
-        // LLAMAR A LA FUNCION PARA MOVER LAS BALAS
-        moveBullet(counterBullet);
     }
 
-    function moveBullet(idBullet){
-        var pos = (100 * parseFloat($('#' + idBullet).css('left')) / (parseFloat($('.main-container').css('width'))));
-        if(pos < 100){
-            pos += 1;
-            $('#' + idBullet).css('left', pos + 'vw');
-        } else{
-            $('#' + idBullet).last().remove();
-            $('.bullet-count').html('NUMERO DE BALAS: ' + $('.bullet').length);
+    function moveBullet(){
+        $('.bullet').css('left', '+=1vw');
+
+        if(parseFloat($('.bullet').css('left')) > parseFloat($('.main-container').css('width'))){
+            $('.bullet').first().remove();
         }
+
+        $('.bullet-count').html('NUMERO DE BALAS: ' + $('.bullet').length);
+
     }
 
-    kd.S.up(function(){
-        $('#player').css('background-color', 'unset');
-    });
 
-    /**
-     * CREAR FUNCION PARA QUE LAS BALAS SE MUEVAN AUTOMATICAMENTE JUSTO DESPUES DE CREARLAS
-     */
 
+
+
+
+var shoot = true;
+var shootTimer = 30;
 
    // This update loop is the heartbeat of Keydrown
     kd.run(function () {
-     kd.tick();
+        kd.tick();
+        moveBullet();
 
-     bulletMovement();
+        if(shootTimer < 30){
+            shootTimer++;
+            shoot = false;
+        }else{
+            shoot = true;
+        }
+        $('.shoot-counter').html('CONTADOR DISPARO: ' + shootTimer);
     });
 
 });
