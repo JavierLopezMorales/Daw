@@ -1,5 +1,4 @@
 
-
     var posX = 0;
     var posY = 0;
     var rSize;

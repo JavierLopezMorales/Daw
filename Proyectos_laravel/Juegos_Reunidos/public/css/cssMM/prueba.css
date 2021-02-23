@@ -1,4 +1,6 @@
-* {
+*,
+::before,
+::after {
 	box-sizing: border-box;
 }
 
@@ -96,6 +98,16 @@ body {
 	z-index: 100;
 }
 
+#player::before {
+	width: 30%;
+	height: 100%;
+	border: 0.2vw solid white;
+	position: absolute;
+	left: -30%;
+	background-color: rgba(255, 24, 24, 0.693);
+	content: '';
+}
+
 .bullet {
 	width: 1vw;
 	height: 1vw;
@@ -103,4 +115,24 @@ body {
 	background-color: rgb(255, 225, 0);
 	position: absolute;
 	z-index: 110;
+	animation: bomb 0.2s infinite alternate;
+}
+
+@keyframes bomb {
+	from {
+		scale: 1;
+	}
+	to {
+		scale: 1.2;
+	}
+}
+
+.enemigo-prueba {
+	height: 10vh;
+	width: 10vh;
+	border: 0.2vw solid red;
+	position: absolute;
+	z-index: 110;
+	left: 75%;
+	top: 35%;
 }

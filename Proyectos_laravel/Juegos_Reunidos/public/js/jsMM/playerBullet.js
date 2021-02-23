@@ -34,7 +34,7 @@
 
     // Incrementar la posicion de la bala
     function moveBullet(){
-        $('.bullet').css('left', '+=1vw');
+        $('.bullet').css('left', '+=0.5vw');
 
         if(parseFloat($('.bullet').css('left')) > parseFloat($('.main-container').css('width'))){
             $('.bullet').first().remove();
@@ -46,7 +46,7 @@
 
     // Velocidad de ataque seleccionable
     function atkSpeed(){
-        if(shootTimer < 30){
+        if(shootTimer < 10){
             shootTimer++;
             shoot = false;
         }else{
@@ -54,3 +54,14 @@
         }
         $('.shoot-counter').html('CONTADOR DISPARO: ' + shootTimer);
     }
+
+    $(document).ready(function(){
+        $('.bullet').draggable({ disabled: true });
+        $('.enemigo-prueba').droppable({
+            accept: '.bullet', tolerance: 'intersect', over: function(){$(this).css('background', 'red')}
+        });
+    
+    });
+
+    
+
