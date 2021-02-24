@@ -9,6 +9,10 @@
             shootTimer = 0;
             $('.bullet-count').html('NUMERO DE BALAS: ' + $('.bullet').length);
         }
+        $('#player').draggable();
+        $('.enemigo-prueba').droppable({
+            accept: '#player', tolerance: 'touch', over: function(){$(this).css('background', 'red')}
+        });
     });
 
     var bulletX;
@@ -34,7 +38,7 @@
 
     // Incrementar la posicion de la bala
     function moveBullet(){
-        $('.bullet').css('left', '+=0.5vw');
+        $('.bullet').css('left', '+=0.1vw');
 
         if(parseFloat($('.bullet').css('left')) > parseFloat($('.main-container').css('width'))){
             $('.bullet').first().remove();
@@ -55,13 +59,6 @@
         $('.shoot-counter').html('CONTADOR DISPARO: ' + shootTimer);
     }
 
-    $(document).ready(function(){
-        $('.bullet').draggable({ disabled: true });
-        $('.enemigo-prueba').droppable({
-            accept: '.bullet', tolerance: 'intersect', over: function(){$(this).css('background', 'red')}
-        });
-    
-    });
 
     
 

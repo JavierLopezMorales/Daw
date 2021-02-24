@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="{{ asset('css/cssMM/prueba.css') }}" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="{{ asset('js/libraries/Keydown.js') }}"></script>
 <script src="{{ asset('js/jsMM/index.js') }}"></script>
 <script src="{{ asset('js/jsMM/playerBullet.js') }}"></script>
