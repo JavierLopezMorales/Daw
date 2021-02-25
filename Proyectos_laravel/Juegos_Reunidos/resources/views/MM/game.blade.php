@@ -8,6 +8,7 @@
 <script src="{{ asset('js/jsMM/index.js') }}"></script>
 <script src="{{ asset('js/jsMM/playerBullet.js') }}"></script>
 <script src="{{ asset('js/jsMM/playerMovement.js') }}"></script>
+<script src="{{ asset('js/jsMM/enemy.js') }}"></script>
 
 
 
@@ -40,8 +41,6 @@
         </div>
         <div id="player"></div>
         <div class='image'></div>
-
-        <div class="enemigo-prueba"></div>
         
     </div>
 

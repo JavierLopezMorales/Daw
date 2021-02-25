@@ -10,6 +10,7 @@
         $('.info-left').html(posX);
     }
 
+    // Calcula el tamaño de la pantalla
     function size() {
         rSize = ((parseFloat($(window).width())/parseFloat($(window).height())) * 100) - (parseFloat($('#player').css('width'))/parseFloat($(window).height())) * 100;
         dSize = (parseFloat($('.main-container').css('height'))/parseFloat($(window).height())*100) - (parseFloat($('#player').css('height'))/parseFloat($(window).height())) * 100;
@@ -21,10 +22,17 @@
 
         coordinates();
         size();
+
+        // velocidad de disparo y spawn de enemigos
         atkSpeed();
+        enemySpawnSpeed()
+
+        // movimiento de enemigos y balas
         moveBullet();
+        moveEnemy();
 
-
+        
+        spawnEnemy();
     });
 
 
