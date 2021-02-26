@@ -16,7 +16,8 @@
         dSize = (parseFloat($('.main-container').css('height'))/parseFloat($(window).height())*100) - (parseFloat($('#player').css('height'))/parseFloat($(window).height())) * 100;
     }
 
-   // This update loop is the heartbeat of Keydrown
+
+    // This update loop is the heartbeat of Keydrown
     kd.run(function () {
         kd.tick();
 
@@ -34,6 +35,9 @@
         
         spawnEnemy();
     });
+
+
+   
 
 
 

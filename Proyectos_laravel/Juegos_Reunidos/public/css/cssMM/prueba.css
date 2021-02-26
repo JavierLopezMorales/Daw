@@ -125,3 +125,9 @@ body {
 	position: absolute;
 	z-index: 111;
 }
+
+.unused-bullet {
+	left: 50%;
+	top: 50%;
+	background-color: cadetblue;
+}

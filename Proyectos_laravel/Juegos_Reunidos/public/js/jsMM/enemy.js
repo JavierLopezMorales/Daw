@@ -15,13 +15,13 @@ function spawnEnemy(){
         enemyArray.push(enemyCounter);
     
         // Se crea al enemigo
-        $('.main-container').append('<div class="enemy" id="' + enemyCounter + '"></div>');
+        $('.main-container').append('<div class="enemy" id="enemy' + enemyCounter + '"></div>');
     
-        enemySize = (parseFloat($('.enemy#' + enemyCounter).css('height')) / parseFloat($('.main-container').css('height'))) * 100;
+        enemySize = (parseFloat($('.enemy#enemy' + enemyCounter).css('height')) / parseFloat($('.main-container').css('height'))) * 100;
         mainHeight = parseFloat(parseFloat($('.main-container').css('height'))/parseFloat($(window).height())*100);
 
-        $('.enemy#' + enemyCounter).css('left' , '110vw');
-        $('.enemy#' + enemyCounter).css('top' , rndPos(mainHeight, enemySize) + 'vh');
+        $('.enemy#enemy' + enemyCounter).css('left' , '110vw');
+        $('.enemy#enemy' + enemyCounter).css('top' , rndPos(mainHeight, enemySize) + 'vh');
 
         spawnTimer = 0;
     }
@@ -50,8 +50,8 @@ function moveEnemy() {
     $('.enemy').css('left', '-=0.1vw');
 
     for(var x = 0; x <= enemyArray.length; x++){
-        if(parseFloat($('.enemy#' + enemyArray[x]).css('left')) <=  -500){
-            $('.enemy#' + enemyArray[x]).remove();
+        if(parseFloat($('.enemy#enemy' + enemyArray[x]).css('left')) <=  -500){
+            $('.enemy#enemy' + enemyArray[x]).remove();
         }
     }
 }
