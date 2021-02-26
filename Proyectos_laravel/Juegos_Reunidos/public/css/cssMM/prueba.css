@@ -124,10 +124,10 @@ body {
 	background-color: rgba(255, 0, 0, 0.083);
 	position: absolute;
 	z-index: 111;
+	border-radius: 15%;
 }
 
 .unused-bullet {
-	left: 50%;
-	top: 50%;
-	background-color: cadetblue;
+	left: -50%;
+	top: -50%;
 }

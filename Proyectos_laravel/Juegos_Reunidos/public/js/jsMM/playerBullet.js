@@ -1,45 +1,4 @@
 
-$(document).ready(function(){
-
-})
-
-/*
-var bulletHeight;
-    // DISPARO
-   kd.A.down(function () {
-
-    // Al disparar se crea un div que avanza hasta el final de la pantalla
-        if(shoot == true){
-            //Se crea la bala
-            counterBullet++;
-
-            // Array con todas los ids de las balas existentes
-            bulletArray.push(counterBullet);
-            $('.main-container').append('<div class="bullet" id="'+ counterBullet +'"></div>');
-            
-
-            shootTimer = 0;
-            $('.bullet-count').html('NUMERO DE BALAS: ' + $('.bullet').length);
-
-           
-            // La mitad de la altura de la bala, para poder centrarlo en la nave
-            bulletHeight = parseFloat($('.bullet').css('height'))/(parseFloat($('.main-container').css('height'))) * 50;
-
-            bulletX = (100 * parseFloat($('#player').css('left')) / (parseFloat($('.main-container').css('width')))) + (parseFloat($('#player').css('width'))/(parseFloat($('.main-container').css('width'))) * 100);
-            bulletY = (100 * parseFloat($('#player').css('top')) / (parseFloat($('.main-container').css('height')))) + (((parseFloat($('#player').css('height'))/2)/(parseFloat($('.main-container').css('height'))) * 100)-bulletHeight);
-
-               // Coordenadas de aparicion de la bala
-                
-                $('.bullet#' + counterBullet).css('left' , bulletX + 'vw');
-                $('.bullet#' + counterBullet).css('top' , bulletY + '%');
-
-                console.log($('.bullet#' + counterBullet).css('left'));
-                console.log($('.bullet#' + counterBullet).css('top'));
-
-
-        }
-    });
-*/
     var bulletX;
     var bulletY;
     var shoot = true;

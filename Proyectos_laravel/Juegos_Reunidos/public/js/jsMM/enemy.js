@@ -45,6 +45,7 @@ function enemySpawnSpeed(){
     }
 }
 
+var enemyDeath = new Array;
 
 function moveEnemy() {
     $('.enemy').css('left', '-=0.1vw');
@@ -52,8 +53,14 @@ function moveEnemy() {
     for(var x = 0; x <= enemyArray.length; x++){
         if(parseFloat($('.enemy#enemy' + enemyArray[x]).css('left')) <=  -500){
             $('.enemy#enemy' + enemyArray[x]).remove();
+            enemyDeath.push(x);
         }
     }
+
+    for(var y = enemyDeath.length; y > 0; y--){
+
+    }
+
 }
 
 
