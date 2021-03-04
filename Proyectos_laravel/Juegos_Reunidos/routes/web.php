@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/juegoMM', 'shipsController@show');
+Route::get('/JuegoST', 'Tematicas_STController@show');
 
 //----------Usuarios----------------//
 Route::get('/users', 'userController@index')->name('User.index');;
@@ -32,7 +33,6 @@ Route::delete('/users/{id}/delete', 'userController@destroy')->name('User.destro
 Route::get('/tematicas', 'Tematicas_STController@index')->name('TematicasST.index');;
 Route::get('/tematicas/create', 'Tematicas_STController@create')->name('TematicasST.create');
 Route::post('/tematicas/store', 'Tematicas_STController@store')->name('TematicasST.store');
-Route::get('/tematicas/{id}', 'Tematicas_STController@show')->name('TematicasST.show');
 Route::get('/tematicas/{id}/edit', 'Tematicas_STController@edit')->name('TematicasST.edit');
 Route::put('/tematicas/{id}', 'Tematicas_STController@update')->name('TematicasST.update');
 Route::delete('/tematicas/{id}/delete', 'Tematicas_STController@destroy')->name('TematicasST.destroy');

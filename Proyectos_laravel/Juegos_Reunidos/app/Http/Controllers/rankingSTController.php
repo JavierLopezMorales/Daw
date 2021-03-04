@@ -15,7 +15,7 @@ class rankingSTController extends Controller
   public function index()
   {
       $rankingList = RankingST::all();
-      return view('showRankingST', ['rankingList' => $rankingList]);
+      return view('ST/Ranking/showRankingST', ['rankingList' => $rankingList]);
   }
 
   /**
@@ -50,10 +50,10 @@ class rankingSTController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
-  {
-      //
-  }
+   public function show()
+   {
+      
+   }
 
   /**
    * Show the form for editing the specified resource.
@@ -64,7 +64,7 @@ class rankingSTController extends Controller
   public function edit($id)
   {
       $ranking = RankingST::find($id);
-      return view('formRankingST', array('ranking' => $ranking));
+      return view('ST/Ranking/formRankingST', array('ranking' => $ranking));
   }
 
   /**

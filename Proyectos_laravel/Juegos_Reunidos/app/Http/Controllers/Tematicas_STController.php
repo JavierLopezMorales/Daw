@@ -9,7 +9,7 @@ class Tematicas_STController extends Controller
 {
   public function index() {
        $tematicasList = TematicasST::all();
-       return view('showTematicasST', ['tematicasList'=>$tematicasList]);
+       return view('ST/Tematicas/showTematicasST', ['tematicasList'=>$tematicasList]);
    }
 
 
@@ -28,14 +28,16 @@ class Tematicas_STController extends Controller
        $tematica->save();
        return redirect()->route('TematicasST.index');
    }
-   public function show($id)
+   public function show()
        {
-           //
+
+             return view('ST/Juego');
+
        }
 
    public function edit($id) {
        $tematicas = TematicasST::find($id);
-       return view('formTematicasST', array('tematica' => $tematicas));
+       return view('ST/Tematicas/formTematicasST', array('tematica' => $tematicas));
    }
 
    public function update(Request $r,$id) {
