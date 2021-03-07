@@ -109,12 +109,17 @@ body {
 }
 
 .bullet {
-	width: 1vw;
+	background-color: rgb(251, 255, 0);
+	width: 3vw;
 	height: 1vw;
-	border-radius: 50%;
-	background-color: rgb(255, 225, 0);
 	position: absolute;
 	z-index: 110;
+}
+
+.waiting-bullet {
+	background-color: rgb(255, 0, 0);
+	top: 0;
+	left: 0;
 }
 
 .enemy {

@@ -23,6 +23,8 @@ function spawnEnemy(){
         $('.enemy#enemy' + enemyCounter).css('left' , '110vw');
         $('.enemy#enemy' + enemyCounter).css('top' , rndPos(mainHeight, enemySize) + 'vh');
 
+        $('.enemy-count').html('NUMERO DE ENEMIGOS: ' + $('.enemy').length);
+
         spawnTimer = 0;
     }
     
@@ -34,34 +36,35 @@ function rndPos(mainHeight, enemySize) {
   }
 
 var spawn = true;
-var spawnTimer = 240;
+var spawnTimer = 100;
 
 function enemySpawnSpeed(){
-    if(spawnTimer < 240){
+    if(spawnTimer < 100){
         spawnTimer++;
         spawn = false;
     }else{
         spawn = true;
     }
+    $('.enemy-counter').html('CONTADOR ENEMIGO: ' + spawnTimer);
 }
 
-var enemyDeath = new Array;
 
 function moveEnemy() {
-    $('.enemy').css('left', '-=0.1vw');
+    $('.enemy').css('left', '-=0.4vw');
 
+    // Eliminar enemigos
     for(var x = 0; x <= enemyArray.length; x++){
         if(parseFloat($('.enemy#enemy' + enemyArray[x]).css('left')) <=  -500){
             $('.enemy#enemy' + enemyArray[x]).remove();
-            enemyDeath.push(x);
+            enemyArray.splice(x, 1)
+            console.log(enemyArray.length)
+            $('.enemy-count').html('NUMERO DE ENEMIGOS: ' + $('.enemy').length);
         }
     }
 
-    for(var y = enemyDeath.length; y > 0; y--){
-
-    }
-
 }
+
+
 
 
 

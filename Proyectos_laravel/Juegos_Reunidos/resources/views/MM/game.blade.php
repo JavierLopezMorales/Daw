@@ -38,8 +38,11 @@
             <div class="info-left"></div>
             <div class="bullet-count">NUMERO DE BALAS: 0</div>
             <div class="shoot-counter"></div>
+            <div class="enemy-count">NUMERO DE ENEMIGOS: 0</div>
+            <div class="enemy-counter"></div>
         </div>
         <div id="player"></div>
+        <div class="bullet waiting-bullet"></div>
         <div class='image'></div>
         
     </div>

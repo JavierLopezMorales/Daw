@@ -25,14 +25,15 @@
         size();
 
         // velocidad de disparo y spawn de enemigos
-        atkSpeed();
+        //atkSpeed();
         enemySpawnSpeed()
 
         // movimiento de enemigos y balas
-        moveBullet();
+        waitingBulletPosition();
         moveEnemy();
+        moveBullet();
 
-        
+        checkHit();
         spawnEnemy();
     });
 
