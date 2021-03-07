@@ -3,9 +3,11 @@
         <title>@yield('Titulo')</title>
     </head>
     <body>
-        @section('sidebar')
-            Este es mi plantilla Master
-        @show
+      <div class="wrap">
+          <h1>Juegos Reunidos - SlidingTiles</h1>
+          <a href="{{route('TematicasST.index')}}">Tematicas</a>
+          <a href="{{route('RankingST.index')}}">Ranking</a>
+          </div>
 
         <div class="container">
             @yield('content')
