@@ -9,11 +9,11 @@
 @section('content')
 
     @isset($tematica)
-        <form action="{{ route('TematicasST.update', ['id' => $tematica->id]) }}" method="POST">
+        <form action="{{ route('TematicasST.update', ['id' => $tematica->id]) }}"enctype="multipart/form-data" method="POST">
     @method("PUT")
 
     @else
-        <form action="{{ route('TematicasST.store') }}" method="POST">
+        <form action="{{ route('TematicasST.store') }}"enctype="multipart/form-data" method="POST">
     @endisset
         @csrf
         Tipo de tematica:<input type="text" name="type" value="{{$tematica->type ?? '' }}"><br>
@@ -21,9 +21,10 @@
         Descripcion:<input type="text" name="description" value="{{$tematica->description ?? '' }}"><br>
         Imagen de fondo:<input type="text" name="img_fondo" value="{{$tematica->img_fondo ?? '' }}"><br>
         Imagen del puzzle:<input type="text" name="img_puzzle" value="{{$tematica->img_puzzle ?? '' }}"><br>
-
+      
         <input type="submit">
         </form>
+
 
 
 @endsection

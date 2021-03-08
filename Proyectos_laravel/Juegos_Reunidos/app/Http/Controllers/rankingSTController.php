@@ -25,7 +25,7 @@ class rankingSTController extends Controller
    */
   public function create()
   {
-      return view('formRankingST');
+      return view('ST/Ranking/formRankingST');
   }
 
   /**
@@ -37,6 +37,7 @@ class rankingSTController extends Controller
   public function store(Request $request)
   {
       $ranking = new RankingST();
+      $ranking->name = $request->name;
       $ranking->score = $request->score;
       $ranking->date = $request->date;
       $ranking->mode = $request->mode;
@@ -52,7 +53,7 @@ class rankingSTController extends Controller
    */
    public function show()
    {
-      
+
    }
 
   /**
@@ -77,6 +78,7 @@ class rankingSTController extends Controller
   public function update(Request $request, $id)
   {
       $ranking = RankingST::find($request->id);
+      $ranking->name = $request->name;
       $ranking->score = $request->score;
       $ranking->date = $request->date;
       $ranking->mode = $request->mode;

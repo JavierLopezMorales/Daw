@@ -1,7 +1,8 @@
 :root{
 	/*--imagen:url("bandera.png");*/
-	--imagen:url("pitufos.jpg");
-	/*--imagen:url("celia.jpg");*/
+	/*--imagen:url("pitufos.jpg");*/
+	--imagen:url("celia2.jpg");
+	--imagen_fondo:url("celia.jpg");
 	/*--imagen:url("almeria.webp");*/
 }
 
@@ -10,7 +11,7 @@ BODY {
 
 }
 #img-container{
-	 background: var(--imagen);
+	 background: var(--imagen_fondo);
      background-size: 120vw 120vh;
      filter: blur(5px);
 	 width:100vw;
@@ -30,8 +31,8 @@ BODY {
 
 
 }
-/*
-Celia
+
+/*Celia*/
 #table{
 	width:600px ;
 	height: 400px; 
@@ -39,15 +40,15 @@ Celia
 
 
 }
-*/
-/* pITUFOS*/
+
+/* pITUFOS
 #table{
 	width:1085px ;
 	height: 675px; 
 	border: 3px solid white;
 
 
-}
+}*/
 
 /*Almeria
 #table{

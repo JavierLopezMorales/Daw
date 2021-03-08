@@ -16,6 +16,7 @@ class RankingSTSeeder extends Seeder
     {
       DB::table('ranking_slide')->insert([
           'id' => '1',
+          'name'=> 'MLL',
           'score' => '1000',
           'date' => '2021/01/23',
           'mode' => '1',
@@ -23,6 +24,7 @@ class RankingSTSeeder extends Seeder
 
       DB::table('ranking_slide')->insert([
           'id' => '2',
+          'name'=> 'JLM',
           'score' => '800',
           'date' => '2021/01/22',
           'mode' => '2',

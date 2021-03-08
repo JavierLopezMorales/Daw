@@ -15,7 +15,7 @@ class Tematicas_STController extends Controller
 
 
    public function create() {
-       return view('formTematicasST');
+       return view('ST/Tematicas/formTematicasST');
    }
 
    public function store(Request $r) {

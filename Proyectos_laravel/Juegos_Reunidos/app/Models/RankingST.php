@@ -17,6 +17,7 @@ class RankingST extends Model
      * @var array
      */
     protected $fillable = [
+        'name',
         'score',
         'date',
         'mode',
