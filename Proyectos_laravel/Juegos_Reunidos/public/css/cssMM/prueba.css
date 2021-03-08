@@ -88,14 +88,20 @@ body {
 	padding: 0.5vw;
 }
 
+.score-info {
+	display: flex;
+}
+
+.score {
+	margin-left: 1vh;
+}
+
 #player {
-	width: 10vh;
 	height: 10vh;
-	border: 0.2vw solid white;
 	left: 0vw;
 	top: 0vw;
 	position: absolute;
-	z-index: 100;
+	z-index: 110;
 }
 
 #player::before {
@@ -113,11 +119,10 @@ body {
 	width: 3vw;
 	height: 1vw;
 	position: absolute;
-	z-index: 110;
+	z-index: 109;
 }
 
 .waiting-bullet {
-	background-color: rgb(255, 0, 0);
 	top: 0;
 	left: 0;
 }

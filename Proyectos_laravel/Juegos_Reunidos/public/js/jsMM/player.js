@@ -1,5 +1,6 @@
 
     var speed;
+if(game == true){
 
     // Velocidad a la que el player se mueve, es mas despacio si se mueve en diagonal
     function calcSpeed(){
@@ -68,3 +69,17 @@
         
         
     });
+
+}
+
+function playerHitBox() {
+    
+    var hit = false;
+
+    
+
+    if(hit == true){
+        game = false;
+    }
+
+}

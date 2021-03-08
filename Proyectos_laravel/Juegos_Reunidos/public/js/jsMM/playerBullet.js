@@ -14,9 +14,11 @@ kd.A.press(function(){
 
 });
 
+var bulletSpeed = 0.5;
 function moveBullet(){
 
-    $('.move-bullet').css('left', '+=0.4vw');
+    // Se mueven siempre a la derecha a una velocidad
+    $('.move-bullet').css('left', '+=' + bulletSpeed + 'vw');
 
     // Se eliminan las balas que salgan de la pantalla
     if(parseFloat($('.move-bullet').css('left')) > parseFloat($('.main-container').css('width'))){
@@ -27,58 +29,32 @@ function moveBullet(){
 
 function checkHit(){
 
+    // Posicion y tamaño de la bala
     var positionBulletX = parseFloat(100 * parseFloat($('.move-bullet').css('left')) / (parseFloat($('.main-container').css('height'))));
     var positionBulletY = parseFloat(100 * parseFloat($('.move-bullet').css('top')) / (parseFloat($('.main-container').css('height'))));
     var bulletHeight = parseFloat(parseFloat($('.move-bullet').css('height')) / parseFloat($('.main-container').css('height'))) * 100;
     var bulletWidth = parseFloat(parseFloat($('.move-bullet').css('width')) / parseFloat($('.main-container').css('height'))) * 100;
 
-    console.log('Posicion bala: x -' + positionBulletX + ' - y - ' + positionBulletY + ' - HEIGHT - ' + bulletHeight + ' - WIDTH - ' + bulletWidth);
-
     for(var en = 0; en < enemyArray.length; en++){
 
+        // Posicion y tamaño de todos los enemigos
         var positionEnemyX = parseFloat(100 * parseFloat($('.enemy#enemy' + enemyArray[en]).css('left')) / (parseFloat($('.main-container').css('height'))));
         var positionEnemyY = parseFloat(100 * parseFloat($('.enemy#enemy' + enemyArray[en]).css('top')) / (parseFloat($('.main-container').css('height'))));
         var enemyHeight = parseFloat($('.enemy#enemy' + enemyArray[en]).css('height')) / parseFloat($('.main-container').css('height')) * 100;
         var enemyWidth = parseFloat($('.enemy#enemy' + enemyArray[en]).css('width')) / parseFloat($('.main-container').css('height')) * 100;
 
-
+        // Hitbox
         if((positionBulletX + bulletWidth) > positionEnemyX && positionBulletX < (positionEnemyX + enemyWidth) && (positionBulletY + bulletHeight) > positionEnemyY && positionBulletY < (positionEnemyY + enemyHeight))
         {
             // CAMBIAR A FUTURO
             $('.enemy#enemy' + enemyArray[en]).remove();
             enemyArray.splice(en, 1);
             $('.move-bullet').removeClass('move-bullet').addClass('waiting-bullet');
+            incrementScore(100);
         }
 
     }
-    /*
-    for(var en = 0; en < enemyArray.length; en++){
 
-        var positionEnemyX = parseFloat(100 * parseFloat($('.enemy#enemy' + enemyArray[en]).css('left')) / (parseFloat($('.main-container').css('width'))));
-        var positionEnemyY = parseFloat(100 * parseFloat($('.enemy#enemy' + enemyArray[en]).css('top')) / (parseFloat($('.main-container').css('height'))));
-        var enemyHeight = parseFloat(parseFloat($('.enemy#enemy' + enemyArray[en]).css('height')) / parseFloat($('.main-container').css('height'))) * 100;
-        var enemyWidth = parseFloat(parseFloat($('.enemy#enemy' + enemyArray[en]).css('width')) / parseFloat($('.main-container').css('height'))) * 100;
-
-
-        // Ver posicion de la bala, de igual manera que del enemigo
-
-        for(var bu = 0; bu < document.getElementsByClassName('bullet').length; bu++){
-
-            var positionBulletX = parseFloat(100 * parseFloat($('.bullet#bullet' + bu).css('left')) / (parseFloat($('.main-container').css('width'))));
-            var positionBulletY = parseFloat(100 * parseFloat($('.bullet#bullet' + bu).css('top')) / (parseFloat($('.main-container').css('height'))));
-            var bulletHeight = parseFloat(parseFloat($('.bullet#bullet' + bu).css('height')) / parseFloat($('.main-container').css('height'))) * 100;
-            var bulletWidth = parseFloat(parseFloat($('.bullet#bullet' + bu).css('width')) / parseFloat($('.main-container').css('height'))) * 100;
-
-            if((positionBulletX + bulletWidth) > positionEnemyX && positionBulletX < (positionEnemyX + enemyWidth) && (positionBulletY + bulletHeight) > positionEnemyY && positionEnemyY < (positionEnemyY + enemyHeight))
-            {
-                // CAMBIAR A FUTURO
-                $('.enemy#enemy' + enemyArray[en]).remove();
-                $('.bullet#bullet' + bu).css({'left': '150vw', 'top': '150vh'});
-            }
-        }
-
-    }
-*/
 }
 
 

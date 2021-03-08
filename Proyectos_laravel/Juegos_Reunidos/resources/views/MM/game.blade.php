@@ -7,7 +7,7 @@
 <script src="{{ asset('js/libraries/Keydown.js') }}"></script>
 <script src="{{ asset('js/jsMM/index.js') }}"></script>
 <script src="{{ asset('js/jsMM/playerBullet.js') }}"></script>
-<script src="{{ asset('js/jsMM/playerMovement.js') }}"></script>
+<script src="{{ asset('js/jsMM/player.js') }}"></script>
 <script src="{{ asset('js/jsMM/enemy.js') }}"></script>
 
 
@@ -23,8 +23,8 @@
         </div>
 
         <div class="game-info">
-            <div class="score">
-                Score: 10000
+            <div class="score-info">
+                Score: <div class="score">0</div>
             </div>
             <div class="health">
                 Health: 75/100
@@ -41,7 +41,7 @@
             <div class="enemy-count">NUMERO DE ENEMIGOS: 0</div>
             <div class="enemy-counter"></div>
         </div>
-        <div id="player"></div>
+        <img id="player" src="../../images/imagesMM/6393.jpg"></img>
         <div class="bullet waiting-bullet"></div>
         <div class='image'></div>
         
