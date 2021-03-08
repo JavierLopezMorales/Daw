@@ -13,6 +13,7 @@
     <table border="1px solid black">
 
         <tr>
+            <th>Nombre</th>
             <th>Fecha</th>
             <th>Puntuacion</th>
             <th>Modo</th>
@@ -22,6 +23,7 @@
         @foreach($rankingList as $ranking)
 
         <tr>
+            <td>{{$ranking -> name}}</td>
             <td>{{$ranking -> date}}</td>
             <td>{{$ranking -> score}}</td>
             <td>{{$ranking -> mode}}</td>

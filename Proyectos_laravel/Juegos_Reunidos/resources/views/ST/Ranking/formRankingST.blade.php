@@ -16,6 +16,7 @@
         <form action="{{ route('RankingST.store') }}" method="POST">
     @endisset
         @csrf
+        Name:<input type="name" name="name" value="{{$ranking->name ?? '' }}"><br>
         Score:<input type="number" name="score" value="{{$ranking->score ?? '' }}"><br>
         Date:<input type="date" name="date" value="{{$ranking->date ?? '' }}"><br>
         Mode:<input type="number" name="mode" value="{{$ranking->mode ?? '' }}"><br>

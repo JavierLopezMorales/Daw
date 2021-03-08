@@ -187,7 +187,7 @@ function Comprobar(){
 		
 	}
 	if(victoria == true){
-		setTimeout(function(){ alert("has ganado"); }, 100);
+		setTimeout(function(){ prompt("has ganado"); }, 100);
 		
 		}
 }	
