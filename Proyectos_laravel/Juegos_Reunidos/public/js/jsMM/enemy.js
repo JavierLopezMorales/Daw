@@ -91,11 +91,14 @@ function enemySpawnHeight() {
 }
 
 var counterExplosion = 0;
+var enemyDeath = false;
 function explosion() {
-    if(counterExplosion < 40){
+    if(counterExplosion < 35 && enemyDeath == true){
         counterExplosion++;
-    }else{
+    }else if(counterExplosion >= 35){
         $('.explosion').remove();
+        enemyDeath = false;
+        
     }
 }
 
@@ -108,6 +111,7 @@ function moveEnemy() {
             $('.enemy#enemy' + enemyArray[x]).remove();
             enemyArray.splice(x, 1)
             $('.enemy-count').html('NUMERO DE ENEMIGOS: ' + $('.enemy').length);
+            incrementScore(-100);
         }
     }
 

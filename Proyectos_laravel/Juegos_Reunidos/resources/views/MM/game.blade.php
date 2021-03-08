@@ -44,6 +44,9 @@
         <img id="player" src="../../images/imagesMM/nave1.png"></img>
         <img src="../../images/imagesMM/bullet.png" class="bullet waiting-bullet"></img>
         <div class='image'></div>
+        <audio id="audioDisparo" src="../../sounds/soundMM/disparo.wav"></audio>
+        <audio id="audioExplosion" src="../../sounds/soundMM/explosion.wav"></audio>
+            
         
     </div>
 

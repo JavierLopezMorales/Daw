@@ -49,6 +49,14 @@ var game = true;
         }
 
     }
+    var audioDisparo;
+    $(document).ready(function () {
+        audioDisparo = document.getElementById("audioDisparo");
+        audioExplosion = document.getElementById("audioExplosion");
+    });
+    
+
+
 
 
     // This update loop is the heartbeat of Keydrown

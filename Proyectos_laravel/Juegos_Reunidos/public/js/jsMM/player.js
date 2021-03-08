@@ -84,7 +84,7 @@
     function iFrames() {
         if(icounter < 60){
 
-            $('#player').css({'border': '0.2vh solid rgba(150, 150, 200, 0.8)', 'border-radius': '35%'});
+            $('#player').css({'border': '0.1vh solid rgba(150, 150, 200, 0.8)', 'border-radius': '35%'});
 
             invincible = true;
             icounter++;
@@ -119,8 +119,12 @@ function playerHitBox() {
                 icounter = 0;
                 health = health - 25;
                 if(health > 0){
-                    $('.enemy').remove();
+                    counterExplosion = 0;
+                    enemyDeath = true;
+                    $('.enemy').attr({'src': '../../images/imagesMM/explosion.gif', 'class': 'explosion'});
                     enemyArray = [];
+                    incrementScore(-500);
+                    audioExplosion.play(); 
                 }
             }
             if(health <= 0){
