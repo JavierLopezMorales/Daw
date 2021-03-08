@@ -77,6 +77,7 @@ body {
 }
 
 .info {
+	opacity: 0;
 	border: 0.1vw solid white;
 	color: white;
 	font-size: 1vw;
@@ -96,28 +97,27 @@ body {
 	margin-left: 1vh;
 }
 
+.health-info {
+	display: flex;
+}
+
+.health {
+	margin-left: 1vh;
+}
+
 #player {
+	/*border: 0.2vh solid white;*/
 	height: 10vh;
 	left: 0vw;
 	top: 0vw;
 	position: absolute;
 	z-index: 110;
-}
 
-#player::before {
-	width: 30%;
-	height: 100%;
-	border: 0.2vw solid white;
-	position: absolute;
-	left: -30%;
-	background-color: rgba(255, 24, 24, 0.693);
-	content: '';
 }
 
 .bullet {
-	background-color: rgb(251, 255, 0);
-	width: 3vw;
-	height: 1vw;
+
+	height: 1.5vw;
 	position: absolute;
 	z-index: 109;
 }
@@ -125,13 +125,12 @@ body {
 .waiting-bullet {
 	top: 0;
 	left: 0;
+	opacity: 0;
 }
 
 .enemy {
-	height: 10vh;
+	
 	width: 10vh;
-	border: 0.2vw solid rgba(255, 0, 0, 0.604);
-	background-color: rgba(255, 0, 0, 0.083);
 	position: absolute;
 	z-index: 111;
 	border-radius: 15%;

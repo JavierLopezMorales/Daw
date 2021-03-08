@@ -1,6 +1,5 @@
 
     var speed;
-if(game == true){
 
     // Velocidad a la que el player se mueve, es mas despacio si se mueve en diagonal
     function calcSpeed(){
@@ -70,13 +69,70 @@ if(game == true){
         
     });
 
-}
+    var health = 100;
+
+    function showHealth() {
+        // Se incrementa el valor
+        $('.health').html(health);
+
+    }
+
+
+    var invincible = true;
+    var icounter = 60;
+    
+    function iFrames() {
+        if(icounter < 60){
+
+            $('#player').css({'border': '0.2vh solid rgba(150, 150, 200, 0.8)', 'border-radius': '35%'});
+
+            invincible = true;
+            icounter++;
+        }else{
+            $('#player').css({'border': 'none', 'border-radius': '0'});
+            invincible = false;
+        }
+    }
 
 function playerHitBox() {
+
+    var positionPlayerX = parseFloat(100 * parseFloat($('#player').css('left')) / (parseFloat($('.main-container').css('height'))));
+    var positionPlayerY = parseFloat(100 * parseFloat($('#player').css('top')) / (parseFloat($('.main-container').css('height'))));
+    var playerHeight = parseFloat($('#player').css('height')) / parseFloat($('.main-container').css('height')) * 100;
+    var playerWidth = parseFloat($('#player').css('width')) / parseFloat($('.main-container').css('height')) * 100;
     
     var hit = false;
 
-    
+    for(var en = 0; en < enemyArray.length; en++){
+
+        // Posicion y tamaño de todos los enemigos
+        var positionEnemyX = parseFloat(100 * parseFloat($('.enemy#enemy' + enemyArray[en]).css('left')) / (parseFloat($('.main-container').css('height'))));
+        var positionEnemyY = parseFloat(100 * parseFloat($('.enemy#enemy' + enemyArray[en]).css('top')) / (parseFloat($('.main-container').css('height'))));
+        var enemyHeight = parseFloat($('.enemy#enemy' + enemyArray[en]).css('height')) / parseFloat($('.main-container').css('height')) * 100;
+        var enemyWidth = parseFloat($('.enemy#enemy' + enemyArray[en]).css('width')) / parseFloat($('.main-container').css('height')) * 100;
+
+        // Hitbox
+        if((positionPlayerX + playerWidth) > positionEnemyX && positionPlayerX < (positionEnemyX + enemyWidth) && (positionPlayerY + playerHeight) > positionEnemyY && positionPlayerY < (positionEnemyY + enemyHeight))
+        {
+            // CAMBIAR A FUTURO
+            if(invincible == false){
+                icounter = 0;
+                health = health - 25;
+                if(health > 0){
+                    $('.enemy').remove();
+                    enemyArray = [];
+                }
+            }
+            if(health <= 0){
+                kd.UP.unbindDown();
+                kd.RIGHT.unbindDown();
+                kd.LEFT.unbindDown();
+                kd.DOWN.unbindDown();
+                hit = true;
+            }
+        }
+
+    }
 
     if(hit == true){
         game = false;

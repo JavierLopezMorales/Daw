@@ -72,7 +72,11 @@ var game = true;
             spawnEnemy();
     
             scoreOverTime();
+            playerHitBox();
+            iFrames();
+            showHealth();
 
+            explosion();
         }
         
     });

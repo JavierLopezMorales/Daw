@@ -26,8 +26,8 @@
             <div class="score-info">
                 Score: <div class="score">0</div>
             </div>
-            <div class="health">
-                Health: 75/100
+            <div class="health-info">
+                Health: <div class="health">100</div>
             </div>
         </div>
 
@@ -41,8 +41,8 @@
             <div class="enemy-count">NUMERO DE ENEMIGOS: 0</div>
             <div class="enemy-counter"></div>
         </div>
-        <img id="player" src="../../images/imagesMM/6393.jpg"></img>
-        <div class="bullet waiting-bullet"></div>
+        <img id="player" src="../../images/imagesMM/nave1.png"></img>
+        <img src="../../images/imagesMM/bullet.png" class="bullet waiting-bullet"></img>
         <div class='image'></div>
         
     </div>

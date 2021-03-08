@@ -15,7 +15,7 @@ function spawnEnemy(){
         enemyArray.push(enemyCounter);
     
         // Se crea al enemigo
-        $('.main-container').append('<div class="enemy" id="enemy' + enemyCounter + '"></div>');
+        $('.main-container').append('<img src="../../images/imagesMM/enemigo1.png" class="enemy" id="enemy' + enemyCounter + '"></img>');
     
         enemySize = (parseFloat($('.enemy#enemy' + enemyCounter).css('height')) / parseFloat($('.main-container').css('height'))) * 100;
         mainHeight = parseFloat(parseFloat($('.main-container').css('height'))/parseFloat($(window).height())*100);
@@ -90,6 +90,14 @@ function enemySpawnHeight() {
 
 }
 
+var counterExplosion = 0;
+function explosion() {
+    if(counterExplosion < 40){
+        counterExplosion++;
+    }else{
+        $('.explosion').remove();
+    }
+}
 
 function moveEnemy() {
     $('.enemy').css('left', '-=0.4vw');

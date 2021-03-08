@@ -47,7 +47,10 @@ function checkHit(){
         if((positionBulletX + bulletWidth) > positionEnemyX && positionBulletX < (positionEnemyX + enemyWidth) && (positionBulletY + bulletHeight) > positionEnemyY && positionBulletY < (positionEnemyY + enemyHeight))
         {
             // CAMBIAR A FUTURO
+            $('.main-container').append('<img src="../../images/imagesMM/explosion1.gif" class="explosion"></img>');
+            $('.explosion').css({'top': positionEnemyY + 'vh', 'left':  positionEnemyX + 'vh', 'width': enemyWidth + 'vh'});
             $('.enemy#enemy' + enemyArray[en]).remove();
+
             enemyArray.splice(en, 1);
             $('.move-bullet').removeClass('move-bullet').addClass('waiting-bullet');
             incrementScore(100);
