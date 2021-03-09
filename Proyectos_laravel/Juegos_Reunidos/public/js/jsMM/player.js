@@ -124,7 +124,11 @@ function playerHitBox() {
                     $('.enemy').attr({'src': '../../images/imagesMM/explosion.gif', 'class': 'explosion'});
                     enemyArray = [];
                     incrementScore(-500);
+                    audioHit.load();
+                    audioExplosion.load(); 
+                    audioHit.play(); 
                     audioExplosion.play(); 
+                    
                 }
             }
             if(health <= 0){
@@ -133,6 +137,7 @@ function playerHitBox() {
                 kd.LEFT.unbindDown();
                 kd.DOWN.unbindDown();
                 hit = true;
+                audioMusic.pause(); 
             }
         }
 

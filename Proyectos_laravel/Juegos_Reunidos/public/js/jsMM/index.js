@@ -53,6 +53,8 @@ var game = true;
     $(document).ready(function () {
         audioDisparo = document.getElementById("audioDisparo");
         audioExplosion = document.getElementById("audioExplosion");
+        audioHit = document.getElementById("audioHit");
+        audioMusic = document.getElementById("audioMusic");
     });
     
 

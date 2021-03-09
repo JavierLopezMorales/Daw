@@ -11,11 +11,15 @@ function waitingBulletPosition() {
 kd.A.press(function(){
 
     if(document.getElementsByClassName('waiting-bullet').length == 1){
+        audioDisparo.load();  
         audioDisparo.play();    
     }
     
     $('.waiting-bullet').removeClass('waiting-bullet').addClass('move-bullet');
 
+    // CAMBIAR  A CUANDO EL USER PULSE START // ---------------------------------------------------
+    audioMusic.play(); 
+    audioMusic.volume = 0.2;
     
 
 
@@ -60,6 +64,7 @@ function checkHit(){
             $('.explosion').css({'top': positionEnemyY + '%', 'left':  positionEnemyX-enemyWidth + 'vh', 'height': enemyHeight + 'vh'});
             $('.explosion').attr('src', '../../images/imagesMM/explosion.gif')
             $('.enemy#enemy' + enemyArray[en]).remove();
+            audioExplosion.load(); 
             audioExplosion.play(); 
 
             enemyArray.splice(en, 1);

@@ -32,15 +32,25 @@ function spawnEnemy(){
     
 }
 
+var spawnTimeReducer = 0;
 var spawn = true;
-var spawnTimer = 60;
+var spawnTimer = 160;
+var spawnSpeed = 30 + Math.floor(Math.random() * 61); 
 
 function enemySpawnSpeed(){
-    if(spawnTimer < 60){
+    if(spawnTimer < spawnSpeed){
         spawnTimer++;
         spawn = false;
     }else{
+        
         spawn = true;
+        if(spawnTimeReducer == 30){
+            spawnSpeed = 20 + Math.floor(Math.random() * 11)
+        }else{
+            spawnSpeed = 30 + Math.floor(Math.random() * 61) - spawnTimeReducer;
+            spawnTimeReducer = spawnTimeReducer + 0.1; 
+        }
+        
     }
     $('.enemy-counter').html('CONTADOR ENEMIGO: ' + spawnTimer);
 }
