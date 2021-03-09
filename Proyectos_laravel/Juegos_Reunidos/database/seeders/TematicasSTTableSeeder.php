@@ -16,20 +16,40 @@ class TematicasSTTableSeeder extends Seeder
     {
       DB::table('tematicas_slide')->insert([
           'id' => '1',
-          'type' => 'Numerico',
-          'name' => 'Sliding Tiles Puzzle',
-          'description' => 'Atrevete a resolver este puzzle numerico ',
+          'type' => 'Puzzle',
+          'name' => 'Almeria',
+          'description' => 'Prueba este puzzle de uno de nuestros mas hermosos monumentos de nuestra ciuad ',
           'img_fondo' => 'x',
           'img_puzzle' => 'x',
+          'modo' => '1'
       ]);
 
       DB::table('tematicas_slide')->insert([
           'id' => '2',
-          'type' => 'puzzle',
-          'name' => 'Sliding Tiles Puzzle',
-          'description' => 'Atrevete a resolver este puzzle con imagen en el orden correcto',
+          'type' => 'Puzzle',
+          'name' => 'Alcazaba',
+          'description' => 'Atrevete a resolver el puzzle de la alcazaba (pista:guiate por los números o lo pasarás mal)',
           'img_fondo' => 'x',
           'img_puzzle' => 'x',
+          'modo' => '2'
+      ]);
+      DB::table('tematicas_slide')->insert([
+          'id' => '3',
+          'type' => 'Numerico',
+          'name' => 'Numeros',
+          'description' => 'Este puzzle es para resolverlo con numeritos en vez de imagen',
+          'img_fondo' => 'x',
+          'img_puzzle' => 'x',
+          'modo' => '3'
+      ]);
+      DB::table('tematicas_slide')->insert([
+          'id' => '4',
+          'type' => 'Puzzle',
+          'name' => 'Cabo de Gata',
+          'description' => 'Hermoso paisaje para divertirte y aprender mas de nuestra provincia y sus playas',
+          'img_fondo' => 'x',
+          'img_puzzle' => 'x',
+          'modo' => '1'
       ]);
     }
 }

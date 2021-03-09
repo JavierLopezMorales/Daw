@@ -20,7 +20,8 @@ class CreateTematicasSlideTable extends Migration
           $table->string('description');
           $table->string('img_fondo');
           $table->string('img_puzzle');
-          $table->timestamps();
+          $table->string('modo');
+          
         });
     }
 

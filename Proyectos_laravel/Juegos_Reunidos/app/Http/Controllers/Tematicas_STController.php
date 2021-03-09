@@ -25,6 +25,7 @@ class Tematicas_STController extends Controller
        $tematica->description = $r->description;
        $tematica->img_fondo = $r->img_fondo;
        $tematica->img_puzzle = $r->img_puzzle;
+       $tematica->modo = $r->modo;
        $tematica->save();
        return redirect()->route('TematicasST.index');
    }
@@ -47,6 +48,7 @@ class Tematicas_STController extends Controller
        $tematica->description = $r->description;
        $tematica->img_fondo = $r->img_fondo;
        $tematica->img_puzzle = $r->img_puzzle;
+        $tematica->modo = $r->modo;
        $tematica->save();
        return redirect()->route('TematicasST.index');
    }

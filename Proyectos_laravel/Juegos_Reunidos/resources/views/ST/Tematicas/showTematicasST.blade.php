@@ -17,6 +17,7 @@
             <th>Descripcion</th>
             <th>Imagen de fondo</th>
             <th>Imagen de puzzle</th>
+            <th>Modo</th>
             <th colspan="2"><a href="{{route('TematicasST.create')}}">Crear</a></th>
         </tr>
 
@@ -28,6 +29,7 @@
             <td>{{$tematicas -> description}}</td>
             <td>{{$tematicas -> img_fondo}}</td>
             <td>{{$tematicas -> img_puzzle}}</td>
+            <td>{{$tematicas -> modo}}</td>
 
             <td><a href="{{route('TematicasST.edit', $tematicas->id)}}">Modificar</a></td>
 

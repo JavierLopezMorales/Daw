@@ -23,6 +23,7 @@ class TematicasST extends Model
         'description',
         'img_fondo',
         'img_puzzle',
-        
+        'modo',
+
     ];
 }
