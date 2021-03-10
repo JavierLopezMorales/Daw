@@ -19,6 +19,14 @@ class Tematicas_STController extends Controller
    }
 
    public function store(Request $r) {
+
+        if($r->hasFile('img_puzzle')){
+       $file = $r->file('img_puzzle');
+       $name = time().$file->getClientOriginalName();
+       $file->move(public_path().'/css/cssST/', $name);
+
+     }
+
        $tematica = new TematicasST();
        $tematica->type = $r->type;
        $tematica->name = $r->name;
@@ -28,6 +36,7 @@ class Tematicas_STController extends Controller
        $tematica->modo = $r->modo;
        $tematica->save();
        return redirect()->route('TematicasST.index');
+
    }
    public function show()
        {

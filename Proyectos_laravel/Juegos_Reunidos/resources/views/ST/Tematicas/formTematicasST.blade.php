@@ -27,10 +27,10 @@
         <td>Descripcion:<input type="text" name="description" value="{{$tematica->description ?? '' }}"></td>
       </tr>
       <tr>
-      <td>Imagen de fondo:<input accept="image/*" type="file" name="img_fondo" value="{{$tematica->img_fondo ?? '' }}"></td>
+      <td>Imagen de fondo:<input  type="file" name="img_fondo" value="{{$tematica->img_fondo ?? '' }}"></td>
     </tr>
     <tr>
-      <td>Imagen del puzzle:<input accept="image/*" type="file" name="img_puzzle" value="{{$tematica->img_puzzle ?? '' }}"></td>
+      <td>Imagen del puzzle:<input  type="file" name="img_puzzle" value="{{$tematica->img_puzzle ?? '' }}"></td>
     </tr>
     <tr>
       <td>Modo :<input type="text" name="modo" value="{{$tematica->modo ?? '' }}"></td>
