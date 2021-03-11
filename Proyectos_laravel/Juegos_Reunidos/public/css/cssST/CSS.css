@@ -1,33 +1,34 @@
 :root{
-	/*--imagen:url("bandera.png");*/
-	/*--imagen_fondo:url("pitufos.jpg");*/
-	/*--imagen:url("pitufos3.jpg");*/
-	--imagen:url("celia2.jpg");
-	--imagen_fondo:url("celia.jpg");
-	/*--imagen:url("almeria.webp");*/
+	/*--imagen:url("../../images/imagesST/bandera.png");*/
+	/*--imagen_fondo:url("../../images/imagesST/pitufos.jpg");*/
+	/*--imagen:url("../../images/imagesST/pitufos3.jpg");*/
+	--imagen:url("../../images/imagesST/celia2.jpg");
+	--imagen_fondo:url("../../images/imagesST/celia.jpg");
+	/*--imagen:url("../../images/imagesST/alcazaba.jpg");
+	--imagen_fondo:url("../../images/imagesST/alcazaba2.jpg");*/
 }
 
-BODY { 
+BODY {
 
 
 }
 #img-container{
 	 background: var(--imagen_fondo);
-     background-size: 120vw 120vh;
-     filter: blur(5px);
+   background-size: 120vw 120vh;
+   filter: blur(5px);
 	 width:100vw;
 	 height: 100vh;
 	 position:fixed;
 	 top: 0;
 	 z-index:-1;
-	 
+
 }
 #head{
 	background-color:white;
 	}
 #table{
 	width:1024px ;
-	height: 682px; 
+	height: 682px;
 	border: 3px solid white;
 
 
@@ -36,16 +37,25 @@ BODY {
 /*Celia*/
 #table{
 	width:600px ;
-	height: 400px; 
+	height: 400px;
 	border: 3px solid white;
 
 
 }
+/*Alcazaba
+#table{
+	width:1600px ;
+	height: 1026px;
+	border: 3px solid white;
+
+
+}*/
+
 
 /* pITUFOS
 #table{
 	width:1085px ;
-	height: 675px; 
+	height: 675px;
 	border: 3px solid white;
 
 
@@ -54,7 +64,7 @@ BODY {
 /*Almeria
 #table{
 	width:1200px ;
-	height: 800px; 
+	height: 800px;
 	border: 3px solid white;
 
 
@@ -67,8 +77,8 @@ BODY {
     font-size:50px;
     color:black;
     background-color:white;
-  
-  
+
+
 }
 #moves  {
 	display:inline-block;
@@ -77,8 +87,8 @@ BODY {
     font-size:50px;
     color:black;
     background-color:white;
-  
-  
+
+
 }
 div div div{
 	position:relative;
@@ -89,8 +99,8 @@ div div div{
 p{
 	color:black;
 	font-size:20px;
-	
-	
+
+
 }
 
 
@@ -104,23 +114,23 @@ p{
 	color: #666666;
 	font-size: 13px;
 	width:200px;
-	
+
 }
 /*Puzzle 5x5*/
 .tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9,.tile10,.tile11, .tile12, .tile13, .tile14, .tile15, .tile16,.tile17,.tile18, .tile19, .tile20, .tile21, .tile22, .tile23,.tile24,.tile25{
-  
+
   display: table-cell;
   border: 1px solid white;
   background: var(--imagen);
   cursor: pointer;
   background-size:500%;
-  
-  
-  
+
+
+
 }
 /*puzzle 4x4*/
 /*.tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9,.tile10,.tile11, .tile12, .tile13, .tile14, .tile15, .tile16{
-	 
+
   display: table-cell;
   width: 0;
   height: 0;
@@ -128,9 +138,9 @@ p{
   background: url("pitufos.jpg");
   cursor: pointer;
   background-size:400%;
-  
-  
-  
+
+
+
 }*/
 
 
@@ -138,7 +148,7 @@ p{
 	margin:0;
 	padding:0;
 	box-sizing:border-box;
-	
+
 }
 /*Puzzle 4x4*/
 
@@ -187,5 +197,3 @@ p{
 .tile23 {background-position:50% 100%;}
 .tile24 {background-position:75% 100%;}
 .tile25 {background: white; cursor: default;}
-
-
