@@ -1,6 +1,20 @@
 // Mientras game sea true el juego continua
 var game = true;
+var start = false;
 
+if(start == false){
+
+
+    kd.SPACE.down(function () { 
+
+        start = true;
+        $('.game-start').remove();
+        audioMusic.play(); 
+        audioMusic.volume = 0.2;
+        
+    });
+
+}
     var posX = 0;
     var posY = 0;
     var rSize;
@@ -64,27 +78,32 @@ var game = true;
     // This update loop is the heartbeat of Keydrown
     kd.run(function () {
         kd.tick();
+        
+        size();
+        coordinates();
+        moveBullet();
+        waitingBulletPosition();
 
-        if(game == true){
+        if(game == true && start == true){
 
-            coordinates();
-            size();
-    
+
+        
             // Spawn de enemigos
             enemySpawnSpeed()
     
             // Movimiento de enemigos y balas
-            waitingBulletPosition();
+            
             moveEnemy();
-            moveBullet();
-    
+            playerHitBox();
+            showHealth();
+           
             checkHit();
             spawnEnemy();
     
             scoreOverTime();
-            playerHitBox();
+            
             iFrames();
-            showHealth();
+            
 
             explosion();
         }

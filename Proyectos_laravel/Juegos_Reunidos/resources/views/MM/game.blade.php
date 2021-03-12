@@ -33,6 +33,7 @@
 
     </div>
     <div class="main-container">
+
         <div class="info">
             <div class="info-top"></div>
             <div class="info-left"></div>
@@ -41,15 +42,26 @@
             <div class="enemy-count">NUMERO DE ENEMIGOS: 0</div>
             <div class="enemy-counter"></div>
         </div>
+
         <img id="player" src="../../images/imagesMM/nave1.png"></img>
         <img src="../../images/imagesMM/bullet.png" class="bullet waiting-bullet"></img>
         <div class='image'></div>
+
         <audio id="audioDisparo" src="../../sounds/soundMM/disparo.wav"></audio>
         <audio id="audioExplosion" src="../../sounds/soundMM/explosion.wav"></audio>
         <audio id="audioHit" src="../../sounds/soundMM/hit.wav"></audio>
         <audio id="audioMusic" src="../../sounds/soundMM/music.mp3" loop></audio>
             
         
+        <div class="game-start">
+              
+            <div class="game-start-info">Bienvenido a SHOOT'EM UP!, para empezar pulse el ESPACIO</div>
+            <div class="game-start-info">Utiliza las FLECHAS para moverte y la tecla A para disparar</div>
+
+        </div>
+        
+        <!--<div class="game-end"></div>-->
+
     </div>
 
 @endsection

@@ -8,22 +8,22 @@ function waitingBulletPosition() {
 
 }
 
-kd.A.press(function(){
 
-    if(document.getElementsByClassName('waiting-bullet').length == 1){
-        audioDisparo.load();  
-        audioDisparo.play();    
+    
+    kd.A.press(function(){
+
+        if(game == true){
+
+            if(document.getElementsByClassName('waiting-bullet').length == 1){
+                audioDisparo.load();  
+                audioDisparo.play();    
+            }
+            
+            $('.waiting-bullet').removeClass('waiting-bullet').addClass('move-bullet');
+
     }
-    
-    $('.waiting-bullet').removeClass('waiting-bullet').addClass('move-bullet');
-
-    // CAMBIAR  A CUANDO EL USER PULSE START // ---------------------------------------------------
-    audioMusic.play(); 
-    audioMusic.volume = 0.2;
-    
-
-
-});
+        
+    });
 
 var bulletSpeed = 0.5;
 function moveBullet(){

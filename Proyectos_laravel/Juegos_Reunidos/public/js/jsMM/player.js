@@ -1,6 +1,8 @@
 
     var speed;
 
+
+
     // Velocidad a la que el player se mueve, es mas despacio si se mueve en diagonal
     function calcSpeed(){
         if(kd.LEFT.isDown() == true && kd.UP.isDown() == true || kd.LEFT.isDown() == true && kd.DOWN.isDown() == true || kd.UP.isDown() == true && kd.RIGHT.isDown() == true || kd.RIGHT.isDown() == true && kd.DOWN.isDown() == true){
@@ -68,6 +70,8 @@
         
         
     });
+
+
 
     var health = 100;
 
