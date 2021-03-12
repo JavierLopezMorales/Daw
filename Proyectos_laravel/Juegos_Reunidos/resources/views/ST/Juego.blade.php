@@ -1,7 +1,10 @@
 @extends('layouts.masterST')
 <link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
 <script src="{{ asset('js/jsST/javascript.js') }}"></script>
-
+<script>
+document.getElementById("img-container").css.background="{{url('images/imagesST/$name_fondo') }}";
+document.getElementById("img-container").css.background="{{url('images/imagesST/$name_puzzle') }}";
+</script>
 
 @section('Titulo', 'Sliding-Tiles')
 
@@ -12,6 +15,7 @@
 <br/>
 
 <center>
+  <div id="puzzle-contenedor">
 <div id="table" style="display: inline-table;">
    <div id="row1" style="display: table-row;">
       <div id="cell11" class="tile1" onClick="clickTile(1,1);"></div>
@@ -52,13 +56,15 @@
 </div>
 <div class="screen">
 
-	<p>Tiempo</p><div id="number"></div><p>Movimientos</p></br></br><div id="moves"></div></br></br></br>
+	<p>Tiempo</p></br></br><div id="number"></div><p>Movimientos</p></br></br><div id="moves"></div></br>
+  <button onClick="temporizador(false);shuffle();">New Game</button>
 
+
+  	<button onClick="Comprobar();">Comprobar</button>
 </div>
-<button onClick="temporizador(false);shuffle();">New Game</button>
+</div>
 
 
-	<button onClick="Comprobar();">Comprobar</button>
 <div id="img-container"></div>
 
 
