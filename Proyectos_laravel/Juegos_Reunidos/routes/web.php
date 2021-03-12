@@ -76,3 +76,5 @@ Route::post('/rankingST/store', 'rankingSTController@store')->name('RankingST.st
 Route::get('/rankingST/{id}/edit', 'rankingSTController@edit')->name('RankingST.edit');
 Route::put('/rankingST/{id}', 'rankingSTController@update')->name('RankingST.update');
 Route::delete('/rankingST/{id}/delete', 'rankingSTController@destroy')->name('RankingST.destroy');
+//----------Rutas de configuracionST------------//
+Route::get('/rankingST', 'rankingSTController@index')->name('RankingST.index');

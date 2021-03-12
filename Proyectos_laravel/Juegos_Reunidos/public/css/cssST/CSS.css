@@ -2,10 +2,12 @@
 	/*--imagen:url("../../images/imagesST/bandera.png");*/
 	/*--imagen_fondo:url("../../images/imagesST/pitufos.jpg");*/
 	/*--imagen:url("../../images/imagesST/pitufos3.jpg");*/
-	--imagen:url("../../images/imagesST/celia2.jpg");
-	--imagen_fondo:url("../../images/imagesST/celia.jpg");
-	/*--imagen:url("../../images/imagesST/alcazaba.jpg");
-	--imagen_fondo:url("../../images/imagesST/alcazaba2.jpg");*/
+	/*--imagen:url("../../images/imagesST/celia2.jpg");*/
+	/*--imagen_fondo:url("../../images/imagesST/celia.jpg");*/
+	--img_puzzle:url("../../images/imagesST/cabo5.jpg");
+	--img_fondo:url("../../images/imagesST/cabo.jpg");
+	/*--imagen:url("images/imagesST/{{$name_puzzle}}");
+	--imagen_fondo:url("images/imagesST/{{$name_fondo}}");*/
 }
 
 BODY {
@@ -13,7 +15,7 @@ BODY {
 
 }
 #img-container{
-	 background: var(--imagen_fondo);
+	 background: var(--img_fondo);
    background-size: 120vw 120vh;
    filter: blur(5px);
 	 width:100vw;
@@ -34,7 +36,7 @@ BODY {
 
 }
 
-/*Celia*/
+/*Celia
 #table{
 	width:600px ;
 	height: 400px;
@@ -42,6 +44,7 @@ BODY {
 
 
 }
+*/
 /*Alcazaba
 #table{
 	width:1600px ;
@@ -70,6 +73,15 @@ BODY {
 
 }
 */
+Cabo
+#table{
+	width:1024px ;
+	height: 683px;
+	border: 3px solid white;
+
+
+}
+
 #number {
 	display:inline-block;
 	width:150px;
@@ -87,6 +99,7 @@ BODY {
     font-size:50px;
     color:black;
     background-color:white;
+
 
 
 }
@@ -121,7 +134,7 @@ p{
 
   display: table-cell;
   border: 1px solid white;
-  background: var(--imagen);
+  background: var(--img_puzzle);
   cursor: pointer;
   background-size:500%;
 
