@@ -27,9 +27,10 @@
             <td>{{$tematicas -> type}}</td>
             <td>{{$tematicas -> name}}</td>
             <td>{{$tematicas -> description}}</td>
-            <td>{{$tematicas -> img_fondo}}</td>
-            <td>{{$tematicas -> img_puzzle}}</td>
+            <td><img src="images/imagesST/{{$tematicas -> img_fondo}}"width="150px"height="100px"></td>
+            <td><img src="images/imagesST/{{$tematicas -> img_puzzle}}"width="150px"height="100px"></td>
             <td>{{$tematicas -> modo}}</td>
+
 
             <td><a href="{{route('TematicasST.edit', $tematicas->id)}}">Modificar</a></td>
 
