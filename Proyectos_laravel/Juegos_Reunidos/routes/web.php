@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/juegoMM', 'shipsController@show')->name('JuegoMM.play');
-Route::get('/JuegoST', 'Tematicas_STController@show');
+Route::get('/JuegoST', 'Tematicas_STController@show')->name('TematicasST.show');
 
 //----------Usuarios----------------//
 Route::get('/users', 'userController@index')->name('User.index');;
@@ -77,4 +77,4 @@ Route::get('/rankingST/{id}/edit', 'rankingSTController@edit')->name('RankingST.
 Route::put('/rankingST/{id}', 'rankingSTController@update')->name('RankingST.update');
 Route::delete('/rankingST/{id}/delete', 'rankingSTController@destroy')->name('RankingST.destroy');
 //----------Rutas de configuracionST------------//
-Route::get('/rankingST', 'rankingSTController@index')->name('RankingST.index');
+Route::get('/opciones', 'configuracion_ST@index');

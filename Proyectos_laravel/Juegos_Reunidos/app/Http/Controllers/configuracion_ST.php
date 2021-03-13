@@ -8,7 +8,7 @@ class configuracion_ST extends Controller
 {
   public function index()
   {
-
+return view('ST/Configuracion/viewConfiguracion');
   }
 
   /**
