@@ -86,7 +86,7 @@
     var icounter = 60;
     
     function iFrames() {
-        if(icounter < 60){
+        if(icounter < 60 && health > 0){
 
             $('#player').css({'border': '0.1vh solid rgba(150, 150, 200, 0.8)', 'border-radius': '35%'});
 
@@ -120,8 +120,8 @@ function playerHitBox() {
         {
             // CAMBIAR A FUTURO
             if(invincible == false){
-                icounter = 0;
                 health = health - 25;
+                icounter = 0;
                 if(health > 0){
                     counterExplosion = 0;
                     enemyDeath = true;
@@ -136,12 +136,20 @@ function playerHitBox() {
                 }
             }
             if(health <= 0){
+                counterExplosion = 0;
+                enemyDeath = true;
                 kd.UP.unbindDown();
                 kd.RIGHT.unbindDown();
                 kd.LEFT.unbindDown();
                 kd.DOWN.unbindDown();
+                $('#player').attr({'src': '../../images/imagesMM/explosion.gif', 'class': 'explosion'});
                 hit = true;
                 audioMusic.pause(); 
+                audioHit.load();
+                audioExplosion.load(); 
+                audioHit.play(); 
+                audioExplosion.play(); 
+                $('.game-end').css('opacity', 0.8);
             }
         }
 

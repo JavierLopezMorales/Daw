@@ -29,6 +29,7 @@
             <div class="health-info">
                 Health: <div class="health">100</div>
             </div>
+            <div  class="sound-info"><img src="../../images/imagesMM/volumen-bajo.png" class="sound" onclick="mute()"></img> </div>
         </div>
 
     </div>
@@ -60,7 +61,17 @@
 
         </div>
         
-        <!--<div class="game-end"></div>-->
+        <div class="game-end">
+
+            <div class="game-end-info title">FIN DE LA PARTIDA</div>
+            <div class="game-end-info">Tu puntuacion es de<div class="score">0</div> </div>
+            <div class="game-buttons">
+
+                <a class="retry" href="{{route('JuegoMM.play')}}">Reintentar</a>
+                <a class="acept" href="{{route('JuegoMM.play')}}">Continuar</a>
+
+            </div>
+        </div>
 
     </div>
 

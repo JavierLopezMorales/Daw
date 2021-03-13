@@ -102,10 +102,11 @@ function enemySpawnHeight() {
 
 var counterExplosion = 0;
 var enemyDeath = false;
+
 function explosion() {
-    if(counterExplosion < 35 && enemyDeath == true){
+    if(counterExplosion < 33 && enemyDeath == true){
         counterExplosion++;
-    }else if(counterExplosion >= 35){
+    }else if(counterExplosion >= 33){
         $('.explosion').remove();
         enemyDeath = false;
         
@@ -122,6 +123,28 @@ function moveEnemy() {
             enemyArray.splice(x, 1)
             $('.enemy-count').html('NUMERO DE ENEMIGOS: ' + $('.enemy').length);
             incrementScore(-100);
+            health = health - 5;
+            if(health <= 0){
+                counterExplosion = 0;
+                enemyDeath = true;
+                kd.UP.unbindDown();
+                kd.RIGHT.unbindDown();
+                kd.LEFT.unbindDown();
+                kd.DOWN.unbindDown();
+                $('#player').attr({'src': '../../images/imagesMM/explosion.gif', 'class': 'explosion'});
+                game = false;
+                audioMusic.pause(); 
+                audioHit.load();
+                audioExplosion.load(); 
+                audioHit.play(); 
+                audioExplosion.play(); 
+                $('.game-end').css('opacity', 0.8);
+            }else{
+                audioHit.load();
+                audioExplosion.load(); 
+                audioHit.play(); 
+                audioExplosion.play(); 
+            }
         }
     }
 

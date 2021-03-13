@@ -105,6 +105,15 @@ body {
 	margin-left: 1vh;
 }
 
+.sound {
+	box-sizing: content-box;
+	margin-left: 1vh;
+	width: 5vh;
+	cursor: pointer;
+	background-color: white;
+	border-radius: 50%;
+}
+
 #player {
 	height: 10vh;
 	left: 0vw;
@@ -158,6 +167,7 @@ body {
 	justify-content: space-around;
 	align-items: center;
 	flex-direction: column;
+	opacity: 1;
 
 	animation: gameStartAnimation 5s infinite alternate ease-in-out, colorStartAnimation 7s infinite alternate linear;
 }
@@ -182,4 +192,62 @@ body {
 
 .game-start-info {
 	opacity: 0.8;
+}
+
+.game-end {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 120;
+	width: 40%;
+	height: 70%;
+	color: rgb(109, 216, 255);
+	font-size: 5vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	background-color: black;
+	border: rgb(109, 216, 255) 0.2vh solid;
+	opacity: 0;
+}
+
+.game-buttons {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.game-buttons a {
+	background-color: white;
+	border: none;
+	border-radius: 9999px;
+	padding: 2vh;
+	margin: 2vh;
+	font-size: 2vh;
+	text-decoration: none;
+	color: black;
+}
+
+.retry:hover,
+.retry:focus {
+	box-shadow: 0 0 0 0.5vh black, 0 0 0 0.7vh rgb(255, 204, 109);
+	background-color: rgb(255, 204, 109);
+	outline: none;
+	cursor: pointer;
+}
+
+.acept:hover,
+.acept:focus {
+	box-shadow: 0 0 0 0.5vh black, 0 0 0 0.7vh rgb(109, 255, 248);
+	background-color: rgb(109, 255, 248);
+	outline: none;
+	cursor: pointer;
+}
+
+.game-buttons a:active,
+.game-buttons a:visited,
+.game-buttons a:any-link {
+	color: black;
 }

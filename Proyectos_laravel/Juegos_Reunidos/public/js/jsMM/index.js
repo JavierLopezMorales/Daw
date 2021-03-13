@@ -1,17 +1,19 @@
 // Mientras game sea true el juego continua
 var game = true;
 var start = false;
-
+var musicCount = 0;
 if(start == false){
 
 
     kd.SPACE.down(function () { 
 
-        start = true;
-        $('.game-start').remove();
-        audioMusic.play(); 
-        audioMusic.volume = 0.2;
-        
+        if(musicCount == 0){
+            start = true;
+            $('.game-start').remove();
+            audioMusic.play(); 
+            audioMusic.volume = 0.2;
+            musicCount = 1;
+        }
     });
 
 }
@@ -71,8 +73,20 @@ if(start == false){
         audioMusic = document.getElementById("audioMusic");
     });
     
+    kd.M.press(function () { 
 
+        mute();
 
+    });
+
+    function mute() {
+        audioMusic = document.getElementById("audioMusic");
+        if(audioMusic.volume > 0){
+            audioMusic.volume = 0;
+        }else{
+            audioMusic.volume = 0.2;
+        }
+    }
 
 
     // This update loop is the heartbeat of Keydrown
@@ -83,6 +97,8 @@ if(start == false){
         coordinates();
         moveBullet();
         waitingBulletPosition();
+
+        explosion();
 
         if(game == true && start == true){
 
@@ -105,7 +121,7 @@ if(start == false){
             iFrames();
             
 
-            explosion();
+            
         }
         
     });
