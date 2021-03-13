@@ -13,15 +13,15 @@
 @section('content')
       <div class="container">
           <div id="tematica1" class="tematica">
-              <img src="../../public/images/imagesST/alcazaba.jpg">
+              <img src="{{url('images/imagesST/$name_fondo') }}">
               <h3>Alcazaba de Almeria</h3>
           </div>
           <div id="tematica2" class="tematica">
-            <img src="../../public/images/imagesST/celia.jpg">
+            <img src="{{url('images/imagesST/$name_fondo') }}">
             <h3>IES Celia Viñas</h3>
           </div>
           <div id="tematica3" class="tematica">
-            <img src="../../public/images/imagesST/cabo.jpg">
+            <img src="{{url('images/imagesST/$name_fondo') }}">
             <h3>Cabo de Gata</h3>
           </div>
       </div>

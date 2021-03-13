@@ -2,8 +2,12 @@
 <link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
 <script src="{{ asset('js/jsST/javascript.js') }}"></script>
 <script>
-document.getElementById("img-container").css.background="{{url('images/imagesST/$name_fondo') }}";
-document.getElementById("img-container").css.background="{{url('images/imagesST/$name_puzzle') }}";
+
+document.getElementById("img-container").css.background ="{{url('../../images/imagesST/$name_fondo')}}";
+@for ($i=1;$i<26;$i++)
+document.getElementByClass("tile" + {{$i}}).css.background ="{{url('images/imagesST/$name_puzzle')}}";
+@endfor
+
 </script>
 
 @section('Titulo', 'Sliding-Tiles')
@@ -56,7 +60,13 @@ document.getElementById("img-container").css.background="{{url('images/imagesST/
 </div>
 <div class="screen">
 
-	<p>Tiempo</p></br></br><div id="number"></div><p>Movimientos</p></br></br><div id="moves"></div></br>
+	<p>Tiempo</p>
+</br></br>
+<div id="number"></div>
+<p>Movimientos</p>
+</br></br>
+<div id="moves"></div>
+</br>
   <button onClick="temporizador(false);shuffle();">New Game</button>
 
 
