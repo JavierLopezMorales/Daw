@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(RankingSTSeeder::class);
         $this->call(TematicasSTTableSeeder::class);
+        $this->call(BoostMMTableSeeder::class);
     }
 }

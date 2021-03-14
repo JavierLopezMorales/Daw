@@ -29,6 +29,7 @@ Route::get('/users/{id}', 'userController@show')->name('User.show');
 Route::get('/users/{id}/edit', 'userController@edit')->name('User.edit');
 Route::put('/users/{id}', 'userController@update')->name('User.update');
 Route::delete('/users/{id}/delete', 'userController@destroy')->name('User.destroy');
+
 //----------Tematicas_slide----------------//
 Route::get('/tematicas', 'Tematicas_STController@index')->name('TematicasST.index');;
 Route::get('/tematicas/create', 'Tematicas_STController@create')->name('TematicasST.create');
@@ -69,6 +70,15 @@ Route::get('/mapMM/store', 'MapMMController@store')->name('mapMM.store');
 Route::get('/mapMM/{id}/edit', 'MapMMController@edit')->name('mapMM.edit');
 Route::get('/mapMM/{id}', 'MapMMController@update')->name('mapMM.update');
 Route::delete('/mapMM/{id}/delete', 'MapMMController@destroy')->name('mapMM.destroy');
+
+//----------Crud de boost------------//
+Route::get('/boosts', 'BoostMMController@index')->name('boosts.index');
+Route::get('/boosts/create', 'BoostMMController@create')->name('boosts.create');
+Route::get('/boosts/store', 'BoostMMController@store')->name('boosts.store');
+Route::get('/boosts/{id}/edit', 'BoostMMController@edit')->name('boosts.edit');
+Route::get('/boosts/{id}', 'BoostMMController@update')->name('boosts.update');
+Route::delete('/boosts/{id}/delete', 'BoostMMController@destroy')->name('boosts.destroy');
+
 //----------Crud de rankingST------------//
 Route::get('/rankingST', 'rankingSTController@index')->name('RankingST.index');
 Route::get('/rankingST/create', 'rankingSTController@create')->name('RankingST.create');
