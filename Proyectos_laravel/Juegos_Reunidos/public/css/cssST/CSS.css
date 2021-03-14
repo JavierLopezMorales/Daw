@@ -9,8 +9,7 @@
 	/*--img_puzzle:url("../../images/imagesST/cabo2.jpg");
 	--img_fondo:url("../../images/imagesST/cabo.jpg");*/
 
-	--img_puzzle:url("../../images/imagesST/alcazaba2.jpg");
-	--img_fondo:url("../../images/imagesST/alcazaba.jpg");
+
 
 
 }
@@ -22,7 +21,7 @@ BODY {
 
 }
 #img-container{
-background: var(--img_fondo);
+
    background-size: 120vw 120vh;
 
 	 width:100vw;

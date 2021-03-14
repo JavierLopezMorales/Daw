@@ -3,9 +3,9 @@
 <script src="{{ asset('js/jsST/javascript.js') }}"></script>
 <script>
 
-document.getElementById("img-container").css.background ="{{url('images/imagesST/$name_fondo')}}";
+document.getElementById("img-container").style.backgroundImage="{{url('images/imagesST/$name_fondo')}}";
 @for ($i=1;$i<26;$i++)
-document.getElementByClass("tile" + {{$i}}).css.background ="{{url('images/imagesST/$name_puzzle')}}";
+document.getElementByClass("tile" + {{$i}}).style.backgroundImage="{{url('images/imagesST/$name_puzzle')}}";
 @endfor
 
 </script>

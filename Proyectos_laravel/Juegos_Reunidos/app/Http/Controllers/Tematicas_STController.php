@@ -47,9 +47,13 @@ class Tematicas_STController extends Controller
    public function show()
        {
 
-             return view('ST/Juego');
+    $data['$name_fondo'] = TematicasST::find(6)->img_fondo;
+    $data['$name_puzzle'] = TematicasST::find(6)->img_puzzle;
 
-       }
+    return view('ST/Juego', $data);
+}
+
+
 
    public function edit($id) {
        $tematicas = TematicasST::find($id);
