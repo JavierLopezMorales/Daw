@@ -12,6 +12,7 @@
 
 
 
+
 @section('Titulo', 'MataMarcianos')
 
 @section('content')
@@ -29,7 +30,7 @@
             <div class="health-info">
                 Health: <div class="health">100</div>
             </div>
-            <div  class="sound-info"><img src="../../images/imagesMM/volumen-bajo.png" class="sound" onclick="mute()"></img> </div>
+            <div  class="sound-info"><img src="../../images/imagesMM/icons/volumen-up.png" class="sound" onclick="mute()"></img> </div>
         </div>
 
     </div>

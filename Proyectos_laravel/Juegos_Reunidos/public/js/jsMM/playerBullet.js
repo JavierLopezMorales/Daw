@@ -62,7 +62,7 @@ function checkHit(){
             enemyDeath = true;
             $('.main-container').append('<img src="" class="explosion"></img>');
             $('.explosion').css({'top': positionEnemyY + '%', 'left':  positionEnemyX-enemyWidth + 'vh', 'height': enemyHeight + 'vh'});
-            $('.explosion').attr('src', '../../images/imagesMM/explosion.gif')
+            $('.explosion').attr({'src': '../../images/imagesMM/explosion.gif'})
             $('.enemy#enemy' + enemyArray[en]).remove();
             audioExplosion.load(); 
             audioExplosion.play(); 

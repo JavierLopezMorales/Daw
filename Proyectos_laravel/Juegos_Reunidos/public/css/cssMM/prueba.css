@@ -110,8 +110,6 @@ body {
 	margin-left: 1vh;
 	width: 5vh;
 	cursor: pointer;
-	background-color: white;
-	border-radius: 50%;
 }
 
 #player {
@@ -250,4 +248,13 @@ body {
 .game-buttons a:visited,
 .game-buttons a:any-link {
 	color: black;
+}
+
+@keyframes rotacion {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
 }

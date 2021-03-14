@@ -88,12 +88,16 @@
     function iFrames() {
         if(icounter < 60 && health > 0){
 
-            $('#player').css({'border': '0.1vh solid rgba(150, 150, 200, 0.8)', 'border-radius': '35%'});
+            if(icounter >= 0 && icounter <= 13 || icounter >= 23 && icounter <= 36 || icounter >= 46 && icounter <= 59){
+                $('#player').css('filter', 'invert(100%)');
+            }else{
+                $('#player').css('filter', 'none');
+            }
 
             invincible = true;
             icounter++;
         }else{
-            $('#player').css({'border': 'none', 'border-radius': '0'});
+            $('#player').css('filter', 'none');
             invincible = false;
         }
     }
@@ -157,6 +161,7 @@ function playerHitBox() {
 
     if(hit == true){
         game = false;
+
     }
 
 }

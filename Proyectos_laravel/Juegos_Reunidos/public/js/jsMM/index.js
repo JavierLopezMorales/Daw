@@ -83,8 +83,10 @@ if(start == false){
         audioMusic = document.getElementById("audioMusic");
         if(audioMusic.volume > 0){
             audioMusic.volume = 0;
+            $('.sound').attr('src', '../../images/imagesMM/icons/volumen-down.png');
         }else{
             audioMusic.volume = 0.2;
+            $('.sound').attr('src', '../../images/imagesMM/icons/volumen-up.png');
         }
     }
 

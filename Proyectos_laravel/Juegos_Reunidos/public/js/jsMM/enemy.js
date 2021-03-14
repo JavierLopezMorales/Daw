@@ -45,7 +45,7 @@ function enemySpawnSpeed(){
         
         spawn = true;
         if(spawnTimeReducer == 30){
-            spawnSpeed = 20 + Math.floor(Math.random() * 11)
+            spawnSpeed = 20 + Math.floor(Math.random() * 11);
         }else{
             spawnSpeed = 30 + Math.floor(Math.random() * 61) - spawnTimeReducer;
             spawnTimeReducer = spawnTimeReducer + 0.1; 
@@ -104,9 +104,9 @@ var counterExplosion = 0;
 var enemyDeath = false;
 
 function explosion() {
-    if(counterExplosion < 33 && enemyDeath == true){
+    if(counterExplosion < 38 && enemyDeath == true){
         counterExplosion++;
-    }else if(counterExplosion >= 33){
+    }else if(counterExplosion >= 38){
         $('.explosion').remove();
         enemyDeath = false;
         
@@ -114,6 +114,7 @@ function explosion() {
 }
 
 function moveEnemy() {
+    
     $('.enemy').css('left', '-=0.4vw');
 
     // Eliminar enemigos
@@ -134,6 +135,7 @@ function moveEnemy() {
                 $('#player').attr({'src': '../../images/imagesMM/explosion.gif', 'class': 'explosion'});
                 game = false;
                 audioMusic.pause(); 
+                audioMusic.volume = 0; 
                 audioHit.load();
                 audioExplosion.load(); 
                 audioHit.play(); 
