@@ -9,7 +9,7 @@
             <a href="{{route('enemies.index')}}">Enemigos</a>
             <a href="{{route('rankingMM.index')}}">Ranking</a>
             <a href="{{route('mapMM.index')}}">Mapas</a></div>
-
+            <a href="{{route('boosts.index')}}">Boosts</a></div>
         <div class="container">
             @yield('content')
         </div>

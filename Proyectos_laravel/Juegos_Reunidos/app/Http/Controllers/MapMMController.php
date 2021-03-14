@@ -25,7 +25,7 @@ class MapMMController extends Controller
      */
     public function create()
     {
-        return view('formMapMM');
+        return view('MM/map/formMapMM');
     }
 
     /**

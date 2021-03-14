@@ -25,7 +25,7 @@ class RankingMMController extends Controller
      */
     public function create()
     {
-        return view('formRankingMM');
+        return view('MM/ranking/formRankingMM');
     }
 
     /**

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Enemies;
+use App\Models\BoostMM;
 
-class EnemiesController extends Controller
+class BoostMMController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class EnemiesController extends Controller
      */
     public function index()
     {
-        $enemiesList = Enemies::all();
-        return view('MM/enemies/showEnemiesMM', ['enemiesList' => $enemiesList]);
+        $boostsList = BoostMM::all();
+        return view('MM/boosts/showBoostsMM', ['boostsList' => $boostsList]);
     }
 
     /**
@@ -25,7 +25,7 @@ class EnemiesController extends Controller
      */
     public function create()
     {
-        return view('MM/enemies/formEnemiesMM');
+        return view('MM/boosts/formBoostsMM');
     }
 
     /**
@@ -36,16 +36,12 @@ class EnemiesController extends Controller
      */
     public function store(Request $request)
     {
-        $enemy = new Enemies();
-        $enemy->name = $request->name;
-        $enemy->health = $request->health;
-        $enemy->image = $request->image;
-        $enemy->atk_speed = $request->atk_speed;
-        $enemy->atk_damage = $request->atk_damage;
-        $enemy->route = $request->route;
-        $enemy->bullet_type = $request->bullet_type;
-        $enemy->save();
-        return redirect()->route('enemies.index');
+        $boost = new BoostMM();
+        $boost->name = $request->name;
+        $boost->amount = $request->amount;
+        $boost->icon = $request->icon;
+        $boost->save();
+        return redirect()->route('boosts.index');
     }
 
     /**
@@ -67,8 +63,8 @@ class EnemiesController extends Controller
      */
     public function edit($id)
     {
-        $enemies = Enemies::find($id);
-        return view('MM/enemies/formEnemiesMM', array('enemy' => $enemies));
+        $boosts = BoostMM::find($id);
+        return view('MM/boosts/formBoostsMM', array('boosts' => $boosts));
     }
 
     /**
@@ -80,16 +76,12 @@ class EnemiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $enemy = Enemies::find($request->id);
-        $enemy->name = $request->name;
-        $enemy->health = $request->health;
-        $enemy->image = $request->image;
-        $enemy->atk_speed = $request->atk_speed;
-        $enemy->atk_damage = $request->atk_damage;
-        $enemy->route = $request->route;
-        $enemy->bullet_type = $request->bullet_type;
+        $boost = BoostMM::find($request->id);
+        $boost->name = $request->name;
+        $boost->amount = $request->amount;
+        $boost->icon = $request->icon;
         $enemy->save();
-        return redirect()->route('enemies.index');
+        return redirect()->route('boosts.index');
     }
 
     /**
@@ -100,8 +92,8 @@ class EnemiesController extends Controller
      */
     public function destroy($id)
     {
-        $enemy = Enemies::find($id);
-        $enemy->delete();
-        return redirect()->route('enemies.index');
+        $boost = BoostMM::find($id);
+        $boost->delete();
+        return redirect()->route('boosts.index');
     }
 }
