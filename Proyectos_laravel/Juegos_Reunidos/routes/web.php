@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/juegoMM', 'shipsController@show')->name('JuegoMM.play');
+Route::get('/juegoMM', 'GameMMController@index')->name('JuegoMM.index');
 Route::get('/JuegoST', 'Tematicas_STController@show')->name('TematicasST.show');
 
 //----------Usuarios----------------//

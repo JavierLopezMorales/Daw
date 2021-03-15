@@ -66,10 +66,13 @@ function checkHit(){
             $('.enemy#enemy' + enemyArray[en]).remove();
             audioExplosion.load(); 
             audioExplosion.play(); 
-
             enemyArray.splice(en, 1);
             $('.move-bullet').removeClass('move-bullet').addClass('waiting-bullet');
             incrementScore(100);
+
+            if(Math.floor(Math.random() * 10) + 1 == 1){
+                boostSelection();
+            }
         }
 
     }

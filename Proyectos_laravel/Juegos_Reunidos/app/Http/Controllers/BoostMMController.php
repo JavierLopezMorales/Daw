@@ -40,6 +40,7 @@ class BoostMMController extends Controller
         $boost->name = $request->name;
         $boost->amount = $request->amount;
         $boost->icon = $request->icon;
+        $boost->selector = $request->selector;
         $boost->save();
         return redirect()->route('boosts.index');
     }
@@ -80,6 +81,7 @@ class BoostMMController extends Controller
         $boost->name = $request->name;
         $boost->amount = $request->amount;
         $boost->icon = $request->icon;
+        $boost->selector = $request->selector;
         $enemy->save();
         return redirect()->route('boosts.index');
     }

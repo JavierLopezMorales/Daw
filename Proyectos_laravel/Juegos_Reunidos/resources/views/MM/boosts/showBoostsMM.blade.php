@@ -18,12 +18,8 @@
             <td>{{$boosts -> name}}</td>
             <td>{{$boosts -> amount}}</td>
             <td><img src="{{url('/images/imagesMM/icons/', $boosts -> icon)}}" style="width: 50px; background-color: black"></td>
-
+            <td>{{$boosts -> selector}}</td>
             <td><a href="{{route('boosts.edit', $boosts->id)}}">Modificar</a></td>
-
-            {{-- 
-                Boton para borrar una nave
-                --}}
             
             <td>
                 <form action = "{{route('boosts.destroy', $boosts->id)}}" method="POST">
