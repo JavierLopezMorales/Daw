@@ -21,7 +21,7 @@ BODY {
 
 }
 #img-container{
-
+background-image: ;
    background-size: 120vw 120vh;
 
 	 width:100vw;
@@ -200,4 +200,4 @@ p{
 .tile22 {background-position:25% 100%;}
 .tile23 {background-position:50% 100%;}
 .tile24 {background-position:75% 100%;}
-.tile25 {background: white; cursor: default;}
+.tile25 { cursor: default;}

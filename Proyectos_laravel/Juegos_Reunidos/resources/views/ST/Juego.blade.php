@@ -1,14 +1,21 @@
 @extends('layouts.masterST')
-<link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
-<script src="{{ asset('js/jsST/javascript.js') }}"></script>
+
 <script>
 
-document.getElementById("img-container").style.backgroundImage="{{url('images/imagesST/$name_fondo')}}";
-@for ($i=1;$i<26;$i++)
-document.getElementByClass("tile" + {{$i}}).style.backgroundImage="{{url('images/imagesST/$name_puzzle')}}";
-@endfor
+
+document.addEventListener("DOMContentLoaded", function () {
+  var fondo = document.getElementById("img-container");
+  fondo.style.backgroundImage="url({{url('images/imagesST',$name_fondo)}})";
+  @for ($i=1;$i<25;$i++)
+  var puzzle =  document.getElementsByClassName("tile" + {{$i}})[0];
+  puzzle.style.backgroundImage="url({{url('images/imagesST',$name_puzzle)}})";
+  @endfor
+  document.getElementsByClassName("tile25")[0].style.background="white";
+});
 
 </script>
+<link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
+<script src="{{ asset('js/jsST/javascript.js') }}"></script>
 
 @section('Titulo', 'Sliding-Tiles')
 
