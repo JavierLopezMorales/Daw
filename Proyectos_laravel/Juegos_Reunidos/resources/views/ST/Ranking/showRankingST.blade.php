@@ -10,25 +10,26 @@
 @endsection
 
 @section('content')
-    <table border="1px solid black">
-
+<div class="container2">
+    <table border="3px solid black">
+<thead>
         <tr>
             <th>Nombre</th>
             <th>Fecha</th>
             <th>Puntuacion</th>
             <th>Modo</th>
-            <th colspan="2"><a href="{{route('RankingST.create')}}">Crear</a></th>
+            <th colspan="2"><a href="{{route('RankingST.create')}}"><input type="button"class="button" value="Crear"></a></th>
         </tr>
-
+</thead>
         @foreach($rankingList as $ranking)
-
+<tbody>
         <tr>
             <td>{{$ranking -> name}}</td>
             <td>{{$ranking -> date}}</td>
             <td>{{$ranking -> score}}</td>
             <td>{{$ranking -> mode}}</td>
 
-            <td><a href="{{route('RankingST.edit', $ranking->id)}}">Modificar</a></td>
+            <td><a href="{{route('RankingST.edit', $ranking->id)}}"><input type="button"class="button" value="Modificar"></a></td>
 
 
 
@@ -36,12 +37,13 @@
                 <form action = "{{route('RankingST.destroy', $ranking->id)}}" method="POST">
                     @csrf
                     @method("DELETE")
-                    <input type="submit" value="Borrar">
+                    <input class="button"type="submit" value="Borrar">
                 </form>
             </td>
 
         </tr>
         @endforeach
-
+</tbody>
     </table>
+  </div>
 @endsection

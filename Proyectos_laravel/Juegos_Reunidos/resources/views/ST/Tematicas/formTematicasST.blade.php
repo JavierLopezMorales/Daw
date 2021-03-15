@@ -16,7 +16,10 @@
         <form action="{{ route('TematicasST.store') }}"enctype="multipart/form-data" method="POST">
     @endisset
         @csrf
+        <div class="container2">
+            <table border="3px solid black">
         <table>
+          <tbody>
           <tr>
             <td>Tipo de tematica:<input type="text" name="type" value="{{$tematica->type ?? '' }}"></td>
           </tr>
@@ -33,11 +36,14 @@
       <td>Imagen del puzzle:<input  type="file" name="img_puzzle" value="{{$tematica->img_puzzle ?? '' }}"></td>
     </tr>
     <tr>
-      <td>Modo :<input type="text" name="modo" value="{{$tematica->modo ?? '' }}"></td>
+      <td>Modo :<input type="number" name="modo" value="{{$tematica->modo ?? '' }}"></td>
     </tr>
+  </tbody>
 
         </table>
-        <input type="submit">
+        <input class="button"type="submit">
+      </div>
+
         </form>
 
 

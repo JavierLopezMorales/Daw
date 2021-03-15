@@ -189,7 +189,10 @@ function Comprobar(){
 
 	}
 	if(victoria == true){
-		setTimeout(function(){ prompt("has ganado"); }, 100);
+
+		setTimeout(function(){
+
+         var name =prompt("has ganado, escribe tu alias (3 caracteres)"); }, 100);
 
 		}
 }

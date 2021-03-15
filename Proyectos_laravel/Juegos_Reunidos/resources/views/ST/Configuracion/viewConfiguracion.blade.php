@@ -1,6 +1,5 @@
 @extends('layouts.masterST')
 <link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/cssST/config.css') }}" />
 <script src="{{ asset('js/jsST/config.js') }}"></script>
 
 @section('Titulo', 'Opciones Puzzle')
@@ -13,15 +12,17 @@
 @endsection
 
 @section('content')
-<div id="container">
+<div id="container2">
   <div class="button-tematica">
     <img src="../../../../images/imagesST/celia.jpg"width="450px"height="300px"alt="imagen-tematica">
-    <a href="{{route('TematicasST.show')}}" alt="boton">Seleccionar</a>
+
   </div>
+  <a href="{{route('TematicasST.show')}}"><input type="button"class="button" value="Seleccionar"></a>
       <div class="button-tematica">
         <img src="../../../../images/imagesST/alcazaba.jpg"width="450px"height="300px"alt="imagen-tematica">
-        <a href="{{route('TematicasST.show')}}" alt="boton">Seleccionar</a>
+
       </div>
+      <a href="{{route('TematicasST.show')}}"><input type="button"class="button" value="Seleccionar"></a>
 
 
     </div>
