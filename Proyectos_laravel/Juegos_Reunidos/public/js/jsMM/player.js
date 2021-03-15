@@ -2,14 +2,14 @@
     var speed;
 
 
-
+var playerSpeed = 0.8;
     // Velocidad a la que el player se mueve, es mas despacio si se mueve en diagonal
     function calcSpeed(){
         if(kd.LEFT.isDown() == true && kd.UP.isDown() == true || kd.LEFT.isDown() == true && kd.DOWN.isDown() == true || kd.UP.isDown() == true && kd.RIGHT.isDown() == true || kd.RIGHT.isDown() == true && kd.DOWN.isDown() == true){
-            speed = 0.6;
+            speed = playerSpeed - 0.2;
         }
         else{
-            speed =  0.8;
+            speed =  playerSpeed;
         }
     }
 
@@ -84,12 +84,15 @@
 
     var invincible = true;
     var icounter = 60;
+    var totaliFrames = 60;
+    var counterStyle = 0;
     
     function iFrames() {
-        if(icounter < 60 && health > 0){
-
-            if(icounter >= 0 && icounter <= 13 || icounter >= 23 && icounter <= 36 || icounter >= 46 && icounter <= 59){
+        if(icounter < totaliFrames && health > 0){
+            counterStyle++;
+            if(counterStyle < 20 || counterStyle >= 40){
                 $('#player').css('filter', 'invert(100%)');
+                if(counterStyle == 60){counterStyle = 20;}
             }else{
                 $('#player').css('filter', 'none');
             }
@@ -99,6 +102,8 @@
         }else{
             $('#player').css('filter', 'none');
             invincible = false;
+            totaliFrames = 60;
+            counterStyle = 0;
         }
     }
 

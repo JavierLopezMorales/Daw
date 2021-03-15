@@ -8,8 +8,10 @@
             <a href="{{route('ships.index')}}">Naves</a>
             <a href="{{route('enemies.index')}}">Enemigos</a>
             <a href="{{route('rankingMM.index')}}">Ranking</a>
-            <a href="{{route('mapMM.index')}}">Mapas</a></div>
-            <a href="{{route('boosts.index')}}">Boosts</a></div>
+            <a href="{{route('mapMM.index')}}">Mapas</a>
+            <a href="{{route('boosts.index')}}">Boosts</a>
+            <a href="{{route('JuegoMM.index')}}">Juego Shoot'em Up!</a> 
+        </div>
         <div class="container">
             @yield('content')
         </div>

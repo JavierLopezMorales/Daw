@@ -56,7 +56,7 @@ class ShipsController extends Controller
      */
     public function show()
     {
-        return view('MM/game');
+        
     }
 
     /**

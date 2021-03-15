@@ -18,6 +18,7 @@ class CreateBoostMMTable extends Migration
             $table->string('name');
             $table->double('amount');
             $table->string('icon');
+            $table->string('selector');
             $table->timestamps();
         });
     }

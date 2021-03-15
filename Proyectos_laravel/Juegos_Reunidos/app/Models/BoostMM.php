@@ -21,5 +21,6 @@ class BoostMM extends Model
         'name',
         'amount',
         'icon',
+        'selector',
     ];
 }

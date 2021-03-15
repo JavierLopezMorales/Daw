@@ -2,6 +2,7 @@
 var game = true;
 var start = false;
 var musicCount = 0;
+
 if(start == false){
 
 
@@ -35,6 +36,7 @@ if(start == false){
     }
 
     var bonusMultiplier = 0;
+    var bonusTimer = 0;
     function incrementScore(score) {
 
         var posMultiplier = parseFloat($('#player').css('left'))/parseFloat($('.main-container').css('width'));
@@ -51,7 +53,22 @@ if(start == false){
 
         // Se incrementa el valor
         $('.score').html(newScore);
+        
+    }
 
+    var bonus = false;
+    var counterTimer = 0;
+    function bonusScoreTimer() {
+        if(counterTimer < bonusTimer && bonusTimer != 0 && bonus == true){
+            counterTimer++;
+            $('.doublePoints').css('opacity', 1);
+        }else{
+            $('.doublePoints').css('opacity', 0);
+            bonusMultiplier = 0;
+            counterTimer=0;
+            bonus = false;
+            
+        }
     }
 
     var counter = 0;
@@ -71,6 +88,7 @@ if(start == false){
         audioExplosion = document.getElementById("audioExplosion");
         audioHit = document.getElementById("audioHit");
         audioMusic = document.getElementById("audioMusic");
+        audioPowerUp = document.getElementById("audioPowerUp");
     });
     
     kd.M.press(function () { 
@@ -121,7 +139,7 @@ if(start == false){
             scoreOverTime();
             
             iFrames();
-            
+            bonusScoreTimer();
 
             
         }

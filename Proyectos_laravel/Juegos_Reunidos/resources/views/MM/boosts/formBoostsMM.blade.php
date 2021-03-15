@@ -14,7 +14,8 @@
         @csrf
         Nombre del boost:<input type="text" name="name" value="{{$boost->name ?? '' }}"><br>
         Cantidad:<input type="number" name="amount" value="{{$boost->amount ?? '' }}"><br>
-        icon:<input type="text" name="icon" value="{{$boost->icon ?? '' }}"><br>
+        Icono:<input type="text" name="icon" value="{{$boost->icon ?? '' }}"><br>
+        Selector:<input type="text" name="selector" value="{{$boost->selector ?? '' }}"><br>
         <input type="submit">
         </form>
 
