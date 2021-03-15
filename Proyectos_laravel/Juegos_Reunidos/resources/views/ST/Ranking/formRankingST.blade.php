@@ -1,5 +1,5 @@
 @extends('layouts.masterST')
-
+<link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
 @section('Titulo', 'Creación de Ranking - Sliding-Tiles')
 
 @section('sidebar')

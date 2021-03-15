@@ -57,13 +57,13 @@ function clickTile(row,column) {
 /*Puzzle 5x5*/
 
  var modo = 5;
- var inicial= new Array();
- var fin = new Array();
+
  var check = true;
  var cont= 0;
 
 function swapTiles(cell1,cell2,x) {
-
+console.log("cell1="+cell1);
+console.log("cell2="+cell2);
   var temp = document.getElementById(cell1).className;
   document.getElementById(cell1).className = document.getElementById(cell2).className;
   document.getElementById(cell2).className = temp;
@@ -82,7 +82,7 @@ function swapTiles(cell1,cell2,x) {
 
 
 
-}
+  }
 }
 
 
@@ -91,7 +91,7 @@ function swapTiles(cell1,cell2,x) {
 function shuffle() {
 
 
-
+cont=0;
 //Use bucles anidados para acceder a cada celda de la cuadrícula de 5x5
 for (var row=1;row<=5;row++) { //Para cada fila de la cuadrícula de 5x5
    for (var column=1;column<=5;column++) { //Para cada columna de esta fila
@@ -110,7 +110,9 @@ for (var row=1;row<=5;row++) { //Para cada fila de la cuadrícula de 5x5
 function clickTile(row,column) {
   var cell = document.getElementById("cell"+row+column);/*ID*/
   var tile = cell.className;/*CLASE*/
-
+console.log("cell="+ row+column);
+console.log("tile="+ tile);
+console.log("------------");
   if (tile!="tile25") {
        //Comprueba si hay un hueco blanco a la derecha
        if (column<5) {

@@ -1,4 +1,5 @@
 @extends('layouts.masterST')
+<link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/cssST/config.css') }}" />
 <script src="{{ asset('js/jsST/config.js') }}"></script>
 
