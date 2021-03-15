@@ -66,6 +66,7 @@
 
         <audio id="audioDisparo" src="../../sounds/soundMM/disparo.wav"></audio>
         <audio id="audioExplosion" src="../../sounds/soundMM/explosion.wav"></audio>
+        <audio id="audioNuke" src="../../sounds/soundMM/nuke.wav"></audio>
         <audio id="audioHit" src="../../sounds/soundMM/hit.wav"></audio>
         <audio id="audioMusic" src="../../sounds/soundMM/music.mp3" loop></audio>
         <audio id="audioPowerUp" src="../../sounds/soundMM/power-up.wav"></audio>

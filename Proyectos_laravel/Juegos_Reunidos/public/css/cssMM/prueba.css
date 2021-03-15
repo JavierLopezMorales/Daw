@@ -285,3 +285,19 @@ body {
 span {
 	color: rgb(253, 255, 113);
 }
+
+.boost {
+	height: 7vh;
+	width: 7vh;
+	position: absolute;
+	z-index: 110;
+}
+
+@keyframes boostRotation {
+	from {
+		transform: rotateY(-45deg);
+	}
+	to {
+		transform: rotateY(45deg);
+	}
+}
