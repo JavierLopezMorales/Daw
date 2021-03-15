@@ -19,7 +19,7 @@ function spawnEnemy(){
     
         enemySize = (parseFloat($('.enemy#enemy' + enemyCounter).css('height')) / parseFloat($('.main-container').css('height'))) * 100;
         mainHeight = parseFloat(parseFloat($('.main-container').css('height'))/parseFloat($(window).height())*100);
-        var spawnEnemy = enemySpawnHeight();
+        var spawnEnemy = enemySpawnHeight(enemySize);
         
 
         $('.enemy#enemy' + enemyCounter).css('left' , '100vw');
@@ -55,7 +55,7 @@ function enemySpawnSpeed(){
     $('.enemy-counter').html('CONTADOR ENEMIGO: ' + spawnTimer);
 }
 
-function enemySpawnHeight() {
+function enemySpawnHeight(size) {
     var number = Math.floor(Math.random() * 10) + 1;
     var heightSpawn = 0;
 
@@ -64,35 +64,35 @@ function enemySpawnHeight() {
             heightSpawn = 0;
             break;
         case 2:
-            heightSpawn = 10 - (enemySize/2);
+            heightSpawn = 10 - (size/2);
             break;
         case 3:
-            heightSpawn = 20 - (enemySize/2);
+            heightSpawn = 20 - (size/2);
             break;
         case 4:
-            heightSpawn = 30 - (enemySize/2);
+            heightSpawn = 30 - (size/2);
             break;
         case 5:
-            heightSpawn = 40 - (enemySize/2);
+            heightSpawn = 40 - (size/2);
             break;
         case 6:
-            heightSpawn = 60 - (enemySize/2);
+            heightSpawn = 60 - (size/2);
             break;
         case 7:
-            heightSpawn = 70 - (enemySize/2);
+            heightSpawn = 70 - (size/2);
             break;
         case 8:
-            heightSpawn = 80 - (enemySize/2);
+            heightSpawn = 80 - (size/2);
             break;
         case 9:
-            heightSpawn = 90 - (parseFloat($('.game-nav').css('height'))/parseFloat($(window).height())*100) - (enemySize/2);
+            heightSpawn = 90 - (parseFloat($('.game-nav').css('height'))/parseFloat($(window).height())*100) - (size/2);
             break;
         case 10:
-            heightSpawn = 101.1 - (parseFloat($('.game-nav').css('height'))/parseFloat($(window).height())*100) - enemySize;
+            heightSpawn = 101.1 - (parseFloat($('.game-nav').css('height'))/parseFloat($(window).height())*100) - size;
             break;
                                             
         default:
-            heightSpawn = heightSpawn = 50 - (enemySize/2);
+            heightSpawn = heightSpawn = 50 - (size/2);
             break;
     }
 
@@ -121,7 +121,7 @@ function moveEnemy() {
     for(var x = 0; x <= enemyArray.length; x++){
         if(parseFloat($('.enemy#enemy' + enemyArray[x]).css('left')) <=  (0-parseFloat($('.enemy#enemy' + enemyArray[x]).css('width')))){
             $('.enemy#enemy' + enemyArray[x]).remove();
-            enemyArray.splice(x, 1)
+            enemyArray.splice(x, 1);
             $('.enemy-count').html('NUMERO DE ENEMIGOS: ' + $('.enemy').length);
             incrementScore(-100);
             health = health - 5;

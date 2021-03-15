@@ -86,6 +86,7 @@ if(start == false){
     $(document).ready(function () {
         audioDisparo = document.getElementById("audioDisparo");
         audioExplosion = document.getElementById("audioExplosion");
+        audioNuke = document.getElementById("audioNuke");
         audioHit = document.getElementById("audioHit");
         audioMusic = document.getElementById("audioMusic");
         audioPowerUp = document.getElementById("audioPowerUp");
@@ -140,8 +141,8 @@ if(start == false){
             
             iFrames();
             bonusScoreTimer();
-
-            
+            moveBoost();
+            checkBoostHit();
         }
         
     });
