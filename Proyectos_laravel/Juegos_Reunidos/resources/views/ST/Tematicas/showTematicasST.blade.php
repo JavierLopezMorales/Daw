@@ -3,19 +3,14 @@
 @section('Titulo', 'Tabla de Tematicas')
 
 @section('sidebar')
-<nav>
-  <a href="#">Inicio</a>
-  <a href="{{route('TematicasST.index')}}">Tematica</a>
-  <a href="{{route('RankingST.index')}}">Ranking</a>
-  <a href="{{route('RankingST.show')}}">Opciones</a>
-  <a href="{{route('TematicasST.show')}}">(Juego de momento)</a>
-  <div class="animation start-home"></div>
-</nav>
+
 
 @endsection
 
 @section('content')
-    <table border="1px solid black">
+<div class="container2">
+    <table border="3px solid black">
+      <thead>
 
         <tr>
             <th>Tipo</th>
@@ -24,11 +19,12 @@
             <th>Imagen de fondo</th>
             <th>Imagen de puzzle</th>
             <th>Modo</th>
-            <th colspan="2"><a href="{{route('TematicasST.create')}}">Crear</a></th>
+            <th colspan="2"><a href="{{route('TematicasST.create')}}"><input type="button"class="button" value="Crear"></a></th>
         </tr>
+      </thead>
 
         @foreach($tematicasList as $tematicas)
-
+        <tbody>
         <tr>
             <td>{{$tematicas -> type}}</td>
             <td>{{$tematicas -> name}}</td>
@@ -38,7 +34,7 @@
             <td>{{$tematicas -> modo}}</td>
 
 
-            <td><a href="{{route('TematicasST.edit', $tematicas->id)}}">Modificar</a></td>
+            <td><a href="{{route('TematicasST.edit', $tematicas->id)}}"><input type="button"class="button" value="Modificar"></a></td>
 
             {{--
                 Boton para borrar una tematica
@@ -48,12 +44,14 @@
                 <form action = "{{route('TematicasST.destroy', $tematicas->id)}}" method="POST">
                     @csrf
                     @method("DELETE")
-                    <input type="submit" value="Borrar">
+                    <input class="button"type="submit" value="Borrar">
                 </form>
             </td>
 
         </tr>
+      </tbody>
         @endforeach
 
     </table>
+  </div>
 @endsection

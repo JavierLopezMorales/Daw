@@ -3,7 +3,7 @@
 	/*--img_puzzle:url("../../images/imagesST/bandera2.png");*/
 	/*--img_fondo:url("../../images/imagesST/bandera.png");*/
 
-	--img_puzzle:url("../../images/imagesST/celia2.jpg");
+	/*--img_puzzle:url("../../images/imagesST/celia2.jpg");
 	--img_fondo:url("../../images/imagesST/celia.jpg");
 
 	/*--img_puzzle:url("../../images/imagesST/cabo2.jpg");
@@ -16,7 +16,7 @@
 
 #img-container{
    background-size: 120vw 120vh;
-   background: var(--imagen_fondo);
+
 	 width:100vw;
 	 height: 100vh;
 	 position:fixed;
@@ -89,7 +89,7 @@ justify-content: space-between;
 
   display: table-cell;
   border: 0.2vh solid white;
-  background: var(--img_puzzle);
+background:;
   cursor: pointer;
   background-size:500%;
 
@@ -260,11 +260,7 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 	background-color: #e67e22;
 }
 
-body {
 
-	font-family: sans-serif;
-
-}
 h1 {
 	text-align: center;
 	margin: 40px 0 40px;
@@ -281,4 +277,102 @@ p{
 
 span {
     color: #2BD6B4;
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+width:100%;
+
+  background-attachment: fixed;;
+  font-family: sans-serif;
+}
+
+.container2 {
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -20%);
+}
+
+table {
+
+	width: 1200px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+
+}
+
+th {
+	text-align: left;
+  font-style: italic;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+.button {
+  line-height: 1;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px;
+  background-color:rgba(255,255,255,0.2) ;
+}
+.button-tematica{
+display:inline-block;
+position:relative;
+}
+
+.button-tematica a{
+position: absolute;
+bottom:10%;
+right:10%;
+background-color:blue;
+border-radius:1.5em;
+color:white;
+text-transform:uppercase;
+padding:1em 1.5em;
+height: 10%;
+
 }

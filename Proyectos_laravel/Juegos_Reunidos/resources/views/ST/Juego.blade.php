@@ -15,12 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var puzzle =  document.getElementsByClassName("tile" + {{$i}})[0];
   puzzle.style.backgroundImage="url({{url('images/imagesST',$name_puzzle)}})";
   @endfor
-  document.getElementsByClassName("tile25")[0].style.background="white";
+
 });
 </script>
 
 
-
+<br>
+<br>
 <center>
   <div id="puzzle-contenedor">
 <div id="table" style="display: inline-table;">
@@ -60,19 +61,22 @@ document.addEventListener("DOMContentLoaded", function () {
 	  <div id="cell55" class="tile25" onClick="clickTile(5,5);"></div>
    </div>
 
+
 </div>
+
 <div class="screen">
 
 	<p>Tiempo</p>
 
 <div id="number"></div>
-<p>Movimientos</p>
-<div id="moves"></div>
+  <p>Movimientos</p>
+    <div id="moves"></div>
 
-  <button onClick="temporizador(false);shuffle();">New Game</button>
+    <button onClick="temporizador(false);shuffle();">New Game</button>
   	<button onClick="Comprobar();">Comprobar</button>
 </div>
 </div>
+
 
 
 <div id="img-container"></div>

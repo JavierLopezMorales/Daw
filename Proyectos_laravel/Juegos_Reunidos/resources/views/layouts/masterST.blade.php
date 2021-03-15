@@ -10,7 +10,7 @@
           	<a href="{{route('TematicasST.index')}}">Tematica</a>
           	<a href="{{route('RankingST.index')}}">Ranking</a>
           	<a href="{{route('RankingST.show')}}">Opciones</a>
-          	<a href="{{route('TematicasST.show')}}">(Juego de momento)</a>
+          	<a href="{{route('TematicasST.show')}}">Juego</a>
           	<div class="animation start-home"></div>
           </nav>
           </div>

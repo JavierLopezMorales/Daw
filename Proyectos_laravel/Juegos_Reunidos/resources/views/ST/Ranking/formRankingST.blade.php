@@ -16,11 +16,28 @@
         <form action="{{ route('RankingST.store') }}" method="POST">
     @endisset
         @csrf
-        Name:<input type="name" name="name" value="{{$ranking->name ?? '' }}"><br>
-        Score:<input type="number" name="score" value="{{$ranking->score ?? '' }}"><br>
-        Date:<input type="date" name="date" value="{{$ranking->date ?? '' }}"><br>
-        Mode:<input type="number" name="mode" value="{{$ranking->mode ?? '' }}"><br>
-        <input type="submit">
+        <div class="container2">
+            <table border="3px solid black">
+              <table>
+                <tbody>
+                <tr>
+                  <td>Name:<input type="text" name="name" value="{{$ranking->name ?? '' }}"></td>
+                </tr>
+                <tr>
+                  <td>Score:<input type="number" name="score" value="{{$ranking->score ?? '' }}"></td>
+                </tr>
+                <tr>
+                  <td>Date:<input type="date" name="date" value="{{$ranking->date ?? '' }}"></td>
+                </tr>
+                <tr>
+                  <td>Mode:<input type="number" name="mode" value="{{$ranking->mode ?? '' }}"></td>
+                </tr>
+              </tbody>
+
+            </table>
+              <input class="button"type="submit">
+          </div>
+
         </form>
 
 
