@@ -5,11 +5,16 @@ position:relative;
 
 .button-tematica a{
 position: absolute;
-bottom:4em;
-right:4em;
+bottom:10%;
+right:10%;
 background-color:blue;
 border-radius:1.5em;
 color:white;
 text-transform:uppercase;
 padding:1em 1.5em;
+height: 10%;
+
+}
+p{
+
 }

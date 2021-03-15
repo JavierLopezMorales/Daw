@@ -20,10 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
 @section('Titulo', 'Sliding-Tiles')
 
 @section('content')
-<div id="head">
-<h1>Sliding-Tiles puzzle</h1>
-</div>
-<br/>
+
+
 
 <center>
   <div id="puzzle-contenedor">
@@ -68,15 +66,12 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="screen">
 
 	<p>Tiempo</p>
-</br></br>
+
 <div id="number"></div>
 <p>Movimientos</p>
-</br></br>
 <div id="moves"></div>
-</br>
+
   <button onClick="temporizador(false);shuffle();">New Game</button>
-
-
   	<button onClick="Comprobar();">Comprobar</button>
 </div>
 </div>

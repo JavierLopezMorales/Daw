@@ -52,8 +52,9 @@ class rankingSTController extends Controller
    * @return \Illuminate\Http\Response
    */
    public function show()
-   {
 
+   {
+     return view('ST/Configuracion/viewConfiguracion');
    }
 
   /**
