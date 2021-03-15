@@ -62,7 +62,8 @@ function clickTile(row,column) {
  var cont= 0;
 
 function swapTiles(cell1,cell2,x) {
-
+console.log("cell1="+cell1);
+console.log("cell2="+cell2);
   var temp = document.getElementById(cell1).className;
   document.getElementById(cell1).className = document.getElementById(cell2).className;
   document.getElementById(cell2).className = temp;
@@ -109,7 +110,9 @@ for (var row=1;row<=5;row++) { //Para cada fila de la cuadrícula de 5x5
 function clickTile(row,column) {
   var cell = document.getElementById("cell"+row+column);/*ID*/
   var tile = cell.className;/*CLASE*/
-
+console.log("cell="+ row+column);
+console.log("tile="+ tile);
+console.log("------------");
   if (tile!="tile25") {
        //Comprueba si hay un hueco blanco a la derecha
        if (column<5) {

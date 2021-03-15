@@ -3,8 +3,8 @@
 	/*--img_puzzle:url("../../images/imagesST/bandera2.png");*/
 	/*--img_fondo:url("../../images/imagesST/bandera.png");*/
 
-	/*--img_puzzle:url("../../images/imagesST/celia2.jpg");*/
-	/*--img_fondo:url("../../images/imagesST/celia.jpg");*/
+	--img_puzzle:url("../../images/imagesST/celia2.jpg");
+	--img_fondo:url("../../images/imagesST/celia.jpg");
 
 	/*--img_puzzle:url("../../images/imagesST/cabo2.jpg");
 	--img_fondo:url("../../images/imagesST/cabo.jpg");*/
@@ -16,6 +16,7 @@
 
 #img-container{
    background-size: 120vw 120vh;
+   background: var(--imagen_fondo);
 	 width:100vw;
 	 height: 100vh;
 	 position:fixed;
@@ -34,6 +35,7 @@
 
 
 }
+
 
 #number {
 	display:inline-block;
@@ -87,7 +89,7 @@ justify-content: space-between;
 
   display: table-cell;
   border: 0.2vh solid white;
-  background: ;
+  background: var(--img_puzzle);
   cursor: pointer;
   background-size:500%;
 
@@ -184,7 +186,7 @@ justify-content: space-between;
 .tile22 {background-position:25% 100%;}
 .tile23 {background-position:50% 100%;}
 .tile24 {background-position:75% 100%;}
-.tile25 { cursor: default;}
+.tile25 { background: white;cursor: default;}
 /*---------------------------------------------------------------------------------*/
 nav {
 	margin: 27px auto 0;
@@ -259,7 +261,7 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 }
 
 body {
-	
+
 	font-family: sans-serif;
 
 }

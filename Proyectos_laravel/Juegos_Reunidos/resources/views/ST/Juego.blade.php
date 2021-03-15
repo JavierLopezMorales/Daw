@@ -1,8 +1,13 @@
 @extends('layouts.masterST')
 
+
+<link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
+<script src="{{ asset('js/jsST/javascript.js') }}"></script>
+
+@section('Titulo', 'Sliding-Tiles')
+
+@section('content')
 <script>
-
-
 document.addEventListener("DOMContentLoaded", function () {
   var fondo = document.getElementById("img-container");
   fondo.style.backgroundImage="url({{url('images/imagesST',$name_fondo)}})";
@@ -12,14 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   @endfor
   document.getElementsByClassName("tile25")[0].style.background="white";
 });
-
 </script>
-<link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
-<script src="{{ asset('js/jsST/javascript.js') }}"></script>
-
-@section('Titulo', 'Sliding-Tiles')
-
-@section('content')
 
 
 
