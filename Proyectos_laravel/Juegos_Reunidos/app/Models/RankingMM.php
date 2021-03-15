@@ -19,7 +19,6 @@ class RankingMM extends Model
      */
     protected $fillable = [
         'name',
-        'level',
         'score',
     ];
 }

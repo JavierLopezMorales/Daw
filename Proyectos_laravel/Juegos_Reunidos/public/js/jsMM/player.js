@@ -77,7 +77,7 @@ var playerSpeed = 0.8;
 
     function showHealth() {
         // Se incrementa el valor
-        $('.health').html(health);
+        $('.health-indicator').html(health);
 
     }
 
@@ -158,7 +158,7 @@ function playerHitBox() {
                 audioExplosion.load(); 
                 audioHit.play(); 
                 audioExplosion.play(); 
-                $('.game-end').css('opacity', 0.8);
+                $('.game-end').css({'display': 'flex', 'opacity': 0.8});
             }
         }
 

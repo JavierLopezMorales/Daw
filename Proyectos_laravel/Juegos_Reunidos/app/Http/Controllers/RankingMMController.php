@@ -39,7 +39,6 @@ class RankingMMController extends Controller
         $ranking = new RankingMM();
         $ranking->name = $request->name;
         $ranking->score = $request->score;
-        $ranking->level = $request->level;
         $ranking->save();
         return redirect()->route('rankingMM.index');
     }
@@ -79,7 +78,6 @@ class RankingMMController extends Controller
         $ranking = RankingMM::find($request->id);
         $ranking->name = $request->name;
         $ranking->score = $request->score;
-        $ranking->level = $request->level;
         $ranking->save();
         return redirect()->route('rankingMM.index');
     }
