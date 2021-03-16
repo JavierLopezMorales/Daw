@@ -2,6 +2,10 @@
 
 @section('Titulo', 'Tabla de Ranking Matamarcianos')
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="{{ asset('js/jsMM/ranking-form.js') }}"></script>
+
 @section('content')
     <table border="1px solid black">
 
@@ -15,8 +19,7 @@
         @foreach($rankingList as $ranking)
 
         <tr>
-            <td>{{$ranking -> name}}</td>
-            <td>{{$ranking -> level}}</td>
+            <td class="name">{{$ranking -> name}}</td>
             <td>{{$ranking -> score}}</td>
 
             <td><a href="{{route('rankingMM.edit', $ranking->id)}}">Modificar</a></td>

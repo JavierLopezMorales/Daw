@@ -16,7 +16,6 @@ class CreateRankingMMTable extends Migration
         Schema::create('ranking_m_m', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('level');
             $table->integer('score');
             $table->timestamps();
         });

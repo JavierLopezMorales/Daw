@@ -38,7 +38,8 @@ function boostEfect(amount, selector) {
                 
             break;
         case 'double-points':
-                
+
+            counterTimer = 0;
             bonusMultiplier = 1;
             bonusTimer = 60 * parseInt(amount);
             bonus = true;
@@ -73,7 +74,7 @@ function createBoost(name, amount, icon, selector) {
     boostContainer = [boostCounter, name, amount, selector];
     boostArray.push(boostContainer);
 
-    $('.main-container').append('<img src="../../images/imagesMM/icons/' + icon + '" class="boost" id="boost' + boostCounter + '"></img>');
+    $('.main-container').append('<img src="../../images/imagesMM/icons/' + icon + '" class="boost ' + selector + '" id="boost' + boostCounter + '"></img>');
 
     var boostSize = (parseFloat($('.boost#boost' + boostCounter).css('height')) / parseFloat($('.main-container').css('height'))) * 100;
     var spawnBoost = enemySpawnHeight(boostSize);
