@@ -14,8 +14,9 @@ class rankingSTController extends Controller
    */
   public function index()
   {
-      $rankingList = RankingST::all();
+      $rankingList = RankingST::orderBy('moves','asc')->get();
       return view('ST/Ranking/showRankingST', ['rankingList' => $rankingList]);
+
   }
 
   /**
@@ -38,7 +39,7 @@ class rankingSTController extends Controller
   {
       $ranking = new RankingST();
       $ranking->name = $request->name;
-      $ranking->score = $request->score;
+      $ranking->moves = $request->moves;
       $ranking->date = $request->date;
       $ranking->mode = $request->mode;
       $ranking->save();
@@ -80,7 +81,7 @@ class rankingSTController extends Controller
   {
       $ranking = RankingST::find($request->id);
       $ranking->name = $request->name;
-      $ranking->score = $request->score;
+      $ranking->moves = $request->moves;
       $ranking->date = $request->date;
       $ranking->mode = $request->mode;
       $ranking->save();

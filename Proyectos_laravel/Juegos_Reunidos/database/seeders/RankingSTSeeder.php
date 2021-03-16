@@ -17,17 +17,25 @@ class RankingSTSeeder extends Seeder
       DB::table('ranking_slide')->insert([
           'id' => '1',
           'name'=> 'MLL',
-          'score' => '1000',
+          'moves' => '1000',
           'date' => '2021/01/23',
-          'mode' => '1',
+          'mode' => '3',
       ]);
 
       DB::table('ranking_slide')->insert([
           'id' => '2',
           'name'=> 'JLM',
-          'score' => '800',
+          'moves' => '800',
           'date' => '2021/01/22',
-          'mode' => '2',
+          'mode' => '3',
+      ]);
+
+      DB::table('ranking_slide')->insert([
+          'id' => '3',
+          'name'=> 'AAA',
+          'moves' => '256',
+          'date' => '2021/01/24',
+          'mode' => '3',
       ]);
 
     }

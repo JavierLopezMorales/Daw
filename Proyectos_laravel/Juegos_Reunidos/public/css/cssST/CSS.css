@@ -4,7 +4,7 @@
 	/*--img_fondo:url("../../images/imagesST/bandera.png");*/
 
 	/*--img_puzzle:url("../../images/imagesST/celia2.jpg");
-	--img_fondo:url("../../images/imagesST/celia.jpg");
+	--img_fondo:url("../../images/imagesST/celia.jpg");*/
 
 	/*--img_puzzle:url("../../images/imagesST/cabo2.jpg");
 	--img_fondo:url("../../images/imagesST/cabo.jpg");*/
@@ -89,7 +89,7 @@ justify-content: space-between;
 
   display: table-cell;
   border: 0.2vh solid white;
-background:;
+
   cursor: pointer;
   background-size:500%;
 
@@ -186,7 +186,7 @@ background:;
 .tile22 {background-position:25% 100%;}
 .tile23 {background-position:50% 100%;}
 .tile24 {background-position:75% 100%;}
-.tile25 { background: white;cursor: default;}
+.tile25 { background-position: 100% 100%;}
 /*---------------------------------------------------------------------------------*/
 nav {
 	margin: 27px auto 0;
@@ -292,7 +292,7 @@ width:100%;
 }
 
 .container2 {
-
+display:inline-block;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -350,29 +350,16 @@ tbody {
 	}
 }
 .button {
-  line-height: 1;
-  display: inline-block;
   font-size: 1.2rem;
   text-decoration: none;
   border-radius: 5px;
   color: #fff;
   padding: 8px;
+  margin :0;
+  margin-top: 8%;
   background-color:rgba(255,255,255,0.2) ;
 }
 .button-tematica{
 display:inline-block;
 position:relative;
-}
-
-.button-tematica a{
-position: absolute;
-bottom:10%;
-right:10%;
-background-color:blue;
-border-radius:1.5em;
-color:white;
-text-transform:uppercase;
-padding:1em 1.5em;
-height: 10%;
-
 }

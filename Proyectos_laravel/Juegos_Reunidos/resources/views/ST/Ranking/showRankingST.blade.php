@@ -4,8 +4,7 @@
 
 @section('sidebar')
     <h1>Juegos Reunidos - Sliding Tiles</h1>
-    <a href="{{route('TematicasST.index')}}">Tematicas</a>
-    <a href="{{route('RankingST.index')}}">Ranking</a>
+
 
 @endsection
 
@@ -16,7 +15,7 @@
         <tr>
             <th>Nombre</th>
             <th>Fecha</th>
-            <th>Puntuacion</th>
+            <th>Movimientos</th>
             <th>Modo</th>
             <th colspan="2"><a href="{{route('RankingST.create')}}"><input type="button"class="button" value="Crear"></a></th>
         </tr>
@@ -26,7 +25,7 @@
         <tr>
             <td>{{$ranking -> name}}</td>
             <td>{{$ranking -> date}}</td>
-            <td>{{$ranking -> score}}</td>
+            <td>{{$ranking -> moves}}</td>
             <td>{{$ranking -> mode}}</td>
 
             <td><a href="{{route('RankingST.edit', $ranking->id)}}"><input type="button"class="button" value="Modificar"></a></td>

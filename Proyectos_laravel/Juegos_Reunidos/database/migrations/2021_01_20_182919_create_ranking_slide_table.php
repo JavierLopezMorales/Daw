@@ -16,7 +16,7 @@ class CreateRankingSlideTable extends Migration
         Schema::create('ranking_slide', function (Blueprint $table) {
           $table->id();
           $table->string('name');
-          $table->integer('score');
+          $table->time('moves');
           $table->date('date');
           $table->string('mode');
           $table->timestamps();

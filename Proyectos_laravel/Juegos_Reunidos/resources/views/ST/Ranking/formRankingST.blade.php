@@ -24,7 +24,7 @@
                   <td>Name:<input type="text" name="name" value="{{$ranking->name ?? '' }}"></td>
                 </tr>
                 <tr>
-                  <td>Score:<input type="number" name="score" value="{{$ranking->score ?? '' }}"></td>
+                  <td>Movimientos:<input type="number" name="moves" value="{{$ranking->moves ?? '' }}"></td>
                 </tr>
                 <tr>
                   <td>Date:<input type="date" name="date" value="{{$ranking->date ?? '' }}"></td>

@@ -5,12 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\TematicasST;
 
-class configuracion_ST extends Controller
+class JuegoController extends Controller
 {
   public function index()
-  { $tematicasList = TematicasST::all();
-   return view('ST/Configuracion/viewConfiguracion', ['tematicasList'=>$tematicasList]);
-
+  {
+return view('ST/JuegoST/Juego');
   }
 
   /**
@@ -40,9 +39,14 @@ class configuracion_ST extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-   public function show()
+   public function show($id)
    {
-//
+    $tematicas = TematicasST::find($id);
+    $data['name_fondo'] = $tematicas->img_fondo;
+    $data['name_puzzle'] = $tematicas->img_puzzle;
+
+
+    return view('ST/JuegoST/Juego',$data);
    }
 
   /**
