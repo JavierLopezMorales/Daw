@@ -4,18 +4,18 @@
 
 @section('content')
 
-    @isset($boost)
-        <form action="{{ route('boosts.update', ['id' => $boost->id]) }}" method="GET">
-        {{-- @method("PUT") --}}
+    @isset($boosts)
+        <form action="{{ route('boosts.update', ['id' => $boosts->id]) }}" enctype="multipart/form-data" method="POST">
+         @method("PUT")
          
     @else
-        <form action="{{ route('boosts.store') }}" method="GET">
+        <form action="{{ route('boosts.store') }}"enctype="multipart/form-data" method="POST">
     @endisset
         @csrf
-        Nombre del boost:<input type="text" name="name" value="{{$boost->name ?? '' }}"><br>
-        Cantidad:<input type="number" name="amount" value="{{$boost->amount ?? '' }}"><br>
-        Icono:<input type="text" name="icon" value="{{$boost->icon ?? '' }}"><br>
-        Selector:<input type="text" name="selector" value="{{$boost->selector ?? '' }}"><br>
+        Nombre del boost:<input type="text" name="name" value="{{$boosts->name ?? '' }}"><br>
+        Cantidad:<input type="number" name="amount" value="{{$boosts->amount ?? '' }}"><br>
+        Icono:<input type="file" name="icon" value="{{$boosts->icon ?? '' }}"><br>
+        Selector:<input type="text" name="selector" value="{{$boosts->selector ?? '' }}"><br>
         <input type="submit">
         </form>
 

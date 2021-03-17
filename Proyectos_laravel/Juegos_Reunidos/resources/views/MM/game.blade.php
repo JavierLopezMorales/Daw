@@ -31,6 +31,8 @@
 
 @section('content')
 
+    <div class="white-explosion"></div>
+
     <div class="game-nav">
 
         <div class="game-title">

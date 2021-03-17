@@ -1,4 +1,6 @@
 
+var explode = false;
+
 function boostSelection() {
 
     var boostNumber = Math.floor(Math.random() * boostList.length);
@@ -18,24 +20,32 @@ function boostEfect(amount, selector) {
         case 'player-speed':
 
             playerSpeed = parseFloat(playerSpeed) + parseFloat(amount);
+            audioPowerUp.load();
+            audioPowerUp.play();
 
             break;
         case 'bullet-speed':
 
             bulletSpeed = parseFloat(bulletSpeed) + parseFloat(amount);
-            
+            audioPowerUp.load();
+            audioPowerUp.play();
+
             break;
         case 'health':
 
             health = health + parseInt(amount);
-            
+            audioPowerUp.load();
+            audioPowerUp.play();
+
             break;
         case 'shield':
 
             totaliFrames = 60 * parseInt(amount);
             invincible = true;
             icounter = 0;
-                
+            audioPowerUp.load();
+            audioPowerUp.play();
+
             break;
         case 'double-points':
 
@@ -43,20 +53,23 @@ function boostEfect(amount, selector) {
             bonusMultiplier = 1;
             bonusTimer = 60 * parseInt(amount);
             bonus = true;
+            audioPowerUp.load();
+            audioPowerUp.play();
 
             break;
 
         case 'nuke':
 
+            explode = true;
+            incrementScore(amount);
             counterExplosion = 0;
             enemyDeath = true;
             $('.enemy').attr({'src': '../../images/imagesMM/explosion.gif', 'class': 'explosion'});
             enemyArray = [];
             audioExplosion.load();
             audioExplosion.play();
-    
+
             break;
-        // NUKE
 
         default:
             break;
@@ -124,16 +137,14 @@ function checkBoostHit() {
         // Hitbox
         if((positionPlayerX + playerWidth) > positionBoostX && positionPlayerX < (positionBoostX + boostWidth) && (positionPlayerY + playerHeight) > positionBoostY && positionPlayerY < (positionBoostY + boostHeight))
         {
-            audioPowerUp.load();
-            audioPowerUp.play();
+
 
             boostEfect(boostArray[en][2], boostArray[en][3]);
             $('.boost#boost' + boostArray[en][0]).remove();
             boostArray.splice(en, 1);
         }
         else if((positionBulletX + bulletWidth) > positionBoostX && positionBulletX < (positionBoostX + boostWidth) && (positionBulletY + bulletHeight) > positionBoostY && positionBulletY < (positionBoostY + boostHeight)){
-            audioPowerUp.load();
-            audioPowerUp.play();
+
 
             boostEfect(boostArray[en][2], boostArray[en][3]);
             $('.boost#boost' + boostArray[en][0]).remove();

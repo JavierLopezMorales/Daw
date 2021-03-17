@@ -9,6 +9,7 @@
             <th>Nombre</th>
             <th>Cantidad</th>
             <th>Icono</th>
+            <th>Selector</th>
             <th colspan="2"><a href="{{route('boosts.create')}}">Crear</a></th>
         </tr>
 

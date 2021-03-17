@@ -122,8 +122,13 @@ if(start == false){
         explosion();
 
         if(game == true && start == true){
-
-
+            
+            if(explode == true){
+                $('.white-explosion').css('z-index', '999');
+                explode = false;
+            }else{
+                $('.white-explosion').css('z-index', '-1');
+            }
         
             // Spawn de enemigos
             enemySpawnSpeed()

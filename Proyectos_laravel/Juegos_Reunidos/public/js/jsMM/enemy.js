@@ -114,7 +114,7 @@ function explosion() {
 }
 
 function moveEnemy() {
-    
+    $('.explosion').css('left', '-=0.1vw');
     $('.enemy').css('left', '-=0.4vw');
 
     // Eliminar enemigos
@@ -140,7 +140,7 @@ function moveEnemy() {
                 audioExplosion.load(); 
                 audioHit.play(); 
                 audioExplosion.play(); 
-                $('.game-end').css('opacity', 0.8);
+                $('.game-end').css({'display': 'flex', 'opacity': 0.8});
             }else{
                 audioHit.load();
                 audioExplosion.load(); 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Models\BoostMM;
 
@@ -36,10 +37,17 @@ class BoostMMController extends Controller
      */
     public function store(Request $request)
     {
+
+        if($request->hasFile('icon')){
+            $file = $request->file('icon');
+            $name_icon = $file->getClientOriginalName();
+            $file->move(public_path().'/images/imagesMM/icons', $name_icon);
+        }
+
         $boost = new BoostMM();
         $boost->name = $request->name;
         $boost->amount = $request->amount;
-        $boost->icon = $request->icon;
+        $boost->icon = $name_icon;
         $boost->selector = $request->selector;
         $boost->save();
         return redirect()->route('boosts.index');
@@ -77,12 +85,21 @@ class BoostMMController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $boost = BoostMM::find($id);
+        File::delete('images/imagesMM/icons/' . $boost->icon);
+
+        if($request->hasFile('icon')){
+            $file = $request->file('icon');
+            $name_icon = $file->getClientOriginalName();
+            $file->move(public_path().'/images/imagesMM/icons', $name_icon);
+        }
+
         $boost = BoostMM::find($request->id);
         $boost->name = $request->name;
         $boost->amount = $request->amount;
-        $boost->icon = $request->icon;
+        $boost->icon = $name_icon;
         $boost->selector = $request->selector;
-        $enemy->save();
+        $boost->save();
         return redirect()->route('boosts.index');
     }
 
@@ -95,6 +112,10 @@ class BoostMMController extends Controller
     public function destroy($id)
     {
         $boost = BoostMM::find($id);
+
+        //borrar imagen
+        File::delete('images/imagesMM/icons/' . $boost->icon);
+
         $boost->delete();
         return redirect()->route('boosts.index');
     }
