@@ -1,7 +1,7 @@
 @extends('layouts.masterMM')
 
 @section('Titulo', 'Tabla de Enemigos')
-
+<link rel="stylesheet" href="{{ asset('css/cssMM/nav.css') }}" />
 @section('content')
     <table border="1px solid black">
 

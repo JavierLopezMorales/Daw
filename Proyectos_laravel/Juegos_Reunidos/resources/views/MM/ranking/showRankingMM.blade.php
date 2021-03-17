@@ -2,18 +2,16 @@
 
 @section('Titulo', 'Tabla de Ranking Matamarcianos')
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="{{ asset('js/jsMM/ranking-form.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/cssMM/nav.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/cssMM/form.css') }}" />
 
 @section('content')
-    <table border="1px solid black">
+    <table>
 
         <tr>
             <th>Nombre</th>
-            <th>Nivel</th>
             <th>Puntuación</th>
-            <th colspan="2"><a href="{{route('rankingMM.create')}}">Crear</a></th>
+            <th colspan="2" class="btn"><a href="{{route('rankingMM.create')}}">Crear</a></th>
         </tr>
 
         @foreach($rankingList as $ranking)
@@ -22,13 +20,13 @@
             <td class="name">{{$ranking -> name}}</td>
             <td>{{$ranking -> score}}</td>
 
-            <td><a href="{{route('rankingMM.edit', $ranking->id)}}">Modificar</a></td>
+            <td class="btn"><a href="{{route('rankingMM.edit', $ranking->id)}}">Modificar</a></td>
 
             {{-- 
                 Boton para borrar una nave
                 --}}
             
-            <td>
+            <td class="btn">
                 <form action = "{{route('rankingMM.destroy', $ranking->id)}}" method="POST">
                     @csrf
                     @method("DELETE")

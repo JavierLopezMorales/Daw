@@ -1,16 +1,19 @@
 <html>
     <head>
         <title>@yield('Titulo')</title>
+
     </head>
     <body>
         <div class="nav">
-            <h1>Juegos Reunidos - MataMarcianos</h1>
-            <a href="{{route('ships.index')}}">Naves</a>
-            <a href="{{route('enemies.index')}}">Enemigos</a>
-            <a href="{{route('rankingMM.index')}}">Ranking</a>
-            <a href="{{route('mapMM.index')}}">Mapas</a>
-            <a href="{{route('boosts.index')}}">Boosts</a>
-            <a href="{{route('JuegoMM.index')}}">Juego Shoot'em Up!</a> 
+            <div class="nav-title nav-item"><a href="">Juegos Reunidos - Shoot'em Up!</a></div>
+            <div class="nav-links nav-item">
+                <!--<a href="{{route('ships.index')}}">Naves</a>-->
+                <!--<a href="{{route('enemies.index')}}">Enemigos</a>-->
+                <a class="ranking-link" href="{{route('rankingMM.index')}}">Ranking</a>
+                <!--<a href="{{route('mapMM.index')}}">Mapas</a>-->
+                <a class="boost-link" href="{{route('boosts.index')}}">Boosts</a>
+                <a class="game-link" href="{{route('JuegoMM.index')}}">Juego Shoot'em Up!</a> 
+            </div>
         </div>
         <div class="container">
             @yield('content')

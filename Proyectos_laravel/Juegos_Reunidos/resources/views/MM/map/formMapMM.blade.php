@@ -1,7 +1,7 @@
 @extends('layouts.masterMM')
 
 @section('Titulo', 'Creación de Mapas - Matamarcianos')
-
+<link rel="stylesheet" href="{{ asset('css/cssMM/nav.css') }}" />
 @section('content')
 
     @isset($mapMM)

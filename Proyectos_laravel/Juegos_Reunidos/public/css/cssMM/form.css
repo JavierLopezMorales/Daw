@@ -1,0 +1,67 @@
+@keyframes backgroundMove {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}
+
+table {
+	border: 0.3vh solid #1b263b;
+	border-spacing: 0;
+	font-size: 2vh;
+	background-color: #e0e1dd;
+}
+
+th,
+.btn {
+	background-color: #1b263b;
+	color: #e0e1dd;
+	padding: 2vh;
+}
+
+td {
+	padding: 1vh;
+	text-align: center;
+	border-top: 0.1vh dashed #1b263b;
+}
+
+tr:nth-child(2),
+tr:nth-child(2) td {
+	border-top: 0;
+}
+
+table a {
+	color: #e0e1dd;
+	outline: none;
+}
+
+input[type=submit] {
+	border: none;
+	background-color: inherit;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+}
+
+.icon-td {
+	background-color: #1b263b;
+}
+
+.btn {
+	outline: none;
+	outline-offset: -0.5vh;
+}
+
+.btn:focus,
+.btn:hover {
+	border: none;
+	outline: 0.2vh solid #e0e1dd;
+	outline-offset: -1vh;
+	transition: all 0.5s;
+}
+
+::-moz-focus-inner {
+	border: 0;
+}
