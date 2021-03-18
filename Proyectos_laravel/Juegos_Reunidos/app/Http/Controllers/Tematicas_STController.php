@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Models\TematicasST;
 
@@ -20,13 +20,13 @@ class Tematicas_STController extends Controller
 
    public function store(Request $r) {
 
-        if($r->hasFile('img_puzzle')){
+    if($r->hasFile('img_puzzle')){
        $file = $r->file('img_puzzle');
        $name_puzzle = $file->getClientOriginalName();
        $file->move(public_path().'/images/imagesST', $name_puzzle);
 
      }
-     if($r->hasFile('img_fondo')){
+  if($r->hasFile('img_fondo')){
     $file = $r->file('img_fondo');
     $name_fondo =$file->getClientOriginalName();
     $file->move(public_path().'/images/imagesST', $name_fondo);
@@ -46,7 +46,7 @@ class Tematicas_STController extends Controller
    }
    public function show()
        {
-//
+return view('inicio');
 
 }
 
@@ -58,16 +58,20 @@ class Tematicas_STController extends Controller
    }
 
    public function update(Request $r,$id) {
+     $tematica = TematicasST::find($id);
+     File::delete('images/imagesST/' . $tematica->img_puzzle);
      if($r->hasFile('img_puzzle')){
-    $file = $r->file('img_puzzle');
-    $name_puzzle = $file->getClientOriginalName();
-    $file->move(public_path().'/images/imagesST', $name_puzzle);
+       $file = $r->file('img_puzzle');
+       $name_puzzle = $file->getClientOriginalName();
+       $file->move(public_path().'/images/imagesST', $name_puzzle);
 
   }
   if($r->hasFile('img_fondo')){
- $file = $r->file('img_fondo');
- $name_fondo =$file->getClientOriginalName();
- $file->move(public_path().'/images/imagesST', $name_fondo);
+    $tematica = TematicasST::find($id);
+    File::delete('images/imagesST/' . $tematica->img_fondo);
+    $file = $r->file('img_fondo');
+    $name_fondo =$file->getClientOriginalName();
+    $file->move(public_path().'/images/imagesST', $name_fondo);
 
 }
        $tematica = TematicasST::find($r->id);
@@ -83,6 +87,8 @@ class Tematicas_STController extends Controller
 
    public function destroy($id) {
        $tematica = TematicasST::find($id);
+       File::delete('images/imagesST/' . $tematica->img_fondo);
+       File::delete('images/imagesST/' . $tematica->img_puzzle);
        $tematica->delete();
        return redirect()->route('TematicasST.index');
    }

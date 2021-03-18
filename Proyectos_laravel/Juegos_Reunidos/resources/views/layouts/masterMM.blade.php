@@ -12,7 +12,7 @@
                 <a class="ranking-link" href="{{route('rankingMM.index')}}">Ranking</a>
                 <!--<a href="{{route('mapMM.index')}}">Mapas</a>-->
                 <a class="boost-link" href="{{route('boosts.index')}}">Boosts</a>
-                <a class="game-link" href="{{route('JuegoMM.index')}}">Juego Shoot'em Up!</a> 
+                <a class="game-link" href="{{route('JuegoMM.index')}}">Juego Shoot'em Up!</a>
             </div>
         </div>
         <div class="container">

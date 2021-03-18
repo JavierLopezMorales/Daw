@@ -13,7 +13,7 @@
       <thead>
 
         <tr>
-            <th>Tipo</th>
+            <!--<th>Tipo</th> -->
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Imagen de fondo</th>
@@ -26,7 +26,7 @@
         @foreach($tematicasList as $tematicas)
         <tbody>
         <tr>
-            <td>{{$tematicas -> type}}</td>
+            <!--<td>{{$tematicas -> type}}</td>-->
             <td>{{$tematicas -> name}}</td>
             <td>{{$tematicas -> description}}</td>
             <td><img src="images/imagesST/{{$tematicas -> img_fondo}}"width="150px"height="100px"></td>
