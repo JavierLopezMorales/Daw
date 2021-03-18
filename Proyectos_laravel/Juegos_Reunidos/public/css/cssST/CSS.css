@@ -89,13 +89,19 @@ justify-content: space-between;
 
   display: table-cell;
   border: 0.2vh solid white;
-
   cursor: pointer;
   background-size:500%;
 
 
 
 }
+/* .tile1::before{
+  content="1";
+  position:absolute;
+  width:100%;
+  font-size: 20%;
+  margin-top:auto;
+} */
 /*puzzle 4x4*/
 /*.tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9,.tile10,.tile11, .tile12, .tile13, .tile14, .tile15, .tile16{
 
@@ -162,8 +168,16 @@ justify-content: space-between;
 
 /*Puzzle 5x5*/
 
-.tile1 {background-position: 0 0}
-.tile2 {background-position: 25% 0%;}
+.tile1::before {
+  content:string="1";
+  position:absolute;
+  font-size: 2vw;
+  background-position: 0 0}
+.tile::before {
+  content:string="2";
+  position:absolute;
+  font-size: 2vw;
+  background-position: 25% 0%;}
 .tile3 {background-position: 50% 0%;}
 .tile4 {background-position: 75% 0%;}
 .tile5 {background-position: 100% 0%;}
