@@ -90,9 +90,12 @@ var playerSpeed = 0.8;
     function iFrames() {
         if(icounter < totaliFrames && health > 0){
             counterStyle++;
-            if(counterStyle < 20 || counterStyle >= 40){
+            if((counterStyle < 20 || counterStyle >= 40) || (icounter >= totaliFrames - (icounter/2))){
                 $('#player').css('filter', 'invert(100%)');
-                if(counterStyle == 60){counterStyle = 20;}
+                if(counterStyle == 60)
+                {
+                    counterStyle = 20;
+                }
             }else{
                 $('#player').css('filter', 'none');
             }
@@ -142,6 +145,21 @@ function playerHitBox() {
                     audioHit.play(); 
                     audioExplosion.play(); 
                     
+                }
+            }
+            if(invincible == true){
+                counterExplosion = 0;
+                enemyDeath = true;
+                $('.explosion').remove();
+                $('.enemy#enemy' + enemyArray[en]).removeClass('enemy').addClass('explosion');
+                $('.explosion#enemy' + enemyArray[en]).attr({'src': '../../images/imagesMM/explosion.gif'});
+                enemyArray.splice(en, 1);
+                incrementScore(100);
+                audioExplosion.load(); 
+                audioExplosion.play(); 
+                
+                if(Math.floor(Math.random() * 10) + 1 == 1){
+                    boostSelection();
                 }
             }
             if(health <= 0){

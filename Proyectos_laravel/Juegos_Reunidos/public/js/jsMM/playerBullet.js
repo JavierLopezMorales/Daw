@@ -60,10 +60,9 @@ function checkHit(){
             // CAMBIAR A FUTURO
             counterExplosion = 0;
             enemyDeath = true;
-            $('.main-container').append('<img src="" class="explosion"></img>');
-            $('.explosion').css({'top': positionEnemyY + '%', 'left':  positionEnemyX-enemyWidth + 'vh', 'height': enemyHeight + 'vh'});
-            $('.explosion').attr({'src': '../../images/imagesMM/explosion.gif'})
-            $('.enemy#enemy' + enemyArray[en]).remove();
+            $('.explosion').remove();
+            $('.enemy#enemy' + enemyArray[en]).removeClass('enemy').addClass('explosion');
+            $('.explosion#enemy' + enemyArray[en]).attr({'src': '../../images/imagesMM/explosion.gif'});
             audioExplosion.load(); 
             audioExplosion.play(); 
             enemyArray.splice(en, 1);

@@ -3,7 +3,8 @@
 
 
 @section('Titulo', 'Creación de Ranking - Matamarcianos')
-
+<link rel="stylesheet" href="{{ asset('css/cssMM/nav.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/cssMM/form.css') }}" />
 @section('content')
 
 

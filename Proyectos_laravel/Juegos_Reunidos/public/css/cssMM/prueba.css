@@ -189,7 +189,7 @@ body {
 	align-items: center;
 	flex-direction: column;
 
-	opacity: 0;
+	opacity: 1;
 
 	animation: gameStartAnimation 5s infinite alternate ease-in-out, colorStartAnimation 7s infinite alternate linear;
 }
@@ -291,30 +291,32 @@ span {
 	width: 7vh;
 	position: absolute;
 	z-index: 110;
+
+	animation: rotacion 3s linear infinite;
 }
 
 .player-speed {
-	filter: drop-shadow(0 0 5px rgb(255, 146, 45));
+	filter: drop-shadow(0 0 10px rgb(255, 146, 45));
 }
 
 .bullet-speed {
-	filter: drop-shadow(0 0 5px rgb(77, 213, 255));
+	filter: drop-shadow(0 0 10px rgb(77, 213, 255));
 }
 
 .health {
-	filter: drop-shadow(0 0 5px rgb(243, 68, 68));
+	filter: drop-shadow(0 0 10px rgb(243, 68, 68));
 }
 
 .shield {
-	filter: drop-shadow(0 0 5px rgb(172, 89, 255));
+	filter: drop-shadow(0 0 10px rgb(172, 89, 255));
 }
 
 .double-points {
-	filter: drop-shadow(0 0 5px rgb(253, 255, 113));
+	filter: drop-shadow(0 0 10px rgb(253, 255, 113));
 }
 
 .nuke {
-	filter: drop-shadow(0 0 5px rgb(98, 255, 84));
+	filter: drop-shadow(0 0 10px rgb(98, 255, 84));
 }
 
 @keyframes boostRotation {
@@ -324,4 +326,14 @@ span {
 	to {
 		transform: rotateY(45deg);
 	}
+}
+
+.white-explosion {
+	position: absolute;
+	background-image: radial-gradient(ellipse, rgb(77, 213, 255), rgba(170, 170, 170, 0.604));
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
