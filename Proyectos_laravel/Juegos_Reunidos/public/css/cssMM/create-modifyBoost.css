@@ -1,0 +1,41 @@
+table {
+	border: 0.3vh solid #1b263b;
+	border-spacing: 0;
+	font-size: 2vh;
+	background-color: #e0e1dd;
+}
+
+td {
+	padding: 1vh;
+	text-align: center;
+	border-top: 0.1vh dashed #1b263b;
+}
+
+tr:nth-child(1),
+tr:nth-child(1) td {
+	border-top: 0;
+}
+
+input[type=submit] {
+	border: none;
+	background-color: inherit;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+}
+
+input,
+select {
+	border: none;
+	width: 100%;
+	height: 2vh;
+	background-color: #e0e1dd;
+	border-bottom: 0.1vh solid #1b263b;
+}
+
+input:focus,
+select:focus {
+	border: none;
+	outline: none;
+	border-bottom: 0.1vh solid #415a77;
+}
