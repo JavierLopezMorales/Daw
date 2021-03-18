@@ -14,11 +14,7 @@ console.log("cell2="+cell2);
   document.getElementById(cell1).className = document.getElementById(cell2).className;
   document.getElementById(cell2).className = temp;
 
-
-
-
   if(x == true){
-
 
   cont++;
 
@@ -26,8 +22,6 @@ console.log("cell2="+cell2);
   l.innerHTML = cont;
 
   Comprobar();
-
-
 
   }
 }

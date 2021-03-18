@@ -19,8 +19,8 @@ class TematicasSTTableSeeder extends Seeder
           'type' => 'Puzzle',
           'name' => 'Almeria',
           'description' => 'Prueba este puzzle de un instituto historico de la ciudad de Almeria.  ',
-          'img_fondo' => 'celia.jpg',
-          'img_puzzle' => 'celia2.jpg',
+          'img_fondo' => 'celia2.jpg',
+          'img_puzzle' => 'celia.jpg',
           'modo' => '3'
       ]);
 
@@ -29,8 +29,8 @@ class TematicasSTTableSeeder extends Seeder
           'type' => 'Puzzle',
           'name' => 'Alcazaba',
           'description' => 'Atrevete a resolver el puzzle de la alcazaba (pista:guiate por los números o lo pasarás mal)',
-          'img_fondo' => 'alcazaba.jpg',
-          'img_puzzle' => 'alcazaba2.jpg',
+          'img_fondo' => 'alcazaba2.jpg',
+          'img_puzzle' => 'alcazaba.jpg',
           'modo' => '3'
       ]);
       DB::table('tematicas_slide')->insert([
@@ -38,8 +38,8 @@ class TematicasSTTableSeeder extends Seeder
           'type' => 'Puzzle',
           'name' => 'Cabo de Gata',
           'description' => 'Hermoso paisaje para ver mientras juegas',
-          'img_fondo' => 'cabo.jpg',
-          'img_puzzle' => 'cabo2.jpg',
+          'img_fondo' => 'cabo2.jpg',
+          'img_puzzle' => 'cabo.jpg',
           'modo' => '3'
       ]);
       DB::table('tematicas_slide')->insert([
@@ -47,8 +47,8 @@ class TematicasSTTableSeeder extends Seeder
           'type' => 'Puzzle',
           'name' => 'España',
           'description' => 'Bandera de españa , para realizar un puzzle patriotico',
-          'img_fondo' => 'bandera.jpg',
-          'img_puzzle' => 'bandera2.jpg',
+          'img_fondo' => 'bandera2.jpg',
+          'img_puzzle' => 'bandera.jpg',
           'modo' => '3'
       ]);
       DB::table('tematicas_slide')->insert([
@@ -56,8 +56,17 @@ class TematicasSTTableSeeder extends Seeder
           'type' => 'Puzzle',
           'name' => 'Numeros',
           'description' => 'Ahora toca un puzzle con numeros',
-          'img_fondo' => 'numeros.jpg',
-          'img_puzzle' => 'numeros2.jpg',
+          'img_fondo' => 'FondoBlanco2.jpg',
+          'img_puzzle' => 'FondoBlanco.jpg',
+          'modo' => '3'
+      ]);
+      DB::table('tematicas_slide')->insert([
+          'id' => '6',
+          'type' => 'Puzzle',
+          'name' => 'Francia',
+          'description' => 'Una panoramica excelente de la torre Eiffel',
+          'img_fondo' => 'torre2.jpg',
+          'img_puzzle' => 'torre.jpg',
           'modo' => '3'
       ]);
     }
