@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\File;
+use Image;
 use Illuminate\Http\Request;
 use App\Models\TematicasST;
 
@@ -22,14 +23,18 @@ class Tematicas_STController extends Controller
 
     if($r->hasFile('img_puzzle')){
        $file = $r->file('img_puzzle');
-       $name_puzzle = $file->getClientOriginalName();
-       $file->move(public_path().'/images/imagesST', $name_puzzle);
+       $name_puzzle =$file->getClientOriginalName();
+       $resize_puzzle =Image::make($file->getRealPath());
+       $resize_puzzle->resize(150, 150);
+       $file->move(public_path().'/images/imagesST', $resize_puzzle);
 
      }
   if($r->hasFile('img_fondo')){
     $file = $r->file('img_fondo');
     $name_fondo =$file->getClientOriginalName();
-    $file->move(public_path().'/images/imagesST', $name_fondo);
+    $resize_fondo =Image::make($file->getRealPath());
+    $resize_fondo->resize(150, 150);
+    $file->move(public_path().'/images/imagesST', $resize_fondo);
 
   }
 
@@ -37,8 +42,8 @@ class Tematicas_STController extends Controller
        $tematica->type = $r->type;
        $tematica->name = $r->name;
        $tematica->description = $r->description;
-       $tematica->img_fondo = $name_fondo;
-       $tematica->img_puzzle = $name_puzzle;
+       $tematica->img_fondo = $resize_fondo;
+       $tematica->img_puzzle = $resize_puzzle;
        $tematica->modo = $r->modo;
        $tematica->save();
        return redirect()->route('TematicasST.index');
