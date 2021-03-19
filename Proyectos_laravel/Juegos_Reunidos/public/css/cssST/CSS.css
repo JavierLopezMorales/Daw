@@ -19,22 +19,26 @@
 	z-index: -1;
 	filter: blur(3px);
 }
-#head {
-	background-color: white;
-}
-#table {
-	width: 50vw;
-	height: 70vh;
-	border: 0.1vh solid white;
+#head{
+	background-color:white;
+	}
+#table{
+	width:50vw ;
+	height:70vh;
+	border: 0.2vh solid white;
+
+
 }
 
 #number {
-	display: inline-block;
-	width: 9vw;
-	height: 5vh;
-	font-size: 4vh;
-	color: black;
-	background-color: white;
+	  display:inline-block;
+	  width:9vw;
+  	height:5vh;
+    font-size:4vh;
+    color:black;
+    background-color:white;
+
+
 }
 #moves {
 	display: inline-block;
@@ -68,190 +72,238 @@ p {
 	height: 30%;
 }
 /*Puzzle 5x5*/
-.tile1,
-.tile2,
-.tile3,
-.tile4,
-.tile5,
-.tile6,
-.tile7,
-.tile8,
-.tile9,
-.tile10,
-.tile11,
-.tile12,
-.tile13,
-.tile14,
-.tile15,
-.tile16,
-.tile17,
-.tile18,
-.tile19,
-.tile20,
-.tile21,
-.tile22,
-.tile23,
-.tile24,
-.tile25 {
-	display: table-cell;
-	border: 0.2vh solid white;
-	cursor: pointer;
-	background-size: 500%;
+.tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9,.tile10,.tile11, .tile12, .tile13, .tile14, .tile15, .tile16,.tile17,.tile18, .tile19, .tile20, .tile21, .tile22, .tile23,.tile24,.tile25{
+
+  display: table-cell;
+  border: 0.2vh solid black;
+  cursor: pointer;
+  background-size:500%;
+
+
+
 }
-/* .tile1::before{
-  content="1";
+.tile1::before {
+  content:"1";
+  opacity:0.60;
   position:absolute;
-  width:100%;
-  font-size: 20%;
-  margin-top:auto;
-} */
-/*puzzle 4x4*/
-/*.tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9,.tile10,.tile11, .tile12, .tile13, .tile14, .tile15, .tile16{
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile2::before {
+  content:"2";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile3::before {
+  content:"3";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile4::before {
+  content:"4";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile5::before {
+  content:"5";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile6::before {
+  content:"6";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile7::before {
+  content:"7";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile8::before {
+  content:"8";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile9::before {
+  content:"9";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile10::before {
+  content:"10";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile11::before {
+  content:"11";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile12::before {
+  content:"12";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile13::before {
+  content:"13";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile14::before {
+  content:"14";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile15::before {
+  content:"15";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile16::before {
+  content:"16";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile17::before {
+  content:"17";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile18::before {
+  content:"18";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile19::before {
+  content:"19";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile20::before {
+  content:"20";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile21::before {
+  content:"21";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile22::before {
+  content:"22";
+  opacity:0.60;
+  position:absolute;
+  font-size: 3vw;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+}
+.tile23::before {
+  content:"23";
+  opacity:0.60;
+  position:absolute;
+  text-shadow: 2px 2px 4px black;
+  color:white;
+  font-size: 3vw;
 
-  display: table-cell;
-  width: 0;
-  height: 0;
-  border: 1px solid white;
-  background: var(--img_puzzle);
-  cursor: pointer;
-  background-size:400%;
+}
+ .tile24::before {
+   content:"24";
+   opacity:0.60;
+   position:absolute;
+   font-size: 3vw;
+   text-shadow: 2px 2px 4px black;
+   color:white;
+ }
 
-
-
-}*/
-/*puzzle 3x3*/
-/*.tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9{
-
-  display: table-cell;
-  width: 0;
-  height: 0;
-  border: 1px solid white;
-  background: var(--img_puzzle);
-  cursor: pointer;
-  background-size:300%;
-
-
-
-}*/
-
-/*Puzzle 3x3*/
-
-/*.tile1 {background-position: 0 0}
-.tile2 {background-position: 50% 0%;}
-.tile3 {background-position: 100% 0%;}
-.tile4 {background-position: 0% 50%;}
-.tile5 {background-position: 50% 50%;}
-.tile6 {background-position: 100% 50%;}
-.tile7 {background-position: 0% 100%;}
-.tile8 {background-position: 50% 100%;}
-.tile9 {background-position: 100% 100%;}
-
-*/
-/*Puzzle 4x4*/
-
-/*.tile1 {background-position: 0 0}
-.tile2 {background-position: 33.33% 0%;}
-.tile3 {background-position: 66.66% 0%;}
-.tile4 {background-position: 99.99% 0%;}
-.tile5 {background-position: 0% 33.33%;}
-.tile6 {background-position: 33.33% 33.33%;}
-.tile7 {background-position: 66.66% 33.33%;}
-.tile8 {background-position: 99.99% 33.33%;}
-.tile9 {background-position: 0% 66.66%;}
-.tile10 {background-position:33.33% 66.66%;}
-.tile11 {background-position:66.66% 66.66%;}
-.tile12 {background-position:99.99% 66.66%;}
-.tile13 {background-position:0% 99.99%;}
-.tile14 {background-position:33.33% 99.99%;}
-.tile15 {background-position:66.66% 99.99%;}
-.tile16 {background: white; cursor: default;}
-*/
 
 /*Puzzle 5x5*/
 
-.tile1::before {
-	content: "1";
-	position: absolute;
-	font-size: 2vw;
-	background-position: 0 0;
-}
-
-.tile::before {
-	content: "2";
-	position: absolute;
-	font-size: 2vw;
-	background-position: 25% 0%;
-}
-
-.tile3 {
-	background-position: 50% 0%;
-}
-.tile4 {
-	background-position: 75% 0%;
-}
-.tile5 {
-	background-position: 100% 0%;
-}
-.tile6 {
-	background-position: 0% 25%;
-}
-.tile7 {
-	background-position: 25% 25%;
-}
-.tile8 {
-	background-position: 50% 25%;
-}
-.tile9 {
-	background-position: 75% 25%;
-}
-.tile10 {
-	background-position: 100% 25%;
-}
-.tile11 {
-	background-position: 0% 50%;
-}
-.tile12 {
-	background-position: 25% 50%;
-}
-.tile13 {
-	background-position: 50% 50%;
-}
-.tile14 {
-	background-position: 75% 50%;
-}
-.tile15 {
-	background-position: 100% 50%;
-}
-.tile16 {
-	background-position: 0% 75%;
-}
-.tile17 {
-	background-position: 25% 75%;
-}
-.tile18 {
-	background-position: 50% 75%;
-}
-.tile19 {
-	background-position: 75% 75%;
-}
-.tile20 {
-	background-position: 100% 75%;
-}
-.tile21 {
-	background-position: 0% 100%;
-}
-.tile22 {
-	background-position: 25% 100%;
-}
-.tile23 {
-	background-position: 50% 100%;
-}
-.tile24 {
-	background-position: 75% 100%;
-}
-.tile25 {
-	background-position: 100% 100%;
-}
+.tile1{background-position: 0 0}
+.tile2 {background-position: 25% 0%;}
+.tile3 {background-position: 50% 0%;}
+.tile4 {background-position: 75% 0%;}
+.tile5 {background-position: 100% 0%;}
+.tile6 {background-position: 0% 25%;}
+.tile7 {background-position: 25% 25%;}
+.tile8 {background-position: 50% 25%;}
+.tile9 {background-position: 75% 25%;}
+.tile10 {background-position:100% 25%;}
+.tile11 {background-position:0% 50%;}
+.tile12 {background-position:25% 50%;}
+.tile13 {background-position:50% 50%;}
+.tile14 {background-position:75% 50%;}
+.tile15 {background-position:100% 50%;}
+.tile16 {background-position:0% 75%;}
+.tile17 {background-position:25% 75%;}
+.tile18 {background-position:50% 75%;}
+.tile19 {background-position:75% 75%;}
+.tile20 {background-position:100% 75%;}
+.tile21 {background-position:0% 100%;}
+.tile22 {background-position:25% 100%;}
+.tile23 {background-position:50% 100%;}
+.tile24 {background-position:75% 100%;}
+.tile25 { background-position: 100% 100%;}
 /*---------------------------------------------------------------------------------*/
 nav {
 	margin: 27px auto 0;
