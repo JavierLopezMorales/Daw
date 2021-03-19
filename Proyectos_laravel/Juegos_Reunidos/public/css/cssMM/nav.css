@@ -2,24 +2,29 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
+	--black: #000000;
+	--blue: #14213d;
+	--orange: #fca311;
+	--platinum: #e5e5e5;
+	--white: #ffffff;
 }
 
 .container {
-	background-color: #e0e1dd;
+	background-color: var(--white);
 	height: 80vh;
 	width: 100vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: linear-gradient(to bottom right, #e0e1dd 10%, #415a77);
-	background-size: 500%;
+	background-image: radial-gradient(ellipse, var(--white), var(--blue));
 	animation: backgroundMove 20s infinite alternate;
 }
 
 .nav {
 	display: flex;
-	background-color: #0d1b2a;
-	color: #e0e1dd;
+	background: url("../../images/imagesMM/space.png");
+	color: var(--white);
 	height: 10vh;
 	justify-content: space-between;
 	align-items: center;
@@ -37,7 +42,8 @@
 }
 
 .nav-links a {
-	color: #e0e1dd;
+	color: var(--white);
+	transition: all 0.3s ease-out;
 }
 
 a {
@@ -47,29 +53,29 @@ a {
 .nav-title a {
 	font-size: 1.4em;
 	margin-left: 5vh;
-	color: #e0e1dd;
+	color: var(--white);
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-	animation: changeColor 0.2s linear forwards;
 	outline: none;
+	color: var(--orange);
+	font-size: 1.2em;
 }
 
 @keyframes changeColor {
 	0% {
-		box-shadow: 0 0.1vh 0 #e0e1dd;
-		color: #e0e1dd;
+		color: var(--white);
 		font-size: 1em;
 	}
-	50% {
-		box-shadow: 0 0.2vh 0 #1b263b;
-		color: #1b263b;
-		font-size: 1.1em;
-	}
 	100% {
-		box-shadow: 0 0.3vh 0 #e0e1dd;
-		color: #e0e1dd;
+		color: var(--orange);
 		font-size: 1.2em;
 	}
+}
+
+.footer {
+	height: 10vh;
+	background: url("../../images/imagesMM/space.png") 110%;
+	width: 100vw;
 }

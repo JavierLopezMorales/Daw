@@ -2,6 +2,7 @@
 
 @section('Titulo', 'Creación de Boosts')
 <link rel="stylesheet" href="{{ asset('css/cssMM/nav.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/cssMM/create-modifyBoost.css') }}" />
 @section('content')
 
 
@@ -9,14 +10,51 @@
     @isset($boosts)
         <form class="form-boost" action="{{ route('boosts.update', ['id' => $boosts->id]) }}" enctype="multipart/form-data" method="POST">
          @method("PUT")
+
+         <script>
+            var selected = "{{$boosts -> selector}}";
+            
+            for(var x = 0; x < document.getElementsByClassName('select-boost')[0].length; x++){
+                var option = document.getElementsByClassName('select-boost')[0].options;
+                if(selected == option[x].value){
+                    document.getElementsByClassName("select-boost")[0].selectedIndex = x;
+                    changeAmountText();
+                }
+            }
+
+            function changeAmountText() { 
+
+                var seleccion = document.getElementsByClassName('select-boost')[0].options[document.getElementsByClassName("select-boost")[0].selectedIndex].value;
+                if(seleccion == 'player-speed' || seleccion == 'health' || seleccion == 'bullet-speed') {
+                    document.getElementById('amount-lbl').innerHTML = 'Cantidad a aumentar:';
+                }
+                if(seleccion == 'shield' || seleccion == 'double-points') {
+                    document.getElementById('amount-lbl').innerHTML = 'Duracion:';
+                }
+                if(seleccion == 'nuke') {
+                    document.getElementById('amount-lbl').innerHTML = 'Puntuación recibida:';
+                }
+
+            }
+
+            function iconSelected() { 
+
+                document.getElementById('icon-lbl').innerHTML = 'Icono seleccionado'
+
+            }
+
+        </script>
          
     @else
         <form class="form-boost" action="{{ route('boosts.store') }}"enctype="multipart/form-data" method="POST">
+
+
+
     @endisset
         @csrf
         
         
-        <table border="1px solid black">
+        <table>
 
             <tr>
                 <td>Nombre del boost:</td>
@@ -59,41 +97,6 @@
         
         </form>
 
-        <script>
-            var selected = "{{$boosts -> selector}}";
-            
-            for(var x = 0; x < document.getElementsByClassName('select-boost')[0].length; x++){
-                var option = document.getElementsByClassName('select-boost')[0].options;
-                if(selected == option[x].value){
-                    document.getElementsByClassName("select-boost")[0].selectedIndex = x;
-                    changeAmountText();
-                }
-            }
-
-            function changeAmountText() { 
-
-                var seleccion = document.getElementsByClassName('select-boost')[0].options[document.getElementsByClassName("select-boost")[0].selectedIndex].value;
-                if(seleccion == 'player-speed' || seleccion == 'health' || seleccion == 'bullet-speed') {
-                    document.getElementById('amount-lbl').innerHTML = 'Cantidad a aumentar:';
-                }
-                if(seleccion == 'shield' || seleccion == 'double-points') {
-                    document.getElementById('amount-lbl').innerHTML = 'Duracion:';
-                }
-                if(seleccion == 'nuke') {
-                    document.getElementById('amount-lbl').innerHTML = 'Puntuación recibida:';
-                }
-
-            }
-
-            function iconSelected() { 
-
-                document.getElementById('icon-lbl').innerHTML = 'Icono seleccionado'
-
-            }
-
-            
-
-            
-        </script>
+       
 
 @endsection
