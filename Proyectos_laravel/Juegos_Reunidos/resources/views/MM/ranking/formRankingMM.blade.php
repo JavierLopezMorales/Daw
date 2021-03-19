@@ -4,7 +4,11 @@
 
 @section('Titulo', 'Creación de Ranking - Matamarcianos')
 <link rel="stylesheet" href="{{ asset('css/cssMM/nav.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/cssMM/form.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/cssMM/create-modifyBoost.css') }}" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="{{ asset('js/jsMM/ranking-form.js') }}"></script>
 @section('content')
 
 
@@ -17,9 +21,32 @@
         <form action="{{ route('rankingMM.store') }}" method="GET">
     @endisset
         @csrf
-        Nombre:<input class="name" type="text" name="name" value="{{$ranking->name ?? '' }}"><br>
-        Puntuacion:<input type="number" name="score" value="{{$ranking->score ?? '' }}"><br>
-        <input type="submit">
+
+        <table>
+
+            <tr>
+                <th colspan="2">Creacion de Ranking</th>
+            </tr>
+
+            <tr>
+                <td>Nombre:</td>
+                <td><input class="name" type="text" name="name" value="{{$ranking->name ?? '' }}" placeholder="AAA"></td>
+            </tr>
+    
+            <tr>
+                <td>Puntuacion:</td>
+                <td><input class="number" type="number" name="score" value="{{$ranking->score ?? '0' }}" ></td>
+            </tr>
+    
+            <tr>
+                <td class="btn"><input class="btn-submit" type="submit" value="Aceptar"></td>
+                <td class="btn"><a href="{{route('rankingMM.index')}}">Cancelar</a></td>
+            </tr>
+    
+        </table>
+
+
+        
         </form>
 
 

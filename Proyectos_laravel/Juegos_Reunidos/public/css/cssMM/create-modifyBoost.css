@@ -1,14 +1,33 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	--black: #000000;
+	--blue: #14213d;
+	--orange: #fca311;
+	--platinum: #e5e5e5;
+	--white: #ffffff;
+}
+
 table {
-	border: 0.3vh solid #1b263b;
+	border: 0.3vh solid var(--blue);
 	border-spacing: 0;
 	font-size: 2vh;
-	background-color: #e0e1dd;
+	background-color: var(--white);
+	text-align: center;
+}
+
+th {
+	background-color: var(--blue);
+	color: var(--white);
+	padding: 2vh;
 }
 
 td {
 	padding: 1vh;
 	text-align: center;
-	border-top: 0.1vh dashed #1b263b;
+	border-top: 0.1vh dashed var(--blue);
 }
 
 tr:nth-child(1),
@@ -26,16 +45,72 @@ input[type=submit] {
 
 input,
 select {
+	font-size: 2vh;
 	border: none;
 	width: 100%;
-	height: 2vh;
-	background-color: #e0e1dd;
-	border-bottom: 0.1vh solid #1b263b;
+	height: 3vh;
+	background-color: var(--white);
+	border-bottom: 0.1vh solid var(--blue);
+	border-right: 0.1vh solid var(--blue);
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
 }
 
 input:focus,
 select:focus {
 	border: none;
 	outline: none;
-	border-bottom: 0.1vh solid #415a77;
+	border-bottom: 0.1vh solid var(--orange);
+	border-right: 0.1vh solid var(--orange);
+}
+
+.btn {
+	outline: none;
+	background-color: var(--blue);
+	color: var(--white);
+	padding: 2vh;
+}
+
+a {
+	color: white;
+}
+
+.btn input[type=submit]:focus,
+.btn input[type=submit]:hover,
+.btn a:focus,
+.btn a:hover {
+	color: var(--orange);
+	outline: 0;
+	border: none;
+	transition: all 0.2s;
+}
+
+input[type=submit] {
+	border: none;
+	background-color: inherit;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+}
+
+label[id=icon-lbl] {
+	border: none;
+	background-color: inherit;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+}
+
+tr:nth-child(2),
+tr:nth-child(2) td {
+	border-top: 0;
+}
+
+select {
+	cursor: pointer;
+}
+
+.btn-dis {
+	text-decoration: line-through;
 }
