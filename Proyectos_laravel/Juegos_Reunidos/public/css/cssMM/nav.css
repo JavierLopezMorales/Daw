@@ -17,7 +17,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--platinum);
+	background-image: radial-gradient(ellipse, var(--white), var(--blue));
 	animation: backgroundMove 20s infinite alternate;
 }
 

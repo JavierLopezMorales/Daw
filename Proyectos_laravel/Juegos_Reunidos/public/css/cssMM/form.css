@@ -70,6 +70,7 @@ input[type=submit] {
 .btn a:focus,
 .btn a:hover {
 	color: var(--orange);
+	outline: 0;
 	border: none;
 	transition: all 0.2s;
 }
