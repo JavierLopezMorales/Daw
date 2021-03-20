@@ -80,28 +80,52 @@
             <div class="game-start-info">Utiliza las <span>FLECHAS</span> para moverte y la tecla <span>A</span> para disparar</div>
 
         </div>
-        
+
         <div class="game-end">
 
-            <div class="game-end-info title">FIN DE LA PARTIDA</div>
-            <div class="game-end-info">Tu puntuacion es de<div class="score">0</div> </div>
-            <div class="game-buttons">
+            <div class="rank flex-item">
 
-                <a class="retry" href="{{route('JuegoMM.index')}}">Reintentar</a>
-                <a class="acept" href="{{route('JuegoMM.index')}}">Continuar</a>
+                <table>
+
+                    <tr>
+                        <th colspan="2">TOP 5 PUNTUACIONES</th>
+                    </tr>
+
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Puntuación</th>
+                    </tr>
+
+                    @foreach($rankingList as $rank)
+                        <tr>
+                            <td>{{$rank->name}}</td>
+                            <td>{{$rank->score}}</td>
+                        </tr>
+                    @endforeach
+
+                </table>
 
             </div>
-        </div>
+            <div class="formUpload flex-item">
 
-        <div class="game-end-continue">
+                <form class="form flex-item" action="{{ route('rankingMM.store') }}" method="GET">
 
-            <div class="game-end-info title">FIN DE LA PARTIDA</div>
-            <div class="game-end-info">Tu puntuacion es de<div class="score">0</div> </div>
-            <div class="game-buttons">
+                    <div class="game-end-info title">FIN DE PARTIDA</div>
 
-                <a class="retry" href="{{route('JuegoMM.index')}}">Reintentar</a>
-                <a class="acept" href="{{route('JuegoMM.index')}}">Continuar</a>
+                    <div class="game-end-info">Introduce tus iniciales</div>
+                    <input class="name" type="text" name="name" placeholder="AAA" autocomplete="off">
+                    
+                    <div class="game-end-info">Tu puntuacion es:</div>
+                    <div class="score">0</div>
+                    <input type="text" name="score" id="score" hidden>
+                    <div class="game-buttons">
+        
+                        <a class="retry" href="{{route('JuegoMM.index')}}">Repetir</a>
+                        <input class="btn-submit" type="submit" value="Aceptar">
+        
+                    </div>
 
+                </form>
             </div>
         </div>
 

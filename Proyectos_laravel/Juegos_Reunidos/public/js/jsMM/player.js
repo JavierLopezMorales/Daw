@@ -163,6 +163,7 @@ function playerHitBox() {
                 }
             }
             if(health <= 0){
+                health = 0;
                 counterExplosion = 0;
                 enemyDeath = true;
                 kd.UP.unbindDown();

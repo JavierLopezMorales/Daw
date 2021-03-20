@@ -48,6 +48,10 @@ if(start == false){
         var oldScore = parseFloat($('.score').html());
         var newScore = oldScore + score;
 
+        if(newScore < 0){
+            newScore = 0;
+        }
+
         // Se eliminan los decimales
         newScore = Math.ceil(newScore);
 
@@ -109,7 +113,7 @@ if(start == false){
         }
     }
 
-
+    var totalScore;
     // This update loop is the heartbeat of Keydrown
     kd.run(function () {
         kd.tick();
@@ -148,7 +152,13 @@ if(start == false){
             bonusScoreTimer();
             moveBoost();
             checkBoostHit();
+
+            totalScore = $('.score').html();
+            $('#score').attr('value', totalScore);
+
         }
+
+        
         
     });
 
