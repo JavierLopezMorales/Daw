@@ -1,5 +1,6 @@
 @extends('layouts.masterST')
 <link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @section('Titulo', 'Creación de Tematicas')
 
 @section('sidebar')
@@ -11,7 +12,19 @@
     @isset($tematica)
         <form action="{{ route('TematicasST.update', ['id' => $tematica->id]) }}"enctype="multipart/form-data" method="POST">
     @method("PUT")
+    <script>
+    $(document).ready(function () {
+                var selected = "{{$tematica -> modo}}";
 
+                for(var x = 0; x < document.getElementsByClassName('selectModo')[0].length; x++){
+                    var option = document.getElementsByClassName('selectModo')[0].options;
+                    if(selected == option[x].value){
+                        document.getElementsByClassName('selectModo')[0].selectedIndex = x;
+
+                    }
+                }
+      });
+</script>
     @else
         <form action="{{ route('TematicasST.store') }}"enctype="multipart/form-data" method="POST">
     @endisset
@@ -36,7 +49,11 @@
       <td>Imagen del puzzle:(La imagen debe ser 1200x800 px)<input  type="file" name="img_puzzle" value="{{$tematica->img_puzzle ?? '' }}"></td>
     </tr>
     <tr>
-      <td>Modo :<input type="number" name="modo" value="{{$tematica->modo ?? '' }}"></td>
+      <td>Modo :<select class="selectModo"name="modo" value="{{$tematica->modo ?? '' }}">
+      <option value="3x3">3X3</option>
+      <option value="4x4">4X4</option>
+      <option value="5x5">5x5</option>
+    </select></td>
     </tr>
   </tbody>
 

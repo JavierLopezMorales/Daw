@@ -1,8 +1,9 @@
 @extends('layouts.masterST')
 <link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('js/jsST/formST.js') }}"></script>
 <script src="{{ asset('js/jsST/javascript.js') }}"></script>
+
 
 @section('Titulo', 'Sliding-Tiles')
 
@@ -22,12 +23,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+<div class="game-end">
 
-<br>
-<br>
+  <div class="formUpload flex-item">
+
+      <form class="form flex-item" action="{{ route('RankingST.store') }}" method="POST">
+
+          <div class="game-end-info title">¡ENHORABUENA!</div>
+          @csrf
+          <div class="game-end-info">Introduce tus iniciales</div>
+          <input class="name" type="text" name="name" autocomplete="off">
+
+          <div class="game-end-info">Tus movimientos han sido:</div>
+          <div class="moves">0</div>
+          <input type="text" name="moves" id="moves1"hidden>
+          <div class="game-buttons">
+          <input type="text" name="mode" id="mode"hidden value="5x5">
+              <a class="retry" href="{{route('opciones')}}">Volver a Elegir Puzzle</a>
+              <input class="btn-submit"style="	box-shadow: 0 0 0 0.5vh black, 0 0 0 0.7vh rgb(109, 216, 255);
+              	background-color: rgb(109, 216, 255);
+              	outline: none;
+              	cursor: pointer;" type="submit" value="Aceptar">
+
+          </div>
+
+      </form>
+  </div>
+</div>
 <center>
   <div id="puzzle-contenedor">
-<div id="table" style="display: inline-table;">
+<div id="table1" style="display: inline-table;">
    <div id="row1" style="display: table-row;">
       <div id="cell11" class="tile1" onClick="clickTile(1,1);"></div>
       <div id="cell12" class="tile2" onClick="clickTile(1,2);"></div>
@@ -67,16 +92,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </div>
 
+
 <div class="screen">
 
 	<p>Tiempo</p>
 
 <div id="number"></div>
   <p>Movimientos</p>
-    <div id="moves"></div>
-
-    <button class="button"onClick="temporizador(false);shuffle();"style="color:black;background-color:Lightblue;">New Game</button>
-
+    <div class="moves"id="moves"></div>
+    <button class="button" onclick="resolver();"style="color:black;background-color:Lightblue;">Resolver</button>
+    <button class="button"onClick="shuffle();"style="color:black;background-color:Lightblue;">New Game</button>
+    
 </div>
 </div>
 

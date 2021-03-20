@@ -37,6 +37,11 @@ class rankingSTController extends Controller
    */
   public function store(Request $request)
   {
+    $validated = $request->validate([
+        'name' => 'required|max:3',
+        'moves' => 'required|numeric',
+        'mode' => 'required',
+    ]);
       $ranking = new RankingST();
       $ranking->name = $request->name;
       $ranking->moves = $request->moves;
@@ -78,6 +83,10 @@ class rankingSTController extends Controller
    */
   public function update(Request $request, $id)
   {
+    $validated = $request->validate([
+        'name' => 'required|max:3|string',
+        'moves' => 'required|numeric',
+    ]);
       $ranking = RankingST::find($request->id);
       $ranking->name = $request->name;
       $ranking->moves = $request->moves;

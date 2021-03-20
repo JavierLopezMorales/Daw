@@ -22,7 +22,8 @@
 #head{
 	background-color:white;
 	}
-#table{
+#table1{
+	margin-top: 5%;
 	width:50vw ;
 	height:70vh;
 	border: 0.2vh solid white;
@@ -48,8 +49,12 @@
 	color: black;
 	background-color: white;
 }
-puzzle-contenedor {
-	float: static;
+#puzzle-contenedor {
+
+	display: flex;
+	justify-content: center;
+
+
 }
 .numeros {
 	display: absolute;
@@ -60,10 +65,11 @@ p {
 }
 
 .screen {
+	margin-top: 5%;
 	display: flex;
 	float: right;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	border: 0.1vh solid black;
 	background-color: white;
 	color: #666666;
@@ -83,198 +89,223 @@ p {
 
 }
 .tile1::before {
+	display:block;
   content:"1";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile2::before {
+	display:block;
   content:"2";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile3::before {
+	display:block;
   content:"3";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile4::before {
+	display:block;
   content:"4";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile5::before {
+	display:block;
   content:"5";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile6::before {
+	display:block;
   content:"6";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile7::before {
+	display:block;
   content:"7";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile8::before {
+	display:block;
   content:"8";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile9::before {
+	display:block;
   content:"9";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile10::before {
+	display:block;
   content:"10";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile11::before {
+	display:block;
   content:"11";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile12::before {
+	display:block;
   content:"12";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile13::before {
+	display:block;
   content:"13";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile14::before {
+	display:block;
   content:"14";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile15::before {
+	display:block;
   content:"15";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile16::before {
+	display:block;
   content:"16";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile17::before {
+	display:block;
   content:"17";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile18::before {
+	display:block;
   content:"18";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile19::before {
+	display:block;
   content:"19";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile20::before {
+	display:block;
   content:"20";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile21::before {
+	display:block;
   content:"21";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile22::before {
+	display:block;
   content:"22";
   opacity:0.60;
   position:absolute;
-  font-size: 3vw;
+  font-size: 2vw;
   text-shadow: 2px 2px 4px black;
   color:white;
 }
 .tile23::before {
+	display:block;
   content:"23";
   opacity:0.60;
   position:absolute;
   text-shadow: 2px 2px 4px black;
   color:white;
-  font-size: 3vw;
+  font-size: 2vw;
 
 }
  .tile24::before {
+	 display:block;
    content:"24";
    opacity:0.60;
    position:absolute;
-   font-size: 3vw;
+   font-size: 2vw;
    text-shadow: 2px 2px 4px black;
    color:white;
  }
+
 
 
 /*Puzzle 5x5*/
@@ -477,4 +508,71 @@ tbody {
 }
 form{
 	margin-top:20%;
+}
+/*--------------------------------------Pantalla Fin---------------------------------------*/
+.game-end {
+	font-family: 'Cherry Swash', cursive;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 120;
+	width: 40%;
+	height: 70%;
+	color:  #5451F9;
+	font-size: 6vh;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-direction: row;
+	background-color: black;
+	border: rgb(109, 216, 255)  solid;
+	display: none;
+}
+.game-buttons {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.game-buttons a {
+	background-color: white;
+	border: none;
+	border-radius: 9999px;
+	padding: 2vh;
+	margin: 2vh;
+	font-size: 2vh;
+	text-decoration: none;
+	color: black;
+}
+.formUpload {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.flex-item {
+	flex-basis: 100%;
+	text-align: center;
+}
+.retry:hover,
+.retry:focus {
+	box-shadow: 0 0 0 0.5vh black, 0 0 0 0.7vh rgb(243, 68, 68);
+	background-color: rgb(243, 68, 68);
+	outline: none;
+	cursor: pointer;
+}
+.game-info {
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+	height: 100%;
+	justify-content: space-around;
+	align-items: center;
+	color: rgb(255, 255, 255);
+	font-size: 5vh;
+}
+.game-title {
+	color: rgb(255, 255, 255);
+	margin-left: 5%;
+	font-size: 7vh;
 }
