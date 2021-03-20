@@ -18,24 +18,21 @@ class RankingSTSeeder extends Seeder
           'id' => '1',
           'name'=> 'MLL',
           'moves' => '1000',
-          'date' => '2021/01/23',
-          'mode' => '3',
+          'mode' => '5x5',
       ]);
 
       DB::table('ranking_slide')->insert([
           'id' => '2',
           'name'=> 'JLM',
           'moves' => '800',
-          'date' => '2021/01/22',
-          'mode' => '3',
+          'mode' => '5x5',
       ]);
 
       DB::table('ranking_slide')->insert([
           'id' => '3',
           'name'=> 'AAA',
           'moves' => '256',
-          'date' => '2021/01/24',
-          'mode' => '3',
+          'mode' => '5x5',
       ]);
 
     }

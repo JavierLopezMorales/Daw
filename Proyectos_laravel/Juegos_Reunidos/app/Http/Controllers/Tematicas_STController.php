@@ -24,17 +24,17 @@ class Tematicas_STController extends Controller
     if($r->hasFile('img_puzzle')){
        $file = $r->file('img_puzzle');
        $name_puzzle =$file->getClientOriginalName();
-       $resize_puzzle =Image::make($file->getRealPath());
-       $resize_puzzle->resize(150, 150);
-       $file->move(public_path().'/images/imagesST', $resize_puzzle);
+       $imag =Image::make(public_path().'images/imagesST',$name_puzzle);
+       $imag->resize(150, 150);
+       $file->move(public_path().'/images/imagesST', $imag);
 
      }
   if($r->hasFile('img_fondo')){
     $file = $r->file('img_fondo');
-    $name_fondo =$file->getClientOriginalName();
-    $resize_fondo =Image::make($file->getRealPath());
-    $resize_fondo->resize(150, 150);
-    $file->move(public_path().'/images/imagesST', $resize_fondo);
+    $name_fondo = $file->getClientOriginalName();
+    $img=Image::make(public_path().'images/imagesST',$name_fondo);
+    $img->resize(150, 150);
+    $file->move(public_path().'/images/imagesST', $img);
 
   }
 
@@ -42,8 +42,8 @@ class Tematicas_STController extends Controller
        $tematica->type = $r->type;
        $tematica->name = $r->name;
        $tematica->description = $r->description;
-       $tematica->img_fondo = $resize_fondo;
-       $tematica->img_puzzle = $resize_puzzle;
+       $tematica->img_fondo = $img;
+       $tematica->img_puzzle = $imag;
        $tematica->modo = $r->modo;
        $tematica->save();
        return redirect()->route('TematicasST.index');

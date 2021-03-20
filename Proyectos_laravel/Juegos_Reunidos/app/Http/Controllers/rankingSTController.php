@@ -40,7 +40,6 @@ class rankingSTController extends Controller
       $ranking = new RankingST();
       $ranking->name = $request->name;
       $ranking->moves = $request->moves;
-      $ranking->date = $request->date;
       $ranking->mode = $request->mode;
       $ranking->save();
       return redirect()->route('RankingST.index');
@@ -82,7 +81,6 @@ class rankingSTController extends Controller
       $ranking = RankingST::find($request->id);
       $ranking->name = $request->name;
       $ranking->moves = $request->moves;
-      $ranking->date = $request->date;
       $ranking->mode = $request->mode;
       $ranking->save();
       return redirect()->route('RankingST.index');

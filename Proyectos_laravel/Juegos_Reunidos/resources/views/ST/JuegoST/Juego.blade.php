@@ -1,5 +1,7 @@
 @extends('layouts.masterST')
 <link rel="stylesheet" href="{{ asset('css/cssST/CSS.css') }}" />
+
+
 <script src="{{ asset('js/jsST/javascript.js') }}"></script>
 
 @section('Titulo', 'Sliding-Tiles')
@@ -73,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
   <p>Movimientos</p>
     <div id="moves"></div>
 
-    <button onClick="temporizador(false);shuffle();">New Game</button>
-  	<button onClick="Comprobar();">Comprobar</button>
+    <button class="button"onClick="temporizador(false);shuffle();"style="color:black;background-color:Lightblue;">New Game</button>
+
 </div>
 </div>
 
