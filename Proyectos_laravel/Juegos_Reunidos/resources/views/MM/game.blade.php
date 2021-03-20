@@ -113,7 +113,7 @@
                     <div class="game-end-info title">FIN DE PARTIDA</div>
 
                     <div class="game-end-info">Introduce tus iniciales</div>
-                    <input class="name" type="text" name="name" placeholder="AAA" autocomplete="off">
+                    <input class="name" type="text" name="name" placeholder="AAA" autocomplete="off" maxlength="3">
                     
                     <div class="game-end-info">Tu puntuacion es:</div>
                     <div class="score">0</div>
@@ -130,5 +130,41 @@
         </div>
 
     </div>
+
+    <script>
+
+$(document).ready(function () {
+
+    if($('.name').val().length != 3){
+        $('.btn-submit').attr('disabled', 'disabled');
+        $('.btn-submit').addClass('btn-dis');
+    }
+
+    // Pone el texto en mayusculas y compruba si son 3 letras
+    $('.name').keyup(function () {
+
+        var text = $('.name').val();
+        text = text.toUpperCase();
+        $('.name').val(text);
+
+
+        if($('.name').val().length < 3){
+            $('.btn-submit').addClass('btn-dis');
+
+            // No dejar enviar menos de 3 letras
+
+            $('.btn-submit').attr('disabled', 'disabled');
+        }
+        else{
+            $('.name').css('color', 'white');
+            $('.btn-submit').prop('disabled', false);
+            $('.btn-submit').removeClass('btn-dis');
+        }
+
+    });
+
+});
+
+    </script>
 
 @endsection

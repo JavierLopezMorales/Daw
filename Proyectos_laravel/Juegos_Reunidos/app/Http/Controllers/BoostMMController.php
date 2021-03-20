@@ -39,7 +39,7 @@ class BoostMMController extends Controller
     {
 
         $validated = $request->validate([
-            'name' => 'required',
+            'name' => 'required|string',
             'amount' => 'required|numeric',
             'icon' => 'required|image|mimes:png',
             'selector' => 'required',
@@ -94,7 +94,7 @@ class BoostMMController extends Controller
     {
 
         $validated = $request->validate([
-            'name' => 'required',
+            'name' => 'required|string',
             'amount' => 'required|numeric',
             'icon' => 'nullable|image|mimes:png',
             'selector' => 'required',

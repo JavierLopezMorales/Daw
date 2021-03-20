@@ -383,6 +383,7 @@ input {
 	text-align: center;
 	border-bottom: 0.2vh dotted rgb(109, 216, 255);
 	width: 5ch;
+	font: inherit;
 }
 
 input:focus {

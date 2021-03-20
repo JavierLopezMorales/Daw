@@ -39,29 +39,36 @@ if(start == false){
     var bonusTimer = 0;
     function incrementScore(score) {
 
-        var posMultiplier = parseFloat($('#player').css('left'))/parseFloat($('.main-container').css('width'));
-        var multiplier = 1 + bonusMultiplier + posMultiplier;
+        if (game == true) {
+            var posMultiplier = parseFloat($('#player').css('left'))/parseFloat($('.main-container').css('width'));
+            var multiplier = 1 + bonusMultiplier + posMultiplier;
 
-        // Se añade el multiplicador a la puntuacion
-        score = score * multiplier;
+            // Se añade el multiplicador a la puntuacion
+            score = score * multiplier;
 
-        var oldScore = parseFloat($('.score').html());
-        var newScore = oldScore + score;
+            var oldScore = parseFloat($('.score').html());
+            var newScore = oldScore + score;
 
-        if(newScore < 0){
-            newScore = 0;
+            if(newScore < 0){
+                newScore = 0;
+            }
+
+            // Se eliminan los decimales
+            newScore = Math.ceil(newScore);
+
+            // Se incrementa el valor
+            $('.score').html(newScore);
+        }else{
+
         }
 
-        // Se eliminan los decimales
-        newScore = Math.ceil(newScore);
-
-        // Se incrementa el valor
-        $('.score').html(newScore);
+        
         
     }
 
     var bonus = false;
     var counterTimer = 0;
+    var counterEnemyBonus = 0;
     function bonusScoreTimer() {
         if(counterTimer < bonusTimer && bonusTimer != 0 && bonus == true){
             counterTimer++;
@@ -71,7 +78,13 @@ if(start == false){
             bonusMultiplier = 0;
             counterTimer=0;
             bonus = false;
-            
+        }
+
+        if(counterEnemyBonus == 600){
+            boostSelection();
+            counterEnemyBonus = 0;
+        }else{
+            counterEnemyBonus++;
         }
     }
 
@@ -121,9 +134,6 @@ if(start == false){
         size();
         coordinates();
         moveBullet();
-        waitingBulletPosition();
-
-        explosion();
 
         if(game == true && start == true){
             
@@ -140,14 +150,12 @@ if(start == false){
             // Movimiento de enemigos y balas
             
             moveEnemy();
-            playerHitBox();
-            showHealth();
-           
-            checkHit();
-            spawnEnemy();
-    
-            scoreOverTime();
             
+            showHealth();
+            spawnEnemy();
+            checkHit();
+            scoreOverTime();
+            playerHitBox();
             iFrames();
             bonusScoreTimer();
             moveBoost();
@@ -157,8 +165,9 @@ if(start == false){
             $('#score').attr('value', totalScore);
 
         }
+        waitingBulletPosition();
 
-        
+        explosion();
         
     });
 

@@ -14,7 +14,7 @@ class RankingMMController extends Controller
      */
     public function index()
     {
-        $rankingList = RankingMM::all();
+        $rankingList = RankingMM::orderBy('score', 'desc')->get();
         return view('MM/ranking/showRankingMM', ['rankingList' => $rankingList]);
     }
 
@@ -38,7 +38,7 @@ class RankingMMController extends Controller
     {
 
         $validated = $request->validate([
-            'name' => 'required|max:3',
+            'name' => 'required|string|max:3',
             'score' => 'required|numeric',
         ]);
 
@@ -83,7 +83,7 @@ class RankingMMController extends Controller
     {
 
         $validated = $request->validate([
-            'name' => 'required|max:3',
+            'name' => 'required|string|max:3',
             'score' => 'required|numeric',
         ]);
 

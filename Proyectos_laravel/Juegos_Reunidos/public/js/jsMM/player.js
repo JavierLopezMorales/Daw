@@ -171,8 +171,9 @@ function playerHitBox() {
                 kd.LEFT.unbindDown();
                 kd.DOWN.unbindDown();
                 $('#player').attr({'src': '../../images/imagesMM/explosion.gif', 'class': 'explosion'});
-                hit = true;
+                game = false;
                 audioMusic.pause(); 
+                audioMusic.volume = 0; 
                 audioHit.load();
                 audioExplosion.load(); 
                 audioHit.play(); 
@@ -183,9 +184,6 @@ function playerHitBox() {
 
     }
 
-    if(hit == true){
-        game = false;
 
-    }
 
 }
