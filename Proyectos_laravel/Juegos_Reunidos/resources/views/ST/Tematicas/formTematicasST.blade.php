@@ -18,22 +18,22 @@
         @csrf
         <div class="container2">
             <table border="3px solid black">
-        <table>
+
           <tbody>
           <tr>
-            <td>Tipo de tematica:<input type="text" name="type" value="{{$tematica->type ?? '' }}"></td>
+            <td>Tipo de imagen:<input type="text" name="type" value="{{$tematica->type ?? '' }}"></td>
           </tr>
           <tr>
-            <td>Nombre de la tematica:<input type="text" name="name" value="{{$tematica->name ?? '' }}"></td>
+            <td>Nombre de la imagen:<input type="text" name="name" value="{{$tematica->name ?? '' }}"></td>
           </tr>
           <tr>
         <td>Descripcion:<input type="text" name="description" value="{{$tematica->description ?? '' }}"></td>
       </tr>
       <tr>
-      <td>Imagen de fondo:<input  type="file" name="img_fondo" value="{{$tematica->img_fondo ?? '' }}"></td>
+      <td>Imagen de fondo:(La imagen debe ser 1200x800 px)<input  type="file" name="img_fondo" value="{{$tematica->img_fondo ?? '' }}"></td>
     </tr>
     <tr>
-      <td>Imagen del puzzle:<input  type="file" name="img_puzzle" value="{{$tematica->img_puzzle ?? '' }}"></td>
+      <td>Imagen del puzzle:(La imagen debe ser 1200x800 px)<input  type="file" name="img_puzzle" value="{{$tematica->img_puzzle ?? '' }}"></td>
     </tr>
     <tr>
       <td>Modo :<input type="number" name="modo" value="{{$tematica->modo ?? '' }}"></td>

@@ -17,7 +17,6 @@ class CreateRankingSlideTable extends Migration
           $table->id();
           $table->string('name');
           $table->integer('moves');
-          $table->date('date');
           $table->string('mode');
           $table->timestamps();
         });

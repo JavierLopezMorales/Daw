@@ -18,19 +18,16 @@
         @csrf
         <div class="container2">
             <table border="3px solid black">
-              <table>
+
                 <tbody>
                 <tr>
-                  <td>Name:<input type="text" name="name" value="{{$ranking->name ?? '' }}"></td>
+                  <td>Name:<input type="text" name="name" value="{{$ranking->name ?? '' }}"onfocus="this.blur()"></td>
                 </tr>
                 <tr>
-                  <td>Movimientos:<input type="number" name="moves" value="{{$ranking->moves ?? '' }}"></td>
+                  <td>Movimientos:<input type="number" name="moves" value="{{$ranking->moves ?? '' }}"onfocus="this.blur()"></td>
                 </tr>
                 <tr>
-                  <td>Date:<input type="date" name="date" value="{{$ranking->date ?? '' }}"></td>
-                </tr>
-                <tr>
-                  <td>Mode:<input type="number" name="mode" value="{{$ranking->mode ?? '' }}"></td>
+                  <td>Mode:<input type="text" name="mode" value="{{$ranking->mode ?? '' }}"onfocus="this.blur()"></td>
                 </tr>
               </tbody>
 
