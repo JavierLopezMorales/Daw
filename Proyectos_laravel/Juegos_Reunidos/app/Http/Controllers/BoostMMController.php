@@ -38,6 +38,13 @@ class BoostMMController extends Controller
     public function store(Request $request)
     {
 
+        $validated = $request->validate([
+            'name' => 'required',
+            'amount' => 'required|numeric',
+            'icon' => 'required|image|mimes:png',
+            'selector' => 'required',
+        ]);
+
         if($request->hasFile('icon')){
             $file = $request->file('icon');
             $name_icon = $file->getClientOriginalName();
@@ -86,6 +93,14 @@ class BoostMMController extends Controller
     public function update(Request $request, $id)
     {
 
+        $validated = $request->validate([
+            'name' => 'required',
+            'amount' => 'required|numeric',
+            'icon' => 'nullable|image|mimes:png',
+            'selector' => 'required',
+        ]);
+
+        
 
 
 
@@ -102,6 +117,9 @@ class BoostMMController extends Controller
             $name_icon = $file->getClientOriginalName();
             $file->move(public_path().'/images/imagesMM/icons', $name_icon);
             $boost->icon = $name_icon;
+        }else{
+            $boostIcon = BoostMM::find($id);
+            $boost->icon = $boostIcon->icon;
         }
         
         $boost->selector = $request->selector;

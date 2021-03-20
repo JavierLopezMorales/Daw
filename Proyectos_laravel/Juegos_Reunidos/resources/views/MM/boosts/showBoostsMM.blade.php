@@ -19,7 +19,7 @@
         <tr>
             <td>{{$boosts -> name}}</td>
             <td>{{$boosts -> amount}}</td>
-            <td class="icon-td"><img src="{{url('/images/imagesMM/icons/', $boosts -> icon)}}" style="width: 50px;"></td>
+            <td class="icon-td"><img src="{{url('/images/imagesMM/icons/', $boosts -> icon)}}" style="width: 5vh;"></td>
             <td>{{$boosts -> selector}}</td>
             <td class="btn" ><a href="{{route('boosts.edit', $boosts->id)}}">Modificar</a></td>
             

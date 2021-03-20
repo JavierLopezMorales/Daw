@@ -10,6 +10,11 @@
 	--white: #ffffff;
 }
 
+*::selection {
+	background-color: var(--orange);
+	color: var(--white);
+}
+
 .container {
 	background-color: var(--white);
 	height: 80vh;
@@ -23,12 +28,14 @@
 
 .nav {
 	display: flex;
-	background: url("../../images/imagesMM/space.png");
+	background: url("../../images/imagesMM/space.png") no-repeat 120%;
+	background-size: 100vw;
 	color: var(--white);
 	height: 10vh;
 	justify-content: space-between;
 	align-items: center;
 	font-size: 3vh;
+	border-bottom: 0.2vh solid var(--white);
 }
 
 .nav-item {
@@ -76,6 +83,8 @@ a {
 
 .footer {
 	height: 10vh;
-	background: url("../../images/imagesMM/space.png") 110%;
+	background: url("../../images/imagesMM/space.png") no-repeat;
+	background-size: 100vw;
 	width: 100vw;
+	border-top: 0.2vh solid var(--white);
 }

@@ -36,6 +36,12 @@ class RankingMMController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validated = $request->validate([
+            'name' => 'required|max:3',
+            'score' => 'required|numeric',
+        ]);
+
         $ranking = new RankingMM();
         $ranking->name = $request->name;
         $ranking->score = $request->score;
@@ -75,6 +81,12 @@ class RankingMMController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $validated = $request->validate([
+            'name' => 'required|max:3',
+            'score' => 'required|numeric',
+        ]);
+
         $ranking = RankingMM::find($request->id);
         $ranking->name = $request->name;
         $ranking->score = $request->score;
