@@ -18,7 +18,7 @@
             <th>Nombre</th>
 
             <th>Movimientos</th>
-            <th>Modo</th>
+            
             <th colspan="2"><a href="{{route('RankingST.create')}}"><input type="button"class="button" value="Crear"></a></th>
         </tr>
 </thead>
@@ -27,7 +27,7 @@
         <tr>
             <td>{{$ranking -> name}}</td>
             <td>{{$ranking -> moves}}</td>
-            <td>{{$ranking -> mode}}</td>
+
             <td><a href="{{route('RankingST.edit', $ranking->id)}}"><input type="button"class="button" value="Modificar"></a></td>
             <td>
                 <form action = "{{route('RankingST.destroy', $ranking->id)}}" method="POST">

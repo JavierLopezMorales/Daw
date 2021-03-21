@@ -43,17 +43,17 @@
         <td>Descripcion:<input type="text" name="description" value="{{$tematica->description ?? '' }}"></td>
       </tr>
       <tr>
-      <td>Imagen de fondo:(La imagen debe ser 1200x800 px)<input  type="file" name="img_fondo" value="{{$tematica->img_fondo ?? '' }}"></td>
+      <td>Imagen de fondo:(La imagen debe ser 1200x800px y un archivo .jpg)<input  type="file" name="img_fondo" value="{{$tematica->img_fondo ?? '' }}"></td>
     </tr>
     <tr>
-      <td>Imagen del puzzle:(La imagen debe ser 1200x800 px)<input  type="file" name="img_puzzle" value="{{$tematica->img_puzzle ?? '' }}"></td>
+      <td>Imagen del puzzle:(La imagen debe ser 1200x800px y un archivo .jpg)<input  type="file" name="img_puzzle" value="{{$tematica->img_puzzle ?? '' }}"></td>
     </tr>
     <tr>
-      <td>Modo :<select class="selectModo"name="modo" value="{{$tematica->modo ?? '' }}">
+      <select hidden class="selectModo"name="modo" value="{{$tematica->modo ?? '' }}">
       <option value="3x3">3X3</option>
       <option value="4x4">4X4</option>
-      <option value="5x5">5x5</option>
-    </select></td>
+      <option value="5x5"selected>5x5</option>
+    </select>
     </tr>
   </tbody>
 

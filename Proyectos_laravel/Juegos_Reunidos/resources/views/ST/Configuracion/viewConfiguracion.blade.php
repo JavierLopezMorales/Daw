@@ -14,7 +14,7 @@
 @foreach($tematicasList as $tematicas)
 
   <div class="button-tematica"style="display:flex;flex-direction:column;align-items:center;flex-wrap:wrap;">
-    <img src="../../../../images/imagesST/{{$tematicas->img_fondo}}"width="300px"height="200px">
+    <img src="../../../../images/imagesST/{{$tematicas->img_fondo}}"width="300px"height="200px"title="{{$tematicas->description}}">
   <a href="{{ route('Juego.show', ['id' => $tematicas->id]) }}"><input type="button"class="button" value="Seleccionar"></a>
 </div>
 

@@ -38,7 +38,7 @@ class rankingSTController extends Controller
   public function store(Request $request)
   {
     $validated = $request->validate([
-        'name' => 'required|max:3',
+        'name' => 'required|string|max:3',
         'moves' => 'required|numeric',
         'mode' => 'required',
     ]);

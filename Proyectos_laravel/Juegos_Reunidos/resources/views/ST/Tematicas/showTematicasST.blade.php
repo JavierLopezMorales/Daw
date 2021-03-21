@@ -18,7 +18,7 @@
             <th>Descripcion</th>
             <th>Imagen de fondo</th>
             <th>Imagen de puzzle</th>
-            <th>Modo</th>
+
             <th colspan="2"><a href="{{route('TematicasST.create')}}"><input type="button"class="button" value="Crear"></a></th>
         </tr>
       </thead>
@@ -31,7 +31,7 @@
             <td>{{$tematicas -> description}}</td>
             <td><img src="images/imagesST/{{$tematicas -> img_fondo}}"width="150px"height="100px"></td>
             <td><img src="images/imagesST/{{$tematicas -> img_puzzle}}"width="150px"height="100px"></td>
-            <td>{{$tematicas -> modo}}</td>
+            
 
 
             <td><a href="{{route('TematicasST.edit', $tematicas->id)}}"><input type="button"class="button" value="Modificar"></a></td>

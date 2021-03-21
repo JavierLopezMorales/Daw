@@ -42,7 +42,7 @@ for(var x =0;x<l.length;x++){
   if(start != true){
 
   }
-
+  
 
 function shuffle() {
   var game = false;

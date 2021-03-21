@@ -30,7 +30,11 @@
                   <td>Movimientos:<input type="number"class="moves" name="moves" value="{{$ranking->moves ?? '' }}"></td>
                 </tr>
                 <tr>
-                  <td>Mode:<input type="text" class="mode"name="mode" value="{{$ranking->mode ?? '' }}"></td>
+                  <select hidden class="selectModo"name="modo" value="{{$ranking->modo ?? '' }}">
+                  <option value="3x3">3X3</option>
+                  <option value="4x4">4X4</option>
+                  <option value="5x5"selected>5x5</option>
+                </select>
                 </tr>
               </tbody>
 

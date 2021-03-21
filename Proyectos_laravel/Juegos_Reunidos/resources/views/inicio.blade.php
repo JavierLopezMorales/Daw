@@ -12,7 +12,7 @@ var selected;
     if(selected == 1){
       $('#route2').removeAttr('href');
       $('#route3').removeAttr('href');
-      $('#route1').attr('href', '');
+      $('#route1').attr('href', '{{route("opciones")}}');
     }
 
     selected = 1;

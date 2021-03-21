@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <div id="puzzle-contenedor">
 <div id="table1" style="display: inline-table;">
    <div id="row1" style="display: table-row;">
-      <div id="cell11" class="tile1" onClick="clickTile(1,1);"></div>
+      <div id="cell11" class="tile1 " onClick="clickTile(1,1);"></div>
       <div id="cell12" class="tile2" onClick="clickTile(1,2);"></div>
       <div id="cell13" class="tile3" onClick="clickTile(1,3);"></div>
 	  <div id="cell14" class="tile4" onClick="clickTile(1,4);"></div>
@@ -101,8 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
   <p>Movimientos</p>
     <div class="moves"id="moves"></div>
     <button class="button" onclick="resolver();"style="color:black;background-color:Lightblue;">Resolver</button>
-    <button class="button"onClick="shuffle();"style="color:black;background-color:Lightblue;">New Game</button>
-    
+    <button class="button"onClick="shuffle();"style="color:black;background-color:Lightblue;">Juego Nuevo</button>
+
+
 </div>
 </div>
 
