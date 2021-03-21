@@ -19,6 +19,62 @@ body {
 
 .nav {
 	display: none;
+	background: url("../../images/imagesMM/space.png") no-repeat 120%;
+	background-size: 100vw;
+	color: var(--white);
+	height: 10vh;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 3vh;
+	border-bottom: 0.2vh solid white;
+	position: absolute;
+	width: 100vw;
+	z-index: 999;
+}
+
+.nav-item {
+	width: 100%;
+}
+
+.nav-links {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-around;
+	margin-right: 2.5vw;
+}
+
+.nav-links a {
+	color: white;
+	transition: all 0.3s ease-out;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+.nav-title a {
+	font-size: 1.4em;
+	margin-left: 5vh;
+	color: white;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+	outline: none;
+	color: #fca311;
+	font-size: 1.2em;
+}
+
+@keyframes changeColor {
+	0% {
+		color: white;
+		font-size: 1em;
+	}
+	100% {
+		color: #fca311;
+		font-size: 1.2em;
+	}
 }
 
 .game-nav {
@@ -32,6 +88,7 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	text-shadow: 0 0 0.5vh #fca311;
 }
 
 .game-info {
@@ -433,4 +490,31 @@ input[type=submit]:focus {
 	background-color: rgb(109, 216, 255);
 	outline: none;
 	cursor: pointer;
+}
+
+.option {
+	box-sizing: content-box;
+	margin-left: 1vh;
+	width: 5vh;
+	cursor: pointer;
+	z-index: 99999;
+	position: fixed;
+	transform: translate(-70%, -50%);
+}
+
+.img-icon {
+	filter: drop-shadow(0 0 0.2vh #fca311);
+}
+
+.img-icon:hover {
+	filter: drop-shadow(0 0 0.2vh rgb(109, 216, 255));
+}
+
+.title {
+	color: rgb(243, 68, 68);
+	text-shadow: 0 0 0.5vh rgb(243, 68, 68);
+}
+
+.game-link {
+	display: none;
 }

@@ -110,9 +110,7 @@ if(start == false){
     });
     
     kd.M.press(function () { 
-
         mute();
-
     });
 
     function mute() {
@@ -126,48 +124,77 @@ if(start == false){
         }
     }
 
+    var pause = false;
+
+    kd.P.press(function () { 
+        pauseGame();
+    });
+
+    function pauseGame() {
+
+        if (pause == false) {
+            pause = true;
+            $('.option').css('transform', 'translate(-70%, -50%) rotateY(180deg)');
+            $('.nav').css('display', 'flex');
+            $('sound').css('display', 'none');
+        }else{
+            pause = false;
+            $('.option').css('transform', 'translate(-70%, -50%) rotateY(0deg)');
+            $('.nav').css('display', 'none');
+            $('sound').css('display', 'flex');
+        }
+
+    }
+
     var totalScore;
     // This update loop is the heartbeat of Keydrown
     kd.run(function () {
         kd.tick();
-        
-        size();
-        coordinates();
-        moveBullet();
 
-        if(game == true && start == true){
+        showHealth();
+
+        if(pause == false){
+        
+            size();
+            coordinates();
+            moveBullet();
+
+            if(game == true && start == true){
+                
+                if(explode == true){
+                    $('.white-explosion').css('z-index', '999');
+                    explode = false;
+                }else{
+                    $('.white-explosion').css('z-index', '-1');
+                }
             
-            if(explode == true){
-                $('.white-explosion').css('z-index', '999');
-                explode = false;
-            }else{
-                $('.white-explosion').css('z-index', '-1');
+                // Spawn de enemigos
+                enemySpawnSpeed()
+        
+                // Movimiento de enemigos y balas
+                
+                moveEnemy();
+                
+                
+                spawnEnemy();
+                checkHit();
+                scoreOverTime();
+                playerHitBox();
+                iFrames();
+                bonusScoreTimer();
+                moveBoost();
+                checkBoostHit();
+
+                totalScore = $('.score').html();
+                $('#score').attr('value', totalScore);
+
             }
-        
-            // Spawn de enemigos
-            enemySpawnSpeed()
-    
-            // Movimiento de enemigos y balas
-            
-            moveEnemy();
-            
-            showHealth();
-            spawnEnemy();
-            checkHit();
-            scoreOverTime();
-            playerHitBox();
-            iFrames();
-            bonusScoreTimer();
-            moveBoost();
-            checkBoostHit();
 
-            totalScore = $('.score').html();
-            $('#score').attr('value', totalScore);
+            waitingBulletPosition();
+
+            explosion();
 
         }
-        waitingBulletPosition();
-
-        explosion();
         
     });
 

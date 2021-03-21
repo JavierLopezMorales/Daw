@@ -10,19 +10,29 @@
 
 
 @section('content')
-<div class="container2">
-  <div id="planet1" class="planet">
-    <img src="https://images.vexels.com/media/users/3/152536/isolated/preview/401b51c3a9098f12b566121c92009877-mars-planet-icon-by-vexels.png">
-    <h3>MARS</h3>
+
+<div class="navIndex">
+  <div class="tittle">JUEGOS REUNIDOS</div>
+</div>
+
+
+<div class="carrousel-container">
+  <div id="game1" class="game" onclick="centerGame1()">
+    <img src="../../images/puzzle.jpg">
+    <h3>SLIDING TILES</h3>
   </div>
-  <div id="planet2" class="planet">
-    <img src="https://images.vexels.com/media/users/3/152680/isolated/preview/22e162e0d0066ad0881e1ee797574680-uranus-planet-icon-by-vexels.png">
-    <h3>URANUS</h3>
+  <div id="game2" class="game" onclick="centerGame2()">
+    <img src="../../images/STM.png">
+    <h3>SHOOT'EM UP</h3>
   </div>
-  <div id="planet3" class="planet">
-    <img src="https://images.vexels.com/media/users/3/152509/isolated/preview/e058e7f53d319e0628763c70ab7dce14-jupiter-planet-icon-by-vexels.png">
-    <h3>JUPITER</h3>
+  <div id="game3" class="game" onclick="centerGame3()">
+    <img src="../../images/STM.png">
+    <h3>SNAKE</h3>
   </div>
+</div>
+
+<div class="footer">
+
 </div>
 
 @endsection

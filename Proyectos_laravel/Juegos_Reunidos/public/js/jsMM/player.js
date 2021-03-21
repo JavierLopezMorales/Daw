@@ -5,11 +5,16 @@
 var playerSpeed = 0.8;
     // Velocidad a la que el player se mueve, es mas despacio si se mueve en diagonal
     function calcSpeed(){
-        if(kd.LEFT.isDown() == true && kd.UP.isDown() == true || kd.LEFT.isDown() == true && kd.DOWN.isDown() == true || kd.UP.isDown() == true && kd.RIGHT.isDown() == true || kd.RIGHT.isDown() == true && kd.DOWN.isDown() == true){
-            speed = playerSpeed - 0.2;
-        }
-        else{
-            speed =  playerSpeed;
+
+        if(pause == false){
+            if(kd.LEFT.isDown() == true && kd.UP.isDown() == true || kd.LEFT.isDown() == true && kd.DOWN.isDown() == true || kd.UP.isDown() == true && kd.RIGHT.isDown() == true || kd.RIGHT.isDown() == true && kd.DOWN.isDown() == true){
+                speed = playerSpeed - 0.2;
+            }
+            else{
+                speed =  playerSpeed;
+            }
+        }else{
+            speed = 0;
         }
     }
 

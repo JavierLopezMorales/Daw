@@ -47,7 +47,8 @@
             <div class="health-info">
                 Health: <div class="health-indicator">100</div>
             </div>
-            <div  class="sound-info"><img src="../../images/imagesMM/icons/volumen-up.png" class="sound" onclick="mute()"></img> </div>
+            <div  class="sound-info"><img src="../../images/imagesMM/icons/volumen-up.png" class="sound img-icon" onclick="mute()" title="Silenciar música"></img> </div>
+            <div  class="option-info"><img src="../../images/imagesMM/icons/option.png" class="option img-icon" onclick="pauseGame()" title="Pausa"></img> </div>
         </div>
 
     </div>
@@ -110,7 +111,7 @@
 
                 <form class="form flex-item" action="{{ route('rankingMM.store') }}" method="GET">
 
-                    <div class="game-end-info title">FIN DE PARTIDA</div>
+                    <div class="game-end-info title">GAME OVER!</div>
 
                     <div class="game-end-info">Introduce tus iniciales</div>
                     <input class="name" type="text" name="name" placeholder="AAA" autocomplete="off" maxlength="3">
