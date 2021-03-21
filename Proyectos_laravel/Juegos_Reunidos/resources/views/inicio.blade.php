@@ -45,7 +45,7 @@ var selected;
     if(selected == 3){
       $('#route1').removeAttr('href');
       $('#route2').removeAttr('href');
-      $('#route3').attr('href', '/snake_game');
+      $('#route3').attr('href', '{{route("GameSG.index")}}');
     }
 
     selected = 3;
