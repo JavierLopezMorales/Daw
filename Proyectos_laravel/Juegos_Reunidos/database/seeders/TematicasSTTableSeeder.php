@@ -51,23 +51,6 @@ class TematicasSTTableSeeder extends Seeder
           'img_puzzle' => 'bandera.jpg',
           'modo' => '3'
       ]);
-      DB::table('tematicas_slide')->insert([
-          'id' => '5',
-          'type' => 'Puzzle',
-          'name' => 'Numeros',
-          'description' => 'Ahora toca un puzzle con numeros',
-          'img_fondo' => 'FondoBlanco2.jpg',
-          'img_puzzle' => 'FondoBlanco.jpg',
-          'modo' => '3'
-      ]);
-      DB::table('tematicas_slide')->insert([
-          'id' => '6',
-          'type' => 'Puzzle',
-          'name' => 'Francia',
-          'description' => 'Una panoramica excelente de la torre Eiffel',
-          'img_fondo' => 'torre2.jpg',
-          'img_puzzle' => 'torre.jpg',
-          'modo' => '3'
-      ]);
+      
     }
 }

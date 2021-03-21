@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\File;
-use Image;
 use Illuminate\Http\Request;
 use App\Models\TematicasST;
 
@@ -20,21 +19,25 @@ class Tematicas_STController extends Controller
    }
 
    public function store(Request $r) {
+       $validated = $r->validate([
+     'type' => 'required|string',
+     'name' => 'required|string',
+     'description' => 'required',
+     'img_fondo' => 'required|image|mimes:jpg',
+     'img_puzzle' => 'required|image|mimes:jpg',
+     'modo' => 'required',
+   ]);
 
     if($r->hasFile('img_puzzle')){
        $file = $r->file('img_puzzle');
        $name_puzzle =$file->getClientOriginalName();
-       $imag =Image::make(public_path().'images/imagesST',$name_puzzle);
-       $imag->resize(150, 150);
-       $file->move(public_path().'/images/imagesST', $imag);
+       $file->move(public_path().'/images/imagesST', $name_puzzle);
 
      }
   if($r->hasFile('img_fondo')){
     $file = $r->file('img_fondo');
     $name_fondo = $file->getClientOriginalName();
-    $img=Image::make(public_path().'images/imagesST',$name_fondo);
-    $img->resize(150, 150);
-    $file->move(public_path().'/images/imagesST', $img);
+    $file->move(public_path().'/images/imagesST', $name_fondo);
 
   }
 
@@ -42,8 +45,8 @@ class Tematicas_STController extends Controller
        $tematica->type = $r->type;
        $tematica->name = $r->name;
        $tematica->description = $r->description;
-       $tematica->img_fondo = $img;
-       $tematica->img_puzzle = $imag;
+       $tematica->img_fondo = $name_fondo;
+       $tematica->img_puzzle = $name_puzzle;
        $tematica->modo = $r->modo;
        $tematica->save();
        return redirect()->route('TematicasST.index');
@@ -63,14 +66,23 @@ return view('inicio');
    }
 
    public function update(Request $r,$id) {
-     $tematica = TematicasST::find($id);
-     File::delete('images/imagesST/' . $tematica->img_puzzle);
-     if($r->hasFile('img_puzzle')){
-       $file = $r->file('img_puzzle');
-       $name_puzzle = $file->getClientOriginalName();
-       $file->move(public_path().'/images/imagesST', $name_puzzle);
+     $validated = $r->validate([
+   'type' => 'required|string',
+   'name' => 'required|string',
+   'description' => 'required',
+   'img_fondo' => 'required|image|mimes:jpg',
+   'img_puzzle' => 'required|image|mimes:jpg',
+   'modo' => 'required',
+ ]);
 
-  }
+    if($r->hasFile('img_puzzle')){
+      $tematica = TematicasST::find($id);
+      File::delete('images/imagesST/' . $tematica->img_puzzle);
+      $file = $r->file('img_puzzle');
+      $name_puzzle = $file->getClientOriginalName();
+      $file->move(public_path().'/images/imagesST', $name_puzzle);
+
+}
   if($r->hasFile('img_fondo')){
     $tematica = TematicasST::find($id);
     File::delete('images/imagesST/' . $tematica->img_fondo);
