@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMapMMTable extends Migration
+class CreateRankingSnakeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateMapMMTable extends Migration
      */
     public function up()
     {
-        Schema::create('map_m_m', function (Blueprint $table) {
+        Schema::create('ranking_snake', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
+            $table->integer('score');
+            $table->date('date');
+            $table->integer('mode');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateMapMMTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('map_m_m');
+        Schema::dropIfExists('ranking_snake');
     }
 }

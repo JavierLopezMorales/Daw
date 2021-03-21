@@ -5,20 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MapMM extends Model
+class ThematicSG extends Model
 {
     use HasFactory;
 
-    protected $table = 'map_m_m'; // Nombre de la tabla
-    protected $primaryKey = 'id'; // Nombre de la clave primaria
+    protected $table = 'thematics_snake';
+    protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'image',
-    ];
+    protected $fillable = ['type','name','description','background','snake_color'];
 }

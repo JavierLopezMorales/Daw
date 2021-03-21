@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\RankingMM;
+use App\Models\RankingSG;
 
-class RankingMMController extends Controller
+class RankingSGController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,10 @@ class RankingMMController extends Controller
      */
     public function index()
     {
-        $rankingList = RankingMM::orderBy('score', 'desc')->get();
-        return view('MM/ranking/showRankingMM', ['rankingList' => $rankingList]);
+        //
+        $rankingList=RankingSG::orderBy('score','DESC')->paginate(10);
+        
+        return view('SG/Ranking/index', ['rankingList'=>$rankingList]);
     }
 
     /**
@@ -25,7 +27,8 @@ class RankingMMController extends Controller
      */
     public function create()
     {
-        return view('MM/ranking/formRankingMM');
+        //
+        return view('SG/Ranking/create');
     }
 
     /**
@@ -34,19 +37,15 @@ class RankingMMController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $r)
     {
-
-        $validated = $request->validate([
-            'name' => 'required|string|max:3',
-            'score' => 'required|numeric',
-        ]);
-
-        $ranking = new RankingMM();
-        $ranking->name = $request->name;
-        $ranking->score = $request->score;
+        $ranking = new RankingSG();
+        $ranking->name = $r->name;
+        $ranking->score = $r->score;
+        $ranking->date = $r->date;
+        $ranking->mode = $r->mode;
         $ranking->save();
-        return redirect()->route('rankingMM.index');
+        return redirect()->route('RankingSG.index');
     }
 
     /**
@@ -68,8 +67,9 @@ class RankingMMController extends Controller
      */
     public function edit($id)
     {
-        $ranking = RankingMM::find($id);
-        return view('MM/ranking/formRankingMM', array('ranking' => $ranking));
+        //
+        $ranking=RankingSG::find($id);
+        return view('SG/Ranking/edit', array('ranking'=>$ranking));
     }
 
     /**
@@ -79,19 +79,15 @@ class RankingMMController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $r, $id)
     {
-
-        $validated = $request->validate([
-            'name' => 'required|string|max:3',
-            'score' => 'required|numeric',
-        ]);
-
-        $ranking = RankingMM::find($request->id);
-        $ranking->name = $request->name;
-        $ranking->score = $request->score;
+        $ranking = RankingSG::find($id);
+        $ranking->name = $r->name;
+        $ranking->score = $r->score;
+        $ranking->date = $r->date;
+        $ranking->mode = $r->mode;
         $ranking->save();
-        return redirect()->route('rankingMM.index');
+        return redirect()->route('RankingSG.index');
     }
 
     /**
@@ -102,8 +98,8 @@ class RankingMMController extends Controller
      */
     public function destroy($id)
     {
-        $ranking = RankingMM::find($id);
+        $ranking = RankingSG::find($id);
         $ranking->delete();
-        return redirect()->route('rankingMM.index');
+        return redirect()->route('RankingSG.index');
     }
 }

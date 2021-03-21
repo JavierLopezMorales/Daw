@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Models\Ships;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -91,3 +90,24 @@ Route::put('/rankingST/{id}', 'rankingSTController@update')->name('RankingST.upd
 Route::delete('/rankingST/{id}/delete', 'rankingSTController@destroy')->name('RankingST.destroy');
 //----------Rutas de configuracionST------------//
 Route::get('/opciones', 'configuracion_ST@index')->name('opciones');
+
+
+
+Route::get('/snake_game', 'GameSGController@index')->name('GameSG.index');
+Route::get('/snake_game/{id}', 'GameSGController@show')->name('GameSG.show');
+
+//Thematics//
+Route::get('/thematicSG', 'ThematicSGController@index')->name('ThematicSG.index');
+Route::get('/thematicSG/create', 'ThematicSGController@create')->name('ThematicSG.create');
+Route::post('/thematicSG/store', 'ThematicSGController@store')->name('ThematicSG.store');
+Route::get('/thematicSG/{id}/edit', 'ThematicSGController@edit')->name('ThematicSG.edit');
+Route::put('thematicSG/{id}', 'ThematicSGController@update')->name('ThematicSG.update');
+Route::delete('/thematic/{id}/delete', 'ThematicSGController@destroy')->name('ThematicSG.destroy');
+
+//Ranking//
+Route::get('/rankingSG', 'RankingSGController@index')->name('RankingSG.index');
+Route::get('/rankingSG/create', 'RankingSGController@create')->name('RankingSG.create');
+Route::post('/rankingSG/store', 'RankingSGController@store')->name('RankingSG.store');
+Route::get('/rankingSG/{id}/edit', 'RankingSGController@edit')->name('RankingSG.edit');
+Route::put('/rankingSG/{id}', 'RankingSGController@update')->name('RankingSG.update');
+Route::delete('/rankingSG/{id}/delete', 'RankingSGController@destroy')->name('RankingSG.destroy');
