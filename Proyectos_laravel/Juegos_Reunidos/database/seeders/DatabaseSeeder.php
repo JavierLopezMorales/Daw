@@ -14,11 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $this->call(ShipsTableSeeder::class);
-        $this->call(EnemiesTableSeeder::class);
-        $this->call(RankingMMTableSeeder::class);
-        $this->call(UserTableSeeder::class);
-        $this->call(RankingSTSeeder::class);
-        $this->call(TematicasSTTableSeeder::class);
+        $this->call(RankingSGSeeder::class);
+        $this->call(ThematicSGSeeder::class);
     }
 }
