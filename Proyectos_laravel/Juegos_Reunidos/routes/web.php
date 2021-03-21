@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/inicio', 'Tematicas_STController@show')->name('inicio.show');
+
 Route::get('/juegoMM', 'GameMMController@index')->name('JuegoMM.index');
 Route::get('/JuegoST/{id}', 'JuegoController@show')->name('Juego.show');
 
@@ -37,7 +39,7 @@ Route::post('/tematicas/store', 'Tematicas_STController@store')->name('Tematicas
 Route::get('/tematicas/{id}/edit', 'Tematicas_STController@edit')->name('TematicasST.edit');
 Route::put('/tematicas/{id}', 'Tematicas_STController@update')->name('TematicasST.update');
 Route::delete('/tematicas/{id}/delete', 'Tematicas_STController@destroy')->name('TematicasST.destroy');
-Route::get('/inicio', 'Tematicas_STController@show')->name('inicio.show');
+
 
 
 //----------Crud de naves------------//

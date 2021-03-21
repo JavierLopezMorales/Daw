@@ -5,7 +5,7 @@
     </head>
     <body>
         <div class="nav">
-            <div class="nav-title nav-item"><a href="">Juegos Reunidos - Shoot'em Up!</a></div>
+            <div class="nav-title nav-item"><a href="{{route('inicio.show')}}">Juegos Reunidos - Shoot'em Up!</a></div>
             <div class="nav-links nav-item">
                 <!--<a href="{{route('ships.index')}}">Naves</a>-->
                 <!--<a href="{{route('enemies.index')}}">Enemigos</a>-->

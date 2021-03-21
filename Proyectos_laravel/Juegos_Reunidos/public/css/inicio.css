@@ -52,7 +52,7 @@ img {
 	border: 0.5vh double rgb(128, 128, 128);
 }
 
-h3 {
+.game a {
 	color: #000000;
 	font-family: 'Titillium Web', sans-serif;
 	letter-spacing: 0.1vh;
