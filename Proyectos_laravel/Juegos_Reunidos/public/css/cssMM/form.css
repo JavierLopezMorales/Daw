@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-
+	font-family: 'Raleway', sans-serif;
 	--black: #000000;
 	--blue: #14213d;
 	--orange: #fca311;
@@ -69,5 +69,3 @@ input[type=submit] {
 ::-moz-focus-inner {
 	border: 0;
 }
-
-

@@ -17,18 +17,18 @@ class RankingMMTableSeeder extends Seeder
         DB::table('ranking_m_m')->insert([
             'id' => '1',
             'name' => 'JLM',
-            'score' => '1200',
+            'score' => '42000',
         ]);
 
         DB::table('ranking_m_m')->insert([
             'id' => '2',
             'name' => 'FRK',
-            'score' => '1100',
+            'score' => '10100',
         ]);
         DB::table('ranking_m_m')->insert([
             'id' => '3',
             'name' => 'MLN',
-            'score' => '1000',
+            'score' => '15400',
         ]);
         DB::table('ranking_m_m')->insert([
             'id' => '4',
@@ -49,22 +49,6 @@ class RankingMMTableSeeder extends Seeder
             'id' => '7',
             'name' => 'ERT',
             'score' => '39800',
-        ]);
-
-        DB::table('ranking_m_m')->insert([
-            'id' => '8',
-            'name' => 'AWD',
-            'score' => '11100',
-        ]);
-        DB::table('ranking_m_m')->insert([
-            'id' => '9',
-            'name' => 'ZZZ',
-            'score' => '29000',
-        ]);
-        DB::table('ranking_m_m')->insert([
-            'id' => '10',
-            'name' => 'GOD',
-            'score' => '23000',
         ]);
     }
 }
