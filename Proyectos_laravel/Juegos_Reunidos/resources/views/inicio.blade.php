@@ -45,7 +45,7 @@ var selected;
     if(selected == 3){
       $('#route1').removeAttr('href');
       $('#route2').removeAttr('href');
-      $('#route3').attr('href', '');
+      $('#route3').attr('href', '/snake_game');
     }
 
     selected = 3;
@@ -86,7 +86,7 @@ var selected;
     <h3>SHOOT'EM UP</h3>
   </div>
   <div id="game3" class="game" onclick="centerGame3()">
-    <a id='route3'><img src="../../images/STM.png"></a>
+    <a id='route3'><img src="../../images/SNK.jpg"></a>
 
     <h3>SNAKE</h3>
   </div>
