@@ -40,10 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="game-buttons">
           <input type="text" name="mode" id="mode"hidden value="5x5">
               <a class="retry" href="{{route('opciones')}}">Volver a Elegir Puzzle</a>
-              <input class="btn-submit"style="	box-shadow: 0 0 0 0.5vh black, 0 0 0 0.7vh rgb(109, 216, 255);
-              	background-color: rgb(109, 216, 255);
-              	outline: none;
-              	cursor: pointer;" type="submit" value="Aceptar">
+              <input class="btn-submit" type="submit" value="Aceptar">
 
           </div>
 

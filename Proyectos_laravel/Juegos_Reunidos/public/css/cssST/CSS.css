@@ -511,7 +511,7 @@ form{
 }
 /*--------------------------------------Pantalla Fin---------------------------------------*/
 .game-end {
-	font-family: 'Cherry Swash', cursive;
+	font-family:"Consolas", monospace;
 	position: fixed;
 	left: 50%;
 	top: 50%;
@@ -534,6 +534,7 @@ form{
 	width: 100%;
 }
 
+
 .game-buttons a {
 	background-color: white;
 	border: none;
@@ -543,6 +544,7 @@ form{
 	font-size: 2vh;
 	text-decoration: none;
 	color: black;
+
 }
 .formUpload {
 	display: flex;
@@ -554,10 +556,21 @@ form{
 	flex-basis: 100%;
 	text-align: center;
 }
-.retry:hover,
-.retry:focus {
-	box-shadow: 0 0 0 0.5vh black, 0 0 0 0.7vh rgb(243, 68, 68);
-	background-color: rgb(243, 68, 68);
+.btn-submit{
+	background-color: white;
+	border: none;
+	border-radius: 9999px;
+	padding: 2vh;
+	margin: 2vh;
+	font-size: 2vh;
+	text-decoration: none;
+	color: black;
+	width:20%;
+	outline: none;
+	cursor: pointer;
+}
+.retry{
+
 	outline: none;
 	cursor: pointer;
 }
