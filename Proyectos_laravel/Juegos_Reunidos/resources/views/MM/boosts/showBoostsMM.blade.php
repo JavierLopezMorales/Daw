@@ -1,6 +1,6 @@
 @extends('layouts.masterMM')
 
-@section('Titulo', 'Tabla de Boosts')
+@section('Titulo', 'Boosts Shoot´em Up')
 <link rel="stylesheet" href="{{ asset('css/cssMM/nav.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/cssMM/form.css') }}" />
 @section('content')

@@ -79,6 +79,7 @@
               
             <div class="game-start-info">Bienvenido a SHOOT'EM UP!, para empezar pulse <span>ESPACIO</span></div>
             <div class="game-start-info">Utiliza las <span>FLECHAS</span> para moverte y la tecla <span>A</span> para disparar</div>
+            <div class="game-start-info">Puedes pausar el juego con <span>P</span> y silenciarlo con <span>M</span></div>
 
         </div>
 
@@ -116,7 +117,7 @@
                     <div class="game-end-info">Introduce tus iniciales</div>
                     <input class="name" type="text" name="name" placeholder="AAA" autocomplete="off" maxlength="3">
                     
-                    <div class="game-end-info">Tu puntuacion es:</div>
+                    <div class="game-end-info">Tu puntuación es:</div>
                     <div class="score">0</div>
                     <input type="text" name="score" id="score" hidden>
                     <div class="game-buttons">

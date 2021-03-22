@@ -1,6 +1,6 @@
 @extends('layouts.masterMM')
 
-@section('Titulo', 'Creación de Boosts')
+@section('Titulo', 'Boosts Shoot´em Up')
 <link rel="stylesheet" href="{{ asset('css/cssMM/nav.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/cssMM/create-modifyBoost.css') }}" />
 
@@ -35,7 +35,7 @@
                             document.getElementById('amount-lbl').innerHTML = 'Cantidad a aumentar:';
                         }
                         if(seleccion == 'shield' || seleccion == 'double-points') {
-                            document.getElementById('amount-lbl').innerHTML = 'Duracion:';
+                            document.getElementById('amount-lbl').innerHTML = 'Duración:';
                         }
                         if(seleccion == 'nuke') {
                             document.getElementById('amount-lbl').innerHTML = 'Puntuación recibida:';
@@ -117,7 +117,7 @@
                         document.getElementById('amount-lbl').innerHTML = 'Cantidad a aumentar:';
                     }
                     if(seleccion == 'shield' || seleccion == 'double-points') {
-                        document.getElementById('amount-lbl').innerHTML = 'Duracion:';
+                        document.getElementById('amount-lbl').innerHTML = 'Duración:';
                     }
                     if(seleccion == 'nuke') {
                         document.getElementById('amount-lbl').innerHTML = 'Puntuación recibida:';

@@ -1,6 +1,6 @@
 @extends('layouts.masterMM')
 
-@section('Titulo', 'Tabla de Ranking Matamarcianos')
+@section('Titulo', 'Ranking Shoot´em Up')
 
 <link rel="stylesheet" href="{{ asset('css/cssMM/nav.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/cssMM/form.css') }}" />

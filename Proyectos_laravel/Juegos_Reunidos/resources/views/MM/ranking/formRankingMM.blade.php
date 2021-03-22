@@ -2,7 +2,7 @@
 
 
 
-@section('Titulo', 'Creación de Ranking - Matamarcianos')
+@section('Titulo', 'Ranking Shoot´em Up')
 <link rel="stylesheet" href="{{ asset('css/cssMM/nav.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/cssMM/create-modifyBoost.css') }}" />
 
@@ -25,7 +25,7 @@
         <table>
 
             <tr>
-                <th colspan="2">Creacion de Ranking</th>
+                <th colspan="2">Creación de Ranking</th>
             </tr>
 
             <tr>
@@ -34,7 +34,7 @@
             </tr>
     
             <tr>
-                <td>Puntuacion:</td>
+                <td>Puntuación:</td>
                 <td><input class="number" type="number" name="score" value="{{$ranking->score ?? '0' }}" ></td>
             </tr>
     
