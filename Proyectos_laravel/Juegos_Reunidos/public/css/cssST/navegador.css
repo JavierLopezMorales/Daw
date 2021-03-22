@@ -2,8 +2,8 @@ nav {
 	margin: 27px auto 0;
 	display: flex;
 	position: relative;
-	width: 590px;
-	height: 50px;
+	width: 59%;
+	height: 7%;
 	background-color: #34495e;
 	border-radius: 8px;
 	font-size: 0;
@@ -72,7 +72,7 @@ h1 {
 	text-align: center;
 	margin: 40px 0 40px;
 	text-align: center;
-	font-size: 30px;
+	font-size: 3vh;
 	color: #ecf0f1;
 	text-shadow: 2px 2px 4px #000000;
 	font-family: 'Cherry Swash', cursive;

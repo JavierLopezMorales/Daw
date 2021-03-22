@@ -31,14 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
           <div class="game-end-info title">¡ENHORABUENA!</div>
           @csrf
-          <div class="game-end-info">Introduce tus iniciales(3 carácteres)</div>
+          <div class="game-end-info">Introduce tus iniciales (3 carácteres)</div>
           <input class="name" type="text" name="name" autocomplete="off">
 
           <div class="game-end-info">Tus movimientos han sido:</div>
           <div class="moves">0</div>
           <input type="text" name="moves" id="moves1"hidden>
+          <input type="hidden" name="mode" id="mode" value="5x5">
           <div class="game-buttons">
-          <input type="text" name="mode" id="mode"hidden value="5x5">
+
               <a class="retry" href="{{route('opciones')}}">Volver a Elegir Puzzle</a>
               <input class="btn-submit" type="submit" value="Aceptar">
 
