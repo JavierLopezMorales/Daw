@@ -43,6 +43,7 @@
 
             <li><a href="/rankingSG">Ranking</a></li>
             <li><a href="/thematicSG">Ver temáticas</a></li>
+            <li><a href="{{ route('inicio.show') }}">Volver</a></li>
         </ul></nav>
         <hr class="new1">
         <div class="info" id="form">
