@@ -19,8 +19,8 @@ class TematicasSTTableSeeder extends Seeder
           'type' => 'Puzzle',
           'name' => 'Almeria',
           'description' => 'Prueba este puzzle de un instituto historico de la ciudad de Almeria.  ',
-          'img_fondo' => 'celia2.jpg',
-          'img_puzzle' => 'celia.jpg',
+          'img_fondo' => 'celia.jpg',
+          'img_puzzle' => 'celia2.jpg',
           'modo' => '5x5'
       ]);
 
@@ -29,8 +29,8 @@ class TematicasSTTableSeeder extends Seeder
           'type' => 'Puzzle',
           'name' => 'Alcazaba',
           'description' => 'Atrevete a resolver el puzzle de la alcazaba (pista:guiate por los números o lo pasarás mal)',
-          'img_fondo' => 'alcazaba2.jpg',
-          'img_puzzle' => 'alcazaba.jpg',
+          'img_fondo' => 'alcazaba.jpg',
+          'img_puzzle' => 'alcazaba2.jpg',
           'modo' => '5x5'
       ]);
       DB::table('tematicas_slide')->insert([
@@ -38,8 +38,8 @@ class TematicasSTTableSeeder extends Seeder
           'type' => 'Puzzle',
           'name' => 'Cabo de Gata',
           'description' => 'Hermoso paisaje para ver mientras juegas',
-          'img_fondo' => 'cabo2.jpg',
-          'img_puzzle' => 'cabo.jpg',
+          'img_fondo' => 'cabo.jpg',
+          'img_puzzle' => 'cabo2.jpg',
           'modo' => '5x5'
       ]);
       DB::table('tematicas_slide')->insert([
@@ -47,8 +47,8 @@ class TematicasSTTableSeeder extends Seeder
           'type' => 'Puzzle',
           'name' => 'España',
           'description' => 'Bandera de españa , para realizar un puzzle patriotico',
-          'img_fondo' => 'bandera2.jpg',
-          'img_puzzle' => 'bandera.jpg',
+          'img_fondo' => 'bandera.jpg',
+          'img_puzzle' => 'bandera2.jpg',
           'modo' => '5x5'
       ]);
 
