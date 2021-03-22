@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           <div class="game-end-info title">¡ENHORABUENA!</div>
           @csrf
-          <div class="game-end-info">Introduce tus iniciales</div>
+          <div class="game-end-info">Introduce tus iniciales(3 carácteres)</div>
           <input class="name" type="text" name="name" autocomplete="off">
 
           <div class="game-end-info">Tus movimientos han sido:</div>

@@ -17,7 +17,7 @@ class RankingSTSeeder extends Seeder
       DB::table('ranking_slide')->insert([
           'id' => '1',
           'name'=> 'MLL',
-          'moves' => '1000',
+          'moves' => '458',
           'mode' => '5x5',
       ]);
 
@@ -30,8 +30,8 @@ class RankingSTSeeder extends Seeder
 
       DB::table('ranking_slide')->insert([
           'id' => '3',
-          'name'=> 'AAA',
-          'moves' => '256',
+          'name'=> 'MJF',
+          'moves' => '758',
           'mode' => '5x5',
       ]);
 
