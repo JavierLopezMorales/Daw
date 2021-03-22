@@ -64,7 +64,7 @@ var selected;
 </script>
 
 
-@section('Titulo', 'Sliding-Tiles')
+@section('Titulo', 'Juegos Reunidos')
 
 
 @section('content')
