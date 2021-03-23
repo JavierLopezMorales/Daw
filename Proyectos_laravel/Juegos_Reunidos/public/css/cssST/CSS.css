@@ -88,6 +88,10 @@ p {
 
 
 }
+.numeroImg{
+	display:none;
+	vertical-align: text-top;
+}
 .tile1::before {
 	display:block;
   content:"1";

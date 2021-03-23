@@ -52,38 +52,38 @@ document.addEventListener("DOMContentLoaded", function () {
   <div id="puzzle-contenedor">
 <div id="table1" style="display: inline-table;">
    <div id="row1" style="display: table-row;">
-      <div id="cell11" class="tile1 " onClick="clickTile(1,1);"></div>
-      <div id="cell12" class="tile2" onClick="clickTile(1,2);"></div>
-      <div id="cell13" class="tile3" onClick="clickTile(1,3);"></div>
-	  <div id="cell14" class="tile4" onClick="clickTile(1,4);"></div>
-	  <div id="cell15" class="tile5" onClick="clickTile(1,5);"></div>
+      <div id="cell11" class="tile1 " onClick="clickTile(1,1);"><div class="numeroImg">1</div></div>
+      <div id="cell12" class="tile2" onClick="clickTile(1,2);"><div class="numeroImg">2</div></div>
+      <div id="cell13" class="tile3" onClick="clickTile(1,3);"><div class="numeroImg">3</div></div>
+	  <div id="cell14" class="tile4" onClick="clickTile(1,4);"><div class="numeroImg">4</div></div>
+	  <div id="cell15" class="tile5" onClick="clickTile(1,5);"><div class="numeroImg">5</div></div>
    </div>
    <div id="row2" style="display: table-row;">
-      <div id="cell21" class="tile6" onClick="clickTile(2,1);"></div>
-      <div id="cell22" class="tile7" onClick="clickTile(2,2);"></div>
-      <div id="cell23" class="tile8" onClick="clickTile(2,3);"></div>
-	  <div id="cell24" class="tile9" onClick="clickTile(2,4);"></div>
-	  <div id="cell25" class="tile10" onClick="clickTile(2,5);"></div>
+      <div id="cell21" class="tile6" onClick="clickTile(2,1);"><div class="numeroImg">6</div></div>
+      <div id="cell22" class="tile7" onClick="clickTile(2,2);"><div class="numeroImg">7</div></div>
+      <div id="cell23" class="tile8" onClick="clickTile(2,3);"><div class="numeroImg">8</div></div>
+	  <div id="cell24" class="tile9" onClick="clickTile(2,4);"><div class="numeroImg">9</div></div>
+	  <div id="cell25" class="tile10" onClick="clickTile(2,5);"><div class="numeroImg">10</div></div>
    </div>
    <div id="row3" style="display: table-row;">
-      <div id="cell31" class="tile11" onClick="clickTile(3,1);"></div>
-      <div id="cell32" class="tile12" onClick="clickTile(3,2);"></div>
-      <div id="cell33" class="tile13" onClick="clickTile(3,3);"></div>
-	  <div id="cell34" class="tile14" onClick="clickTile(3,4);"></div>
-	  <div id="cell35" class="tile15" onClick="clickTile(3,5);"></div>
+      <div id="cell31" class="tile11" onClick="clickTile(3,1);"><div class="numeroImg">11</div></div>
+      <div id="cell32" class="tile12" onClick="clickTile(3,2);"><div class="numeroImg">12</div></div>
+      <div id="cell33" class="tile13" onClick="clickTile(3,3);"><div class="numeroImg">13</div></div>
+	  <div id="cell34" class="tile14" onClick="clickTile(3,4);"><div class="numeroImg">14</div></div>
+	  <div id="cell35" class="tile15" onClick="clickTile(3,5);"><div class="numeroImg">15</div></div>
    </div>
    <div id="row4" style="display: table-row;">
-      <div id="cell41" class="tile16" onClick="clickTile(4,1);"></div>
-      <div id="cell42" class="tile17" onClick="clickTile(4,2);"></div>
-      <div id="cell43" class="tile18" onClick="clickTile(4,3);"></div>
-	  <div id="cell44" class="tile19" onClick="clickTile(4,4);"></div>
-	  <div id="cell45" class="tile20" onClick="clickTile(4,5);"></div>
+      <div id="cell41" class="tile16" onClick="clickTile(4,1);"><div class="numeroImg">16</div></div>
+      <div id="cell42" class="tile17" onClick="clickTile(4,2);"><div class="numeroImg">17</div></div>
+      <div id="cell43" class="tile18" onClick="clickTile(4,3);"><div class="numeroImg">18</div></div>
+	  <div id="cell44" class="tile19" onClick="clickTile(4,4);"><div class="numeroImg">19</div></div>
+	  <div id="cell45" class="tile20" onClick="clickTile(4,5);"><div class="numeroImg">20</div></div>
    </div>
    <div id="row5" style="display: table-row;">
-      <div id="cell51" class="tile21" onClick="clickTile(5,1);"></div>
-      <div id="cell52" class="tile22" onClick="clickTile(5,2);"></div>
-      <div id="cell53" class="tile23" onClick="clickTile(5,3);"></div>
-	  <div id="cell54" class="tile24" onClick="clickTile(5,4);"></div>
+      <div id="cell51" class="tile21" onClick="clickTile(5,1);"><div class="numeroImg">21</div></div>
+      <div id="cell52" class="tile22" onClick="clickTile(5,2);"><div class="numeroImg">22</div></div>
+      <div id="cell53" class="tile23" onClick="clickTile(5,3);"><div class="numeroImg">23</div></div>
+	  <div id="cell54" class="tile24" onClick="clickTile(5,4);"><div class="numeroImg">24</div></div>
 	  <div id="cell55" class="tile25" onClick="clickTile(5,5);"></div>
    </div>
 
@@ -100,17 +100,13 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="moves"id="moves"></div>
     <button class="button" onclick="resolver();"style="color:black;background-color:Lightblue;">Resolver</button>
     <button class="button"onClick="shuffle();"style="color:black;background-color:Lightblue;">Juego Nuevo</button>
+    <button class="button show"style="color:black;background-color:Lightblue;">Numeros</button>
 
 
 </div>
 </div>
-
-
 
 <div id="img-container"></div>
-
-
-
 
 
 @endsection
