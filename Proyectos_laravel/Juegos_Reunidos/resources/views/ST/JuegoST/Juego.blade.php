@@ -9,7 +9,7 @@
 
 @section('content')
 <script>
-
+//Funcion para mandar las imagenes al juego , desde servidor.(revisar el bucle, posible causa de cuadrado blanco)
 document.addEventListener("DOMContentLoaded", function () {
   var fondo = document.getElementById("img-container");
   fondo.style.backgroundImage="url({{url('images/imagesST',$name_fondo)}})";
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
-
+<!-- Informacion al acabar -->
 <div class="game-end">
 
   <div class="formUpload flex-item">
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </form>
   </div>
 </div>
-<center>
+<center><!-- Tabla de puzzle -->
   <div id="puzzle-contenedor">
 <div id="table1" style="display: inline-table;">
    <div id="row1" style="display: table-row;">
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </div>
 
-
+<!-- Pantalla de informacion -->
 <div class="screen">
 
 	<p>Tiempo</p>
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </div>
 </div>
-
+<!-- imagen de fondo -->
 <div id="img-container"></div>
 
 

@@ -6,13 +6,14 @@
 @section('sidebar')
     <h1>Juegos Reunidos - Sliding-Tiles</h1>
 @endsection
-
+<!--Vista de formulario de tematicas -->
 @section('content')
 
     @isset($tematica)
         <form action="{{ route('TematicasST.update', ['id' => $tematica->id]) }}"enctype="multipart/form-data" method="POST">
     @method("PUT")
     <script>
+    //funcion para que coja el modo directamente
     $(document).ready(function () {
                 var selected = "{{$tematica -> modo}}";
 
@@ -43,6 +44,7 @@
         <td>Descripcion:<input type="text" name="description" value="{{$tematica->description ?? '' }}"></td>
       </tr>
       <tr>
+        <!--subir imagenes a servidor-->
       <td>Imagen de fondo:(La imagen debe ser 1200x800px y un archivo .jpg)<input  type="file" name="img_fondo" value="{{$tematica->img_fondo ?? '' }}"></td>
     </tr>
     <tr>

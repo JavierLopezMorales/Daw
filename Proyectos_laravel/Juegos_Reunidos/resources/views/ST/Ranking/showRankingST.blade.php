@@ -8,7 +8,7 @@
 
 
 @endsection
-
+<!--Vista de ranking -->
 @section('content')
 
 <div class="container2">
@@ -18,7 +18,7 @@
             <th>Nombre</th>
 
             <th>Movimientos</th>
-            
+
             <th colspan="2"><a href="{{route('RankingST.create')}}"><input type="button"class="button" value="Crear"></a></th>
         </tr>
 </thead>

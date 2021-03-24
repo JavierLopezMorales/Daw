@@ -8,7 +8,7 @@
 @section('sidebar')
     <h1>Juegos Reunidos - Sliding-Tiles</h1>
 @endsection
-
+<!--Vista de formulario Ranking -->
 @section('content')
 
     @isset($ranking)

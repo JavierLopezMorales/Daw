@@ -6,7 +6,7 @@
 
 
 @endsection
-
+<!--Vista de tematicas -->
 @section('content')
 <div class="container2">
     <table border="3px solid black">
@@ -29,9 +29,10 @@
             <!--<td>{{$tematicas -> type}}</td>-->
             <td>{{$tematicas -> name}}</td>
             <td>{{$tematicas -> description}}</td>
+            <!--Coge las imagenes de servidor por su variable para mostrarlo en chiquitito -->
             <td><img src="images/imagesST/{{$tematicas -> img_fondo}}"width="150px"height="100px"></td>
             <td><img src="images/imagesST/{{$tematicas -> img_puzzle}}"width="150px"height="100px"></td>
-            
+
 
 
             <td><a href="{{route('TematicasST.edit', $tematicas->id)}}"><input type="button"class="button" value="Modificar"></a></td>

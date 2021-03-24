@@ -7,12 +7,15 @@
   if(start == false){
 
   function swapTiles(cell1,cell2,x) {
+    //Esta funcion permite cambiar las fichas unas por otras, lo que hace es cambiar la clase de una por la otra
+    //apoyandose en una variable auxiliar.
 
   var temp = document.getElementById(cell1).className;
   document.getElementById(cell1).className = document.getElementById(cell2).className;
   document.getElementById(cell2).className = temp;
-
+//Aqui tenemos el contador de movimientos , para que con cada intercambio , se incremente y al final tener un total de movimientos
   if(x == true){
+
 
     cont++;
 
@@ -27,6 +30,7 @@
   Comprobar();
 
   }
+  //Mostramos el contenido en la variable movimientos
   $(document).ready(function() {
 
     $('#moves1').attr('value', cont);
@@ -36,7 +40,7 @@
 
 
 
-
+//Esta funcion baraja las piezas.
 function shuffle() {
   var game = false;
   if(start==true){
@@ -76,6 +80,7 @@ function shuffle() {
 
 
   }
+  //Este es el boton de resolver , para mostrarlo en la demostracion.Basicamente recorre la tabla y las situa en su posicion original
   function resolver(){
     start=true;
     victoria=true;
@@ -88,12 +93,12 @@ function shuffle() {
 
         }
 
-      }
+      }//Si el juego se ha empezado (dado el boton Juego Nuevo), y ha acabado(puzzle completo)muestra un div de fin de juego que esta oculto.
    if(victoria == true && start==true){
      $('.game-end').css({'display': 'flex', 'opacity': 0.8});
     }
   }
-
+//Funcion para identificar que celda hay en sus lados  al clicar para ver si se puede intercambiar.
 function clickTile(row,column) {
   var cell = document.getElementById("cell"+row+column);/*ID*/
   var tile = cell.className;/*CLASE*/
@@ -136,7 +141,7 @@ console.log("------------");
 
 
 }
-
+//Funcion de contador de tiempo
   function temporizador(){
 
 	 var n = 0;
@@ -153,7 +158,7 @@ console.log("------------");
 
   }
 
-
+//Funcion comprobar, identifica si cada pieza esta en su lugar y si todo el puzzle esta resuelto.
   function Comprobar(){
 	var contador= 0;
 	var victoria = true;
@@ -173,11 +178,12 @@ console.log("------------");
 			 }
 		}
 
-	}
+	}//Muestra la pantalla de fin oculta.
 	if(victoria == true && start==true){
     $('.game-end').css({'display': 'flex', 'opacity': 0.8});
     }
   }
+  //En proceso para ver si puedo alternar la visibilidad de los numeros
   $(document).ready(function(){
 	    $(".show").click(function(){
 	           $(".numeroImg").toggle();

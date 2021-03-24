@@ -12,7 +12,7 @@
 @section('content')
 <div id="container3"style="display:flex;justify-content:space-around;align-items:center;margin-top:20vh;flex-wrap:wrap;max-width:100vw;">
 @foreach($tematicasList as $tematicas)
-
+<!--Vista de seleccion de puzzle -->
   <div class="button-tematica"style="display:flex;flex-direction:column;align-items:center;flex-wrap:wrap;">
     <img src="../../../../images/imagesST/{{$tematicas->img_fondo}}"width="300px"height="200px"title="{{$tematicas->description}}">
   <a href="{{ route('Juego.show', ['id' => $tematicas->id]) }}"><input type="button"class="button" value="Seleccionar"></a>
